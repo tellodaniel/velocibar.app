@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VelociBar — Mide tu velocidad real de internet en macOS</title>
+  <meta name="description" content="VelociBar es una app de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking, todo local.">
+  <meta name="keywords" content="velocidad internet, speed test, macOS, barra de menú, medidor de velocidad, test de velocidad, ISP, evidencia velocidad">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://velocibar.com/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="VelociBar — Tu velocidad real de internet">
+  <meta property="og:description" content="App de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Guarda historial local y exporta CSV.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velocibar.com/">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VelociBar — Tu velocidad real de internet">
+  <meta name="twitter:description" content="Mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking.">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo" aria-label="VelociBar - Inicio">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#privacidad">Privacidad</a></li>
+        <li><a href="/legal/terms.html">Términos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="pill">App de barra de menú para macOS</span>
+        <h1>Mide tu velocidad <em>real</em> de internet — a lo largo del tiempo.</h1>
+        <p class="hero-subtitle">
+          VelociBar es una app ligera para macOS que ejecuta pruebas periódicas y guarda un historial local. 
+          Entiende tu conexión día a día — no solo en una prueba puntual en condiciones ideales.
+        </p>
+        <div class="cta-group">
+          <button class="btn btn-primary" id="download-btn" type="button">
+            <span class="btn-icon">↓</span>
+            Descargar
+          </button>
+          <a href="#como-funciona" class="btn btn-secondary">Cómo funciona</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="menu-bar-preview">
+          <div class="menu-bar-dot"></div>
+          <div class="menu-bar-content">
+            <span class="speed-value">94.2</span>
+            <span class="speed-unit">Mbps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="section" id="como-funciona">
+      <h2>Cómo funciona</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">⏱</div>
+          <h3>Pruebas automáticas o manuales</h3>
+          <p>Ejecuta mediciones cuando quieras o programa tests automáticos a intervalos regulares.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Medición real de descarga</h3>
+          <p>Mide el rendimiento con una prueba basada en descarga real, reflejando mejor el uso cotidiano.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3>Historial local exportable</h3>
+          <p>Guarda los resultados en tu Mac y exporta una línea temporal en CSV cuando lo necesites.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Evidencia -->
+    <section class="section section-alt" id="evidencia">
+      <h2>Tu historial, tu evidencia</h2>
+      <div class="evidence-content">
+        <p>
+          VelociBar genera un registro cronológico de tus mediciones que puedes exportar como CSV. 
+          Este historial puede ser útil para documentar el rendimiento de tu conexión a lo largo del tiempo 
+          y compartirlo con tu proveedor de servicios si necesitas reportar incidencias.
+        </p>
+        <div class="csv-preview">
+          <code>
+            fecha,hora,descarga_mbps,latencia_ms<br>
+            2024-12-20,09:15,92.4,12<br>
+            2024-12-20,14:30,45.1,28<br>
+            2024-12-20,21:45,88.7,15
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacidad -->
+    <section class="section" id="privacidad">
+      <h2>Tu privacidad, primero</h2>
+      <ul class="privacy-list">
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Sin cuentas</strong>
+            <p>No necesitas registrarte ni crear una cuenta para usar VelociBar.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Sin tracking</strong>
+            <p>No recopilamos datos de uso ni analíticas. Cero telemetría.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <strong>Todo en tu Mac</strong>
+            <p>Los resultados se almacenan localmente. Tú decides si compartirlos.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Por qué no usar simplemente Speedtest?</summary>
+          <p>
+            Los tests de velocidad tradicionales suelen medir en condiciones óptimas y pueden mostrar 
+            el mejor caso posible. VelociBar te permite hacer seguimiento continuo para ver cómo 
+            se comporta tu conexión en diferentes momentos del día y bajo distintas condiciones.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué mide exactamente VelociBar?</summary>
+          <p>
+            VelociBar realiza una prueba de descarga real midiendo la velocidad efectiva de transferencia 
+            y la latencia. Esto refleja mejor el rendimiento que experimentas al navegar, ver vídeos o descargar archivos.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>¿VelociBar sube mis datos a algún servidor?</summary>
+          <p>
+            No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube, 
+            no hay tracking. Tú tienes el control total de tus datos.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo exportar los resultados para mi ISP?</summary>
+          <p>
+            Sí. Puedes exportar tu historial completo como archivo CSV con fechas, horas y valores 
+            de velocidad. Esto puede servir como documentación objetiva si necesitas reportar problemas 
+            a tu proveedor de internet.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Funciona en segundo plano?</summary>
+          <p>
+            Sí. VelociBar vive en tu barra de menú y puede ejecutar pruebas programadas automáticamente 
+            mientras trabajas. Consume muy pocos recursos y no interfiere con tu flujo de trabajo.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section cta-section">
+      <h2>Empieza a medir tu velocidad real</h2>
+      <p>Descarga VelociBar gratis y toma el control de tu conexión.</p>
+      <button class="btn btn-primary btn-large" id="download-btn-footer" type="button">
+        <span class="btn-icon">↓</span>
+        Descargar para macOS
+      </button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/legal/privacy.html">Política de Privacidad</a>
+        <a href="/legal/terms.html">Términos de Uso</a>
+      </nav>
+      <p class="copyright">© 2024 VelociBar. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
