@@ -22,8 +22,8 @@
   // --- Download button handler ---
   function handleDownload(event) {
     event.preventDefault();
-    // Placeholder: Replace with actual download URL when available
-    const downloadUrl = null;
+    // App Store URL for VelociBar
+    const downloadUrl = 'https://apps.apple.com/us/app/velocibar/id6756196355';
 
     if (downloadUrl) {
       window.location.href = downloadUrl;
