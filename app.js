@@ -62,6 +62,51 @@
     });
   }
 
+  // --- Speed counter animation ---
+  function animateSpeedCounter() {
+    const counter = document.getElementById('speed-counter');
+    if (!counter) return;
+
+    const target = 847;
+    const duration = 2000; // 2 seconds
+    const startTime = performance.now();
+
+    // Easing function for smooth deceleration
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutExpo(progress);
+      const currentValue = Math.floor(easedProgress * target);
+
+      counter.textContent = currentValue;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target;
+      }
+    }
+
+    // Start animation when element is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(updateCounter);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(counter);
+  }
+
   // --- Initialize ---
   function init() {
     // Bind download buttons
@@ -69,6 +114,9 @@
     downloadBtns.forEach((btn) => {
       btn.addEventListener('click', handleDownload);
     });
+
+    // Start speed counter animation
+    animateSpeedCounter();
 
     // Initialize smooth scroll
     initSmoothScroll();

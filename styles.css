@@ -27,14 +27,14 @@
   --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Monaco, 
                'Cascadia Mono', Consolas, monospace;
   
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
+  /* Golden-ratio spacing scale */
+  --space-xs: 0.382rem;
+  --space-sm: 0.618rem;
   --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2.5rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
+  --space-lg: 1.618rem;
+  --space-xl: 2.618rem;
+  --space-2xl: 4.236rem;
+  --space-3xl: 6.854rem;
   
   /* Layout */
   --max-width: 960px;
@@ -116,8 +116,8 @@ h1 em {
 
 h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: var(--space-xl);
   text-align: center;
+  margin-bottom: var(--space-lg);
 }
 
 h3 {
@@ -146,10 +146,19 @@ a:focus-visible {
 }
 
 /* --- Layout --- */
+main > * + * {
+  margin-top: var(--space-3xl);
+}
+
 .section {
   padding: var(--space-3xl) var(--space-lg);
   max-width: var(--max-width);
   margin: 0 auto;
+}
+
+.section > * + *,
+.section-alt > * + * {
+  margin-top: var(--space-lg);
 }
 
 .section-alt {
@@ -235,7 +244,7 @@ a:focus-visible {
 
 @media (min-width: 768px) {
   .hero {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.6fr 1fr;
     min-height: auto;
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-3xl);
@@ -403,6 +412,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .feature-card {
@@ -427,6 +437,33 @@ a:focus-visible {
 
 .feature-card h3 {
   color: var(--color-text);
+}
+
+/* --- Use cases --- */
+.use-cases {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.use-cases li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.use-cases li:last-child {
+  border-bottom: none;
+}
+
+.use-cases strong {
+  color: var(--color-text);
+  display: inline-block;
+  margin-bottom: var(--space-xs);
 }
 
 /* --- Evidence --- */
