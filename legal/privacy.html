@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Política de Privacidad — VelociBar</title>
-  <meta name="description" content="Política de Privacidad de VelociBar. Conoce cómo protegemos tu información y respetamos tu privacidad.">
+  <title data-i18n-page="title">Política de Privacidad — VelociBar</title>
+  <meta name="description" content="Política de Privacidad de VelociBar. Conoce cómo protegemos tu información y respetamos tu privacidad." data-i18n-page="description">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://velocibar.com/legal/privacy.html">
   
@@ -19,13 +19,14 @@
   </script>
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Política de Privacidad — VelociBar">
-  <meta property="og:description" content="Conoce cómo VelociBar protege tu información y respeta tu privacidad.">
+  <meta property="og:title" content="Política de Privacidad — VelociBar" data-i18n-page="title">
+  <meta property="og:description" content="Conoce cómo VelociBar protege tu información y respeta tu privacidad." data-i18n-page="ogDescription">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://velocibar.com/legal/privacy.html">
   <meta property="og:locale" content="es_MX">
   
   <link rel="stylesheet" href="../styles.css">
+  <script src="../translations.js"></script>
   <style>
     .legal-page {
       max-width: 760px;
@@ -108,224 +109,230 @@
         <span class="logo-text">VelociBar</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/#como-funciona">Cómo funciona</a></li>
-        <li><a href="/#privacidad">Privacidad</a></li>
-        <li><a href="/legal/terms.html">Términos</a></li>
+        <li><a href="/#como-funciona" data-i18n="nav.howItWorks">Cómo funciona</a></li>
+        <li><a href="/#privacidad" data-i18n="nav.privacy">Privacidad</a></li>
+        <li><a href="/legal/terms.html" data-i18n="nav.terms">Términos</a></li>
+        <li>
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+            <span class="lang-es active">ES</span>
+            <span class="lang-en">EN</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main class="legal-page">
-    <a href="/" class="legal-back">← Volver al inicio</a>
+    <a href="/" class="legal-back" data-i18n="legal.backHome">← Volver al inicio</a>
     
-    <h1>Política de Privacidad</h1>
-    <p class="legal-meta">Última actualización: 24 de diciembre de 2024</p>
+    <h1 data-i18n-page="heading">Política de Privacidad</h1>
+    <p class="legal-meta" data-i18n-page="lastUpdated">Última actualización: 24 de diciembre de 2024</p>
 
     <div class="highlight-box">
-      <p>
+      <p data-i18n-page="summary" data-i18n-html>
         <strong>Resumen:</strong> VelociBar está diseñado con la privacidad como principio fundamental. 
         No recopilamos datos personales, no requerimos cuentas de usuario, y toda la información 
         generada por la aplicación permanece almacenada exclusivamente en tu dispositivo.
       </p>
     </div>
 
-    <h2>1. Introducción</h2>
-    <p>
+    <h2 data-i18n-page="sections.intro.title">1. Introducción</h2>
+    <p data-i18n-page="sections.intro.content.0">
       Esta Política de Privacidad describe cómo VelociBar ("nosotros", "nuestro" o "la Aplicación") 
       maneja la información cuando utilizas nuestra aplicación de medición de velocidad de internet 
       para macOS. Esta política aplica a usuarios en México, Estados Unidos y cualquier otra 
       jurisdicción donde la Aplicación esté disponible.
     </p>
-    <p>
+    <p data-i18n-page="sections.intro.content.1">
       Al descargar, instalar o utilizar VelociBar, aceptas las prácticas descritas en esta 
       Política de Privacidad.
     </p>
 
-    <h2>2. Información que NO Recopilamos</h2>
-    <p>
+    <h2 data-i18n-page="sections.noCollect.title">2. Información que NO Recopilamos</h2>
+    <p data-i18n-page="sections.noCollect.intro" data-i18n-html>
       VelociBar fue diseñado siguiendo el principio de minimización de datos. 
       <strong>No recopilamos, almacenamos ni transmitimos:</strong>
     </p>
-    <ul>
-      <li>Información personal identificable (nombre, correo electrónico, dirección, teléfono)</li>
-      <li>Datos de ubicación geográfica</li>
-      <li>Identificadores de dispositivo o direcciones IP</li>
-      <li>Historial de navegación o uso de aplicaciones</li>
-      <li>Información de tu proveedor de servicios de internet (ISP)</li>
-      <li>Datos biométricos o de autenticación</li>
-      <li>Información financiera o de pago</li>
+    <ul class="privacy-no-collect-list">
+      <li data-i18n-page="sections.noCollect.items.0">Información personal identificable (nombre, correo electrónico, dirección, teléfono)</li>
+      <li data-i18n-page="sections.noCollect.items.1">Datos de ubicación geográfica</li>
+      <li data-i18n-page="sections.noCollect.items.2">Identificadores de dispositivo o direcciones IP</li>
+      <li data-i18n-page="sections.noCollect.items.3">Historial de navegación o uso de aplicaciones</li>
+      <li data-i18n-page="sections.noCollect.items.4">Información de tu proveedor de servicios de internet (ISP)</li>
+      <li data-i18n-page="sections.noCollect.items.5">Datos biométricos o de autenticación</li>
+      <li data-i18n-page="sections.noCollect.items.6">Información financiera o de pago</li>
     </ul>
 
-    <h2>3. Información Generada por la Aplicación</h2>
-    <p>
+    <h2 data-i18n-page="sections.generated.title">3. Información Generada por la Aplicación</h2>
+    <p data-i18n-page="sections.generated.intro">
       VelociBar genera los siguientes datos durante su funcionamiento normal:
     </p>
     
-    <h3>3.1 Resultados de Pruebas de Velocidad</h3>
-    <p>
+    <h3 data-i18n-page="sections.generated.speedTests.title">3.1 Resultados de Pruebas de Velocidad</h3>
+    <p data-i18n-page="sections.generated.speedTests.intro">
       Cuando ejecutas una prueba de velocidad, la Aplicación registra:
     </p>
     <ul>
-      <li>Fecha y hora de la prueba</li>
-      <li>Velocidad de descarga medida (en Mbps)</li>
-      <li>Latencia o ping (en milisegundos)</li>
+      <li data-i18n-page="sections.generated.speedTests.items.0">Fecha y hora de la prueba</li>
+      <li data-i18n-page="sections.generated.speedTests.items.1">Velocidad de descarga medida (en Mbps)</li>
+      <li data-i18n-page="sections.generated.speedTests.items.2">Latencia o ping (en milisegundos)</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.generated.speedTests.note" data-i18n-html>
       <strong>Estos datos se almacenan exclusivamente en tu Mac</strong>, en un archivo local que 
       tú controlas completamente. Nunca se transmiten a nuestros servidores ni a terceros.
     </p>
 
-    <h3>3.2 Archivo CSV de Historial</h3>
-    <p>
+    <h3 data-i18n-page="sections.generated.csvHistory.title">3.2 Archivo CSV de Historial</h3>
+    <p data-i18n-page="sections.generated.csvHistory.intro">
       La Aplicación mantiene un archivo CSV con el historial de tus mediciones. Este archivo:
     </p>
     <ul>
-      <li>Se guarda en una ubicación de tu elección en tu sistema de archivos</li>
-      <li>Puede ser exportado, compartido o eliminado por ti en cualquier momento</li>
-      <li>No contiene información que permita identificarte personalmente</li>
-      <li>Permanece bajo tu control exclusivo</li>
+      <li data-i18n-page="sections.generated.csvHistory.items.0">Se guarda en una ubicación de tu elección en tu sistema de archivos</li>
+      <li data-i18n-page="sections.generated.csvHistory.items.1">Puede ser exportado, compartido o eliminado por ti en cualquier momento</li>
+      <li data-i18n-page="sections.generated.csvHistory.items.2">No contiene información que permita identificarte personalmente</li>
+      <li data-i18n-page="sections.generated.csvHistory.items.3">Permanece bajo tu control exclusivo</li>
     </ul>
 
-    <h2>4. Cómo Funcionan las Pruebas de Velocidad</h2>
-    <p>
+    <h2 data-i18n-page="sections.howItWorks.title">4. Cómo Funcionan las Pruebas de Velocidad</h2>
+    <p data-i18n-page="sections.howItWorks.intro">
       Para medir la velocidad de tu conexión, VelociBar realiza una descarga de prueba desde 
       servidores públicos de prueba. Durante este proceso:
     </p>
     <ul>
-      <li>Tu dirección IP es visible para el servidor de prueba (como ocurre con cualquier conexión a internet)</li>
-      <li>No enviamos ningún identificador adicional ni información personal</li>
-      <li>La conexión es temporal y solo para propósitos de medición</li>
-      <li>No mantenemos registros de estas conexiones</li>
+      <li data-i18n-page="sections.howItWorks.items.0">Tu dirección IP es visible para el servidor de prueba (como ocurre con cualquier conexión a internet)</li>
+      <li data-i18n-page="sections.howItWorks.items.1">No enviamos ningún identificador adicional ni información personal</li>
+      <li data-i18n-page="sections.howItWorks.items.2">La conexión es temporal y solo para propósitos de medición</li>
+      <li data-i18n-page="sections.howItWorks.items.3">No mantenemos registros de estas conexiones</li>
     </ul>
 
-    <h2>5. Almacenamiento Local</h2>
-    <p>
+    <h2 data-i18n-page="sections.localStorage.title">5. Almacenamiento Local</h2>
+    <p data-i18n-page="sections.localStorage.intro">
       Toda la información generada por VelociBar se almacena localmente en tu dispositivo:
     </p>
     <ul>
-      <li><strong>Ubicación:</strong> Los datos se guardan en el directorio de la aplicación o en una ubicación que tú especifiques</li>
-      <li><strong>Formato:</strong> Archivos CSV de texto plano, legibles por cualquier aplicación de hojas de cálculo</li>
-      <li><strong>Seguridad:</strong> Los archivos están protegidos por los permisos de tu sistema operativo macOS</li>
-      <li><strong>Eliminación:</strong> Puedes eliminar estos archivos en cualquier momento usando el Finder o la Terminal</li>
+      <li data-i18n-page="sections.localStorage.items.0" data-i18n-html><strong>Ubicación:</strong> Los datos se guardan en el directorio de la aplicación o en una ubicación que tú especifiques</li>
+      <li data-i18n-page="sections.localStorage.items.1" data-i18n-html><strong>Formato:</strong> Archivos CSV de texto plano, legibles por cualquier aplicación de hojas de cálculo</li>
+      <li data-i18n-page="sections.localStorage.items.2" data-i18n-html><strong>Seguridad:</strong> Los archivos están protegidos por los permisos de tu sistema operativo macOS</li>
+      <li data-i18n-page="sections.localStorage.items.3" data-i18n-html><strong>Eliminación:</strong> Puedes eliminar estos archivos en cualquier momento usando el Finder o la Terminal</li>
     </ul>
 
-    <h2>6. Sin Cuentas de Usuario</h2>
-    <p>
+    <h2 data-i18n-page="sections.noAccounts.title">6. Sin Cuentas de Usuario</h2>
+    <p data-i18n-page="sections.noAccounts.intro">
       VelociBar no requiere ni ofrece la creación de cuentas de usuario. Esto significa:
     </p>
     <ul>
-      <li>No necesitas proporcionar correo electrónico ni contraseña</li>
-      <li>No existe un perfil de usuario asociado a tu uso</li>
-      <li>No hay sincronización en la nube de tus datos</li>
-      <li>No podemos recuperar tus datos si los eliminas, porque nunca los tenemos</li>
+      <li data-i18n-page="sections.noAccounts.items.0">No necesitas proporcionar correo electrónico ni contraseña</li>
+      <li data-i18n-page="sections.noAccounts.items.1">No existe un perfil de usuario asociado a tu uso</li>
+      <li data-i18n-page="sections.noAccounts.items.2">No hay sincronización en la nube de tus datos</li>
+      <li data-i18n-page="sections.noAccounts.items.3">No podemos recuperar tus datos si los eliminas, porque nunca los tenemos</li>
     </ul>
 
-    <h2>7. Sin Análisis ni Telemetría</h2>
-    <p>
+    <h2 data-i18n-page="sections.noAnalytics.title">7. Sin Análisis ni Telemetría</h2>
+    <p data-i18n-page="sections.noAnalytics.intro" data-i18n-html>
       VelociBar <strong>no incluye</strong>:
     </p>
     <ul>
-      <li>Herramientas de análisis (Google Analytics, Mixpanel, etc.)</li>
-      <li>SDKs de seguimiento o publicidad</li>
-      <li>Telemetría de uso o comportamiento</li>
-      <li>Reportes automáticos de errores que incluyan información personal</li>
+      <li data-i18n-page="sections.noAnalytics.items.0">Herramientas de análisis (Google Analytics, Mixpanel, etc.)</li>
+      <li data-i18n-page="sections.noAnalytics.items.1">SDKs de seguimiento o publicidad</li>
+      <li data-i18n-page="sections.noAnalytics.items.2">Telemetría de uso o comportamiento</li>
+      <li data-i18n-page="sections.noAnalytics.items.3">Reportes automáticos de errores que incluyan información personal</li>
     </ul>
 
-    <h2>8. Compartir Información con Terceros</h2>
-    <p>
+    <h2 data-i18n-page="sections.thirdParty.title">8. Compartir Información con Terceros</h2>
+    <p data-i18n-page="sections.thirdParty.content.0" data-i18n-html>
       <strong>No compartimos información con terceros</strong> porque no recopilamos información 
       en primer lugar. No vendemos, alquilamos ni intercambiamos datos de usuarios.
     </p>
-    <p>
+    <p data-i18n-page="sections.thirdParty.content.1">
       Si tú decides compartir tu archivo CSV de historial (por ejemplo, con tu proveedor de 
       internet para documentar problemas de servicio), esa es tu decisión y está bajo tu control.
     </p>
 
-    <h2>9. Derechos del Usuario</h2>
+    <h2 data-i18n-page="sections.userRights.title">9. Derechos del Usuario</h2>
     
-    <h3>9.1 Para Usuarios en México</h3>
-    <p>
+    <h3 data-i18n-page="sections.userRights.mexico.title">9.1 Para Usuarios en México</h3>
+    <p data-i18n-page="sections.userRights.mexico.intro">
       De conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los 
       Particulares (LFPDPPP) y su Reglamento, tienes derecho a:
     </p>
     <ul>
-      <li><strong>Acceso:</strong> Conocer qué datos tenemos sobre ti (en este caso, ninguno)</li>
-      <li><strong>Rectificación:</strong> Corregir datos inexactos</li>
-      <li><strong>Cancelación:</strong> Solicitar la eliminación de tus datos</li>
-      <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
+      <li data-i18n-page="sections.userRights.mexico.items.0" data-i18n-html><strong>Acceso:</strong> Conocer qué datos tenemos sobre ti (en este caso, ninguno)</li>
+      <li data-i18n-page="sections.userRights.mexico.items.1" data-i18n-html><strong>Rectificación:</strong> Corregir datos inexactos</li>
+      <li data-i18n-page="sections.userRights.mexico.items.2" data-i18n-html><strong>Cancelación:</strong> Solicitar la eliminación de tus datos</li>
+      <li data-i18n-page="sections.userRights.mexico.items.3" data-i18n-html><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.userRights.mexico.note">
       Dado que VelociBar no recopila datos personales, estos derechos se ejercen automáticamente 
       por diseño. Todos tus datos están bajo tu control local.
     </p>
 
-    <h3>9.2 Para Usuarios en Estados Unidos</h3>
-    <p>
+    <h3 data-i18n-page="sections.userRights.usa.title">9.2 Para Usuarios en Estados Unidos</h3>
+    <p data-i18n-page="sections.userRights.usa.intro">
       Respetamos las leyes de privacidad aplicables en Estados Unidos, incluyendo:
     </p>
     <ul>
-      <li><strong>California Consumer Privacy Act (CCPA):</strong> No vendemos información personal</li>
-      <li><strong>California Privacy Rights Act (CPRA):</strong> No compartimos información personal para publicidad dirigida</li>
-      <li><strong>Leyes estatales de privacidad:</strong> Cumplimos con regulaciones de Virginia, Colorado, Connecticut y otros estados</li>
+      <li data-i18n-page="sections.userRights.usa.items.0" data-i18n-html><strong>California Consumer Privacy Act (CCPA):</strong> No vendemos información personal</li>
+      <li data-i18n-page="sections.userRights.usa.items.1" data-i18n-html><strong>California Privacy Rights Act (CPRA):</strong> No compartimos información personal para publicidad dirigida</li>
+      <li data-i18n-page="sections.userRights.usa.items.2" data-i18n-html><strong>Leyes estatales de privacidad:</strong> Cumplimos con regulaciones de Virginia, Colorado, Connecticut y otros estados</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.userRights.usa.note">
       Bajo estas leyes, tienes derecho a saber qué información personal recopilamos (ninguna), 
       solicitar su eliminación (ya está en tu dispositivo), y optar por no participar en la 
       venta de datos (no vendemos datos).
     </p>
 
-    <h2>10. Seguridad</h2>
-    <p>
+    <h2 data-i18n-page="sections.security.title">10. Seguridad</h2>
+    <p data-i18n-page="sections.security.intro">
       Aunque no almacenamos tus datos en nuestros servidores, reconocemos la importancia de la 
       seguridad. VelociBar:
     </p>
     <ul>
-      <li>Está firmado digitalmente con certificado de desarrollador de Apple</li>
-      <li>Pasa las verificaciones de seguridad de macOS Gatekeeper</li>
-      <li>No requiere permisos especiales del sistema más allá de acceso a red</li>
-      <li>No modifica archivos del sistema ni instala componentes adicionales</li>
+      <li data-i18n-page="sections.security.items.0">Está firmado digitalmente con certificado de desarrollador de Apple</li>
+      <li data-i18n-page="sections.security.items.1">Pasa las verificaciones de seguridad de macOS Gatekeeper</li>
+      <li data-i18n-page="sections.security.items.2">No requiere permisos especiales del sistema más allá de acceso a red</li>
+      <li data-i18n-page="sections.security.items.3">No modifica archivos del sistema ni instala componentes adicionales</li>
     </ul>
 
-    <h2>11. Menores de Edad</h2>
-    <p>
+    <h2 data-i18n-page="sections.minors.title">11. Menores de Edad</h2>
+    <p data-i18n-page="sections.minors.content">
       VelociBar no está dirigido a menores de 13 años en Estados Unidos ni menores de 18 años 
       en México. No recopilamos intencionalmente información de menores. Dado que la Aplicación 
       no recopila datos personales, no existe riesgo de recopilación de información de menores.
     </p>
 
-    <h2>12. Cambios a esta Política</h2>
-    <p>
+    <h2 data-i18n-page="sections.changes.title">12. Cambios a esta Política</h2>
+    <p data-i18n-page="sections.changes.intro">
       Podemos actualizar esta Política de Privacidad ocasionalmente. Cuando lo hagamos:
     </p>
     <ul>
-      <li>Actualizaremos la fecha de "Última actualización" al inicio del documento</li>
-      <li>Los cambios significativos se comunicarán a través de nuestra página web</li>
-      <li>El uso continuado de la Aplicación después de cambios constituye aceptación de la nueva política</li>
+      <li data-i18n-page="sections.changes.items.0">Actualizaremos la fecha de "Última actualización" al inicio del documento</li>
+      <li data-i18n-page="sections.changes.items.1">Los cambios significativos se comunicarán a través de nuestra página web</li>
+      <li data-i18n-page="sections.changes.items.2">El uso continuado de la Aplicación después de cambios constituye aceptación de la nueva política</li>
     </ul>
 
-    <h2>13. Transferencias Internacionales</h2>
-    <p>
+    <h2 data-i18n-page="sections.international.title">13. Transferencias Internacionales</h2>
+    <p data-i18n-page="sections.international.content">
       Dado que no recopilamos ni almacenamos datos en servidores, no realizamos transferencias 
       internacionales de datos personales. Tus datos permanecen en tu dispositivo, en la 
       jurisdicción donde te encuentres.
     </p>
 
-    <h2>14. Contacto</h2>
-    <p>
+    <h2 data-i18n-page="sections.contact.title">14. Contacto</h2>
+    <p data-i18n-page="sections.contact.intro">
       Si tienes preguntas sobre esta Política de Privacidad o sobre las prácticas de privacidad 
       de VelociBar, puedes contactarnos a través de:
     </p>
     <ul>
-      <li><strong>Sitio web:</strong> <a href="https://velocibar.com">velocibar.com</a></li>
+      <li><span data-i18n-page="sections.contact.website" data-i18n-html><strong>Sitio web:</strong></span> <a href="https://velocibar.com">velocibar.com</a></li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.contact.note">
       Para usuarios en México que deseen ejercer sus derechos ARCO, o usuarios en Estados Unidos 
       con solicitudes bajo CCPA/CPRA, responderemos dentro de los plazos establecidos por la ley 
       aplicable, aunque reiteramos que no mantenemos datos personales que gestionar.
     </p>
 
     <div class="highlight-box">
-      <p>
+      <p data-i18n-page="sections.commitment" data-i18n-html>
         <strong>Nuestro compromiso:</strong> La privacidad no es solo una política para nosotros, 
         es un principio de diseño. VelociBar fue construido desde cero para que no necesites 
         confiar en nosotros con tus datos — simplemente nunca los tenemos.
@@ -341,12 +348,75 @@
         <span>VelociBar</span>
       </div>
       <nav class="footer-links">
-        <a href="/legal/privacy.html">Política de Privacidad</a>
-        <a href="/legal/terms.html">Términos de Uso</a>
+        <a href="/legal/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+        <a href="/legal/terms.html" data-i18n="footer.terms">Términos de Uso</a>
       </nav>
-      <p class="copyright">© 2024 VelociBar. Todos los derechos reservados.</p>
+      <p class="copyright" data-i18n="footer.copyright">© 2024 VelociBar. Todos los derechos reservados.</p>
     </div>
   </footer>
+  
+  <script src="../app.js" defer></script>
+  <script>
+    // Privacy page specific translations
+    document.addEventListener('DOMContentLoaded', function() {
+      function applyPrivacyTranslations() {
+        if (typeof privacyTranslations === 'undefined' || typeof i18n === 'undefined') return;
+        
+        const lang = i18n.currentLang;
+        const t = privacyTranslations[lang];
+        if (!t) return;
+        
+        // Update elements with data-i18n-page attribute
+        document.querySelectorAll('[data-i18n-page]').forEach(el => {
+          const keyPath = el.getAttribute('data-i18n-page');
+          const keys = keyPath.split('.');
+          let value = t;
+          
+          for (const key of keys) {
+            if (value && typeof value === 'object' && key in value) {
+              value = value[key];
+            } else {
+              return;
+            }
+          }
+          
+          if (typeof value === 'string') {
+            if (el.hasAttribute('data-i18n-html')) {
+              el.innerHTML = value;
+            } else {
+              el.textContent = value;
+            }
+          }
+        });
+        
+        // Update page title
+        document.title = t.title;
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', t.description);
+        
+        // Update OG tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', t.title);
+        
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', t.ogDescription);
+        
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
+        if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'es_MX');
+      }
+      
+      // Initial application
+      setTimeout(applyPrivacyTranslations, 50);
+      
+      // Override i18n.setLanguage to also update page-specific translations
+      const originalSetLanguage = i18n.setLanguage.bind(i18n);
+      i18n.setLanguage = function(lang) {
+        originalSetLanguage(lang);
+        setTimeout(applyPrivacyTranslations, 10);
+      };
+    });
+  </script>
 </body>
 </html>
-

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Términos y Condiciones — VelociBar</title>
-  <meta name="description" content="Términos y Condiciones de uso de VelociBar. Conoce las condiciones que rigen el uso de nuestra aplicación.">
+  <title data-i18n-page="title">Términos y Condiciones — VelociBar</title>
+  <meta name="description" content="Términos y Condiciones de uso de VelociBar. Conoce las condiciones que rigen el uso de nuestra aplicación." data-i18n-page="description">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://velocibar.com/legal/terms.html">
   
@@ -19,13 +19,14 @@
   </script>
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Términos y Condiciones — VelociBar">
-  <meta property="og:description" content="Términos y Condiciones de uso de VelociBar.">
+  <meta property="og:title" content="Términos y Condiciones — VelociBar" data-i18n-page="title">
+  <meta property="og:description" content="Términos y Condiciones de uso de VelociBar." data-i18n-page="ogDescription">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://velocibar.com/legal/terms.html">
   <meta property="og:locale" content="es_MX">
   
   <link rel="stylesheet" href="../styles.css">
+  <script src="../translations.js"></script>
   <style>
     .legal-page {
       max-width: 760px;
@@ -118,325 +119,331 @@
         <span class="logo-text">VelociBar</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/#como-funciona">Cómo funciona</a></li>
-        <li><a href="/#privacidad">Privacidad</a></li>
-        <li><a href="/legal/terms.html">Términos</a></li>
+        <li><a href="/#como-funciona" data-i18n="nav.howItWorks">Cómo funciona</a></li>
+        <li><a href="/#privacidad" data-i18n="nav.privacy">Privacidad</a></li>
+        <li><a href="/legal/terms.html" data-i18n="nav.terms">Términos</a></li>
+        <li>
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+            <span class="lang-es active">ES</span>
+            <span class="lang-en">EN</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main class="legal-page">
-    <a href="/" class="legal-back">← Volver al inicio</a>
+    <a href="/" class="legal-back" data-i18n="legal.backHome">← Volver al inicio</a>
     
-    <h1>Términos y Condiciones de Uso</h1>
-    <p class="legal-meta">Última actualización: 24 de diciembre de 2024</p>
+    <h1 data-i18n-page="heading">Términos y Condiciones de Uso</h1>
+    <p class="legal-meta" data-i18n-page="lastUpdated">Última actualización: 24 de diciembre de 2024</p>
 
     <div class="highlight-box">
-      <p>
+      <p data-i18n-page="summary" data-i18n-html>
         <strong>Resumen:</strong> VelociBar es una herramienta de medición de velocidad de internet 
         proporcionada "tal cual". Los resultados son informativos y no constituyen garantía del 
         rendimiento de tu conexión. Úsala de forma responsable y respeta estos términos.
       </p>
     </div>
 
-    <h2>1. Aceptación de los Términos</h2>
-    <p>
+    <h2 data-i18n-page="sections.acceptance.title">1. Aceptación de los Términos</h2>
+    <p data-i18n-page="sections.acceptance.content.0">
       Al descargar, instalar, acceder o utilizar VelociBar ("la Aplicación", "el Software" o 
       "el Servicio"), aceptas quedar vinculado por estos Términos y Condiciones de Uso 
       ("Términos"). Si no estás de acuerdo con estos Términos, no descargues, instales ni 
       utilices la Aplicación.
     </p>
-    <p>
+    <p data-i18n-page="sections.acceptance.content.1">
       Estos Términos constituyen un acuerdo legal vinculante entre tú ("Usuario", "tú" o "tu") 
       y VelociBar ("nosotros", "nuestro" o "la Compañía").
     </p>
 
-    <h2>2. Descripción del Servicio</h2>
-    <p>
+    <h2 data-i18n-page="sections.description.title">2. Descripción del Servicio</h2>
+    <p data-i18n-page="sections.description.intro">
       VelociBar es una aplicación de barra de menú para macOS que permite:
     </p>
     <ul>
-      <li>Realizar pruebas de velocidad de descarga de tu conexión a internet</li>
-      <li>Medir la latencia (ping) de tu conexión</li>
-      <li>Programar pruebas automáticas a intervalos regulares</li>
-      <li>Almacenar localmente un historial de resultados</li>
-      <li>Exportar el historial en formato CSV</li>
+      <li data-i18n-page="sections.description.items.0">Realizar pruebas de velocidad de descarga de tu conexión a internet</li>
+      <li data-i18n-page="sections.description.items.1">Medir la latencia (ping) de tu conexión</li>
+      <li data-i18n-page="sections.description.items.2">Programar pruebas automáticas a intervalos regulares</li>
+      <li data-i18n-page="sections.description.items.3">Almacenar localmente un historial de resultados</li>
+      <li data-i18n-page="sections.description.items.4">Exportar el historial en formato CSV</li>
     </ul>
 
-    <h2>3. Requisitos del Sistema</h2>
-    <p>
+    <h2 data-i18n-page="sections.requirements.title">3. Requisitos del Sistema</h2>
+    <p data-i18n-page="sections.requirements.intro">
       Para utilizar VelociBar necesitas:
     </p>
     <ul>
-      <li>Una computadora Mac con macOS 12.0 (Monterey) o posterior</li>
-      <li>Conexión activa a internet</li>
-      <li>Espacio suficiente en disco para la aplicación y los archivos de historial</li>
+      <li data-i18n-page="sections.requirements.items.0">Una computadora Mac con macOS 12.0 (Monterey) o posterior</li>
+      <li data-i18n-page="sections.requirements.items.1">Conexión activa a internet</li>
+      <li data-i18n-page="sections.requirements.items.2">Espacio suficiente en disco para la aplicación y los archivos de historial</li>
     </ul>
 
-    <h2>4. Licencia de Uso</h2>
+    <h2 data-i18n-page="sections.license.title">4. Licencia de Uso</h2>
     
-    <h3>4.1 Concesión de Licencia</h3>
-    <p>
+    <h3 data-i18n-page="sections.license.grant.title">4.1 Concesión de Licencia</h3>
+    <p data-i18n-page="sections.license.grant.intro">
       Sujeto al cumplimiento de estos Términos, te otorgamos una licencia limitada, no exclusiva, 
       no transferible, no sublicenciable y revocable para:
     </p>
     <ul>
-      <li>Descargar e instalar la Aplicación en dispositivos Mac de tu propiedad o control</li>
-      <li>Usar la Aplicación para propósitos personales y no comerciales</li>
-      <li>Crear y mantener copias de seguridad de la Aplicación</li>
+      <li data-i18n-page="sections.license.grant.items.0">Descargar e instalar la Aplicación en dispositivos Mac de tu propiedad o control</li>
+      <li data-i18n-page="sections.license.grant.items.1">Usar la Aplicación para propósitos personales y no comerciales</li>
+      <li data-i18n-page="sections.license.grant.items.2">Crear y mantener copias de seguridad de la Aplicación</li>
     </ul>
 
-    <h3>4.2 Restricciones</h3>
-    <p>
+    <h3 data-i18n-page="sections.license.restrictions.title">4.2 Restricciones</h3>
+    <p data-i18n-page="sections.license.restrictions.intro">
       No podrás:
     </p>
     <ul>
-      <li>Copiar, modificar, adaptar, traducir o crear obras derivadas de la Aplicación</li>
-      <li>Realizar ingeniería inversa, descompilar, desensamblar o intentar obtener el código fuente</li>
-      <li>Vender, revender, alquilar, arrendar o sublicenciar la Aplicación</li>
-      <li>Usar la Aplicación para fines ilegales o no autorizados</li>
-      <li>Interferir con o interrumpir la integridad o el rendimiento de la Aplicación</li>
-      <li>Intentar eludir medidas de seguridad o autenticación</li>
-      <li>Usar la Aplicación de manera que pueda dañar, deshabilitar o sobrecargar infraestructura de terceros</li>
+      <li data-i18n-page="sections.license.restrictions.items.0">Copiar, modificar, adaptar, traducir o crear obras derivadas de la Aplicación</li>
+      <li data-i18n-page="sections.license.restrictions.items.1">Realizar ingeniería inversa, descompilar, desensamblar o intentar obtener el código fuente</li>
+      <li data-i18n-page="sections.license.restrictions.items.2">Vender, revender, alquilar, arrendar o sublicenciar la Aplicación</li>
+      <li data-i18n-page="sections.license.restrictions.items.3">Usar la Aplicación para fines ilegales o no autorizados</li>
+      <li data-i18n-page="sections.license.restrictions.items.4">Interferir con o interrumpir la integridad o el rendimiento de la Aplicación</li>
+      <li data-i18n-page="sections.license.restrictions.items.5">Intentar eludir medidas de seguridad o autenticación</li>
+      <li data-i18n-page="sections.license.restrictions.items.6">Usar la Aplicación de manera que pueda dañar, deshabilitar o sobrecargar infraestructura de terceros</li>
     </ul>
 
-    <h2>5. Precisión de las Mediciones</h2>
+    <h2 data-i18n-page="sections.accuracy.title">5. Precisión de las Mediciones</h2>
     
     <div class="warning-box">
-      <p>
+      <p data-i18n-page="sections.accuracy.warning" data-i18n-html>
         <strong>Importante:</strong> Las mediciones de velocidad proporcionadas por VelociBar son 
         aproximaciones y pueden variar debido a múltiples factores fuera de nuestro control.
       </p>
     </div>
 
-    <h3>5.1 Factores que Afectan los Resultados</h3>
-    <p>
+    <h3 data-i18n-page="sections.accuracy.factors.title">5.1 Factores que Afectan los Resultados</h3>
+    <p data-i18n-page="sections.accuracy.factors.intro">
       Los resultados de las pruebas de velocidad pueden verse afectados por:
     </p>
     <ul>
-      <li>Congestión de red en tu hogar, vecindario o proveedor de internet</li>
-      <li>Distancia física a los servidores de prueba</li>
-      <li>Calidad y configuración de tu router o módem</li>
-      <li>Interferencia de Wi-Fi u otras señales inalámbricas</li>
-      <li>Otros dispositivos o aplicaciones usando tu conexión simultáneamente</li>
-      <li>Limitaciones técnicas de los servidores de prueba</li>
-      <li>Hora del día y carga general de internet</li>
-      <li>Tipo de conexión (fibra, cable, DSL, satelital, etc.)</li>
+      <li data-i18n-page="sections.accuracy.factors.items.0">Congestión de red en tu hogar, vecindario o proveedor de internet</li>
+      <li data-i18n-page="sections.accuracy.factors.items.1">Distancia física a los servidores de prueba</li>
+      <li data-i18n-page="sections.accuracy.factors.items.2">Calidad y configuración de tu router o módem</li>
+      <li data-i18n-page="sections.accuracy.factors.items.3">Interferencia de Wi-Fi u otras señales inalámbricas</li>
+      <li data-i18n-page="sections.accuracy.factors.items.4">Otros dispositivos o aplicaciones usando tu conexión simultáneamente</li>
+      <li data-i18n-page="sections.accuracy.factors.items.5">Limitaciones técnicas de los servidores de prueba</li>
+      <li data-i18n-page="sections.accuracy.factors.items.6">Hora del día y carga general de internet</li>
+      <li data-i18n-page="sections.accuracy.factors.items.7">Tipo de conexión (fibra, cable, DSL, satelital, etc.)</li>
     </ul>
 
-    <h3>5.2 No es un Estándar Oficial</h3>
-    <p>
+    <h3 data-i18n-page="sections.accuracy.notOfficial.title">5.2 No es un Estándar Oficial</h3>
+    <p data-i18n-page="sections.accuracy.notOfficial.intro" data-i18n-html>
       VelociBar <strong>no es una herramienta de medición certificada</strong> ni está avalada 
       por organismos reguladores como el Instituto Federal de Telecomunicaciones (IFT) de México 
       o la Federal Communications Commission (FCC) de Estados Unidos. Los resultados:
     </p>
     <ul>
-      <li>No deben considerarse como mediciones oficiales para disputas contractuales</li>
-      <li>Pueden diferir de mediciones realizadas por otras herramientas</li>
-      <li>Son informativos y para uso personal</li>
+      <li data-i18n-page="sections.accuracy.notOfficial.items.0">No deben considerarse como mediciones oficiales para disputas contractuales</li>
+      <li data-i18n-page="sections.accuracy.notOfficial.items.1">Pueden diferir de mediciones realizadas por otras herramientas</li>
+      <li data-i18n-page="sections.accuracy.notOfficial.items.2">Son informativos y para uso personal</li>
     </ul>
 
-    <h3>5.3 Uso Apropiado del Historial</h3>
-    <p>
+    <h3 data-i18n-page="sections.accuracy.appropriate.title">5.3 Uso Apropiado del Historial</h3>
+    <p data-i18n-page="sections.accuracy.appropriate.intro">
       El historial CSV generado por VelociBar puede ser útil para:
     </p>
     <ul>
-      <li>Llevar un registro personal de tu experiencia de conectividad</li>
-      <li>Identificar patrones o tendencias en tu conexión</li>
-      <li>Documentar problemas recurrentes para conversaciones con tu ISP</li>
+      <li data-i18n-page="sections.accuracy.appropriate.items.0">Llevar un registro personal de tu experiencia de conectividad</li>
+      <li data-i18n-page="sections.accuracy.appropriate.items.1">Identificar patrones o tendencias en tu conexión</li>
+      <li data-i18n-page="sections.accuracy.appropriate.items.2">Documentar problemas recurrentes para conversaciones con tu ISP</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.accuracy.appropriate.note">
       Sin embargo, no garantizamos que los ISPs acepten estos datos como evidencia formal ni 
       que tengan obligación legal de actuar basándose en ellos.
     </p>
 
-    <h2>6. Relación con Proveedores de Internet</h2>
-    <p>
+    <h2 data-i18n-page="sections.isp.title">6. Relación con Proveedores de Internet</h2>
+    <p data-i18n-page="sections.isp.intro">
       VelociBar es una herramienta independiente y no tiene afiliación con ningún proveedor de 
       servicios de internet (ISP). No hacemos afirmaciones sobre:
     </p>
     <ul>
-      <li>El cumplimiento de tu ISP con velocidades contratadas</li>
-      <li>Prácticas de throttling o limitación de velocidad de ningún ISP</li>
-      <li>La calidad del servicio de ningún proveedor específico</li>
+      <li data-i18n-page="sections.isp.items.0">El cumplimiento de tu ISP con velocidades contratadas</li>
+      <li data-i18n-page="sections.isp.items.1">Prácticas de throttling o limitación de velocidad de ningún ISP</li>
+      <li data-i18n-page="sections.isp.items.2">La calidad del servicio de ningún proveedor específico</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.isp.note">
       Si tienes problemas con tu servicio de internet, te recomendamos contactar directamente 
       a tu ISP y, si corresponde, a los organismos reguladores de tu país (IFT en México, 
       FCC en Estados Unidos).
     </p>
 
-    <h2>7. Propiedad Intelectual</h2>
-    <p>
+    <h2 data-i18n-page="sections.ip.title">7. Propiedad Intelectual</h2>
+    <p data-i18n-page="sections.ip.intro">
       VelociBar y todo su contenido, características y funcionalidad (incluyendo pero no limitado 
       a diseño, código, gráficos, interfaces, logos y marcas) son propiedad de VelociBar o sus 
       licenciantes y están protegidos por leyes de propiedad intelectual de México, Estados Unidos 
       y tratados internacionales, incluyendo:
     </p>
     <ul>
-      <li>Ley Federal del Derecho de Autor (México)</li>
-      <li>Ley de la Propiedad Industrial (México)</li>
-      <li>Copyright Act (Estados Unidos)</li>
-      <li>Lanham Act (Estados Unidos)</li>
-      <li>Convenio de Berna y Acuerdo sobre los ADPIC</li>
+      <li data-i18n-page="sections.ip.items.0">Ley Federal del Derecho de Autor (México)</li>
+      <li data-i18n-page="sections.ip.items.1">Ley de la Propiedad Industrial (México)</li>
+      <li data-i18n-page="sections.ip.items.2">Copyright Act (Estados Unidos)</li>
+      <li data-i18n-page="sections.ip.items.3">Lanham Act (Estados Unidos)</li>
+      <li data-i18n-page="sections.ip.items.4">Convenio de Berna y Acuerdo sobre los ADPIC</li>
     </ul>
 
-    <h2>8. Exclusión de Garantías</h2>
-    <p>
+    <h2 data-i18n-page="sections.warranty.title">8. Exclusión de Garantías</h2>
+    <p data-i18n-page="sections.warranty.content.0">
       LA APLICACIÓN SE PROPORCIONA "TAL CUAL" Y "SEGÚN DISPONIBILIDAD", SIN GARANTÍAS DE 
       NINGÚN TIPO, YA SEAN EXPRESAS O IMPLÍCITAS.
     </p>
-    <p>
+    <p data-i18n-page="sections.warranty.content.1">
       En la máxima medida permitida por la ley aplicable, rechazamos expresamente todas las 
       garantías, incluyendo pero no limitado a:
     </p>
     <ul>
-      <li>Garantías implícitas de comerciabilidad</li>
-      <li>Idoneidad para un propósito particular</li>
-      <li>No infracción de derechos de terceros</li>
-      <li>Que la Aplicación funcionará sin interrupciones o errores</li>
-      <li>Que los resultados serán precisos o confiables</li>
-      <li>Que los defectos serán corregidos</li>
+      <li data-i18n-page="sections.warranty.items.0">Garantías implícitas de comerciabilidad</li>
+      <li data-i18n-page="sections.warranty.items.1">Idoneidad para un propósito particular</li>
+      <li data-i18n-page="sections.warranty.items.2">No infracción de derechos de terceros</li>
+      <li data-i18n-page="sections.warranty.items.3">Que la Aplicación funcionará sin interrupciones o errores</li>
+      <li data-i18n-page="sections.warranty.items.4">Que los resultados serán precisos o confiables</li>
+      <li data-i18n-page="sections.warranty.items.5">Que los defectos serán corregidos</li>
     </ul>
 
-    <h2>9. Limitación de Responsabilidad</h2>
-    <p>
+    <h2 data-i18n-page="sections.liability.title">9. Limitación de Responsabilidad</h2>
+    <p data-i18n-page="sections.liability.intro">
       EN NINGÚN CASO VELOCIBAR, SUS DIRECTORES, EMPLEADOS, SOCIOS, AGENTES, PROVEEDORES O 
       AFILIADOS SERÁN RESPONSABLES POR:
     </p>
     <ul>
-      <li>Daños indirectos, incidentales, especiales, consecuentes o punitivos</li>
-      <li>Pérdida de beneficios, datos, uso, fondo de comercio u otras pérdidas intangibles</li>
-      <li>Daños resultantes del uso o la imposibilidad de usar la Aplicación</li>
-      <li>Acceso no autorizado o alteración de tus transmisiones o datos</li>
-      <li>Declaraciones o conducta de terceros en relación con la Aplicación</li>
+      <li data-i18n-page="sections.liability.items.0">Daños indirectos, incidentales, especiales, consecuentes o punitivos</li>
+      <li data-i18n-page="sections.liability.items.1">Pérdida de beneficios, datos, uso, fondo de comercio u otras pérdidas intangibles</li>
+      <li data-i18n-page="sections.liability.items.2">Daños resultantes del uso o la imposibilidad de usar la Aplicación</li>
+      <li data-i18n-page="sections.liability.items.3">Acceso no autorizado o alteración de tus transmisiones o datos</li>
+      <li data-i18n-page="sections.liability.items.4">Declaraciones o conducta de terceros en relación con la Aplicación</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.liability.note">
       Esta limitación aplica independientemente de la teoría legal bajo la cual se reclamen 
       los daños (contrato, agravio, negligencia, responsabilidad objetiva u otra).
     </p>
 
-    <h3>9.1 Jurisdicciones Específicas</h3>
-    <p>
+    <h3 data-i18n-page="sections.liability.jurisdictions.title">9.1 Jurisdicciones Específicas</h3>
+    <p data-i18n-page="sections.liability.jurisdictions.mexico" data-i18n-html>
       <strong>México:</strong> De conformidad con el Código Civil Federal y legislación aplicable, 
       algunas limitaciones pueden no aplicar. En tal caso, nuestra responsabilidad se limitará 
       al máximo permitido por la ley.
     </p>
-    <p>
+    <p data-i18n-page="sections.liability.jurisdictions.usa" data-i18n-html>
       <strong>Estados Unidos:</strong> Algunos estados no permiten la exclusión de garantías 
       implícitas o la limitación de daños incidentales o consecuentes, por lo que las 
       limitaciones anteriores pueden no aplicarte completamente.
     </p>
 
-    <h2>10. Indemnización</h2>
-    <p>
+    <h2 data-i18n-page="sections.indemnification.title">10. Indemnización</h2>
+    <p data-i18n-page="sections.indemnification.intro">
       Aceptas defender, indemnizar y mantener indemne a VelociBar de cualquier reclamación, 
       daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluyendo honorarios 
       de abogados) derivados de:
     </p>
     <ul>
-      <li>Tu uso de la Aplicación</li>
-      <li>Tu violación de estos Términos</li>
-      <li>Tu violación de derechos de terceros</li>
-      <li>Cualquier contenido que generes o compartas usando la Aplicación</li>
+      <li data-i18n-page="sections.indemnification.items.0">Tu uso de la Aplicación</li>
+      <li data-i18n-page="sections.indemnification.items.1">Tu violación de estos Términos</li>
+      <li data-i18n-page="sections.indemnification.items.2">Tu violación de derechos de terceros</li>
+      <li data-i18n-page="sections.indemnification.items.3">Cualquier contenido que generes o compartas usando la Aplicación</li>
     </ul>
 
-    <h2>11. Modificaciones a los Términos</h2>
-    <p>
+    <h2 data-i18n-page="sections.modifications.title">11. Modificaciones a los Términos</h2>
+    <p data-i18n-page="sections.modifications.intro">
       Nos reservamos el derecho de modificar estos Términos en cualquier momento. Cuando 
       hagamos cambios:
     </p>
     <ul>
-      <li>Publicaremos los nuevos Términos en nuestro sitio web</li>
-      <li>Actualizaremos la fecha de "Última actualización"</li>
-      <li>Los cambios materiales se comunicarán de forma razonable</li>
+      <li data-i18n-page="sections.modifications.items.0">Publicaremos los nuevos Términos en nuestro sitio web</li>
+      <li data-i18n-page="sections.modifications.items.1">Actualizaremos la fecha de "Última actualización"</li>
+      <li data-i18n-page="sections.modifications.items.2">Los cambios materiales se comunicarán de forma razonable</li>
     </ul>
-    <p>
+    <p data-i18n-page="sections.modifications.note">
       El uso continuado de la Aplicación después de la publicación de cambios constituye tu 
       aceptación de los nuevos Términos.
     </p>
 
-    <h2>12. Terminación</h2>
-    <p>
+    <h2 data-i18n-page="sections.termination.title">12. Terminación</h2>
+    <p data-i18n-page="sections.termination.content.0">
       Podemos suspender o terminar tu acceso a la Aplicación inmediatamente, sin previo aviso, 
       si incumples estos Términos. Puedes terminar tu uso de la Aplicación en cualquier momento 
       desinstalándola de tu dispositivo.
     </p>
-    <p>
+    <p data-i18n-page="sections.termination.content.1">
       Tras la terminación:
     </p>
     <ul>
-      <li>Tu licencia de uso queda revocada</li>
-      <li>Debes eliminar todas las copias de la Aplicación</li>
-      <li>Tus datos locales permanecen bajo tu control y responsabilidad</li>
-      <li>Las secciones que por su naturaleza deban sobrevivir, sobrevivirán</li>
+      <li data-i18n-page="sections.termination.items.0">Tu licencia de uso queda revocada</li>
+      <li data-i18n-page="sections.termination.items.1">Debes eliminar todas las copias de la Aplicación</li>
+      <li data-i18n-page="sections.termination.items.2">Tus datos locales permanecen bajo tu control y responsabilidad</li>
+      <li data-i18n-page="sections.termination.items.3">Las secciones que por su naturaleza deban sobrevivir, sobrevivirán</li>
     </ul>
 
-    <h2>13. Ley Aplicable y Jurisdicción</h2>
+    <h2 data-i18n-page="sections.law.title">13. Ley Aplicable y Jurisdicción</h2>
     
-    <h3>13.1 Para Usuarios en México</h3>
-    <p>
+    <h3 data-i18n-page="sections.law.mexico.title">13.1 Para Usuarios en México</h3>
+    <p data-i18n-page="sections.law.mexico.content">
       Estos Términos se regirán e interpretarán de acuerdo con las leyes de los Estados Unidos 
       Mexicanos. Para cualquier controversia, las partes se someten a la jurisdicción de los 
       tribunales competentes de la Ciudad de México, renunciando a cualquier otro fuero que 
       pudiera corresponderles.
     </p>
 
-    <h3>13.2 Para Usuarios en Estados Unidos</h3>
-    <p>
+    <h3 data-i18n-page="sections.law.usa.title">13.2 Para Usuarios en Estados Unidos</h3>
+    <p data-i18n-page="sections.law.usa.content">
       Estos Términos se regirán por las leyes del Estado de Delaware, sin dar efecto a 
       principios de conflicto de leyes. Cualquier disputa se resolverá en los tribunales 
       estatales o federales ubicados en Delaware.
     </p>
 
-    <h3>13.3 Resolución Alternativa de Disputas</h3>
-    <p>
+    <h3 data-i18n-page="sections.law.alternative.title">13.3 Resolución Alternativa de Disputas</h3>
+    <p data-i18n-page="sections.law.alternative.content">
       Antes de iniciar cualquier procedimiento legal, las partes intentarán resolver la 
       disputa de buena fe mediante negociación directa durante un período de treinta (30) días.
     </p>
 
-    <h2>14. Disposiciones Generales</h2>
+    <h2 data-i18n-page="sections.general.title">14. Disposiciones Generales</h2>
     
-    <h3>14.1 Acuerdo Completo</h3>
-    <p>
+    <h3 data-i18n-page="sections.general.complete.title">14.1 Acuerdo Completo</h3>
+    <p data-i18n-page="sections.general.complete.content">
       Estos Términos, junto con nuestra Política de Privacidad, constituyen el acuerdo completo 
       entre tú y VelociBar respecto al uso de la Aplicación.
     </p>
 
-    <h3>14.2 Divisibilidad</h3>
-    <p>
+    <h3 data-i18n-page="sections.general.severability.title">14.2 Divisibilidad</h3>
+    <p data-i18n-page="sections.general.severability.content">
       Si alguna disposición de estos Términos se considera inválida o inaplicable, las 
       disposiciones restantes permanecerán en pleno vigor y efecto.
     </p>
 
-    <h3>14.3 Renuncia</h3>
-    <p>
+    <h3 data-i18n-page="sections.general.waiver.title">14.3 Renuncia</h3>
+    <p data-i18n-page="sections.general.waiver.content">
       La falta de ejercicio de cualquier derecho bajo estos Términos no constituirá una 
       renuncia a dicho derecho.
     </p>
 
-    <h3>14.4 Cesión</h3>
-    <p>
+    <h3 data-i18n-page="sections.general.assignment.title">14.4 Cesión</h3>
+    <p data-i18n-page="sections.general.assignment.content">
       No puedes ceder ni transferir estos Términos sin nuestro consentimiento previo por escrito. 
       Nosotros podemos ceder estos Términos sin restricción.
     </p>
 
-    <h3>14.5 Idioma</h3>
-    <p>
+    <h3 data-i18n-page="sections.general.language.title">14.5 Idioma</h3>
+    <p data-i18n-page="sections.general.language.content">
       Estos Términos se han redactado en español. En caso de traducción a otros idiomas, 
       la versión en español prevalecerá ante cualquier discrepancia.
     </p>
 
-    <h2>15. Contacto</h2>
-    <p>
+    <h2 data-i18n-page="sections.contact.title">15. Contacto</h2>
+    <p data-i18n-page="sections.contact.intro">
       Para preguntas sobre estos Términos y Condiciones, contáctanos a través de:
     </p>
     <ul>
-      <li><strong>Sitio web:</strong> <a href="https://velocibar.com">velocibar.com</a></li>
+      <li><span data-i18n-page="sections.contact.website" data-i18n-html><strong>Sitio web:</strong></span> <a href="https://velocibar.com">velocibar.com</a></li>
     </ul>
 
     <div class="highlight-box">
-      <p>
+      <p data-i18n-page="sections.acceptance_final">
         Al usar VelociBar, confirmas que has leído, entendido y aceptado estos Términos y 
         Condiciones en su totalidad.
       </p>
@@ -451,12 +458,75 @@
         <span>VelociBar</span>
       </div>
       <nav class="footer-links">
-        <a href="/legal/privacy.html">Política de Privacidad</a>
-        <a href="/legal/terms.html">Términos de Uso</a>
+        <a href="/legal/privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+        <a href="/legal/terms.html" data-i18n="footer.terms">Términos de Uso</a>
       </nav>
-      <p class="copyright">© 2024 VelociBar. Todos los derechos reservados.</p>
+      <p class="copyright" data-i18n="footer.copyright">© 2024 VelociBar. Todos los derechos reservados.</p>
     </div>
   </footer>
+  
+  <script src="../app.js" defer></script>
+  <script>
+    // Terms page specific translations
+    document.addEventListener('DOMContentLoaded', function() {
+      function applyTermsTranslations() {
+        if (typeof termsTranslations === 'undefined' || typeof i18n === 'undefined') return;
+        
+        const lang = i18n.currentLang;
+        const t = termsTranslations[lang];
+        if (!t) return;
+        
+        // Update elements with data-i18n-page attribute
+        document.querySelectorAll('[data-i18n-page]').forEach(el => {
+          const keyPath = el.getAttribute('data-i18n-page');
+          const keys = keyPath.split('.');
+          let value = t;
+          
+          for (const key of keys) {
+            if (value && typeof value === 'object' && key in value) {
+              value = value[key];
+            } else {
+              return;
+            }
+          }
+          
+          if (typeof value === 'string') {
+            if (el.hasAttribute('data-i18n-html')) {
+              el.innerHTML = value;
+            } else {
+              el.textContent = value;
+            }
+          }
+        });
+        
+        // Update page title
+        document.title = t.title;
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', t.description);
+        
+        // Update OG tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', t.title);
+        
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', t.ogDescription);
+        
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
+        if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'es_MX');
+      }
+      
+      // Initial application
+      setTimeout(applyTermsTranslations, 50);
+      
+      // Override i18n.setLanguage to also update page-specific translations
+      const originalSetLanguage = i18n.setLanguage.bind(i18n);
+      i18n.setLanguage = function(lang) {
+        originalSetLanguage(lang);
+        setTimeout(applyTermsTranslations, 10);
+      };
+    });
+  </script>
 </body>
 </html>
-
