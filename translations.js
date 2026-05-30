@@ -11,184 +11,124 @@ const translations = {
       description: "¿Tu internet es lento o es tu Mac? VelociBar monitorea tu conexión real minuto a minuto desde la barra de menú. Detecta caídas, guarda historial y expórtalo para reclamar a tu ISP.",
       ogTitle: "VelociBar — Tu velocidad real de internet",
       ogDescription: "App de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Guarda historial local y exporta CSV.",
-      twitterDescription: "Mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking."
+      twitterDescription: "Mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking.",
+      ogImageAlt: "VelociBar — monitor de velocidad de internet en la barra de menú de macOS"
     },
 
     // Navigation
     nav: {
-      howItWorks: "Cómo funciona",
-      privacy: "Privacidad",
-      terms: "Términos"
+      measurement: "Medición",
+      responsiveness: "Responsividad",
+      history: "Historial",
+      download: "Descargar"
     },
 
     // Hero
     hero: {
-      pill: "App para macOS",
-      title: "¿Pagas por 300 Mbps pero sientes que navegas a 10?",
-      subtitle: "Los tests de velocidad convencionales solo te muestran una foto del mejor momento. <strong>VelociBar</strong> graba la película completa de tu conexión real, minuto a minuto, directamente desde tu barra de menú.",
-      downloadBtn: "Descargar",
-      howItWorksBtn: "Ver cómo funciona"
+      eyebrow: "Monitor de red · macOS",
+      title: "La velocidad real de tu internet, no la de la foto perfecta.",
+      subtitle: "VelociBar vive en la barra de menú de macOS y mide tu conexión sola, en segundo plano: <strong>descarga real</strong> y <strong>responsividad bajo carga</strong>, con un historial local que puedes exportar.",
+      downloadBtn: "Descargar para macOS",
+      requirement: "Requiere macOS 26 o superior",
+      panel: {
+        time: "· hace 2 min",
+        download: "Descarga",
+        responsiveness: "Responsividad",
+        high: "Alta",
+        interval: "⏱ Intervalo",
+        runNow: "▶ Probar ahora"
+      }
     },
 
-    // Benefits section
-    benefits: {
-      title: "Tu ISP se porta bien... cuando lo miras",
-      intro: "Muchos proveedores de internet detectan cuando abres una web de test de velocidad y priorizan artificialmente tu tráfico. Es el efecto observador: mides una conexión idealizada, no la real.",
-      features: [
-        {
-          icon: "🕵️",
-          title: "La verdad sin filtros",
-          description: "VelociBar realiza comprobaciones discretas en segundo plano, revelando la velocidad real que obtienes mientras trabajas, no solo cuando haces un test."
-        },
-        {
-          icon: "📉",
-          title: "Detecta el \"throttling\"",
-          description: "Descubre si tu velocidad cae sistemáticamente por las noches o al usar ciertas aplicaciones, patrones que un test puntual jamás detectaría."
-        },
-        {
-          icon: "⚡️",
-          title: "Sin interrupciones",
-          description: "Olvídate de cerrar pestañas para hacer un test. VelociBar vive en tu menú, ligero y siempre listo para darte el dato que necesitas."
-        }
-      ]
+    // Stat strip
+    stats: [
+      "En tu Mac, en local",
+      "Motores de medición: networkQuality de Apple + CDN",
+      "Historial completo, exportable"
+    ],
+
+    // Feature — Measurement
+    measurement: {
+      eyebrow: "Medición",
+      title: "Dos motores de medición, una sola verdad.",
+      body: "VelociBar alterna la herramienta <span class=\"mono\">networkQuality</span> de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio.",
+      mockHead: "Resultado",
+      engine: "Motor",
+      cdn: "Descarga CDN",
+      sub: "descarga real<br>1240 RPM · resp."
     },
 
-    // Diagnostics section
-    diagnostics: {
-      title: "Diagnostica lo que un test puntual ignora",
-      intro: "Los problemas de internet más frustrantes son los intermitentes. Esos micro-cortes en Zoom o el lag repentino en juegos. VelociBar te da el contexto histórico para entender qué está pasando.",
-      features: [
-        {
-          icon: "🌙",
-          title: "Saturación en horas pico",
-          description: "¿Tu internet \"muere\" a las 8 PM? Ten el registro exacto de cuándo y cuánto baja la velocidad para reclamar con base."
-        },
-        {
-          icon: "🎮",
-          title: "Estabilidad vs Velocidad",
-          description: "A veces tienes 300 Mbps pero una latencia inestable. VelociBar monitorea ambos para explicar por qué esa videollamada se cortó."
-        },
-        {
-          icon: "📑",
-          title: "Evidencia objetiva",
-          description: "No llames a soporte técnico diciendo \"va lento\". Mándales un CSV con las caídas de velocidad de la última semana."
-        }
-      ]
+    // Feature — Responsiveness
+    responsiveness: {
+      eyebrow: "Responsividad",
+      title: "Por qué tu videollamada se entrecorta con 300 Mbps.",
+      body1: "La velocidad no lo es todo. VelociBar mide la <strong>responsividad bajo carga</strong> (RPM): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del <em>bufferbloat</em>, y es lo que decide si Zoom se congela.",
+      body2: "Cada prueba se califica como Baja, Media o Alta — el mismo criterio que usa la herramienta de Apple — para que sepas de un vistazo si el problema es la velocidad o la estabilidad.",
+      mockHead: "Responsividad bajo carga",
+      low: "Baja",
+      medium: "Media",
+      high: "Alta"
     },
 
-    // Use cases section
-    useCases: {
-      title: "Casos de uso con impacto real",
-      items: [
-        {
-          title: "Teletrabajo:",
-          description: "Evita congelarte en medio de una presentación importante detectando inestabilidad antes de entrar a la reunión."
-        },
-        {
-          title: "Gaming:",
-          description: "Descubre por qué tienes lag en partidas competitivas aunque tu ping parezca bajo en el lobby."
-        },
-        {
-          title: "Negociación:",
-          description: "Soporte técnico no podrá decirte \"reinicia el router\" cuando tengas un historial de caídas a la misma hora por un mes."
-        },
-        {
-          title: "Comparativa:",
-          description: "Documenta si ese nuevo proveedor de fibra o Starlink realmente ofrece la mejora que prometieron."
-        }
-      ]
+    // Feature — History
+    history: {
+      eyebrow: "Historial",
+      title: "Ve el patrón, no solo el momento.",
+      body: "Cada prueba se guarda localmente y se dibuja en una línea de tiempo. Descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió.",
+      mockHead: "Últimas 24 h · Mbps",
+      flag: "Caída detectada · 21:00 – 23:00"
     },
 
-    // How it works section
-    howItWorks: {
-      title: "Cómo funciona",
-      features: [
-        {
-          icon: "⏱",
-          title: "Pruebas automáticas o manuales",
-          description: "Ejecuta mediciones cuando quieras o programa tests automáticos a intervalos regulares."
-        },
-        {
-          icon: "📊",
-          title: "Medición real de descarga",
-          description: "Mide el rendimiento con una prueba basada en descarga real, reflejando mejor el uso cotidiano."
-        },
-        {
-          icon: "💾",
-          title: "Historial local exportable",
-          description: "Guarda los resultados en tu Mac y exporta una línea temporal en CSV cuando lo necesites."
-        }
-      ]
+    // Feature — Export
+    export: {
+      eyebrow: "Exportar",
+      title: "Tus datos, en un CSV que habla por ti.",
+      body: "Exporta el historial completo con un clic: marca de tiempo, motor, descarga, latencia y responsividad. Evidencia objetiva para tu proveedor de internet — o solo para ti.",
+      drop: "← caída"
     },
 
-    // Evidence section
-    evidence: {
-      title: "No te quejes, demuestra",
-      content: "Cuando llamas a tu proveedor de internet, ellos ven \"todo verde\" en su sistema. <strong>VelociBar te arma de razones.</strong> Exporta tu historial a CSV y muestra a tu técnico exactamente cuándo y cómo falla el servicio. Datos reales contra excusas genéricas.",
-      csvHeader: "fecha,hora,descarga_mbps,latencia_ms",
-      csvDetected: "← Caída detectada"
+    // Privacy line
+    privacy: {
+      line: "Tus datos nunca salen de tu Mac. <strong>Sin cuentas, sin nube, sin telemetría</strong> — cada prueba, cada registro y cada exportación ocurren en local."
     },
 
-    // Privacy section
-    privacySection: {
-      title: "Tu privacidad, primero",
-      items: [
-        {
-          title: "Sin cuentas",
-          description: "No necesitas registrarte ni crear una cuenta para usar VelociBar."
-        },
-        {
-          title: "Sin tracking",
-          description: "No recopilamos datos de uso ni analíticas. Cero telemetría."
-        },
-        {
-          title: "Todo en tu Mac",
-          description: "Los resultados se almacenan localmente. Tú decides si compartirlos."
-        }
-      ]
-    },
-
-    // FAQ section
+    // FAQ
     faq: {
+      eyebrow: "Preguntas",
       title: "Preguntas frecuentes",
       items: [
         {
-          question: "¿Por qué no usar simplemente Speedtest?",
-          answer: "Los tests de velocidad tradicionales suelen medir en condiciones óptimas y pueden mostrar el mejor caso posible. VelociBar te permite hacer seguimiento continuo para ver cómo se comporta tu conexión en diferentes momentos del día y bajo distintas condiciones."
+          question: "¿Qué mide exactamente VelociBar?",
+          answer: "VelociBar mide la velocidad de descarga real (Mbps) y la responsividad bajo carga (RPM). Alterna dos motores: la herramienta networkQuality de Apple y una descarga real desde una CDN global. Así refleja el rendimiento que de verdad experimentas, no un número de laboratorio en condiciones ideales."
         },
         {
-          question: "¿Qué mide exactamente VelociBar?",
-          answer: "VelociBar realiza una prueba de descarga real midiendo la velocidad efectiva de transferencia y la latencia. Esto refleja mejor el rendimiento que experimentas al navegar, ver vídeos o descargar archivos."
+          question: "¿Qué es la responsividad (RPM) y por qué importa?",
+          answer: "La responsividad mide cuántos viajes de ida y vuelta completa tu red por minuto mientras está bajo carga. Es la métrica del bufferbloat: explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. VelociBar la clasifica como Baja, Media o Alta."
         },
         {
           question: "¿VelociBar sube mis datos a algún servidor?",
-          answer: "No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube, no hay tracking. Tú tienes el control total de tus datos."
+          answer: "No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube y no hay telemetría. Tú tienes el control total de tus datos."
         },
         {
-          question: "¿Puedo exportar los resultados para mi ISP?",
-          answer: "Sí. Puedes exportar tu historial completo como archivo CSV con fechas, horas y valores de velocidad. Esto puede servir como documentación objetiva si necesitas reportar problemas a tu proveedor de internet."
+          question: "¿Puedo exportar el historial?",
+          answer: "Sí. VelociBar guarda cada prueba en un archivo CSV con marca de tiempo, motor, descarga (Mbps), latencia (ms) y responsividad (RPM). Lo abres o lo exportas con un clic, lo que sirve como evidencia objetiva para tu proveedor de internet o para tu propio seguimiento."
         },
         {
           question: "¿Funciona en segundo plano?",
-          answer: "Sí. VelociBar vive en tu barra de menú y puede ejecutar pruebas programadas automáticamente mientras trabajas. Consume muy pocos recursos y no interfiere con tu flujo de trabajo."
+          answer: "Sí. VelociBar vive en la barra de menú y ejecuta pruebas automáticas en el intervalo que elijas: cada 15, 30 o 60 minutos. También incluye un widget para ver tu última medición de un vistazo."
         },
         {
-          question: "¿VelociBar reemplaza servicios como Speedtest o Fast.com?",
-          answer: "Los servicios tradicionales siguen siendo útiles para mediciones puntuales. VelociBar te entrega contexto histórico, alertas automáticas y evidencia exportable para complementar esos tests y detectar priorizaciones."
-        },
-        {
-          question: "¿Cuánta carga añade a mi conexión?",
-          answer: "Las pruebas están calibradas para no saturar tu ancho de banda: puedes definir la frecuencia y VelociBar pausa los tests cuando tu Mac está en batería o con poca señal."
+          question: "¿Qué necesito para usar VelociBar?",
+          answer: "macOS 26 o superior. Puedes descargar VelociBar desde la App Store de Apple."
         }
       ]
     },
 
-    // CTA section
+    // CTA
     cta: {
-      title: "Recupera lo que pagas",
-      subtitle: "Es tu internet. Es tu Mac. Es tu derecho saber la verdad.",
+      title: "Deja de adivinar. Empieza a medir.",
       button: "Descargar VelociBar",
-      requirement: "Requiere macOS 14.0 o superior"
+      requirement: "Requiere macOS 26 o superior"
     },
 
     // Footer
@@ -216,184 +156,124 @@ const translations = {
       description: "Is your internet slow or is it your Mac? VelociBar monitors your real connection minute by minute from the menu bar. Detects drops, saves history and exports it to claim from your ISP.",
       ogTitle: "VelociBar — Your real internet speed",
       ogDescription: "Menu bar app for macOS that measures your real internet speed over time. Saves local history and exports to CSV.",
-      twitterDescription: "Measure your real internet speed over time. No accounts, no tracking."
+      twitterDescription: "Measure your real internet speed over time. No accounts, no tracking.",
+      ogImageAlt: "VelociBar — internet speed monitor in the macOS menu bar"
     },
 
     // Navigation
     nav: {
-      howItWorks: "How it works",
-      privacy: "Privacy",
-      terms: "Terms"
+      measurement: "Measurement",
+      responsiveness: "Responsiveness",
+      history: "History",
+      download: "Download"
     },
 
     // Hero
     hero: {
-      pill: "macOS App",
-      title: "Paying for 300 Mbps but feel like you're browsing at 10?",
-      subtitle: "Traditional speed tests only show you a snapshot of the best moment. <strong>VelociBar</strong> records the full movie of your real connection, minute by minute, right from your menu bar.",
-      downloadBtn: "Download",
-      howItWorksBtn: "See how it works"
+      eyebrow: "Network monitor · macOS",
+      title: "Your internet's real speed — not the perfect-snapshot one.",
+      subtitle: "VelociBar lives in the macOS menu bar and measures your connection on its own, in the background: <strong>real download</strong> and <strong>responsiveness under load</strong>, with a local history you can export.",
+      downloadBtn: "Download for macOS",
+      requirement: "Requires macOS 26 or later",
+      panel: {
+        time: "· 2 min ago",
+        download: "Download",
+        responsiveness: "Responsiveness",
+        high: "High",
+        interval: "⏱ Interval",
+        runNow: "▶ Run now"
+      }
     },
 
-    // Benefits section
-    benefits: {
-      title: "Your ISP behaves... when you're watching",
-      intro: "Many internet providers detect when you open a speed test website and artificially prioritize your traffic. It's the observer effect: you're measuring an idealized connection, not the real one.",
-      features: [
-        {
-          icon: "🕵️",
-          title: "The unfiltered truth",
-          description: "VelociBar runs discrete checks in the background, revealing the real speed you get while working, not just when you run a test."
-        },
-        {
-          icon: "📉",
-          title: "Detect throttling",
-          description: "Find out if your speed systematically drops at night or when using certain apps—patterns a one-time test would never detect."
-        },
-        {
-          icon: "⚡️",
-          title: "No interruptions",
-          description: "Forget closing tabs to run a test. VelociBar lives in your menu bar, lightweight and always ready to give you the data you need."
-        }
-      ]
+    // Stat strip
+    stats: [
+      "On your Mac, on-device",
+      "Measurement engines: Apple networkQuality + CDN",
+      "Full history, exportable"
+    ],
+
+    // Feature — Measurement
+    measurement: {
+      eyebrow: "Measurement",
+      title: "Two measurement engines, one honest number.",
+      body: "VelociBar alternates Apple's <span class=\"mono\">networkQuality</span> tool with a real download from a global CDN. It measures the performance you actually get while browsing — not an idealized lab number.",
+      mockHead: "Result",
+      engine: "Engine",
+      cdn: "CDN download",
+      sub: "real download<br>1240 RPM · resp."
     },
 
-    // Diagnostics section
-    diagnostics: {
-      title: "Diagnose what a one-time test misses",
-      intro: "The most frustrating internet problems are intermittent. Those micro-drops on Zoom or sudden lag in games. VelociBar gives you the historical context to understand what's happening.",
-      features: [
-        {
-          icon: "🌙",
-          title: "Peak hour saturation",
-          description: "Does your internet \"die\" at 8 PM? Get the exact record of when and how much your speed drops to file a proper complaint."
-        },
-        {
-          icon: "🎮",
-          title: "Stability vs Speed",
-          description: "Sometimes you have 300 Mbps but unstable latency. VelociBar monitors both to explain why that video call dropped."
-        },
-        {
-          icon: "📑",
-          title: "Objective evidence",
-          description: "Don't call tech support saying \"it's slow\". Send them a CSV with last week's speed drops."
-        }
-      ]
+    // Feature — Responsiveness
+    responsiveness: {
+      eyebrow: "Responsiveness",
+      title: "Why your video call stutters on a 300 Mbps line.",
+      body1: "Speed isn't everything. VelociBar measures <strong>responsiveness under load</strong> (RPM): how many times per minute your network answers while it's saturated. It's the <em>bufferbloat</em> metric — and it's what decides whether Zoom freezes.",
+      body2: "Every test is rated Low, Medium or High — the same scale Apple's own tool uses — so you can tell at a glance whether the problem is speed or stability.",
+      mockHead: "Responsiveness under load",
+      low: "Low",
+      medium: "Medium",
+      high: "High"
     },
 
-    // Use cases section
-    useCases: {
-      title: "Real-world use cases",
-      items: [
-        {
-          title: "Remote work:",
-          description: "Avoid freezing in the middle of an important presentation by detecting instability before joining the meeting."
-        },
-        {
-          title: "Gaming:",
-          description: "Find out why you have lag in competitive matches even though your ping looks low in the lobby."
-        },
-        {
-          title: "Negotiation:",
-          description: "Tech support can't tell you \"restart the router\" when you have a month's history of drops at the same time."
-        },
-        {
-          title: "Comparison:",
-          description: "Document whether that new fiber provider or Starlink really delivers the improvement they promised."
-        }
-      ]
+    // Feature — History
+    history: {
+      eyebrow: "History",
+      title: "See the pattern, not just the moment.",
+      body: "Every test is saved locally and plotted on a timeline. Spot the 9 p.m. drop, the weekend congestion, or the exact day your connection changed.",
+      mockHead: "Last 24 h · Mbps",
+      flag: "Drop detected · 21:00 – 23:00"
     },
 
-    // How it works section
-    howItWorks: {
-      title: "How it works",
-      features: [
-        {
-          icon: "⏱",
-          title: "Automatic or manual tests",
-          description: "Run measurements whenever you want or schedule automatic tests at regular intervals."
-        },
-        {
-          icon: "📊",
-          title: "Real download measurement",
-          description: "Measures performance with a real download test, better reflecting everyday use."
-        },
-        {
-          icon: "💾",
-          title: "Exportable local history",
-          description: "Save results on your Mac and export a timeline in CSV whenever you need it."
-        }
-      ]
+    // Feature — Export
+    export: {
+      eyebrow: "Export",
+      title: "Your data, in a CSV that speaks for itself.",
+      body: "Export the full history in one click: timestamp, engine, download, latency and responsiveness. Objective evidence for your ISP — or just for you.",
+      drop: "← drop"
     },
 
-    // Evidence section
-    evidence: {
-      title: "Don't complain, prove it",
-      content: "When you call your internet provider, they see \"all green\" in their system. <strong>VelociBar arms you with evidence.</strong> Export your history to CSV and show your technician exactly when and how the service fails. Real data against generic excuses.",
-      csvHeader: "date,time,download_mbps,latency_ms",
-      csvDetected: "← Drop detected"
+    // Privacy line
+    privacy: {
+      line: "Your data never leaves your Mac. <strong>No accounts, no cloud, no telemetry</strong> — every test, every log and every export runs locally."
     },
 
-    // Privacy section
-    privacySection: {
-      title: "Your privacy, first",
-      items: [
-        {
-          title: "No accounts",
-          description: "No need to sign up or create an account to use VelociBar."
-        },
-        {
-          title: "No tracking",
-          description: "We don't collect usage data or analytics. Zero telemetry."
-        },
-        {
-          title: "Everything on your Mac",
-          description: "Results are stored locally. You decide if you want to share them."
-        }
-      ]
-    },
-
-    // FAQ section
+    // FAQ
     faq: {
+      eyebrow: "Questions",
       title: "Frequently asked questions",
       items: [
         {
-          question: "Why not just use Speedtest?",
-          answer: "Traditional speed tests tend to measure under optimal conditions and may show the best-case scenario. VelociBar lets you continuously track how your connection behaves at different times of day and under different conditions."
-        },
-        {
           question: "What exactly does VelociBar measure?",
-          answer: "VelociBar runs a real download test measuring effective transfer speed and latency. This better reflects the performance you experience when browsing, streaming, or downloading files."
+          answer: "VelociBar measures real download speed (Mbps) and responsiveness under load (RPM). It alternates two engines: Apple's networkQuality tool and a real download from a global CDN — so it reflects the performance you actually experience, not a lab number under ideal conditions."
         },
         {
-          question: "Does VelociBar upload my data to any server?",
-          answer: "No. All results are stored only on your Mac. No accounts, no cloud, no tracking. You have complete control over your data."
+          question: "What is responsiveness (RPM), and why does it matter?",
+          answer: "Responsiveness measures how many round trips your network completes per minute while under load. It's the bufferbloat metric: it explains why a video call stutters or a game lags even when your download speed is high. VelociBar rates it Low, Medium or High."
         },
         {
-          question: "Can I export results for my ISP?",
-          answer: "Yes. You can export your complete history as a CSV file with dates, times, and speed values. This can serve as objective documentation if you need to report issues to your internet provider."
+          question: "Does VelociBar upload my data anywhere?",
+          answer: "No. All results are stored only on your Mac. There are no accounts, no cloud and no telemetry. You have full control of your data."
         },
         {
-          question: "Does it work in the background?",
-          answer: "Yes. VelociBar lives in your menu bar and can run scheduled tests automatically while you work. It uses very few resources and doesn't interfere with your workflow."
+          question: "Can I export the history?",
+          answer: "Yes. VelociBar saves every test to a CSV file with timestamp, engine, download (Mbps), latency (ms) and responsiveness (RPM). You can open or export it in one click — objective evidence for your ISP or for your own tracking."
         },
         {
-          question: "Does VelociBar replace services like Speedtest or Fast.com?",
-          answer: "Traditional services are still useful for one-time measurements. VelociBar gives you historical context, automatic alerts, and exportable evidence to complement those tests and detect prioritization."
+          question: "Does it run in the background?",
+          answer: "Yes. VelociBar lives in the menu bar and runs automatic tests at the interval you choose: every 15, 30 or 60 minutes. It also includes a widget so you can see your latest reading at a glance."
         },
         {
-          question: "How much load does it add to my connection?",
-          answer: "Tests are calibrated not to saturate your bandwidth: you can set the frequency and VelociBar pauses tests when your Mac is on battery or has low signal."
+          question: "What do I need to run VelociBar?",
+          answer: "macOS 26 or later. You can download VelociBar from the Apple App Store."
         }
       ]
     },
 
-    // CTA section
+    // CTA
     cta: {
-      title: "Get what you pay for",
-      subtitle: "It's your internet. It's your Mac. It's your right to know the truth.",
+      title: "Stop guessing. Start measuring.",
       button: "Download VelociBar",
-      requirement: "Requires macOS 14.0 or later"
+      requirement: "Requires macOS 26 or later"
     },
 
     // Footer

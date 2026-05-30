@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n-page="title">Términos y Condiciones — VelociBar</title>
   <meta name="description" content="Términos y Condiciones de uso de VelociBar. Conoce las condiciones que rigen el uso de nuestra aplicación." data-i18n-page="description">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://velocibar.com/legal/terms.html">
-  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/legal/terms.html">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
   <script>
@@ -19,14 +26,35 @@
   </script>
   
   <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
   <meta property="og:title" content="Términos y Condiciones — VelociBar" data-i18n-page="title">
   <meta property="og:description" content="Términos y Condiciones de uso de VelociBar." data-i18n-page="ogDescription">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://velocibar.com/legal/terms.html">
+  <meta property="og:url" content="https://velocibar.app/legal/terms.html">
   <meta property="og:locale" content="es_MX">
-  
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Términos y Condiciones — VelociBar" data-i18n-page="title">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://velocibar.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Términos y Condiciones", "item": "https://velocibar.app/legal/terms.html" }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="../styles.css">
-  <script src="../translations.js"></script>
+  <script src="../translations.js" defer></script>
   <style>
     .legal-page {
       max-width: 760px;
@@ -119,9 +147,10 @@
         <span class="logo-text">VelociBar</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/#como-funciona" data-i18n="nav.howItWorks">Cómo funciona</a></li>
-        <li><a href="/#privacidad" data-i18n="nav.privacy">Privacidad</a></li>
-        <li><a href="/legal/terms.html" data-i18n="nav.terms">Términos</a></li>
+        <li class="nav-link-collapse"><a href="/#medicion" data-i18n="nav.measurement">Medición</a></li>
+        <li class="nav-link-collapse"><a href="/#responsividad" data-i18n="nav.responsiveness">Responsividad</a></li>
+        <li class="nav-link-collapse"><a href="/#historial" data-i18n="nav.history">Historial</a></li>
+        <li><a href="/#descargar" class="nav-cta" data-i18n="nav.download">Descargar</a></li>
         <li>
           <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
             <span class="lang-es active">ES</span>
@@ -439,7 +468,7 @@
       Para preguntas sobre estos Términos y Condiciones, contáctanos a través de:
     </p>
     <ul>
-      <li><span data-i18n-page="sections.contact.website" data-i18n-html><strong>Sitio web:</strong></span> <a href="https://velocibar.com">velocibar.com</a></li>
+      <li><span data-i18n-page="sections.contact.website" data-i18n-html><strong>Sitio web:</strong></span> <a href="https://velocibar.app">velocibar.app</a></li>
     </ul>
 
     <div class="highlight-box">

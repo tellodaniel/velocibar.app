@@ -1,0 +1,38 @@
+# VelociBar
+
+> VelociBar is a macOS menu bar app that continuously measures your real internet speed over time, instead of only at the moment you run a one-off test. It runs discreet background download/latency tests, keeps a local history, and exports it to CSV so you can prove ISP throttling or slowdowns. Site: https://velocibar.app
+
+VelociBar is built for people who pay for a fast plan but feel their connection is slow. Traditional speed tests (Speedtest, Fast.com) measure under ideal conditions and can show a best-case snapshot; some ISPs even prioritize traffic when they detect a speed-test site is open. VelociBar instead samples your connection minute by minute in the background to reveal what you actually get while working, gaming, or on video calls.
+
+## Key facts
+
+- Platform: macOS 26.0 or later (menu bar / status bar app).
+- What it measures: real download throughput (Mbps) and responsiveness under load (RPM, a bufferbloat indicator), rated Low/Medium/High. It alternates two engines: Apple's built-in networkQuality tool and a real download from a global CDN.
+- Schedule: automatic background tests every 15, 30 or 60 minutes (your choice), plus an on-demand "Run now" and a desktop widget.
+- History: all results are stored locally on your Mac and can be exported as a CSV (timestamp, source/engine, download_mbps, latency_ms, responsiveness_rpm).
+- Privacy: no accounts, no cloud, no tracking, no telemetry. Data never leaves your Mac unless you export it yourself.
+- Pricing: paid app, distributed via the Apple App Store.
+- Languages: Spanish (default) and English.
+- Download: https://apps.apple.com/us/app/velocibar/id6756196355
+
+## What makes it different
+
+- Continuous monitoring vs. one-off tests: it records the full picture of your connection, not a single best moment.
+- Throttling detection: spots systematic speed drops at specific times of day (for example evening peak-hour congestion) that a point-in-time test would miss.
+- Exportable evidence: produces an objective CSV log you can send to your ISP's technical support instead of saying "it feels slow."
+- Lightweight and unobtrusive: lives in the menu bar, uses few resources, and can pause tests on battery or weak signal.
+
+## Common questions
+
+- Does it replace Speedtest or Fast.com? No — those remain useful for spot checks. VelociBar adds historical context, automatic alerts, and exportable evidence to complement them.
+- Does it upload my data? No. Results are stored only on your Mac.
+- Can I export results for my ISP? Yes — full history as a CSV (date, time, download_mbps, latency_ms).
+- Does it run in the background? Yes — it runs scheduled tests from the menu bar while you work.
+- How much load does it add? Tests are calibrated not to saturate your bandwidth; you set the frequency and it pauses on battery or weak signal.
+
+## Links
+
+- Home: https://velocibar.app/
+- Download (App Store): https://apps.apple.com/us/app/velocibar/id6756196355
+- Privacy Policy: https://velocibar.app/legal/privacy.html
+- Terms of Use: https://velocibar.app/legal/terms.html

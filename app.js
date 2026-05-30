@@ -238,8 +238,9 @@
     const counter = document.getElementById('speed-counter');
     if (!counter) return;
 
-    const target = 847;
-    const duration = 2000; // 2 seconds
+    const target = 92;
+    const finalLabel = '92.4';
+    const duration = 1800;
     const startTime = performance.now();
 
     // Easing function for smooth deceleration
@@ -258,7 +259,7 @@
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        counter.textContent = target;
+        counter.textContent = finalLabel;
       }
     }
 

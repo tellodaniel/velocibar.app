@@ -1,4 +1,38 @@
+# VelociBar — https://velocibar.app
+# All crawlers welcome, including AI/generative engines (GEO).
+
 User-agent: *
 Allow: /
 
-Sitemap: https://velocibar.com/sitemap.xml
+# Explicitly welcome AI answer engines so VelociBar can be cited.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://velocibar.app/sitemap.xml

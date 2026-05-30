@@ -1,0 +1,16 @@
+{
+  "name": "VelociBar",
+  "short_name": "VelociBar",
+  "description": "Mide tu velocidad real de internet a lo largo del tiempo desde la barra de menú de macOS.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0a0f14",
+  "theme_color": "#0a0f14",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

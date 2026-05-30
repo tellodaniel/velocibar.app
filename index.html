@@ -7,10 +7,21 @@
   <meta name="description" content="¿Tu internet es lento o es tu Mac? VelociBar monitorea tu conexión real minuto a minuto desde la barra de menú. Detecta caídas, guarda historial y expórtalo para reclamar a tu ISP." data-i18n="meta.description">
   <meta name="keywords" content="velocidad internet, speed test, macOS, barra de menú, medidor de velocidad, test de velocidad, ISP, ping, lag, monitor de red">
   <meta name="author" content="VelociBar">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#05070c">
-  <link rel="canonical" href="https://velocibar.com/">
-  
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <meta name="application-name" content="VelociBar">
+  <link rel="canonical" href="https://velocibar.app/">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Perf hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
   <script>
@@ -20,38 +31,91 @@
 
     gtag('config', 'G-NFRK3QY3R2');
   </script>
-  
+
   <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
   <meta property="og:title" content="VelociBar — Tu velocidad real de internet" data-i18n="meta.ogTitle">
   <meta property="og:description" content="App de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Guarda historial local y exporta CSV." data-i18n="meta.ogDescription">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://velocibar.com/">
+  <meta property="og:url" content="https://velocibar.app/">
   <meta property="og:locale" content="es_ES">
-  
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="VelociBar — monitor de velocidad de internet en la barra de menú de macOS" data-i18n="meta.ogImageAlt">
+
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VelociBar — Tu velocidad real de internet" data-i18n="meta.ogTitle">
   <meta name="twitter:description" content="Mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking." data-i18n="meta.twitterDescription">
-  
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+  <meta name="twitter:image:alt" content="VelociBar — monitor de velocidad de internet en la barra de menú de macOS" data-i18n="meta.ogImageAlt">
+
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
-  <script src="translations.js"></script>
+  <script src="translations.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://velocibar.app/#app",
     "name": "VelociBar",
-    "operatingSystem": "macOS",
+    "operatingSystem": "macOS 26.0 or later",
     "applicationCategory": "UtilitiesApplication",
     "applicationSubCategory": "Speed Test",
-    "description": "VelociBar ejecuta pruebas de velocidad continuas desde la barra de menú de macOS para detectar priorización del ISP y documentar el rendimiento verdadero.",
-    "url": "https://velocibar.com/",
+    "description": "VelociBar es una app de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Alterna la herramienta networkQuality de Apple con una descarga real desde una CDN para medir la velocidad de descarga (Mbps) y la responsividad bajo carga (RPM, indicador de bufferbloat). Ejecuta pruebas automáticas cada 15, 30 o 60 minutos, guarda un historial local exportable a CSV e incluye un widget. Todo el procesamiento ocurre en el dispositivo: sin cuentas, sin nube, sin telemetría.",
+    "url": "https://velocibar.app/",
+    "image": "https://velocibar.app/og-image.png",
+    "screenshot": "https://velocibar.app/og-image.png",
     "softwareVersion": "2.0",
+    "inLanguage": ["es", "en"],
+    "downloadUrl": "https://apps.apple.com/us/app/velocibar/id6756196355",
+    "installUrl": "https://apps.apple.com/us/app/velocibar/id6756196355",
+    "featureList": [
+      "Mide velocidad de descarga real (Mbps) y responsividad bajo carga (RPM)",
+      "Dos motores: herramienta networkQuality de Apple y descarga desde una CDN global",
+      "Pruebas automáticas en segundo plano cada 15, 30 o 60 minutos",
+      "Gráfico en tiempo real e historial local exportable a CSV",
+      "Detección de bufferbloat con calificación Baja / Media / Alta",
+      "Widget de escritorio con tu última medición",
+      "100% en el dispositivo: sin cuentas, sin nube, sin telemetría"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "VelociBar",
+      "url": "https://velocibar.app/"
+    },
     "offers": {
       "@type": "Offer",
       "price": "49.00",
-      "priceCurrency": "MXN"
+      "priceCurrency": "MXN",
+      "url": "https://apps.apple.com/us/app/velocibar/id6756196355",
+      "availability": "https://schema.org/InStock"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://velocibar.app/#org",
+    "name": "VelociBar",
+    "url": "https://velocibar.app/",
+    "logo": "https://velocibar.app/icon-512.png",
+    "sameAs": ["https://apps.apple.com/us/app/velocibar/id6756196355"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://velocibar.app/#website",
+    "name": "VelociBar",
+    "url": "https://velocibar.app/",
+    "inLanguage": ["es", "en"],
+    "publisher": { "@id": "https://velocibar.app/#org" }
   }
   </script>
   <script type="application/ld+json">
@@ -60,52 +124,45 @@
     "@type": "FAQPage",
     "mainEntity": [{
       "@type": "Question",
-      "name": "¿Por qué no usar simplemente Speedtest?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los tests de velocidad tradicionales suelen medir en condiciones óptimas y pueden mostrar el mejor caso posible. VelociBar te permite hacer seguimiento continuo para ver cómo se comporta tu conexión en diferentes momentos del día y bajo distintas condiciones."
-      }
-    }, {
-      "@type": "Question",
       "name": "¿Qué mide exactamente VelociBar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VelociBar realiza una prueba de descarga real midiendo la velocidad efectiva de transferencia y la latencia. Esto refleja mejor el rendimiento que experimentas al navegar, ver vídeos o descargar archivos."
+        "text": "VelociBar mide la velocidad de descarga real (Mbps) y la responsividad bajo carga (RPM). Alterna dos motores: la herramienta networkQuality de Apple y una descarga real desde una CDN global. Así refleja el rendimiento que de verdad experimentas, no un número de laboratorio en condiciones ideales."
+      }
+    }, {
+      "@type": "Question",
+      "name": "¿Qué es la responsividad (RPM) y por qué importa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La responsividad mide cuántos viajes de ida y vuelta completa tu red por minuto mientras está bajo carga (RPM, roundtrips per minute). Es la métrica del bufferbloat: explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. VelociBar la clasifica como Baja, Media o Alta."
       }
     }, {
       "@type": "Question",
       "name": "¿VelociBar sube mis datos a algún servidor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube, no hay tracking. Tú tienes el control total de tus datos."
+        "text": "No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube y no hay telemetría. Tú tienes el control total de tus datos."
       }
     }, {
       "@type": "Question",
-      "name": "¿Puedo exportar los resultados para mi ISP?",
+      "name": "¿Puedo exportar el historial?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Puedes exportar tu historial completo como archivo CSV con fechas, horas y valores de velocidad. Esto puede servir como documentación objetiva si necesitas reportar problemas a tu proveedor de internet."
+        "text": "Sí. VelociBar guarda cada prueba en un archivo CSV con marca de tiempo, motor, descarga (Mbps), latencia (ms) y responsividad (RPM). Lo abres o lo exportas con un clic, lo que sirve como evidencia objetiva para tu proveedor de internet o para tu propio seguimiento."
       }
     }, {
       "@type": "Question",
       "name": "¿Funciona en segundo plano?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. VelociBar vive en tu barra de menú y puede ejecutar pruebas programadas automáticamente mientras trabajas. Consume muy pocos recursos y no interfiere con tu flujo de trabajo."
+        "text": "Sí. VelociBar vive en la barra de menú y ejecuta pruebas automáticas en el intervalo que elijas: cada 15, 30 o 60 minutos. También incluye un widget para ver tu última medición de un vistazo."
       }
     }, {
       "@type": "Question",
-      "name": "¿VelociBar reemplaza servicios como Speedtest o Fast.com?",
+      "name": "¿Qué necesito para usar VelociBar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los servicios tradicionales siguen siendo útiles para mediciones puntuales. VelociBar te entrega contexto histórico, alertas automáticas y evidencia exportable para complementar esos tests y detectar priorizaciones."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Cuánta carga añade a mi conexión?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las pruebas están calibradas para no saturar tu ancho de banda: puedes definir la frecuencia y VelociBar pausa los tests cuando tu Mac está en batería o con poca señal."
+        "text": "macOS 26 o superior. Puedes descargar VelociBar desde la App Store de Apple."
       }
     }]
   }
@@ -120,9 +177,10 @@
         <span class="logo-text">VelociBar</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#como-funciona" data-i18n="nav.howItWorks">Cómo funciona</a></li>
-        <li><a href="/legal/privacy.html" data-i18n="nav.privacy">Privacidad</a></li>
-        <li><a href="/legal/terms.html" data-i18n="nav.terms">Términos</a></li>
+        <li class="nav-link-collapse"><a href="#medicion" data-i18n="nav.measurement">Medición</a></li>
+        <li class="nav-link-collapse"><a href="#responsividad" data-i18n="nav.responsiveness">Responsividad</a></li>
+        <li class="nav-link-collapse"><a href="#historial" data-i18n="nav.history">Historial</a></li>
+        <li><a href="#descargar" class="nav-cta" data-i18n="nav.download">Descargar</a></li>
         <li>
           <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
             <span class="lang-es active">ES</span>
@@ -136,232 +194,266 @@
   <main>
     <!-- Hero -->
     <section class="hero" id="inicio">
-      <div class="hero-content">
-        <span class="pill" data-i18n="hero.pill">App para macOS</span>
-        <h1 data-i18n="hero.title">¿Pagas por 300 Mbps pero sientes que navegas a 10?</h1>
+      <div class="hero-text">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Monitor de red · macOS</span>
+        <h1 data-i18n="hero.title">La velocidad real de tu internet, no la de la foto perfecta.</h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle" data-i18n-html>
-          Los tests de velocidad convencionales solo te muestran una foto del mejor momento. 
-          <strong>VelociBar</strong> graba la película completa de tu conexión real, minuto a minuto, directamente desde tu barra de menú.
+          VelociBar vive en la barra de menú de macOS y mide tu conexión sola, en segundo plano: <strong>descarga real</strong> y <strong>responsividad bajo carga</strong>, con un historial local que puedes exportar.
         </p>
         <div class="cta-group">
           <button class="btn btn-primary" id="download-btn" type="button">
             <span class="btn-icon">↓</span>
-            <span data-i18n="hero.downloadBtn">Descargar</span>
+            <span data-i18n="hero.downloadBtn">Descargar para macOS</span>
           </button>
-          <a href="#como-funciona" class="btn btn-secondary" data-i18n="hero.howItWorksBtn">Ver cómo funciona</a>
+          <span class="cta-meta-inline" data-i18n="hero.requirement">Requiere macOS 26 o superior</span>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="menu-bar-preview" aria-hidden="true">
-          <div class="menu-bar-dot"></div>
-          <div class="menu-bar-content">
-            <span class="speed-value" id="speed-counter">0</span>
-            <span class="speed-unit">Mbps</span>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="stage">
+          <div class="menubar">
+            <span class="menubar-app">Finder</span>
+            <div class="menubar-menus"><span>Archivo</span><span>Edición</span><span>Ver</span></div>
+            <span class="menubar-status"><span class="ico">◉</span> 92 Mbps</span>
+            <span class="menubar-clock">9:41</span>
+          </div>
+          <div class="stage-body">
+            <div class="vb-panel">
+              <div class="vb-head">
+                <span class="vb-head-title">VelociBar</span>
+                <span class="vb-head-time" data-i18n="hero.panel.time">· hace 2 min</span>
+                <span class="vb-head-dot"></span>
+              </div>
+              <div class="vb-metrics">
+                <div class="vb-metric">
+                  <span class="vb-metric-label" data-i18n="hero.panel.download">Descarga</span>
+                  <span class="vb-metric-value"><span id="speed-counter">92.4</span> Mbps</span>
+                </div>
+                <div class="vb-metric">
+                  <span class="vb-metric-label" data-i18n="hero.panel.responsiveness">Responsividad</span>
+                  <span class="vb-metric-value">1240 RPM</span>
+                  <span class="vb-badge is-high" data-i18n="hero.panel.high">Alta</span>
+                </div>
+              </div>
+              <div class="vb-graph">
+                <svg viewBox="0 0 228 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#38bdc3" stop-opacity="0.35"/>
+                      <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M2,30 L24,24 L46,27 L68,17 L90,25 L112,19 L134,29 L156,15 L178,31 L200,21 L226,25 L226,46 L2,46 Z" fill="url(#vbg)"/>
+                  <path d="M2,30 L24,24 L46,27 L68,17 L90,25 L112,19 L134,29 L156,15 L178,31 L200,21 L226,25" fill="none" stroke="#4dd4db" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                </svg>
+              </div>
+              <div class="vb-row">
+                <span data-i18n="hero.panel.interval">⏱ Intervalo</span>
+                <span class="vb-pick">15 min ▾</span>
+              </div>
+              <div class="vb-actions">
+                <span class="vb-btn is-primary" data-i18n="hero.panel.runNow">▶ Probar ahora</span>
+                <span class="vb-btn is-icon">▤</span>
+                <span class="vb-btn is-icon">⌫</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Beneficios destacados -->
-    <section class="section section-alt" id="beneficios">
-      <h2 data-i18n="benefits.title">Tu ISP se porta bien... cuando lo miras</h2>
-      <p data-i18n="benefits.intro">
-        Muchos proveedores de internet detectan cuando abres una web de test de velocidad y priorizan artificialmente tu tráfico. 
-        Es el efecto observador: mides una conexión idealizada, no la real.
+    <!-- Stat strip -->
+    <section class="stats" aria-label="VelociBar de un vistazo">
+      <div class="stat">
+        <span class="stat-num">100<span class="unit">%</span></span>
+        <span class="stat-label" data-i18n="stats.0">En tu Mac, en local</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2</span>
+        <span class="stat-label" data-i18n="stats.1">Motores de medición: networkQuality de Apple + CDN</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">CSV</span>
+        <span class="stat-label" data-i18n="stats.2">Historial completo, exportable</span>
+      </div>
+    </section>
+
+    <!-- Feature 1 — Measurement -->
+    <section class="feature" id="medicion">
+      <div class="feature-text">
+        <span class="eyebrow" data-i18n="measurement.eyebrow">Medición</span>
+        <h2 data-i18n="measurement.title">Dos motores de medición, una sola verdad.</h2>
+        <p data-i18n="measurement.body">VelociBar alterna la herramienta <span class="mono">networkQuality</span> de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="mock" role="img" aria-label="Tarjeta de resultado mostrando velocidad de descarga y responsividad">
+          <div class="mock-head"><span class="mock-dot"></span><span class="mono" data-i18n="measurement.mockHead">Resultado</span></div>
+          <div class="result-body">
+            <div class="source-row">
+              <div class="source-chip is-active">
+                <span class="label" data-i18n="measurement.engine">Motor</span>
+                <span class="name">Apple networkQuality</span>
+              </div>
+              <div class="source-chip">
+                <span class="label" data-i18n="measurement.engine">Motor</span>
+                <span class="name" data-i18n="measurement.cdn">Descarga CDN</span>
+              </div>
+            </div>
+            <div class="reading">
+              <span class="big">92.4</span>
+              <span class="unit">Mbps</span>
+              <span class="sub" data-i18n="measurement.sub" data-i18n-html>descarga real<br>1240 RPM · resp.</span>
+            </div>
+            <div class="spark">
+              <svg viewBox="0 0 480 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="spk" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#38bdc3" stop-opacity="0.3"/>
+                    <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,40 L40,34 L80,38 L120,22 L160,30 L200,18 L240,33 L280,14 L320,28 L360,20 L400,32 L440,16 L480,26 L480,54 L0,54 Z" fill="url(#spk)"/>
+                <path d="M0,40 L40,34 L80,38 L120,22 L160,30 L200,18 L240,33 L280,14 L320,28 L360,20 L400,32 L440,16 L480,26" fill="none" stroke="#4dd4db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 2 — Responsiveness -->
+    <section class="feature feature-reverse" id="responsividad">
+      <div class="feature-text">
+        <span class="eyebrow" data-i18n="responsiveness.eyebrow">Responsividad</span>
+        <h2 data-i18n="responsiveness.title">Por qué tu videollamada se entrecorta con 300 Mbps.</h2>
+        <p data-i18n="responsiveness.body1">La velocidad no lo es todo. VelociBar mide la <strong>responsividad bajo carga</strong> (RPM): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del <em>bufferbloat</em>, y es lo que decide si Zoom se congela.</p>
+        <p data-i18n="responsiveness.body2">Cada prueba se califica como Baja, Media o Alta — el mismo criterio que usa la herramienta de Apple — para que sepas de un vistazo si el problema es la velocidad o la estabilidad.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="mock" role="img" aria-label="Medidor de responsividad bajo carga calificado como Alto">
+          <div class="mock-head"><span class="mock-dot"></span><span class="mono" data-i18n="responsiveness.mockHead">Responsividad bajo carga</span></div>
+          <div class="rpm-body">
+            <div class="rpm-readout">
+              <span class="rpm-num">1240</span>
+              <span class="rpm-unit">RPM</span>
+              <span class="rpm-rating" data-i18n="responsiveness.high">Alta</span>
+            </div>
+            <div class="rpm-scale">
+              <div class="rpm-bar"><span class="rpm-marker"></span></div>
+              <div class="rpm-ticks">
+                <span data-i18n="responsiveness.low">Baja</span>
+                <span data-i18n="responsiveness.medium">Media</span>
+                <span data-i18n="responsiveness.high">Alta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 3 — History -->
+    <section class="feature" id="historial">
+      <div class="feature-text">
+        <span class="eyebrow" data-i18n="history.eyebrow">Historial</span>
+        <h2 data-i18n="history.title">Ve el patrón, no solo el momento.</h2>
+        <p data-i18n="history.body">Cada prueba se guarda localmente y se dibuja en una línea de tiempo. Descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="mock" role="img" aria-label="Gráfico de las últimas 24 horas con una caída de velocidad por la noche">
+          <div class="mock-head"><span class="mock-dot"></span><span class="mono" data-i18n="history.mockHead">Últimas 24 h · Mbps</span></div>
+          <div class="history-body">
+            <div class="history-chart">
+              <svg viewBox="0 0 480 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hist" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#38bdc3" stop-opacity="0.32"/>
+                    <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,46 L48,40 L96,34 L144,30 L192,33 L240,32 L288,42 L336,70 L384,112 L416,122 L448,72 L480,50 L480,150 L0,150 Z" fill="url(#hist)"/>
+                <path d="M0,46 L48,40 L96,34 L144,30 L192,33 L240,32 L288,42 L336,70 L384,112 L416,122 L448,72 L480,50" fill="none" stroke="#4dd4db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <circle cx="416" cy="122" r="4.5" fill="#e55039" stroke="#0a0f14" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="history-axis"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
+            <span class="history-flag"><span class="swatch"></span><span data-i18n="history.flag">Caída detectada · 21:00 – 23:00</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 4 — Export -->
+    <section class="feature feature-reverse" id="exportar">
+      <div class="feature-text">
+        <span class="eyebrow" data-i18n="export.eyebrow">Exportar</span>
+        <h2 data-i18n="export.title">Tus datos, en un CSV que habla por ti.</h2>
+        <p data-i18n="export.body">Exporta el historial completo con un clic: marca de tiempo, motor, descarga, latencia y responsividad. Evidencia objetiva para tu proveedor de internet — o solo para ti.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="mock csv-card" role="img" aria-label="Archivo CSV exportado con una fila de caída resaltada">
+          <div class="mock-head"><span class="mock-dot"></span><span class="mono">speed_log.csv</span></div>
+          <div class="csv-body">
+            <div class="csv-line head"><span class="col ts">timestamp</span><span class="col">source</span><span class="col">download_mbps</span><span class="col">latency_ms</span><span class="col">responsiveness_rpm</span></div>
+            <div class="csv-line"><span class="col ts">09:15</span><span class="col">apple</span><span class="col">92.4</span><span class="col">12</span><span class="col">1240</span></div>
+            <div class="csv-line"><span class="col ts">14:30</span><span class="col">custom</span><span class="col">88.7</span><span class="col">15</span><span class="col">980</span></div>
+            <div class="csv-line drop"><span class="col ts">21:30</span><span class="col">apple</span><span class="col">45.1</span><span class="col">86</span><span class="col">210</span><span class="drop-tag" data-i18n="export.drop">← caída</span></div>
+            <div class="csv-line"><span class="col ts">23:45</span><span class="col">custom</span><span class="col">90.2</span><span class="col">14</span><span class="col">1110</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy line -->
+    <section class="privacy" id="privacidad">
+      <p class="privacy-line" data-i18n="privacy.line" data-i18n-html>
+        Tus datos nunca salen de tu Mac. <strong>Sin cuentas, sin nube, sin telemetría</strong> — cada prueba, cada registro y cada exportación ocurren en local.
       </p>
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🕵️</div>
-          <h3 data-i18n="benefits.features.0.title">La verdad sin filtros</h3>
-          <p data-i18n="benefits.features.0.description">VelociBar realiza comprobaciones discretas en segundo plano, revelando la velocidad real que obtienes mientras trabajas, no solo cuando haces un test.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📉</div>
-          <h3 data-i18n="benefits.features.1.title">Detecta el "throttling"</h3>
-          <p data-i18n="benefits.features.1.description">Descubre si tu velocidad cae sistemáticamente por las noches o al usar ciertas aplicaciones, patrones que un test puntual jamás detectaría.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⚡️</div>
-          <h3 data-i18n="benefits.features.2.title">Sin interrupciones</h3>
-          <p data-i18n="benefits.features.2.description">Olvídate de cerrar pestañas para hacer un test. VelociBar vive en tu menú, ligero y siempre listo para darte el dato que necesitas.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Diagnóstico (Reemplaza SEO) -->
-    <section class="section" id="diagnostico">
-      <h2 data-i18n="diagnostics.title">Diagnostica lo que un test puntual ignora</h2>
-      <p data-i18n="diagnostics.intro">
-        Los problemas de internet más frustrantes son los intermitentes. Esos micro-cortes en Zoom o el lag repentino en juegos.
-        VelociBar te da el contexto histórico para entender qué está pasando.
-      </p>
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🌙</div>
-          <h3 data-i18n="diagnostics.features.0.title">Saturación en horas pico</h3>
-          <p data-i18n="diagnostics.features.0.description">¿Tu internet "muere" a las 8 PM? Ten el registro exacto de cuándo y cuánto baja la velocidad para reclamar con base.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🎮</div>
-          <h3 data-i18n="diagnostics.features.1.title">Estabilidad vs Velocidad</h3>
-          <p data-i18n="diagnostics.features.1.description">A veces tienes 300 Mbps pero una latencia inestable. VelociBar monitorea ambos para explicar por qué esa videollamada se cortó.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📑</div>
-          <h3 data-i18n="diagnostics.features.2.title">Evidencia objetiva</h3>
-          <p data-i18n="diagnostics.features.2.description">No llames a soporte técnico diciendo "va lento". Mándales un CSV con las caídas de velocidad de la última semana.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Casos de uso -->
-    <section class="section section-alt" id="casos-uso">
-      <h2 data-i18n="useCases.title">Casos de uso con impacto real</h2>
-      <ul class="use-cases">
-        <li><strong data-i18n="useCases.items.0.title">Teletrabajo:</strong> <span data-i18n="useCases.items.0.description">Evita congelarte en medio de una presentación importante detectando inestabilidad antes de entrar a la reunión.</span></li>
-        <li><strong data-i18n="useCases.items.1.title">Gaming:</strong> <span data-i18n="useCases.items.1.description">Descubre por qué tienes lag en partidas competitivas aunque tu ping parezca bajo en el lobby.</span></li>
-        <li><strong data-i18n="useCases.items.2.title">Negociación:</strong> <span data-i18n="useCases.items.2.description">Soporte técnico no podrá decirte "reinicia el router" cuando tengas un historial de caídas a la misma hora por un mes.</span></li>
-        <li><strong data-i18n="useCases.items.3.title">Comparativa:</strong> <span data-i18n="useCases.items.3.description">Documenta si ese nuevo proveedor de fibra o Starlink realmente ofrece la mejora que prometieron.</span></li>
-      </ul>
-    </section>
-
-    <!-- Cómo funciona -->
-    <section class="section" id="como-funciona">
-      <h2 data-i18n="howItWorks.title">Cómo funciona</h2>
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⏱</div>
-          <h3 data-i18n="howItWorks.features.0.title">Pruebas automáticas o manuales</h3>
-          <p data-i18n="howItWorks.features.0.description">Ejecuta mediciones cuando quieras o programa tests automáticos a intervalos regulares.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📊</div>
-          <h3 data-i18n="howItWorks.features.1.title">Medición real de descarga</h3>
-          <p data-i18n="howItWorks.features.1.description">Mide el rendimiento con una prueba basada en descarga real, reflejando mejor el uso cotidiano.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">💾</div>
-          <h3 data-i18n="howItWorks.features.2.title">Historial local exportable</h3>
-          <p data-i18n="howItWorks.features.2.description">Guarda los resultados en tu Mac y exporta una línea temporal en CSV cuando lo necesites.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Evidencia -->
-    <section class="section section-alt" id="evidencia">
-      <h2 data-i18n="evidence.title">No te quejes, demuestra</h2>
-      <div class="evidence-content">
-        <p data-i18n="evidence.content" data-i18n-html>
-          Cuando llamas a tu proveedor de internet, ellos ven "todo verde" en su sistema. 
-          <strong>VelociBar te arma de razones.</strong> Exporta tu historial a CSV y muestra a tu técnico 
-          exactamente cuándo y cómo falla el servicio. Datos reales contra excusas genéricas.
-        </p>
-        <div class="csv-preview">
-          <code>
-            <span data-i18n="evidence.csvHeader">fecha,hora,descarga_mbps,latencia_ms</span><br>
-            2024-12-20,09:15,92.4,12<br>
-            2024-12-20,14:30,45.1,28 <span style="color:#e55039; font-weight:bold;" data-i18n="evidence.csvDetected">← Caída detectada</span><br>
-            2024-12-20,21:45,88.7,15
-          </code>
-        </div>
-      </div>
-    </section>
-
-    <!-- Privacidad -->
-    <section class="section" id="privacidad">
-      <h2 data-i18n="privacySection.title">Tu privacidad, primero</h2>
-      <ul class="privacy-list">
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <strong data-i18n="privacySection.items.0.title">Sin cuentas</strong>
-            <p data-i18n="privacySection.items.0.description">No necesitas registrarte ni crear una cuenta para usar VelociBar.</p>
-          </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <strong data-i18n="privacySection.items.1.title">Sin tracking</strong>
-            <p data-i18n="privacySection.items.1.description">No recopilamos datos de uso ni analíticas. Cero telemetría.</p>
-          </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
-          <div>
-            <strong data-i18n="privacySection.items.2.title">Todo en tu Mac</strong>
-            <p data-i18n="privacySection.items.2.description">Los resultados se almacenan localmente. Tú decides si compartirlos.</p>
-          </div>
-        </li>
-      </ul>
     </section>
 
     <!-- FAQ -->
-    <section class="section section-alt" id="faq">
-      <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+    <section class="faq" id="faq">
+      <div class="faq-head">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Preguntas</span>
+        <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+      </div>
       <div class="faq-list">
         <details class="faq-item">
-          <summary data-i18n="faq.items.0.question">¿Por qué no usar simplemente Speedtest?</summary>
-          <p data-i18n="faq.items.0.answer">
-            Los tests de velocidad tradicionales suelen medir en condiciones óptimas y pueden mostrar 
-            el mejor caso posible. VelociBar te permite hacer seguimiento continuo para ver cómo 
-            se comporta tu conexión en diferentes momentos del día y bajo distintas condiciones.
-          </p>
+          <summary data-i18n="faq.items.0.question">¿Qué mide exactamente VelociBar?</summary>
+          <p data-i18n="faq.items.0.answer">VelociBar mide la velocidad de descarga real (Mbps) y la responsividad bajo carga (RPM). Alterna dos motores: la herramienta networkQuality de Apple y una descarga real desde una CDN global. Así refleja el rendimiento que de verdad experimentas, no un número de laboratorio en condiciones ideales.</p>
         </details>
         <details class="faq-item">
-          <summary data-i18n="faq.items.1.question">¿Qué mide exactamente VelociBar?</summary>
-          <p data-i18n="faq.items.1.answer">
-            VelociBar realiza una prueba de descarga real midiendo la velocidad efectiva de transferencia 
-            y la latencia. Esto refleja mejor el rendimiento que experimentas al navegar, ver vídeos o descargar archivos.
-          </p>
+          <summary data-i18n="faq.items.1.question">¿Qué es la responsividad (RPM) y por qué importa?</summary>
+          <p data-i18n="faq.items.1.answer">La responsividad mide cuántos viajes de ida y vuelta completa tu red por minuto mientras está bajo carga. Es la métrica del bufferbloat: explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. VelociBar la clasifica como Baja, Media o Alta.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.items.2.question">¿VelociBar sube mis datos a algún servidor?</summary>
-          <p data-i18n="faq.items.2.answer">
-            No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube, 
-            no hay tracking. Tú tienes el control total de tus datos.
-          </p>
+          <p data-i18n="faq.items.2.answer">No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube y no hay telemetría. Tú tienes el control total de tus datos.</p>
         </details>
         <details class="faq-item">
-          <summary data-i18n="faq.items.3.question">¿Puedo exportar los resultados para mi ISP?</summary>
-          <p data-i18n="faq.items.3.answer">
-            Sí. Puedes exportar tu historial completo como archivo CSV con fechas, horas y valores 
-            de velocidad. Esto puede servir como documentación objetiva si necesitas reportar problemas 
-            a tu proveedor de internet.
-          </p>
+          <summary data-i18n="faq.items.3.question">¿Puedo exportar el historial?</summary>
+          <p data-i18n="faq.items.3.answer">Sí. VelociBar guarda cada prueba en un archivo CSV con marca de tiempo, motor, descarga (Mbps), latencia (ms) y responsividad (RPM). Lo abres o lo exportas con un clic, lo que sirve como evidencia objetiva para tu proveedor de internet o para tu propio seguimiento.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.items.4.question">¿Funciona en segundo plano?</summary>
-          <p data-i18n="faq.items.4.answer">
-            Sí. VelociBar vive en tu barra de menú y puede ejecutar pruebas programadas automáticamente 
-            mientras trabajas. Consume muy pocos recursos y no interfiere con tu flujo de trabajo.
-          </p>
+          <p data-i18n="faq.items.4.answer">Sí. VelociBar vive en la barra de menú y ejecuta pruebas automáticas en el intervalo que elijas: cada 15, 30 o 60 minutos. También incluye un widget para ver tu última medición de un vistazo.</p>
         </details>
         <details class="faq-item">
-          <summary data-i18n="faq.items.5.question">¿VelociBar reemplaza servicios como Speedtest o Fast.com?</summary>
-          <p data-i18n="faq.items.5.answer">
-            Los servicios tradicionales siguen siendo útiles para mediciones puntuales. VelociBar te entrega contexto histórico,
-            alertas automáticas y evidencia exportable para complementar esos tests y detectar priorizaciones.
-          </p>
-        </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.items.6.question">¿Cuánta carga añade a mi conexión?</summary>
-          <p data-i18n="faq.items.6.answer">
-            Las pruebas están calibradas para no saturar tu ancho de banda: puedes definir la frecuencia y VelociBar pausa los tests
-            cuando tu Mac está en batería o con poca señal.
-          </p>
+          <summary data-i18n="faq.items.5.question">¿Qué necesito para usar VelociBar?</summary>
+          <p data-i18n="faq.items.5.answer">macOS 26 o superior. Puedes descargar VelociBar desde la App Store de Apple.</p>
         </details>
       </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="section cta-section">
-      <h2 data-i18n="cta.title">Recupera lo que pagas</h2>
-      <p data-i18n="cta.subtitle">Es tu internet. Es tu Mac. Es tu derecho saber la verdad.</p>
-      <button class="btn btn-primary btn-large" id="download-btn-footer" type="button">
-        <span class="btn-icon">↓</span>
-        <span data-i18n="cta.button">Descargar VelociBar</span>
-      </button>
-      <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--color-text-subtle);" data-i18n="cta.requirement">Requiere macOS 14.0 o superior</p>
+    <section class="cta-section" id="descargar">
+      <h2 data-i18n="cta.title">Deja de adivinar. Empieza a medir.</h2>
+      <div class="cta-group">
+        <button class="btn btn-primary btn-large" id="download-btn-footer" type="button">
+          <span class="btn-icon">↓</span>
+          <span data-i18n="cta.button">Descargar VelociBar</span>
+        </button>
+      </div>
+      <p class="cta-meta" data-i18n="cta.requirement">Requiere macOS 26 o superior</p>
     </section>
   </main>
 

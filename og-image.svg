@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1820"/>
+      <stop offset="1" stop-color="#070b10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0" r="0.9">
+      <stop offset="0" stop-color="#38bdc3" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4dd4db"/>
+      <stop offset="1" stop-color="#38bdc3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1199" height="629" rx="0" fill="none" stroke="#1c2c38" stroke-width="1"/>
+
+  <!-- Brand lockup -->
+  <g transform="translate(90 96)">
+    <circle cx="26" cy="26" r="24" fill="none" stroke="url(#ring)" stroke-width="5"/>
+    <circle cx="26" cy="26" r="9" fill="#4dd4db"/>
+    <text x="70" y="40" fill="#e8f0f2" font-size="40" font-weight="700" letter-spacing="-0.5">VelociBar</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="90" y="300" fill="#e8f0f2" font-size="72" font-weight="800" letter-spacing="-1.5">Tu velocidad real</text>
+  <text x="90" y="384" fill="#38bdc3" font-size="72" font-weight="800" letter-spacing="-1.5">de internet, sin filtros</text>
+
+  <!-- Subhead -->
+  <text x="92" y="452" fill="#8aa3ad" font-size="30" font-weight="400">Monitorea tu conexion minuto a minuto desde la barra de menu de macOS.</text>
+  <text x="92" y="492" fill="#8aa3ad" font-size="30" font-weight="400">Detecta caidas, guarda historial y exporta evidencia para tu ISP.</text>
+
+  <!-- macOS pill -->
+  <g transform="translate(90 540)">
+    <rect width="240" height="48" rx="24" fill="none" stroke="#38bdc3" stroke-opacity="0.4" stroke-width="1.5"/>
+    <circle cx="28" cy="24" r="5" fill="#38c378"/>
+    <text x="48" y="32" fill="#e8f0f2" font-size="22" font-weight="600">App para macOS</text>
+  </g>
+
+  <!-- Menu bar speed chip -->
+  <g transform="translate(812 250)">
+    <rect x="-4" y="-4" width="316" height="150" rx="20" fill="#141f2a" stroke="#1c2c38" stroke-width="1.5"/>
+    <circle cx="34" cy="44" r="9" fill="none" stroke="url(#ring)" stroke-width="3.4"/>
+    <circle cx="34" cy="44" r="3.4" fill="#4dd4db"/>
+    <text x="60" y="56" fill="#e8f0f2" font-size="46" font-weight="800">847</text>
+    <text x="168" y="56" fill="#8aa3ad" font-size="26" font-weight="600">Mbps</text>
+    <!-- sparkline -->
+    <polyline points="30,118 70,104 110,112 150,86 190,122 230,96 278,110"
+      fill="none" stroke="#38bdc3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="150" cy="86" r="4" fill="#4dd4db"/>
+  </g>
+
+  <text x="812" y="556" fill="#5a7580" font-size="22" font-weight="500">velocibar.app</text>
+</svg>
