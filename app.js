@@ -159,12 +159,37 @@
     
     // Initialize i18n
     init() {
+      // Pages with data-static-lang on <html> are pre-rendered in one language
+      // (/ is Spanish, /en/ is English) so crawlers index real content. There
+      // the toggle is a plain link between the two URLs; here we only honor a
+      // previously saved preference and remember new choices.
+      const staticLang = document.documentElement.getAttribute('data-static-lang');
+      if (staticLang) {
+        this.currentLang = staticLang;
+
+        const saved = localStorage.getItem('velocibar-lang');
+        if ((saved === 'es' || saved === 'en') && saved !== staticLang) {
+          window.location.replace(saved === 'en' ? '/en/' : '/');
+          return;
+        }
+
+        const toggle = document.getElementById('lang-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', () => {
+            const target = toggle.getAttribute('data-lang-target');
+            if (target) localStorage.setItem('velocibar-lang', target);
+          });
+        }
+        return;
+      }
+
+      // Legacy in-place translation (legal pages)
       this.currentLang = this.detectLanguage();
       document.documentElement.lang = this.currentLang;
-      
+
       this.applyTranslations();
       this.updateToggle();
-      
+
       // Bind toggle button
       const toggle = document.getElementById('lang-toggle');
       if (toggle) {
@@ -175,33 +200,6 @@
   
   // Make i18n available globally
   window.i18n = i18n;
-
-  // --- Toast notification ---
-  function showToast(message, duration = 3000) {
-    const toast = document.getElementById('toast');
-    if (!toast) return;
-
-    toast.textContent = message;
-    toast.classList.add('show');
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, duration);
-  }
-
-  // --- Download button handler ---
-  function handleDownload(event) {
-    event.preventDefault();
-    // App Store URL for VelociBar
-    const downloadUrl = 'https://apps.apple.com/us/app/velocibar/id6756196355';
-
-    if (downloadUrl) {
-      window.location.href = downloadUrl;
-    } else {
-      const message = i18n.get('toast.downloadSoon');
-      showToast(message);
-    }
-  }
 
   // --- Smooth scroll for internal links ---
   function initSmoothScroll() {
@@ -283,12 +281,6 @@
   function init() {
     // Initialize i18n system
     i18n.init();
-    
-    // Bind download buttons
-    const downloadBtns = document.querySelectorAll('#download-btn, #download-btn-footer');
-    downloadBtns.forEach((btn) => {
-      btn.addEventListener('click', handleDownload);
-    });
 
     // Start speed counter animation
     animateSpeedCounter();

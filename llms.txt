@@ -11,7 +11,7 @@ VelociBar is built for people who pay for a fast plan but feel their connection 
 - Schedule: automatic background tests every 15, 30 or 60 minutes (your choice), plus an on-demand "Run now" and a desktop widget.
 - History: all results are stored locally on your Mac and can be exported as a CSV (timestamp, source/engine, download_mbps, latency_ms, responsiveness_rpm).
 - Privacy: no accounts, no cloud, no tracking, no telemetry. Data never leaves your Mac unless you export it yourself.
-- Pricing: paid app, distributed via the Apple App Store.
+- Pricing: paid app ($1.99 USD on the US App Store, one-time purchase; local pricing varies by country).
 - Languages: Spanish (default) and English.
 - Download: https://apps.apple.com/us/app/velocibar/id6756196355
 
@@ -32,7 +32,8 @@ VelociBar is built for people who pay for a fast plan but feel their connection 
 
 ## Links
 
-- Home: https://velocibar.app/
+- Home (Spanish): https://velocibar.app/
+- Home (English): https://velocibar.app/en/
 - Download (App Store): https://apps.apple.com/us/app/velocibar/id6756196355
 - Privacy Policy: https://velocibar.app/legal/privacy.html
 - Terms of Use: https://velocibar.app/legal/terms.html

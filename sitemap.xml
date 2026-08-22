@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://velocibar.app/</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velocibar.app/"/>
     <image:image>
       <image:loc>https://velocibar.app/og-image.png</image:loc>
       <image:title>VelociBar — monitor de velocidad de internet para macOS</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://velocibar.app/en/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velocibar.app/"/>
+    <image:image>
+      <image:loc>https://velocibar.app/og-image.png</image:loc>
+      <image:title>VelociBar — internet speed monitor for macOS</image:title>
     </image:image>
   </url>
   <url>
