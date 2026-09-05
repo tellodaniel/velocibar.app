@@ -266,8 +266,12 @@ img.logo-icon {
 }
 
 @media (max-width: 680px) {
-  .nav-links { gap: var(--space-md); }
+  /* Match the 16px side padding the sections use on mobile and tighten the
+     remaining items so logo + CTA + language toggle fit a 360px viewport */
+  .nav { padding-left: var(--space-md); padding-right: var(--space-md); gap: var(--space-md); }
+  .nav-links { gap: var(--space-sm); }
   .nav-links li.nav-link-collapse { display: none; }
+  .nav-cta { padding: 0.5rem 0.85rem; }
 }
 
 /* --- Buttons --- */
