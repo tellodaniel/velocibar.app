@@ -20,8 +20,14 @@
 
   <!-- Brand lockup -->
   <g transform="translate(90 96)">
-    <circle cx="26" cy="26" r="24" fill="none" stroke="url(#ring)" stroke-width="5"/>
-    <circle cx="26" cy="26" r="9" fill="#4dd4db"/>
+    <svg x="0" y="0" width="52" height="52" viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="14" fill="#0d1a22" stroke="#1c2c38" stroke-width="2"/>
+      <path d="M16 40 A18 18 0 1 1 48 40" fill="none" stroke="#1c2c38" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M16 40 A18 18 0 1 1 47.6 25" fill="none" stroke="url(#ring)" stroke-width="5.5" stroke-linecap="round"/>
+      <line x1="32" y1="34" x2="45.2" y2="29.2" stroke="#f4fbfc" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="32" cy="34" r="5.6" fill="#0f1820" stroke="#4dd4db" stroke-width="2"/>
+      <circle cx="32" cy="34" r="2.3" fill="#4dd4db"/>
+    </svg>
     <text x="70" y="40" fill="#e8f0f2" font-size="40" font-weight="700" letter-spacing="-0.5">VelociBar</text>
   </g>
 
@@ -43,8 +49,13 @@
   <!-- Menu bar speed chip -->
   <g transform="translate(812 250)">
     <rect x="-4" y="-4" width="316" height="150" rx="20" fill="#141f2a" stroke="#1c2c38" stroke-width="1.5"/>
-    <circle cx="34" cy="44" r="9" fill="none" stroke="url(#ring)" stroke-width="3.4"/>
-    <circle cx="34" cy="44" r="3.4" fill="#4dd4db"/>
+    <svg x="18" y="28" width="32" height="32" viewBox="0 0 64 64">
+      <path d="M16 40 A18 18 0 1 1 48 40" fill="none" stroke="#1c2c38" stroke-width="6" stroke-linecap="round"/>
+      <path d="M16 40 A18 18 0 1 1 47.6 25" fill="none" stroke="url(#ring)" stroke-width="6" stroke-linecap="round"/>
+      <line x1="32" y1="34" x2="45.2" y2="29.2" stroke="#f4fbfc" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="32" cy="34" r="6" fill="#0f1820" stroke="#4dd4db" stroke-width="2.2"/>
+      <circle cx="32" cy="34" r="2.5" fill="#4dd4db"/>
+    </svg>
     <text x="60" y="56" fill="#e8f0f2" font-size="46" font-weight="800">847</text>
     <text x="168" y="56" fill="#8aa3ad" font-size="26" font-weight="600">Mbps</text>
     <!-- sparkline -->

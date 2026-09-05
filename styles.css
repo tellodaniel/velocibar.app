@@ -197,6 +197,12 @@ a:focus-visible {
   font-size: 1.2rem;
   line-height: 1;
 }
+img.logo-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex: 0 0 auto;
+}
 
 .nav-links {
   display: flex;

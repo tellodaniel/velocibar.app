@@ -1,19 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="VelociBar">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f1820"/>
-      <stop offset="1" stop-color="#0a0f14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="VelociBar">
+<defs>
+    <radialGradient id="stage" cx="50%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#14323a"/>
+      <stop offset="48%" stop-color="#0d1a22"/>
+      <stop offset="100%" stop-color="#080e13"/>
+    </radialGradient>
+    <radialGradient id="dial" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#122230"/>
+      <stop offset="70%" stop-color="#0c161e"/>
+      <stop offset="100%" stop-color="#0a121a"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0%" y1="80%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#2aa2a8"/>
+      <stop offset="55%" stop-color="#38bdc3"/>
+      <stop offset="100%" stop-color="#5fe0e6"/>
     </linearGradient>
-    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4dd4db"/>
-      <stop offset="1" stop-color="#38bdc3"/>
+    <linearGradient id="needle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cfe9ec"/>
+      <stop offset="100%" stop-color="#f4fbfc"/>
     </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <!-- speedometer arc -->
-  <path d="M16 40 A18 18 0 1 1 48 40" fill="none" stroke="#1c2c38" stroke-width="5" stroke-linecap="round"/>
-  <path d="M16 40 A18 18 0 0 1 30 22.7" fill="none" stroke="url(#ring)" stroke-width="5" stroke-linecap="round"/>
-  <!-- bullseye / signal dot -->
-  <circle cx="32" cy="34" r="9.5" fill="none" stroke="url(#ring)" stroke-width="3.2"/>
-  <circle cx="32" cy="34" r="3.6" fill="#4dd4db"/>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="spec" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  <clipPath id="squircle"><rect width="1024" height="1024" rx="224"/></clipPath></defs>
+<g clip-path="url(#squircle)">
+
+  <!-- LAYER 1: background stage -->
+  <rect width="1024" height="1024" fill="url(#stage)"/>
+  <ellipse cx="240" cy="120" rx="420" ry="260" fill="#38bdc3" opacity="0.10" filter="url(#spec)"/>
+  <rect width="1024" height="1024" fill="none"/>
+
+  <!-- LAYER 2: dial disc + ticks -->
+  <circle cx="512" cy="548" r="352" fill="url(#dial)"
+          stroke="rgba(255,255,255,0.07)" stroke-width="2"/>
+  <path d="M 216 380 A 352 352 0 0 1 808 380" fill="none"
+        stroke="rgba(255,255,255,0.06)" stroke-width="10" filter="url(#soft)"/>
+  <!-- ticks: 270-degree span from 135deg to 405deg, every 27deg, r 268->300 -->
+  <g stroke="rgba(232,240,242,0.20)" stroke-width="7" stroke-linecap="round">
+    <line x1="322.5" y1="737.5" x2="300.0" y2="760.1"/>
+    <line x1="254.4" y1="629.6" x2="224.5" y2="639.1"/>
+    <line x1="245.7" y1="502.5" x2="214.4" y2="497.1"/>
+    <line x1="297.5" y1="386.1" x2="273.3" y2="365.7"/>
+    <line x1="398.4" y1="308.4" x2="384.9" y2="279.9"/>
+    <line x1="525.0" y1="280.3" x2="526.5" y2="248.8"/>
+    <line x1="649.4" y1="304.9" x2="663.8" y2="276.8"/>
+    <line x1="752.5" y1="378.6" x2="777.5" y2="359.3"/>
+    <line x1="808.0" y1="493.0" x2="839.2" y2="486.5"/>
+    <line x1="802.6" y1="620.0" x2="832.2" y2="630.5"/>
+    <line x1="737.0" y1="729.0" x2="760.3" y2="750.5"/>
+  </g>
+
+  <!-- LAYER 3: value arc (track + luminous sweep) -->
+  <path d="M 279.1 780.9 A 329.3 329.3 0 1 1 744.9 780.9" fill="none"
+        stroke="#1c2c38" stroke-width="52" stroke-linecap="round"/>
+  <path d="M 279.1 780.9 A 329.3 329.3 0 1 1 816.3 421.9" fill="none"
+        stroke="#38bdc3" stroke-width="52" stroke-linecap="round"
+        opacity="0.55" filter="url(#glow)"/>
+  <path d="M 279.1 780.9 A 329.3 329.3 0 1 1 816.3 421.9" fill="none"
+        stroke="url(#sweep)" stroke-width="52" stroke-linecap="round"/>
+
+  <!-- LAYER 4: needle + hub -->
+  <g transform="rotate(-22.5 512 548)">
+    <path d="M 514 520 L 766 543 Q 772 548 766 553 L 514 576 Z"
+          fill="rgba(0,0,0,0.35)" filter="url(#soft)" transform="translate(6 10)"/>
+    <path d="M 514 520 L 766 543 Q 772 548 766 553 L 514 576 Z" fill="url(#needle)"/>
+    <path d="M 512 530 L 428 540 Q 422 548 428 556 L 512 566 Z" fill="#9fc3c8" opacity="0.85"/>
+  </g>
+  <circle cx="512" cy="548" r="66" fill="#0f1820"
+          stroke="rgba(77,212,219,0.55)" stroke-width="4"/>
+  <circle cx="512" cy="548" r="66" fill="none"
+          stroke="rgba(255,255,255,0.10)" stroke-width="2"
+          stroke-dasharray="103 311" stroke-dashoffset="155"/>
+  <circle cx="512" cy="548" r="26" fill="#4dd4db"/>
+
+  <!-- glass specular -->
+  <ellipse cx="512" cy="150" rx="520" ry="190" fill="rgba(255,255,255,0.05)" filter="url(#spec)"/>
+</g>
 </svg>
