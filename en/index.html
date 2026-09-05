@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VelociBar — Measure Your Real Internet Speed on macOS</title>
-  <meta name="description" content="Is your internet slow, or is it your Mac? VelociBar monitors your real speed from the macOS menu bar and exports the history to hold your ISP accountable.">
+  <title>VelociBar — Continuous Internet Speed Test for macOS</title>
+  <meta name="description" content="Is your internet slow? VelociBar runs automatic speed tests from your Mac's menu bar and exports the history to hold your ISP accountable.">
   <meta name="author" content="VelociBar">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0a0f14">
@@ -69,9 +69,12 @@
     "applicationSubCategory": "Speed Test",
     "description": "VelociBar is a macOS menu bar app that measures your real internet speed over time. It alternates Apple's networkQuality tool with a real download from a CDN to measure download speed (Mbps) and responsiveness under load (RPM, a bufferbloat indicator). It runs automatic tests every 15, 30, or 60 minutes, keeps a local history exportable to CSV, and includes a widget. All processing happens on-device: no accounts, no cloud, no telemetry.",
     "url": "https://velocibar.app/en/",
+    "mainEntityOfPage": "https://velocibar.app/en/",
     "image": "https://velocibar.app/og-image.png",
     "screenshot": "https://velocibar.app/og-image.png",
     "softwareVersion": "2.0",
+    "datePublished": "2026-05-30",
+    "dateModified": "2026-09-04",
     "inLanguage": ["en", "es"],
     "downloadUrl": "https://apps.apple.com/us/app/velocibar/id6756196355",
     "installUrl": "https://apps.apple.com/us/app/velocibar/id6756196355",
@@ -124,6 +127,8 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://velocibar.app/en/#faq",
+    "inLanguage": "en",
     "mainEntity": [{
       "@type": "Question",
       "name": "What exactly does VelociBar measure?",
@@ -165,6 +170,20 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "macOS 26 or later. You can download VelociBar from the Apple App Store."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do I prove to my ISP that my internet is slow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Let VelociBar measure in the background for a few days, then export the history to CSV. The file includes timestamp, measurement engine, download (Mbps), latency (ms) and responsiveness (RPM) — objective evidence of recurring drops (say, every night at 9 p.m.) that a one-off test can't show."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does VelociBar replace Speedtest or Fast.com?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It complements them. A one-off test is great for checking a single moment; VelociBar measures continuously and automatically, keeps the history on your Mac, and exports it to CSV — so you can see patterns over time and have objective evidence. Many users run both."
       }
     }]
   }
@@ -412,6 +431,55 @@
       </p>
     </section>
 
+    <!-- Comparison -->
+    <section class="compare" id="comparativa">
+      <div class="compare-head">
+        <span class="eyebrow">Comparison</span>
+        <h2>VelociBar or a one-off speed test?</h2>
+      </div>
+      <p class="compare-intro">Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.</p>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <caption class="sr-only">Comparison between one-off speed tests and VelociBar</caption>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">One-off tests (Speedtest, Fast.com)</th>
+              <th scope="col" class="is-vb">VelociBar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">When it measures</th>
+              <td>Only when you run it</td>
+              <td class="is-vb">Automatically, every 15, 30 or 60 minutes</td>
+            </tr>
+            <tr>
+              <th scope="row">What it reveals</th>
+              <td>A snapshot of that instant</td>
+              <td class="is-vb">The real pattern: the 9 p.m. drop, the weekend congestion</td>
+            </tr>
+            <tr>
+              <th scope="row">Bufferbloat</th>
+              <td>Not always measured</td>
+              <td class="is-vb">Responsiveness under load (RPM), rated Low / Medium / High</td>
+            </tr>
+            <tr>
+              <th scope="row">History</th>
+              <td>Limited, or requires an account</td>
+              <td class="is-vb">Local on your Mac, exportable to CSV in one click</td>
+            </tr>
+            <tr>
+              <th scope="row">Privacy</th>
+              <td>Web service, varies by provider</td>
+              <td class="is-vb">No accounts, no cloud, no telemetry</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note">You don't have to choose: use a one-off test to check the moment, and VelociBar to know — and prove — what your connection is really like.</p>
+    </section>
+
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="faq-head">
@@ -442,6 +510,14 @@
         <details class="faq-item">
           <summary>What do I need to run VelociBar?</summary>
           <p>macOS 26 or later. You can download VelociBar from the Apple App Store.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I prove to my ISP that my internet is slow?</summary>
+          <p>Let VelociBar measure in the background for a few days, then export the history to CSV. The file includes timestamp, measurement engine, download (Mbps), latency (ms) and responsiveness (RPM) — objective evidence of recurring drops (say, every night at 9 p.m.) that a one-off test can't show.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does VelociBar replace Speedtest or Fast.com?</summary>
+          <p>It complements them. A one-off test is great for checking a single moment; VelociBar measures continuously and automatically, keeps the history on your Mac, and exports it to CSV — so you can see patterns over time and have objective evidence. Many users run both.</p>
         </details>
       </div>
     </section>

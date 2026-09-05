@@ -883,6 +883,77 @@ a:focus-visible {
   visibility: visible;
 }
 
+/* --- Comparison --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.compare {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+.compare-head { text-align: center; margin-bottom: var(--space-lg); }
+.compare-head .eyebrow { margin-bottom: var(--space-sm); }
+.compare-head h2 { max-width: none; }
+.compare-intro {
+  max-width: 58ch;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+.compare-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.compare-table th,
+.compare-table td {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  border-top: 1px solid var(--color-hairline);
+  vertical-align: top;
+}
+.compare-table thead th {
+  border-top: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-subtle);
+}
+.compare-table thead th.is-vb { color: var(--color-accent); }
+.compare-table tbody th[scope="row"] {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.compare-table td { color: var(--color-text-muted); line-height: 1.55; }
+.compare-table td.is-vb { color: var(--color-text); }
+.compare-note {
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* --- Mobile --- */
 @media (max-width: 720px) {
   .hero { padding: var(--space-2xl) var(--space-md); }
@@ -890,6 +961,7 @@ a:focus-visible {
   .stats { padding: var(--space-xl) var(--space-md); }
   .privacy, .cta-section { padding: var(--space-2xl) var(--space-md); }
   .faq { padding: var(--space-xl) var(--space-md) var(--space-2xl); }
+  .compare { padding: var(--space-xl) var(--space-md); }
   h2 { max-width: none; }
   .stage { transform: none; }
 }

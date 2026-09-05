@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://velocibar.app/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/"/>
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/"/>
