@@ -940,7 +940,9 @@ a:focus-visible {
 .compare-table tbody th[scope="row"] {
   color: var(--color-text);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  white-space: nowrap;
 }
 .compare-table td { color: var(--color-text-muted); line-height: 1.55; }
 .compare-table td.is-vb { color: var(--color-text); }
