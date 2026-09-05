@@ -436,40 +436,40 @@
       </div>
       <p class="compare-intro">Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.</p>
       <div class="compare-table-wrap">
-        <table class="compare-table">
+        <table class="compare-table" role="table">
           <caption class="sr-only">Comparación entre tests de velocidad puntuales y VelociBar</caption>
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Tests puntuales</th>
-              <th scope="col" class="is-vb">VelociBar</th>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader"></th>
+              <th scope="col" role="columnheader">Tests puntuales</th>
+              <th scope="col" role="columnheader" class="is-vb">VelociBar</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Cuándo mide</th>
-              <td>Solo cuando tú lo ejecutas</td>
-              <td class="is-vb">Automáticamente, cada 15, 30 o 60 minutos</td>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">Cuándo mide</th>
+              <td role="cell" data-label="Tests puntuales">Solo cuando tú lo ejecutas</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Automáticamente, cada 15, 30 o 60 minutos</td>
             </tr>
-            <tr>
-              <th scope="row">Qué revela</th>
-              <td>Una foto de ese instante</td>
-              <td class="is-vb">El patrón real: la caída de las 21:00, la congestión del fin de semana</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Qué revela</th>
+              <td role="cell" data-label="Tests puntuales">Una foto de ese instante</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">El patrón real: la caída de las 21:00, la congestión del fin de semana</td>
             </tr>
-            <tr>
-              <th scope="row">Bufferbloat</th>
-              <td>No siempre lo mide</td>
-              <td class="is-vb">Responsividad bajo carga (RPM), calificada Baja / Media / Alta</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Bufferbloat</th>
+              <td role="cell" data-label="Tests puntuales">No siempre lo mide</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Responsividad bajo carga (RPM), calificada Baja / Media / Alta</td>
             </tr>
-            <tr>
-              <th scope="row">Historial</th>
-              <td>Limitado o requiere cuenta</td>
-              <td class="is-vb">Local en tu Mac, exportable a CSV con un clic</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Historial</th>
+              <td role="cell" data-label="Tests puntuales">Limitado o requiere cuenta</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Local en tu Mac, exportable a CSV con un clic</td>
             </tr>
-            <tr>
-              <th scope="row">Privacidad</th>
-              <td>Servicio web, según cada proveedor</td>
-              <td class="is-vb">Sin cuentas, sin nube, sin telemetría</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Privacidad</th>
+              <td role="cell" data-label="Tests puntuales">Servicio web, según cada proveedor</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Sin cuentas, sin nube, sin telemetría</td>
             </tr>
           </tbody>
         </table>

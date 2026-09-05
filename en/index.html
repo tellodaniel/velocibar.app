@@ -436,40 +436,40 @@
       </div>
       <p class="compare-intro">Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.</p>
       <div class="compare-table-wrap">
-        <table class="compare-table">
+        <table class="compare-table" role="table">
           <caption class="sr-only">Comparison between one-off speed tests and VelociBar</caption>
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">One-off tests</th>
-              <th scope="col" class="is-vb">VelociBar</th>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader"></th>
+              <th scope="col" role="columnheader">One-off tests</th>
+              <th scope="col" role="columnheader" class="is-vb">VelociBar</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">When it measures</th>
-              <td>Only when you run it</td>
-              <td class="is-vb">Automatically, every 15, 30 or 60 minutes</td>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">When it measures</th>
+              <td role="cell" data-label="One-off tests">Only when you run it</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Automatically, every 15, 30 or 60 minutes</td>
             </tr>
-            <tr>
-              <th scope="row">What it reveals</th>
-              <td>A snapshot of that instant</td>
-              <td class="is-vb">The real pattern: the 9 p.m. drop, the weekend congestion</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">What it reveals</th>
+              <td role="cell" data-label="One-off tests">A snapshot of that instant</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">The real pattern: the 9 p.m. drop, the weekend congestion</td>
             </tr>
-            <tr>
-              <th scope="row">Bufferbloat</th>
-              <td>Not always measured</td>
-              <td class="is-vb">Responsiveness under load (RPM), rated Low / Medium / High</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Bufferbloat</th>
+              <td role="cell" data-label="One-off tests">Not always measured</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Responsiveness under load (RPM), rated Low / Medium / High</td>
             </tr>
-            <tr>
-              <th scope="row">History</th>
-              <td>Limited, or requires an account</td>
-              <td class="is-vb">Local on your Mac, exportable to CSV in one click</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">History</th>
+              <td role="cell" data-label="One-off tests">Limited, or requires an account</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">Local on your Mac, exportable to CSV in one click</td>
             </tr>
-            <tr>
-              <th scope="row">Privacy</th>
-              <td>Web service, varies by provider</td>
-              <td class="is-vb">No accounts, no cloud, no telemetry</td>
+            <tr role="row">
+              <th scope="row" role="rowheader">Privacy</th>
+              <td role="cell" data-label="One-off tests">Web service, varies by provider</td>
+              <td class="is-vb" role="cell" data-label="VelociBar">No accounts, no cloud, no telemetry</td>
             </tr>
           </tbody>
         </table>
