@@ -736,8 +736,13 @@ a:focus-visible {
 .csv-card { font-family: var(--font-mono); }
 .csv-body { padding: 0.4rem; overflow-x: auto; }
 .csv-line {
-  display: flex;
-  gap: 0;
+  display: grid;
+  position: relative;
+  /* ch-widths match each header's length (mono font), so all rows align */
+  grid-template-columns: 9.5ch 6.5ch 13.5ch 10.5ch 19ch;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  align-items: baseline;
   padding: 0.34rem 0.55rem;
   font-size: 0.64rem;
   white-space: nowrap;
@@ -746,9 +751,14 @@ a:focus-visible {
 }
 .csv-line.head { color: var(--color-accent); letter-spacing: 0.02em; }
 .csv-line.drop { background: rgba(229, 80, 57, 0.1); color: var(--color-text); }
-.csv-line .col { flex: 0 0 auto; padding-right: 1.1rem; }
-.csv-line .col.ts { width: 92px; }
-.csv-line .drop-tag { color: var(--color-error); font-weight: 700; }
+.csv-line .drop-tag {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-error);
+  font-weight: 700;
+}
 
 /* --- Privacy line --- */
 .privacy {
