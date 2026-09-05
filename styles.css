@@ -1005,8 +1005,8 @@ a:focus-visible {
 .post ul, .post ol { margin: 0 0 var(--space-md) 1.25rem; }
 .post li { margin-bottom: var(--space-xs); }
 .post li::marker { color: var(--color-accent); }
-.post a { color: var(--color-accent); }
-.post a:hover { color: var(--color-accent-hover); }
+.post a:not(.btn) { color: var(--color-accent); }
+.post a:not(.btn):hover { color: var(--color-accent-hover); }
 .post strong { color: var(--color-text); }
 .post code {
   font-family: var(--font-mono, ui-monospace, "SF Mono", Menlo, monospace);
