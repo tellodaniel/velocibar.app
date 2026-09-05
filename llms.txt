@@ -32,8 +32,9 @@ VelociBar is built for people who pay for a fast plan but feel their connection 
 
 ## Links
 
-- Home (Spanish): https://velocibar.app/
-- Home (English): https://velocibar.app/en/
+- Home (Spanish): https://velocibar.app/ — Markdown: https://velocibar.app/index.md
+- Home (English): https://velocibar.app/en/ — Markdown: https://velocibar.app/en/index.md
+- Full site content in one file: https://velocibar.app/llms-full.txt
 - Comparison vs one-off speed tests (English): https://velocibar.app/en/#comparativa
 - FAQ (English): https://velocibar.app/en/#faq
 - Download (App Store): https://apps.apple.com/us/app/velocibar/id6756196355

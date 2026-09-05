@@ -1,0 +1,188 @@
+# VelociBar — Full site content for LLMs
+
+> This file inlines the complete content of https://velocibar.app in English and Spanish.
+> Short summary: https://velocibar.app/llms.txt · Markdown pages: https://velocibar.app/en/index.md (EN), https://velocibar.app/index.md (ES)
+
+---
+
+# VelociBar — Continuous Internet Speed Test for macOS
+
+> Markdown version of https://velocibar.app/en/ · [Versión en español](https://velocibar.app/index.md)
+
+VelociBar is a macOS menu bar app that measures your real internet speed over time, not just at the moment you run a one-off test. It lives in the menu bar, measures on its own in the background, and keeps a local history you can export to CSV to hold your internet provider (ISP) accountable.
+
+- **Download**: https://apps.apple.com/us/app/velocibar/id6756196355 (App Store, $1.99 USD, one-time purchase)
+- **Requirements**: macOS 26 or later
+- **Languages**: Spanish (default) and English
+
+## At a glance
+
+- **100% on your Mac, on-device** — no accounts, no cloud, no telemetry
+- **2 measurement engines** — Apple's `networkQuality` tool + a real download from a global CDN
+- **Full history exportable to CSV**
+
+## What it measures
+
+**Two measurement engines, one honest number.** VelociBar alternates Apple's `networkQuality` tool with a real download from a global CDN. It measures the performance you actually get while browsing — not an idealized lab number:
+
+- **Real download speed** (Mbps)
+- **Responsiveness under load** (RPM, roundtrips per minute): how many times per minute your network answers while it's saturated. It's the *bufferbloat* metric — it explains why a video call stutters or a game lags even when your download speed is high. Every test is rated **Low / Medium / High**, the same scale Apple's own tool uses.
+
+## History and export
+
+Every test is saved locally and plotted on a timeline: spot the 9 p.m. drop, the weekend congestion, or the exact day your connection changed. Export the full history in one click to CSV with these columns: `timestamp`, `source` (engine), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Objective evidence for your ISP — or just for you.
+
+Automatic tests run in the background every 15, 30, or 60 minutes (your choice), with a "Run now" button and a desktop widget showing your latest measurement.
+
+## Privacy
+
+Your data never leaves your Mac. **No accounts, no cloud, no telemetry** — every test, every log and every export runs locally.
+
+## VelociBar or a one-off speed test?
+
+Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.
+
+| | One-off tests (Speedtest, Fast.com) | VelociBar |
+|---|---|---|
+| **When it measures** | Only when you run it | Automatically, every 15, 30 or 60 minutes |
+| **What it reveals** | A snapshot of that instant | The real pattern: the 9 p.m. drop, the weekend congestion |
+| **Bufferbloat** | Not always measured | Responsiveness under load (RPM), rated Low / Medium / High |
+| **History** | Limited, or requires an account | Local on your Mac, exportable to CSV in one click |
+| **Privacy** | Web service, varies by provider | No accounts, no cloud, no telemetry |
+
+You don't have to choose: use a one-off test to check the moment, and VelociBar to know — and prove — what your connection is really like.
+
+## Frequently asked questions
+
+### What exactly does VelociBar measure?
+
+VelociBar measures real download speed (Mbps) and responsiveness under load (RPM). It alternates two engines: Apple's networkQuality tool and a real download from a global CDN — so it reflects the performance you actually experience, not a lab number under ideal conditions.
+
+### What is responsiveness (RPM), and why does it matter?
+
+Responsiveness measures how many round trips your network completes per minute while under load. It's the bufferbloat metric: it explains why a video call stutters or a game lags even when your download speed is high. VelociBar rates it Low, Medium or High.
+
+### Does VelociBar upload my data anywhere?
+
+No. All results are stored only on your Mac. There are no accounts, no cloud and no telemetry. You have full control of your data.
+
+### Can I export the history?
+
+Yes. VelociBar saves every test to a CSV file with timestamp, engine, download (Mbps), latency (ms) and responsiveness (RPM). You can open or export it in one click — objective evidence for your ISP or for your own tracking.
+
+### Does it run in the background?
+
+Yes. VelociBar lives in the menu bar and runs automatic tests at the interval you choose: every 15, 30 or 60 minutes. It also includes a widget so you can see your latest reading at a glance.
+
+### What do I need to run VelociBar?
+
+macOS 26 or later. You can download VelociBar from the Apple App Store.
+
+### How do I prove to my ISP that my internet is slow?
+
+Let VelociBar measure in the background for a few days, then export the history to CSV. The file includes timestamp, measurement engine, download (Mbps), latency (ms) and responsiveness (RPM) — objective evidence of recurring drops (say, every night at 9 p.m.) that a one-off test can't show.
+
+### Does VelociBar replace Speedtest or Fast.com?
+
+It complements them. A one-off test is great for checking a single moment; VelociBar measures continuously and automatically, keeps the history on your Mac, and exports it to CSV — so you can see patterns over time and have objective evidence. Many users run both.
+
+## Links
+
+- Home page (HTML): https://velocibar.app/en/
+- Versión en español (HTML): https://velocibar.app/
+- Download on the App Store: https://apps.apple.com/us/app/velocibar/id6756196355
+- Privacy Policy: https://velocibar.app/legal/privacy.html
+- Terms of Use: https://velocibar.app/legal/terms.html
+- Site summary for LLMs: https://velocibar.app/llms.txt
+
+---
+
+# VelociBar — Test de velocidad de internet continuo para macOS
+
+> Versión en Markdown de https://velocibar.app/ · [English version](https://velocibar.app/en/index.md)
+
+VelociBar es una app de barra de menú para macOS que mide tu velocidad real de internet a lo largo del tiempo, no solo en el momento en que ejecutas un test puntual. Vive en la barra de menú, mide sola en segundo plano y guarda un historial local que puedes exportar a CSV para reclamar a tu proveedor de internet (ISP).
+
+- **Descarga**: https://apps.apple.com/us/app/velocibar/id6756196355 (App Store, 1,99 USD, pago único)
+- **Requisitos**: macOS 26 o superior
+- **Idiomas**: español (por defecto) e inglés
+
+## De un vistazo
+
+- **100 % en tu Mac, en local** — sin cuentas, sin nube, sin telemetría
+- **2 motores de medición** — la herramienta `networkQuality` de Apple + descarga real desde una CDN global
+- **Historial completo exportable a CSV**
+
+## Qué mide
+
+**Dos motores de medición, una sola verdad.** VelociBar alterna la herramienta `networkQuality` de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio:
+
+- **Velocidad de descarga real** (Mbps)
+- **Responsividad bajo carga** (RPM, roundtrips per minute): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del *bufferbloat*, y explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. Cada prueba se califica como **Baja / Media / Alta**, el mismo criterio que usa la herramienta de Apple.
+
+## Historial y exportación
+
+Cada prueba se guarda localmente y se dibuja en una línea de tiempo: descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió. Exporta el historial completo con un clic a CSV con estas columnas: `timestamp`, `source` (motor), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Evidencia objetiva para tu ISP — o solo para ti.
+
+Las pruebas automáticas se ejecutan en segundo plano cada 15, 30 o 60 minutos (tú eliges), con un botón «Probar ahora» y un widget de escritorio con tu última medición.
+
+## Privacidad
+
+Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría** — cada prueba, cada registro y cada exportación ocurren en local.
+
+## ¿VelociBar o un test de velocidad puntual?
+
+Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.
+
+| | Tests puntuales (Speedtest, Fast.com) | VelociBar |
+|---|---|---|
+| **Cuándo mide** | Solo cuando tú lo ejecutas | Automáticamente, cada 15, 30 o 60 minutos |
+| **Qué revela** | Una foto de ese instante | El patrón real: la caída de las 21:00, la congestión del fin de semana |
+| **Bufferbloat** | No siempre lo mide | Responsividad bajo carga (RPM), calificada Baja / Media / Alta |
+| **Historial** | Limitado o requiere cuenta | Local en tu Mac, exportable a CSV con un clic |
+| **Privacidad** | Servicio web, según cada proveedor | Sin cuentas, sin nube, sin telemetría |
+
+No tienes que elegir: usa un test puntual para comprobar el momento y VelociBar para conocer —y demostrar— cómo es tu conexión de verdad.
+
+## Preguntas frecuentes
+
+### ¿Qué mide exactamente VelociBar?
+
+VelociBar mide la velocidad de descarga real (Mbps) y la responsividad bajo carga (RPM). Alterna dos motores: la herramienta networkQuality de Apple y una descarga real desde una CDN global. Así refleja el rendimiento que de verdad experimentas, no un número de laboratorio en condiciones ideales.
+
+### ¿Qué es la responsividad (RPM) y por qué importa?
+
+La responsividad mide cuántos viajes de ida y vuelta completa tu red por minuto mientras está bajo carga. Es la métrica del bufferbloat: explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. VelociBar la clasifica como Baja, Media o Alta.
+
+### ¿VelociBar sube mis datos a algún servidor?
+
+No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube y no hay telemetría. Tú tienes el control total de tus datos.
+
+### ¿Puedo exportar el historial?
+
+Sí. VelociBar guarda cada prueba en un archivo CSV con marca de tiempo, motor, descarga (Mbps), latencia (ms) y responsividad (RPM). Lo abres o lo exportas con un clic, lo que sirve como evidencia objetiva para tu proveedor de internet o para tu propio seguimiento.
+
+### ¿Funciona en segundo plano?
+
+Sí. VelociBar vive en la barra de menú y ejecuta pruebas automáticas en el intervalo que elijas: cada 15, 30 o 60 minutos. También incluye un widget para ver tu última medición de un vistazo.
+
+### ¿Qué necesito para usar VelociBar?
+
+macOS 26 o superior. Puedes descargar VelociBar desde la App Store de Apple.
+
+### ¿Cómo demuestro a mi ISP que mi internet va lento?
+
+Deja que VelociBar mida en segundo plano durante unos días y exporta el historial a CSV. El archivo incluye fecha y hora, motor de medición, descarga (Mbps), latencia (ms) y responsividad (RPM): evidencia objetiva de caídas recurrentes —por ejemplo, cada noche a las 21:00— que un test puntual no puede demostrar.
+
+### ¿VelociBar reemplaza a Speedtest o Fast.com?
+
+Los complementa. Un test puntual sirve para comprobar un momento concreto; VelociBar mide de forma continua y automática, guarda el historial en tu Mac y lo exporta a CSV, para que veas patrones a lo largo del tiempo y tengas evidencia objetiva. Muchos usuarios usan ambos.
+
+## Enlaces
+
+- Página principal (HTML): https://velocibar.app/
+- English version (HTML): https://velocibar.app/en/
+- Descargar en la App Store: https://apps.apple.com/us/app/velocibar/id6756196355
+- Política de privacidad: https://velocibar.app/legal/privacy.html
+- Términos de uso: https://velocibar.app/legal/terms.html
+- Resumen del sitio para LLMs: https://velocibar.app/llms.txt
