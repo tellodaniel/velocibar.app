@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VelociBar — Test de velocidad de internet continuo para macOS</title>
+  <title>VelociBar - Test de velocidad de internet continuo para macOS</title>
   <meta name="description" content="¿Tu internet va lento? VelociBar hace tests de velocidad automáticos desde la barra de menú de tu Mac y exporta el historial para reclamar a tu ISP.">
   <meta name="author" content="VelociBar">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -38,7 +38,7 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="VelociBar">
-  <meta property="og:title" content="VelociBar — Tu velocidad real de internet">
+  <meta property="og:title" content="VelociBar - Tu velocidad real de internet">
   <meta property="og:description" content="App de barra de menú para macOS que mide tu velocidad de internet real a lo largo del tiempo. Guarda historial local y exporta CSV.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://velocibar.app/">
@@ -48,14 +48,14 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="VelociBar — monitor de velocidad de internet en la barra de menú de macOS">
+  <meta property="og:image:alt" content="VelociBar: monitor de velocidad de internet en la barra de menú de macOS">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VelociBar — Tu velocidad real de internet">
+  <meta name="twitter:title" content="VelociBar - Tu velocidad real de internet">
   <meta name="twitter:description" content="Mide tu velocidad de internet real a lo largo del tiempo. Sin cuentas, sin tracking.">
   <meta name="twitter:image" content="https://velocibar.app/og-image.png">
-  <meta name="twitter:image:alt" content="VelociBar — monitor de velocidad de internet en la barra de menú de macOS">
+  <meta name="twitter:image:alt" content="VelociBar: monitor de velocidad de internet en la barra de menú de macOS">
 
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
@@ -221,12 +221,12 @@
         <span class="eyebrow">Monitor de red · macOS</span>
         <h1>La velocidad real de tu internet, no la de la foto perfecta.</h1>
         <p class="hero-subtitle">
-          VelociBar vive en la barra de menú de macOS y mide tu conexión sola, en segundo plano: <strong>descarga real</strong> y <strong>responsividad bajo carga</strong>, con un historial local que puedes exportar.
+          VelociBar mide tu conexión por sí sola desde la barra de menú: <strong>descarga real</strong>, <strong>responsividad bajo carga</strong> e historial exportable.
         </p>
         <div class="cta-group">
           <a class="btn btn-primary" id="download-btn" href="https://apps.apple.com/us/app/velocibar/id6756196355">
             <span class="btn-icon">↓</span>
-            <span>Descargar para macOS</span>
+            <span>Descargar VelociBar</span>
           </a>
           <span class="cta-meta-inline">Requiere macOS 26 o superior</span>
         </div>
@@ -304,7 +304,6 @@
     <!-- Feature 1 — Measurement -->
     <section class="feature" id="medicion">
       <div class="feature-text">
-        <span class="eyebrow">Medición</span>
         <h2>Dos motores de medición, una sola verdad.</h2>
         <p>VelociBar alterna la herramienta <span class="mono">networkQuality</span> de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio.</p>
       </div>
@@ -347,10 +346,9 @@
     <!-- Feature 2 — Responsiveness -->
     <section class="feature feature-reverse" id="responsividad">
       <div class="feature-text">
-        <span class="eyebrow">Responsividad</span>
         <h2>Por qué tu videollamada se entrecorta con 300 Mbps.</h2>
         <p>La velocidad no lo es todo. VelociBar mide la <strong>responsividad bajo carga</strong> (RPM): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del <em>bufferbloat</em>, y es lo que decide si Zoom se congela.</p>
-        <p>Cada prueba se califica como Baja, Media o Alta — el mismo criterio que usa la herramienta de Apple — para que sepas de un vistazo si el problema es la velocidad o la estabilidad.</p>
+        <p>Cada prueba se califica como Baja, Media o Alta (el mismo criterio que usa la herramienta de Apple) para que sepas de un vistazo si el problema es la velocidad o la estabilidad.</p>
       </div>
       <div class="feature-visual">
         <div class="mock" role="img" aria-label="Medidor de responsividad bajo carga calificado como Alto">
@@ -377,7 +375,6 @@
     <!-- Feature 3 — History -->
     <section class="feature" id="historial">
       <div class="feature-text">
-        <span class="eyebrow">Historial</span>
         <h2>Ve el patrón, no solo el momento.</h2>
         <p>Cada prueba se guarda localmente y se dibuja en una línea de tiempo. Descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió.</p>
       </div>
@@ -399,7 +396,7 @@
               </svg>
             </div>
             <div class="history-axis"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
-            <span class="history-flag"><span class="swatch"></span><span>Caída detectada · 21:00 – 23:00</span></span>
+            <span class="history-flag"><span class="swatch"></span><span>Caída detectada · 21:00-23:00</span></span>
           </div>
         </div>
       </div>
@@ -408,9 +405,8 @@
     <!-- Feature 4 — Export -->
     <section class="feature feature-reverse" id="exportar">
       <div class="feature-text">
-        <span class="eyebrow">Exportar</span>
         <h2>Tus datos, en un CSV que habla por ti.</h2>
-        <p>Exporta el historial completo con un clic: marca de tiempo, motor, descarga, latencia y responsividad. Evidencia objetiva para tu proveedor de internet — o solo para ti.</p>
+        <p>Exporta el historial completo con un clic: marca de tiempo, motor, descarga, latencia y responsividad. Evidencia objetiva para tu proveedor de internet, o solo para ti.</p>
       </div>
       <div class="feature-visual">
         <div class="mock csv-card" role="img" aria-label="Archivo CSV exportado con una fila de caída resaltada">
@@ -429,14 +425,13 @@
     <!-- Privacy line -->
     <section class="privacy" id="privacidad">
       <p class="privacy-line">
-        Tus datos nunca salen de tu Mac. <strong>Sin cuentas, sin nube, sin telemetría</strong> — cada prueba, cada registro y cada exportación ocurren en local.
+        Tus datos nunca salen de tu Mac. <strong>Sin cuentas, sin nube, sin telemetría.</strong> Cada prueba, cada registro y cada exportación ocurren en local.
       </p>
     </section>
 
     <!-- Comparison -->
     <section class="compare" id="comparativa">
       <div class="compare-head">
-        <span class="eyebrow">Comparativa</span>
         <h2>¿VelociBar o un test de velocidad puntual?</h2>
       </div>
       <p class="compare-intro">Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.</p>
@@ -485,7 +480,6 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="faq-head">
-        <span class="eyebrow">Preguntas</span>
         <h2>Preguntas frecuentes</h2>
       </div>
       <div class="faq-list">

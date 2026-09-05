@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>What Is Bufferbloat and Why Your Video Calls Freeze — VelociBar</title>
+  <title>What Is Bufferbloat and Why Your Video Calls Freeze - VelociBar</title>
   <meta name="description" content="Bufferbloat explains why your video calls freeze on a 300 Mbps line: what it is, how to measure it with RPM, and how to fix it with SQM and QoS.">
   <meta name="author" content="VelociBar">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -108,28 +108,28 @@
       <p>You pay for 300 Mbps, your speed test comes back at 290, and your Zoom call still freezes the moment someone in the house uploads photos to the cloud or kicks off a backup. It's not an outage, it's not your WiFi, and the speed test isn't lying: the problem has a name. It's called <strong>bufferbloat</strong>, and it's one of the most common network problems precisely because a normal speed test can't see it.</p>
 
       <h2>What bufferbloat actually is</h2>
-      <p>Every router and modem keeps a small pool of memory — a <strong>buffer</strong> — where it holds packets that are about to go out over your line. It exists for a good reason: if two packets arrive at once, one waits a moment instead of getting dropped. But many manufacturers, trying hard to avoid ever dropping a single packet, made that pool huge. That's where the problem starts.</p>
+      <p>Every router and modem keeps a small pool of memory (a <strong>buffer</strong>) where it holds packets that are about to go out over your line. It exists for a good reason: if two packets arrive at once, one waits a moment instead of getting dropped. But many manufacturers, trying hard to avoid ever dropping a single packet, made that pool huge. That's where the problem starts.</p>
       <p>Picture a supermarket checkout with a mile-long conveyor belt behind it. As long as the line is short, everything moves fast. But if more people show up than the register can handle, the belt doesn't say "no room": it just keeps filling up, and every new person waits behind everyone who arrived before them. Nobody gets turned away, but the wait balloons.</p>
-      <p>That's exactly what happens in your router when the line is saturated — say, uploading a big video or running a cloud backup. The oversized buffer accepts hundreds of extra packets instead of dropping them, so <strong>upload or download speed barely budges</strong>. But every new packet — the one from your video call, the one from your online match, the one for the page you're trying to load — has to wait its turn behind a very long line. The result is <strong>sky-high latency with perfect throughput</strong>: exactly the combination a normal speed test can't catch, because it only measures how many megabits fit through the pipe, not how long they take to arrive.</p>
+      <p>That's exactly what happens in your router when the line is saturated, for example while uploading a big video or running a cloud backup. The oversized buffer accepts hundreds of extra packets instead of dropping them, so <strong>upload or download speed barely budges</strong>. But every new packet (the one from your video call, the one from your online match, the one for the page you're trying to load) has to wait its turn behind a very long line. The result is <strong>sky-high latency with perfect throughput</strong>: exactly the combination a normal speed test can't catch, because it only measures how many megabits fit through the pipe, not how long they take to arrive.</p>
 
       <h2>The symptoms: the test looks great, but everything stutters</h2>
       <p>Bufferbloat has a very recognizable signature once you know what to look for:</p>
       <ul>
-        <li>The speed test comes back excellent — sometimes better than ever — and the video call still freezes.</li>
+        <li>The speed test comes back excellent, sometimes better than ever, and the video call still freezes.</li>
         <li>Online games have intermittent lag, not constant lag: fine most of the time, terrible in bursts.</li>
         <li>Web pages take a while to start loading, even though they finish fast once they do.</li>
         <li>The problem shows up whenever <strong>someone on the network uploads or downloads something heavy</strong>: a cloud backup, a 4K photo, a console update, a torrent. The moment that transfer finishes, everything goes back to normal.</li>
       </ul>
-      <p>If you recognize this pattern — especially the part about it lining up with someone uploading something — it's almost certainly bufferbloat, not a problem with your provider or with <a href="/en/blog/internet-slow-at-night.html">nightly peak-hour congestion</a>, although both problems can coexist in the same house.</p>
+      <p>If you recognize this pattern, especially the part about it lining up with someone uploading something, it's almost certainly bufferbloat, not a problem with your provider or with <a href="/en/blog/internet-slow-at-night.html">nightly peak-hour congestion</a>, although both problems can coexist in the same house.</p>
 
       <h2>How to measure it: responsiveness in RPM</h2>
-      <p>The right way to measure bufferbloat isn't speed — it's <strong>responsiveness under load</strong>, expressed as <strong>RPM (round-trips per minute)</strong>: how many times per minute your network can complete a round trip while it's saturated with traffic. It's the metric reported by Apple's <code>networkQuality</code> tool, which rates it in three tiers: <strong>Low, Medium, or High</strong>.</p>
-      <p>You don't need to memorize an exact number — and you should be skeptical of anyone who hands you an overly precise threshold. What you can expect, in general terms: at a few hundred RPM, video calls and online games are going to suffer as soon as the line gets loaded; above roughly a thousand, the experience is usually comfortable even with heavy background traffic. What matters isn't the isolated number, it's seeing it <strong>over time</strong>: if your responsiveness tanks every night at 10 p.m., every time the automatic backup kicks in, or every weekend, that tells you the cause.</p>
-      <p>A one-off test only gives you a snapshot of RPM at that instant — the same limitation you run into if you just <a href="/en/blog/speed-test-mac.html">run a speed test on your Mac</a> once and trust that single number. <a href="/en/">VelociBar</a> measures responsiveness automatically several times a day from your Mac's menu bar and keeps the history locally, so you can see exactly when bufferbloat hits — at night, during the backup window, when there's a video class running in the next room — instead of guessing.</p>
+      <p>The right way to measure bufferbloat isn't speed: it's <strong>responsiveness under load</strong>, expressed as <strong>RPM (round-trips per minute)</strong>: how many times per minute your network can complete a round trip while it's saturated with traffic. It's the metric reported by Apple's <code>networkQuality</code> tool, which rates it in three tiers: <strong>Low, Medium, or High</strong>.</p>
+      <p>You don't need to memorize an exact number, and you should be skeptical of anyone who hands you an overly precise threshold. What you can expect, in general terms: at a few hundred RPM, video calls and online games are going to suffer as soon as the line gets loaded; above roughly a thousand, the experience is usually comfortable even with heavy background traffic. What matters isn't the isolated number, it's seeing it <strong>over time</strong>: if your responsiveness tanks every night at 10 p.m., every time the automatic backup kicks in, or every weekend, that tells you the cause.</p>
+      <p>A one-off test only gives you a snapshot of RPM at that instant: the same limitation you run into if you just <a href="/en/blog/speed-test-mac.html">run a speed test on your Mac</a> once and trust that single number. <a href="/en/">VelociBar</a> measures responsiveness automatically several times a day from your Mac's menu bar and keeps the history locally, so you can see exactly when bufferbloat hits (at night, during the backup window, when there's a video class running in the next room) instead of guessing.</p>
 
       <h2>How to fix it, ranked by impact</h2>
       <h3>1. Enable Smart Queue Management (SQM) on your router</h3>
-      <p>By far the most effective fix. SQM combines a rate limit set slightly below your actual line speed with a modern queue-management algorithm — <strong>fq_codel</strong> or <strong>CAKE</strong> — that shares bandwidth fairly across flows and stops the queue from growing unbounded. Most stock ISP routers don't ship with it enabled, or don't include it at all.</p>
+      <p>By far the most effective fix. SQM combines a rate limit set slightly below your actual line speed with a modern queue-management algorithm (<strong>fq_codel</strong> or <strong>CAKE</strong>) that shares bandwidth fairly across flows and stops the queue from growing unbounded. Most stock ISP routers don't ship with it enabled, or don't include it at all.</p>
       <h3>2. Set up QoS to prioritize latency-sensitive traffic</h3>
       <p>If your router offers QoS (Quality of Service), prioritize video calls and online gaming over downloads and backups. It doesn't eliminate bufferbloat on its own, but it decides who gets to the front of the queue.</p>
       <h3>3. Use ethernet for anything that can't wait</h3>
@@ -141,7 +141,7 @@
 
       <div class="post-cta">
         <h2>Measure your bufferbloat over time</h2>
-        <p>VelociBar logs your responsiveness in RPM automatically from the macOS menu bar, so you can see exactly when latency under load spikes — not just what it reads right now. No accounts, no cloud — everything stays on your Mac.</p>
+        <p>VelociBar logs your responsiveness in RPM automatically from the macOS menu bar, so you can see exactly when latency under load spikes, not just what it reads right now. No accounts, no cloud: everything stays on your Mac.</p>
         <a class="btn btn-primary" href="https://apps.apple.com/us/app/velocibar/id6756196355"><span class="btn-icon">↓</span><span>Download VelociBar</span></a>
       </div>
 

@@ -18,7 +18,7 @@ Por eso el patrón es tan reconocible: **lento cada noche a la misma hora, rápi
 
 - **Interferencia WiFi vecinal.** Por la noche también se encienden los routers de tus vecinos. Si usas la banda de 2,4 GHz, los canales saturados degradan tu red local aunque tu línea esté bien. Prueba con cable o en la banda de 5 GHz para descartarlo.
 - **Congestión dentro de tu propia casa.** Backups en la nube, actualizaciones de consolas y streaming en 4K en otra habitación compiten contigo. Es [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.md) doméstico: la línea está llena y tu tráfico espera en cola.
-- **Gestión de tráfico del proveedor.** Algunos ISP priorizan o limitan ciertos tráficos en horas de carga. Es difícil de ver desde fuera — precisamente por eso necesitas un historial de mediciones y no una prueba suelta.
+- **Gestión de tráfico del proveedor.** Algunos ISP priorizan o limitan ciertos tráficos en horas de carga. Es difícil de ver desde fuera; precisamente por eso necesitas un historial de mediciones y no una prueba suelta.
 
 ## Cómo comprobarlo con datos (no con sensaciones)
 

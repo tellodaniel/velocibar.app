@@ -1,4 +1,4 @@
-# VelociBar — Test de velocidad de internet continuo para macOS
+# VelociBar - Test de velocidad de internet continuo para macOS
 
 > Versión en Markdown de https://velocibar.app/ · [English version](https://velocibar.app/en/index.md)
 
@@ -10,8 +10,8 @@ VelociBar es una app de barra de menú para macOS que mide tu velocidad real de 
 
 ## De un vistazo
 
-- **100 % en tu Mac, en local** — sin cuentas, sin nube, sin telemetría
-- **2 motores de medición** — la herramienta `networkQuality` de Apple + descarga real desde una CDN global
+- **100 % en tu Mac, en local**: sin cuentas, sin nube, sin telemetría
+- **2 motores de medición**: la herramienta `networkQuality` de Apple + descarga real desde una CDN global
 - **Historial completo exportable a CSV**
 
 ## Qué mide
@@ -23,13 +23,13 @@ VelociBar es una app de barra de menú para macOS que mide tu velocidad real de 
 
 ## Historial y exportación
 
-Cada prueba se guarda localmente y se dibuja en una línea de tiempo: descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió. Exporta el historial completo con un clic a CSV con estas columnas: `timestamp`, `source` (motor), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Evidencia objetiva para tu ISP — o solo para ti.
+Cada prueba se guarda localmente y se dibuja en una línea de tiempo: descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió. Exporta el historial completo con un clic a CSV con estas columnas: `timestamp`, `source` (motor), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Evidencia objetiva para tu ISP, o solo para ti.
 
 Las pruebas automáticas se ejecutan en segundo plano cada 15, 30 o 60 minutos (tú eliges), con un botón «Probar ahora» y un widget de escritorio con tu última medición.
 
 ## Privacidad
 
-Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría** — cada prueba, cada registro y cada exportación ocurren en local.
+Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría.** Cada prueba, cada registro y cada exportación ocurren en local.
 
 ## ¿VelociBar o un test de velocidad puntual?
 

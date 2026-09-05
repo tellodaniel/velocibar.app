@@ -6,7 +6,7 @@
 
 Buscas "test de velocidad" en Google, entras al primer resultado, esperas quince segundos y aparece un número en Mbps. ¿Ya está? No del todo. Ese número describe cómo estaba tu conexión en ese instante concreto, en ese navegador, contra ese servidor. Si quieres saber de verdad qué tan rápida —y qué tan estable— es tu conexión, tu Mac te ofrece tres formas de comprobarlo, y la más reveladora ni siquiera pasa por un navegador. Aquí tienes las tres, de la más rápida a la más completa.
 
-## Método 1 — Test de velocidad web (Speedtest.net, Fast.com)
+## Método 1: Test de velocidad web (Speedtest.net, Fast.com)
 
 Abrir Speedtest.net o Fast.com y esperar unos segundos es la forma más rápida de comprobar tu conexión. Para una revisión puntual —¿funciona el wifi ahora mismo?, ¿el técnico dejó la línea bien tras la visita?— es más que suficiente, y no necesitas instalar nada.
 
@@ -18,7 +18,7 @@ Pero conviene conocer sus límites:
 
 Perfecto para saber si tu wifi funciona ahora mismo. Insuficiente para saber si tu internet [va lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html) o solo en ciertos momentos. Para eso necesitas algo más.
 
-## Método 2 — El test que Apple esconde en la Terminal: `networkquality`
+## Método 2: El test que Apple esconde en la Terminal: `networkquality`
 
 Desde macOS Monterey, tu Mac trae integrado el mismo motor de medición que Apple usa para calificar la calidad de tu red. Se llama `networkquality`, vive en la Terminal, no tiene interfaz gráfica y casi nadie sabe que existe.
 
@@ -50,12 +50,12 @@ Cada línea te dice algo distinto:
 
 El comando tiene dos variantes útiles:
 
-- `networkquality -v` — versión detallada (verbose), con más desglose de cada fase de la prueba.
-- `networkquality -s` — ejecuta las pruebas de subida y bajada de forma secuencial en vez de simultánea, útil si sospechas que se están interfiriendo entre sí y quieres una lectura más limpia de cada sentido.
+- `networkquality -v`: versión detallada (verbose), con más desglose de cada fase de la prueba.
+- `networkquality -s`: ejecuta las pruebas de subida y bajada de forma secuencial en vez de simultánea, útil si sospechas que se están interfiriendo entre sí y quieres una lectura más limpia de cada sentido.
 
 Es gratis, no requiere abrir un navegador ni instalar nada, y te da un dato —la responsividad— que la mayoría de tests web ni siquiera menciona.
 
-## Método 3 — Medición continua desde la barra de menú (VelociBar)
+## Método 3: Medición continua desde la barra de menú (VelociBar)
 
 Los métodos 1 y 2 tienen algo en común: son una foto fija. Te dicen cómo está tu conexión ahora mismo, a las 11:00 de la mañana, con la casa vacía. No pueden responder a la pregunta que de verdad te preocupa: "¿por qué mi internet va lento todas las noches sobre las 21:00?"
 

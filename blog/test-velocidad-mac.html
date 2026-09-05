@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test de velocidad en Mac: 3 métodos, incluido el oculto de Apple — VelociBar</title>
+  <title>Test de velocidad en Mac: 3 métodos, incluido el oculto de Apple - VelociBar</title>
   <meta name="description" content="Cómo hacer un test de velocidad en tu Mac: webs como Speedtest, el comando networkquality oculto de macOS y medición continua para ver el patrón real.">
   <meta name="author" content="VelociBar">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -107,7 +107,7 @@
 
       <p>Buscas "test de velocidad" en Google, entras al primer resultado, esperas quince segundos y aparece un número en Mbps. ¿Ya está? No del todo. Ese número describe cómo estaba tu conexión en ese instante concreto, en ese navegador, contra ese servidor. Si quieres saber de verdad qué tan rápida —y qué tan estable— es tu conexión, tu Mac te ofrece tres formas de comprobarlo, y la más reveladora ni siquiera pasa por un navegador. Aquí tienes las tres, de la más rápida a la más completa.</p>
 
-      <h2>Método 1 — Test de velocidad web (Speedtest.net, Fast.com)</h2>
+      <h2>Método 1: Test de velocidad web (Speedtest.net, Fast.com)</h2>
       <p>Abrir Speedtest.net o Fast.com y esperar unos segundos es la forma más rápida de comprobar tu conexión. Para una revisión puntual —¿funciona el wifi ahora mismo?, ¿el técnico dejó la línea bien tras la visita?— es más que suficiente, y no necesitas instalar nada.</p>
       <p>Pero conviene conocer sus límites:</p>
       <ul>
@@ -117,7 +117,7 @@
       </ul>
       <p>Perfecto para saber si tu wifi funciona ahora mismo. Insuficiente para saber si tu internet <a href="/blog/internet-lento-por-la-noche.html">va lento por la noche</a> o solo en ciertos momentos. Para eso necesitas algo más.</p>
 
-      <h2>Método 2 — El test que Apple esconde en la Terminal: <code>networkquality</code></h2>
+      <h2>Método 2: El test que Apple esconde en la Terminal: <code>networkquality</code></h2>
       <p>Desde macOS Monterey, tu Mac trae integrado el mismo motor de medición que Apple usa para calificar la calidad de tu red. Se llama <code>networkquality</code>, vive en la Terminal, no tiene interfaz gráfica y casi nadie sabe que existe.</p>
       <p>Así se usa:</p>
       <ol>
@@ -140,12 +140,12 @@ Idle Latency: 14.353 milliseconds</code></pre>
       </ul>
       <p>El comando tiene dos variantes útiles:</p>
       <ul>
-        <li><code>networkquality -v</code> — versión detallada (verbose), con más desglose de cada fase de la prueba.</li>
-        <li><code>networkquality -s</code> — ejecuta las pruebas de subida y bajada de forma secuencial en vez de simultánea, útil si sospechas que se están interfiriendo entre sí y quieres una lectura más limpia de cada sentido.</li>
+        <li><code>networkquality -v</code>: versión detallada (verbose), con más desglose de cada fase de la prueba.</li>
+        <li><code>networkquality -s</code>: ejecuta las pruebas de subida y bajada de forma secuencial en vez de simultánea, útil si sospechas que se están interfiriendo entre sí y quieres una lectura más limpia de cada sentido.</li>
       </ul>
       <p>Es gratis, no requiere abrir un navegador ni instalar nada, y te da un dato —la responsividad— que la mayoría de tests web ni siquiera menciona.</p>
 
-      <h2>Método 3 — Medición continua desde la barra de menú (VelociBar)</h2>
+      <h2>Método 3: Medición continua desde la barra de menú (VelociBar)</h2>
       <p>Los métodos 1 y 2 tienen algo en común: son una foto fija. Te dicen cómo está tu conexión ahora mismo, a las 11:00 de la mañana, con la casa vacía. No pueden responder a la pregunta que de verdad te preocupa: "¿por qué mi internet va lento todas las noches sobre las 21:00?"</p>
       <p>Para eso necesitas ejecutar el mismo tipo de prueba una y otra vez, a lo largo de todo el día, y comparar los resultados. Es exactamente lo que hace <a href="/">VelociBar</a>: una app de barra de menú para Mac que ejecuta pruebas automáticas cada 15, 30 o 60 minutos —tú eliges el intervalo—, guarda cada resultado en un historial local y te deja exportarlo a CSV cuando quieras.</p>
       <p>Con ese historial puedes ver de un vistazo si tu velocidad cae de forma sistemática cada noche, si el problema es puntual o constante, y si tu responsividad (RPM) se desploma en las horas de más tráfico aunque la velocidad de descarga siga pareciendo aceptable. Es la diferencia entre sospechar algo y demostrarlo con datos.</p>

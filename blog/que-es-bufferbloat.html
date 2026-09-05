@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Qué es el bufferbloat y por qué tu videollamada se congela — VelociBar</title>
+  <title>Qué es el bufferbloat y por qué tu videollamada se congela - VelociBar</title>
   <meta name="description" content="Bufferbloat explica por qué tu videollamada se congela con 300 Mbps: qué es, cómo medirlo con RPM y cómo solucionarlo con SQM y QoS.">
   <meta name="author" content="VelociBar">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -108,28 +108,28 @@
       <p>Tienes 300 Mbps contratados, el test de velocidad marca 290, y aun así el Zoom se congela justo cuando alguien en casa sube fotos a la nube o hace una copia de seguridad. No es una avería, no es tu WiFi y el test de velocidad no miente: el problema tiene nombre, se llama <strong>bufferbloat</strong>, y es uno de los defectos de red más comunes precisamente porque es invisible para un test de velocidad normal.</p>
 
       <h2>Qué es el bufferbloat</h2>
-      <p>Cada router y cada módem tiene un pequeño almacén de memoria — un <strong>buffer</strong> — donde guarda los paquetes que están a punto de salir por tu línea. Existe por una buena razón: si dos paquetes llegan a la vez, uno espera un instante en vez de perderse. Pero muchos fabricantes, para evitar a toda costa que se descarte un solo paquete, hicieron ese almacén enorme. Y ahí empieza el problema.</p>
+      <p>Cada router y cada módem tiene un pequeño almacén de memoria (un <strong>buffer</strong>) donde guarda los paquetes que están a punto de salir por tu línea. Existe por una buena razón: si dos paquetes llegan a la vez, uno espera un instante en vez de perderse. Pero muchos fabricantes, para evitar a toda costa que se descarte un solo paquete, hicieron ese almacén enorme. Y ahí empieza el problema.</p>
       <p>Imagina la caja de un supermercado con una cinta transportadora kilométrica detrás. Mientras la cola sea corta, todo va rápido. Pero si entra más gente de la que la caja puede atender, la cinta no dice "no caben más": simplemente se llena y se llena, y cada persona nueva espera detrás de todas las anteriores. Nadie se queda sin pasar, pero la espera se dispara.</p>
-      <p>Eso es exactamente lo que ocurre en tu router cuando la línea está saturada — por ejemplo, subiendo un vídeo grande o haciendo una copia de seguridad en la nube. El buffer sobredimensionado acepta cientos de paquetes de más en vez de descartarlos, así que la <strong>velocidad de subida o bajada apenas se resiente</strong>. Pero cada paquete nuevo — el de tu videollamada, el de tu partida online, el de la página que intentas cargar — tiene que esperar su turno detrás de una cola larguísima. El resultado es <strong>latencia altísima con throughput perfecto</strong>: exactamente la combinación que un test de velocidad normal no detecta, porque solo mide cuántos megabits caben por el tubo, no cuánto tardan en llegar.</p>
+      <p>Eso es exactamente lo que ocurre en tu router cuando la línea está saturada, por ejemplo, subiendo un vídeo grande o haciendo una copia de seguridad en la nube. El buffer sobredimensionado acepta cientos de paquetes de más en vez de descartarlos, así que la <strong>velocidad de subida o bajada apenas se resiente</strong>. Pero cada paquete nuevo (el de tu videollamada, el de tu partida online, el de la página que intentas cargar) tiene que esperar su turno detrás de una cola larguísima. El resultado es <strong>latencia altísima con throughput perfecto</strong>: exactamente la combinación que un test de velocidad normal no detecta, porque solo mide cuántos megabits caben por el tubo, no cuánto tardan en llegar.</p>
 
       <h2>Los síntomas: el test da bien, pero todo se traba</h2>
       <p>El bufferbloat tiene una firma muy reconocible una vez que sabes buscarla:</p>
       <ul>
-        <li>El test de velocidad da un resultado excelente — a veces mejor que nunca — y aun así la videollamada se congela.</li>
+        <li>El test de velocidad da un resultado excelente (a veces mejor que nunca) y aun así la videollamada se congela.</li>
         <li>Las partidas online tienen lag intermitente, no constante: bien la mayor parte del tiempo, terrible en ráfagas.</li>
         <li>Las páginas web tardan en empezar a cargar, aunque luego bajen rápido.</li>
         <li>El problema aparece siempre que <strong>alguien en la red sube algo pesado</strong>: una copia de seguridad en la nube, una foto de 4K, una actualización de consola, un torrent. En cuanto esa subida o descarga termina, todo vuelve a la normalidad.</li>
       </ul>
-      <p>Si reconoces este patrón — sobre todo la parte de "coincide con que alguien sube algo" — es casi con seguridad bufferbloat, no un problema de tu proveedor ni de tu <a href="/blog/internet-lento-por-la-noche.html">horario de congestión nocturna</a>, aunque ambos problemas pueden convivir en la misma casa.</p>
+      <p>Si reconoces este patrón (sobre todo la parte de "coincide con que alguien sube algo") es casi con seguridad bufferbloat, no un problema de tu proveedor ni de tu <a href="/blog/internet-lento-por-la-noche.html">horario de congestión nocturna</a>, aunque ambos problemas pueden convivir en la misma casa.</p>
 
       <h2>Cómo medirlo: la responsividad en RPM</h2>
       <p>La forma correcta de medir el bufferbloat no es la velocidad, sino la <strong>responsividad bajo carga</strong>, expresada en <strong>RPM (roundtrips per minute)</strong>: cuántas veces por minuto tu red es capaz de completar un viaje de ida y vuelta mientras está saturada de tráfico. Es la métrica que reporta la herramienta <code>networkQuality</code> de Apple, y la clasifica en tres niveles: <strong>Baja, Media o Alta</strong>.</p>
-      <p>No hace falta memorizar un número exacto — y conviene desconfiar de cualquiera que te dé un umbral demasiado preciso. Lo que sí puedes esperar, en términos generales: con unos pocos cientos de RPM, las videollamadas y las partidas online van a sufrir en cuanto la línea se sature; por encima de mil, la experiencia suele ser cómoda incluso con tráfico pesado de fondo. Lo importante no es el número aislado, sino verlo <strong>a lo largo del tiempo</strong>: si tu responsividad se desploma cada noche a las 22:00, cada vez que arranca el backup automático, o cada fin de semana, ahí tienes la causa.</p>
-      <p>Un test puntual solo te da una foto del RPM en ese instante — lo mismo que ocurre si solo <a href="/blog/test-velocidad-mac.html">haces un test de velocidad en tu Mac</a> una vez y confías en ese número. <a href="/">VelociBar</a> mide la responsividad automáticamente varias veces al día desde la barra de menú de tu Mac y guarda el historial en local, así que puedes ver exactamente cuándo golpea el bufferbloat — por la noche, durante el backup, cuando hay clases online en otra habitación — en vez de adivinarlo.</p>
+      <p>No hace falta memorizar un número exacto, y conviene desconfiar de cualquiera que te dé un umbral demasiado preciso. Lo que sí puedes esperar, en términos generales: con unos pocos cientos de RPM, las videollamadas y las partidas online van a sufrir en cuanto la línea se sature; por encima de mil, la experiencia suele ser cómoda incluso con tráfico pesado de fondo. Lo importante no es el número aislado, sino verlo <strong>a lo largo del tiempo</strong>: si tu responsividad se desploma cada noche a las 22:00, cada vez que arranca el backup automático, o cada fin de semana, ahí tienes la causa.</p>
+      <p>Un test puntual solo te da una foto del RPM en ese instante: lo mismo que ocurre si solo <a href="/blog/test-velocidad-mac.html">haces un test de velocidad en tu Mac</a> una vez y confías en ese número. <a href="/">VelociBar</a> mide la responsividad automáticamente varias veces al día desde la barra de menú de tu Mac y guarda el historial en local, así que puedes ver exactamente cuándo golpea el bufferbloat (por la noche, durante el backup, cuando hay clases online en otra habitación) en vez de adivinarlo.</p>
 
       <h2>Cómo solucionarlo, de mayor a menor impacto</h2>
       <h3>1. Activa Smart Queue Management (SQM) en el router</h3>
-      <p>Es, con diferencia, la solución más efectiva. SQM combina un límite de velocidad ligeramente por debajo de tu línea real con un algoritmo de gestión de colas moderno — <strong>fq_codel</strong> o <strong>CAKE</strong> — que reparte el ancho de banda de forma justa entre flujos y evita que la cola crezca sin control. La mayoría de los routers de fabricante no lo traen activado por defecto, o directamente no lo incluyen.</p>
+      <p>Es, con diferencia, la solución más efectiva. SQM combina un límite de velocidad ligeramente por debajo de tu línea real con un algoritmo de gestión de colas moderno (<strong>fq_codel</strong> o <strong>CAKE</strong>) que reparte el ancho de banda de forma justa entre flujos y evita que la cola crezca sin control. La mayoría de los routers de fabricante no lo traen activado por defecto, o directamente no lo incluyen.</p>
       <h3>2. Configura QoS para priorizar tráfico sensible a la latencia</h3>
       <p>Si tu router ofrece QoS (Quality of Service), prioriza videollamadas y juego online por encima de descargas y backups. No elimina el bufferbloat por sí solo, pero decide quién espera en la cola primero.</p>
       <h3>3. Usa cable ethernet para lo que no puede esperar</h3>
@@ -141,7 +141,7 @@
 
       <div class="post-cta">
         <h2>Mide tu bufferbloat a lo largo del tiempo</h2>
-        <p>VelociBar registra tu responsividad en RPM automáticamente desde la barra de menú de macOS, para que veas exactamente cuándo se dispara la latencia bajo carga — no solo cuánto marca ahora mismo. Sin cuentas, sin nube: todo en tu Mac.</p>
+        <p>VelociBar registra tu responsividad en RPM automáticamente desde la barra de menú de macOS, para que veas exactamente cuándo se dispara la latencia bajo carga, no solo cuánto marca ahora mismo. Sin cuentas, sin nube: todo en tu Mac.</p>
         <a class="btn btn-primary" href="https://apps.apple.com/us/app/velocibar/id6756196355"><span class="btn-icon">↓</span><span>Descargar VelociBar</span></a>
       </div>
 

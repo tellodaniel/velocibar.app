@@ -8,7 +8,7 @@
 
 ## Cómo funciona Speedtest de Ookla
 
-Speedtest busca, entre miles de servidores repartidos por el mundo, uno cercano a ti y con muy buena conectividad —normalmente alojado en la infraestructura de un operador o un datacenter con mucho ancho de banda disponible. Después abre varias conexiones en paralelo contra ese servidor y suma el rendimiento de todas ellas.
+Speedtest busca, entre miles de servidores repartidos por el mundo, uno cercano a ti y con muy buena conectividad: normalmente alojado en la infraestructura de un operador o un datacenter con mucho ancho de banda disponible. Después abre varias conexiones en paralelo contra ese servidor y suma el rendimiento de todas ellas.
 
 Ese diseño no es casualidad: Speedtest está pensado para encontrar el **techo** de tu línea. Si contratas 500 Mbps, quieres un test que sea capaz de exprimir esos 500 Mbps si tu línea los da, y las conexiones múltiples contra un servidor óptimo son la forma de conseguirlo. Es la herramienta correcta para una pregunta muy concreta: *¿mi proveedor me está dando lo que contraté?*
 
@@ -16,7 +16,7 @@ Lo que Speedtest no está diseñado para representar es tu **experiencia habitua
 
 ## Cómo funciona Fast.com
 
-Fast.com, de Netflix, nació con un propósito mucho más concreto: dejar que cualquiera comprobara si su proveedor estaba **limitando el tráfico hacia Netflix**. Por eso, en lugar de servidores genéricos de test, Fast.com mide contra la propia infraestructura de Netflix —la misma red de servidores (Open Connect) que te sirve las películas y series.
+Fast.com, de Netflix, nació con un propósito mucho más concreto: dejar que cualquiera comprobara si su proveedor estaba **limitando el tráfico hacia Netflix**. Por eso, en lugar de servidores genéricos de test, Fast.com mide contra la propia infraestructura de Netflix: la misma red de servidores (Open Connect) que te sirve las películas y series.
 
 Es una herramienta deliberadamente simple: pocos parámetros, poca configuración, un número grande en el centro de la pantalla. Eso la hace muy accesible, pero también más limitada como diagnóstico general: mide bien el escenario «tráfico hacia Netflix», que sirve como aproximación razonable a tu velocidad de descarga general, aunque no es exactamente lo mismo que hablar con cualquier otro servicio.
 
@@ -24,7 +24,7 @@ Es una herramienta deliberadamente simple: pocos parámetros, poca configuració
 
 Más allá de sus diferencias, ambos comparten una limitación estructural: son una **fotografía de un instante**, tomada justo en el momento en que tú, de forma consciente, decides mirar. Y ese detalle importa más de lo que parece.
 
-Algunos proveedores han sido señalados por gestionar de forma más favorable el tráfico dirigido a servidores de test conocidos —los de Speedtest y Fast.com son, por definición, de los más reconocibles que existen. No es una acusación generalizada ni demostrable en cada caso individual, pero sí es una razón plausible por la que un resultado puede verse mejor en el test de lo que se siente navegando a diario. Y aunque no hubiera ningún trato especial, el simple hecho de que el resultado dependa de un único momento —justo cuando abres la app— ya deja fuera todo lo que pasa el resto del día.
+Algunos proveedores han sido señalados por gestionar de forma más favorable el tráfico dirigido a servidores de test conocidos: los de Speedtest y Fast.com son, por definición, de los más reconocibles que existen. No es una acusación generalizada ni demostrable en cada caso individual, pero sí es una razón plausible por la que un resultado puede verse mejor en el test de lo que se siente navegando a diario. Y aunque no hubiera ningún trato especial, el simple hecho de que el resultado dependa de un único momento —justo cuando abres la app— ya deja fuera todo lo que pasa el resto del día.
 
 ## Comparativa: Speedtest, Fast.com y monitoreo continuo
 
@@ -43,7 +43,7 @@ Ni Speedtest ni Fast.com pueden responder a preguntas que dependen del tiempo: �
 
 Esas preguntas no se responden con un test puntual, por bueno que sea el test. Se responden con **monitoreo continuo**: mediciones automáticas y repetidas que dibujan una curva, no un punto. Es exactamente para eso que existe [VelociBar](https://velocibar.app/), una app de barra de menú para macOS que ejecuta un test automático cada 15, 30 o 60 minutos, mide tanto la velocidad de descarga como la responsividad bajo carga (RPM) y guarda todo el historial en local, exportable a CSV.
 
-La conclusión honesta es que no compiten entre sí: se complementan. Usa Speedtest o Fast.com para una comprobación puntual —por ejemplo, para [hacer un test de velocidad en tu Mac](https://velocibar.app/blog/test-velocidad-mac.html) antes de una videollamada importante. Y si sospechas que tu conexión empeora en ciertos momentos o quieres [reclamar a tu ISP con datos](https://velocibar.app/blog/reclamar-isp-internet-lento.html), necesitas el patrón completo que solo da el monitoreo continuo.
+La conclusión honesta es que no compiten entre sí: se complementan. Usa Speedtest o Fast.com para una comprobación puntual: por ejemplo, para [hacer un test de velocidad en tu Mac](https://velocibar.app/blog/test-velocidad-mac.html) antes de una videollamada importante. Y si sospechas que tu conexión empeora en ciertos momentos o quieres [reclamar a tu ISP con datos](https://velocibar.app/blog/reclamar-isp-internet-lento.html), necesitas el patrón completo que solo da el monitoreo continuo.
 
 ## Enlaces
 
