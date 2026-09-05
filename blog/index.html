@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" data-static-lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Guías sobre velocidad de internet, bufferbloat y tu ISP | VelociBar</title>
+  <meta name="description" content="Guías prácticas sobre velocidad de internet: por qué va lento por la noche, qué es el bufferbloat, cómo medir en Mac y cómo reclamar a tu ISP con evidencia.">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/blog/">
+  <link rel="alternate" hreflang="es" href="https://velocibar.app/blog/">
+  <link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NFRK3QY3R2');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
+  <meta property="og:title" content="Blog de VelociBar — Guías sobre velocidad de internet">
+  <meta property="og:description" content="Guías prácticas: por qué tu internet va lento por la noche, qué es el bufferbloat, cómo medir en Mac y cómo reclamar a tu ISP con evidencia.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velocibar.app/blog/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog de VelociBar — Guías sobre velocidad de internet">
+  <meta name="twitter:description" content="Por qué tu internet va lento por la noche, qué es el bufferbloat, cómo medir en Mac y cómo reclamar a tu ISP con evidencia.">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://velocibar.app/blog/#blog",
+    "name": "Blog de VelociBar",
+    "description": "Guías prácticas sobre velocidad de internet, bufferbloat, mediciones en macOS y cómo reclamar a tu ISP con evidencia.",
+    "url": "https://velocibar.app/blog/",
+    "inLanguage": "es",
+    "publisher": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/", "logo": { "@type": "ImageObject", "url": "https://velocibar.app/icon-512.png" } },
+    "blogPost": [
+      { "@type": "BlogPosting", "headline": "¿Por qué tu internet va lento por la noche? Causas y solución", "url": "https://velocibar.app/blog/internet-lento-por-la-noche.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)", "url": "https://velocibar.app/blog/que-es-bufferbloat.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "Cómo reclamar a tu ISP por internet lento: la guía con evidencia", "url": "https://velocibar.app/blog/reclamar-isp-internet-lento.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "Cómo hacer un test de velocidad en tu Mac: 3 métodos", "url": "https://velocibar.app/blog/test-velocidad-mac.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)", "url": "https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html", "datePublished": "2026-09-04" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo" aria-label="VelociBar - Inicio">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-link-collapse"><a href="/blog/" aria-current="page">Blog</a></li>
+        <li><a href="https://apps.apple.com/us/app/velocibar/id6756196355" class="nav-cta">Descargar</a></li>
+        <li>
+          <a class="lang-toggle" id="lang-toggle" href="/en/blog/" data-lang-target="en" hreflang="en" aria-label="Switch to English">
+            <span class="lang-es active">ES</span>
+            <span class="lang-en">EN</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="blog-wrap">
+      <div class="blog-head">
+        <span class="eyebrow">Blog</span>
+        <h1>Entiende tu conexión a internet</h1>
+        <p>Guías prácticas sobre velocidad real, bufferbloat, mediciones en macOS y cómo defenderte con datos cuando tu conexión no da lo que pagas.</p>
+      </div>
+      <div class="post-list">
+        <a class="post-card" href="/blog/internet-lento-por-la-noche.html">
+          <h2>¿Por qué tu internet va lento por la noche? Causas y solución</h2>
+          <p>Lento de 21:00 a 23:00 y rápido de madrugada: eso es congestión de hora pico. Qué la causa, cómo comprobarla con datos y qué puedes hacer.</p>
+          <span class="post-meta">4 de septiembre de 2026 · 6 min de lectura</span>
+        </a>
+        <a class="post-card" href="/blog/que-es-bufferbloat.html">
+          <h2>Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)</h2>
+          <p>La velocidad no lo es todo: el bufferbloat dispara la latencia cuando tu línea está llena. Qué es, cómo medirlo en RPM y cómo arreglarlo.</p>
+          <span class="post-meta">4 de septiembre de 2026 · 6 min de lectura</span>
+        </a>
+        <a class="post-card" href="/blog/reclamar-isp-internet-lento.html">
+          <h2>Cómo reclamar a tu ISP por internet lento: la guía con evidencia</h2>
+          <p>Del "va lento" que soporte ignora al CSV con semanas de mediciones que no pueden despachar. Paso a paso: descartar tu WiFi, medir, reclamar y escalar.</p>
+          <span class="post-meta">4 de septiembre de 2026 · 7 min de lectura</span>
+        </a>
+        <a class="post-card" href="/blog/test-velocidad-mac.html">
+          <h2>Cómo hacer un test de velocidad en tu Mac: 3 métodos</h2>
+          <p>Tests web, la herramienta networkQuality que Apple esconde en la Terminal y la medición continua desde la barra de menú. Cuándo usar cada uno.</p>
+          <span class="post-meta">4 de septiembre de 2026 · 6 min de lectura</span>
+        </a>
+        <a class="post-card" href="/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html">
+          <h2>Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)</h2>
+          <p>Uno mide tu techo teórico, el otro los servidores de Netflix — y ninguno te enseña cómo se comporta tu conexión a las 21:00. La comparativa honesta.</p>
+          <span class="post-meta">4 de septiembre de 2026 · 6 min de lectura</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/blog/">Blog</a>
+        <a href="/legal/privacy.html">Política de Privacidad</a>
+        <a href="/legal/terms.html">Términos de Uso</a>
+      </nav>
+      <p class="copyright">© 2026 VelociBar. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

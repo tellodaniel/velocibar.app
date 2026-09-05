@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Test Internet Speed on a Mac: 3 Ways, Including Apple's Hidden Tool — VelociBar</title>
+  <meta name="description" content="How to test your internet speed on a Mac: web tests like Speedtest, macOS's hidden networkquality command, and continuous monitoring for real patterns.">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/en/blog/speed-test-mac.html">
+  <link rel="alternate" hreflang="es" href="https://velocibar.app/blog/test-velocidad-mac.html">
+  <link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speed-test-mac.html">
+  <link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/test-velocidad-mac.html">
+  <link rel="alternate" type="text/markdown" href="https://velocibar.app/en/blog/speed-test-mac.md" title="Markdown version">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NFRK3QY3R2');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
+  <meta property="og:title" content="How to Test Internet Speed on a Mac: 3 Ways, Including Apple's Hidden Tool">
+  <meta property="og:description" content="How to test your internet speed on a Mac: web tests like Speedtest, macOS's hidden networkquality command, and continuous monitoring for real patterns.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://velocibar.app/en/blog/speed-test-mac.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+  <meta property="article:published_time" content="2026-09-04">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Test Your Internet Speed on a Mac">
+  <meta name="twitter:description" content="3 ways to measure your internet on macOS: web tests, Apple's hidden networkquality command, and continuous monitoring with VelociBar.">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://velocibar.app/en/blog/speed-test-mac.html#post",
+    "headline": "How to Test Internet Speed on a Mac: 3 Ways, Including Apple's Hidden Tool",
+    "description": "How to test your internet speed on a Mac: web tests like Speedtest, macOS's hidden networkquality command, and continuous monitoring for real patterns.",
+    "inLanguage": "en",
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-04",
+    "image": "https://velocibar.app/og-image.png",
+    "mainEntityOfPage": "https://velocibar.app/en/blog/speed-test-mac.html",
+    "author": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/" },
+    "publisher": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/", "logo": { "@type": "ImageObject", "url": "https://velocibar.app/icon-512.png" } }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velocibar.app/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://velocibar.app/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How to Test Internet Speed on a Mac" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/en/" class="logo" aria-label="VelociBar - Home">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-link-collapse"><a href="/en/blog/">Blog</a></li>
+        <li><a href="https://apps.apple.com/us/app/velocibar/id6756196355" class="nav-cta">Download</a></li>
+        <li>
+          <a class="lang-toggle" id="lang-toggle" href="/blog/test-velocidad-mac.html" data-lang-target="es" hreflang="es" aria-label="Cambiar a español">
+            <span class="lang-es">ES</span>
+            <span class="lang-en active">EN</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/en/">Home</a> · <a href="/en/blog/">Blog</a>
+      </nav>
+      <h1>How to Test Your Internet Speed on a Mac (Including Apple's Hidden Terminal Tool)</h1>
+      <span class="post-meta">September 4, 2026 · 6 min read</span>
+
+      <p>You search "speed test" on Google, click the first result, wait fifteen seconds, and a number in Mbps shows up. Done? Not quite. That number describes your connection at that exact instant, in that browser, against that server. If you actually want to know how fast — and how stable — your connection is, your Mac gives you three ways to check, and the most revealing one doesn't even involve a browser. Here they are, from fastest to most complete.</p>
+
+      <h2>Method 1 — Web speed tests (Speedtest.net, Fast.com)</h2>
+      <p>Opening Speedtest.net or Fast.com and waiting a few seconds is the fastest way to check your connection. For a quick spot check — is the wifi working right now? did the technician actually fix the line? — it's more than enough, and you don't need to install anything.</p>
+      <p>But it's worth knowing the limits:</p>
+      <ul>
+        <li><strong>It's a best-case number.</strong> The test picks the nearest, least-loaded server and measures under near-ideal conditions — not the real conditions you work, game, or video-call under.</li>
+        <li><strong>It adds browser overhead.</strong> JavaScript running in a tab introduces its own variance; it isn't a pure network-level measurement.</li>
+        <li><strong>It only measures that instant.</strong> A test at 11 a.m. tells you nothing about what happens at 9:30 p.m., when your whole house — and your whole neighborhood — is online at once.</li>
+      </ul>
+      <p>Fine for checking whether your wifi is working right now. Not enough to know whether your internet <a href="/en/blog/internet-slow-at-night.html">is slow specifically at night</a> or only at certain times. For that, you need something more.</p>
+
+      <h2>Method 2 — Apple's hidden Terminal tool: <code>networkquality</code></h2>
+      <p>Since macOS Monterey, your Mac ships with the same measurement engine Apple uses to rate your network quality. It's called <code>networkquality</code>, it lives in Terminal, has no graphical interface, and almost nobody knows it exists.</p>
+      <p>Here's how to run it:</p>
+      <ol>
+        <li>Open <strong>Terminal</strong> (Applications → Utilities → Terminal, or press ⌘+Space and type "Terminal").</li>
+        <li>Type the command and press Return:</li>
+      </ol>
+      <pre><code>networkquality</code></pre>
+      <p>Wait about 20-30 seconds. You'll see something like this:</p>
+      <pre><code>==== SUMMARY ====
+Uplink capacity: 18.220 Mbps
+Downlink capacity: 245.981 Mbps
+Responsiveness: Medium (612 RPM)
+Idle Latency: 14.353 milliseconds</code></pre>
+      <p>Each line tells you something different:</p>
+      <ul>
+        <li><strong>Uplink / Downlink capacity.</strong> Real upload and download throughput, measured while the network is under working load, not an isolated burst.</li>
+        <li><strong>Responsiveness.</strong> This is the interesting part. Apple doesn't just measure Mbps: it measures how your network responds while it's saturated, and rates it <strong>Low, Medium, or High</strong>. It's the number a traditional speed test doesn't give you.</li>
+        <li><strong>RPM (round trips per minute).</strong> The number in parentheses next to Responsiveness. It tells you how many round trips your connection completes per minute while heavy traffic is running at the same time. It's the direct indicator of <a href="/en/blog/what-is-bufferbloat.html">bufferbloat</a>: the lower the RPM, the more your traffic queues up behind a large download or upload, and the more you notice lag on a video call or in an online game even when your download speed looks fine.</li>
+        <li><strong>Idle Latency.</strong> Latency with the network at rest, no load. It's your baseline — compare it against what happens under load to see how much your connection degrades when you actually push it.</li>
+      </ul>
+      <p>The command has two useful variants:</p>
+      <ul>
+        <li><code>networkquality -v</code> — verbose output, with more detail on each phase of the test.</li>
+        <li><code>networkquality -s</code> — runs the upload and download tests sequentially instead of simultaneously, useful if you suspect they're interfering with each other and want a cleaner reading of each direction.</li>
+      </ul>
+      <p>It's free, requires no browser and no install, and gives you a number — responsiveness — that most web speed tests don't even mention.</p>
+
+      <h2>Method 3 — Continuous measurement from your menu bar (VelociBar)</h2>
+      <p>Methods 1 and 2 have something in common: they're a snapshot. They tell you how your connection looks right now, at 11 a.m., with the house empty. They can't answer the question you actually care about: "why does my internet slow down every night around 9 p.m.?"</p>
+      <p>For that you need to run the same kind of test over and over, throughout the day, and compare the results. That's exactly what <a href="/en/">VelociBar</a> does: a Mac menu bar app that runs automatic tests every 15, 30, or 60 minutes — you choose the interval — keeps every result in a local history, and lets you export it to CSV whenever you want.</p>
+      <p>With that history you can see at a glance whether your speed drops consistently every night, whether the problem is occasional or constant, and whether your responsiveness (RPM) collapses during peak hours even while download speed still looks acceptable. That's the difference between suspecting something and proving it with data.</p>
+      <p>None of the three methods is redundant: use Speedtest or Fast.com for a quick check, <code>networkquality</code> when you want a precise technical reading without leaving Terminal, and VelociBar when you need to see the full pattern over days.</p>
+
+      <h2>Tips for accurate results</h2>
+      <p>Whichever method you use, these details change the result more than you'd think:</p>
+      <ul>
+        <li><strong>Use an ethernet cable if you can</strong>, or sit close to the router on the 5 GHz band. 2.4 GHz wifi and distance add variables that have nothing to do with your provider.</li>
+        <li><strong>Pause downloads, backups, and VPNs</strong> before you test. A cloud backup running quietly in the background can eat a big chunk of your bandwidth without you noticing.</li>
+        <li><strong>Repeat the test at different times of day</strong>, not just once in the morning. The pattern — if there is one — only shows up when you compare several moments.</li>
+        <li><strong>Don't trust a single reading.</strong> Both web tests and <code>networkquality</code> can vary from one run to the next for reasons unrelated to your connection — momentary server congestion, for instance. Run the test two or three times and go with the trend, not the outlier.</li>
+      </ul>
+
+      <div class="post-cta">
+        <h2>Let VelociBar measure it for you</h2>
+        <p>Run automatic tests from your Mac's menu bar, keep the history locally, and export it to CSV whenever you need it. No accounts, no cloud — everything stays on your Mac.</p>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/velocibar/id6756196355"><span class="btn-icon">↓</span><span>Download VelociBar</span></a>
+      </div>
+
+      <p class="post-footer-nav"><a href="/en/blog/">← All articles</a></p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/en/blog/">Blog</a>
+        <a href="/legal/privacy.html">Privacy Policy</a>
+        <a href="/legal/terms.html">Terms of Use</a>
+      </nav>
+      <p class="copyright">© 2026 VelociBar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

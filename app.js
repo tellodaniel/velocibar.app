@@ -169,7 +169,9 @@
 
         const saved = localStorage.getItem('velocibar-lang');
         if ((saved === 'es' || saved === 'en') && saved !== staticLang) {
-          window.location.replace(saved === 'en' ? '/en/' : '/');
+          // Send the visitor to this page's own translation, not the homepage
+          const alt = document.querySelector('link[rel="alternate"][hreflang="' + saved + '"]');
+          window.location.replace(alt ? alt.getAttribute('href') : (saved === 'en' ? '/en/' : '/'));
           return;
         }
 

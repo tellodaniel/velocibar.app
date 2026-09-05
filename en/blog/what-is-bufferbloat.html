@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is Bufferbloat and Why Your Video Calls Freeze — VelociBar</title>
+  <meta name="description" content="Bufferbloat explains why your video calls freeze on a 300 Mbps line: what it is, how to measure it with RPM, and how to fix it with SQM and QoS.">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/en/blog/what-is-bufferbloat.html">
+  <link rel="alternate" hreflang="es" href="https://velocibar.app/blog/que-es-bufferbloat.html">
+  <link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/what-is-bufferbloat.html">
+  <link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/que-es-bufferbloat.html">
+  <link rel="alternate" type="text/markdown" href="https://velocibar.app/en/blog/what-is-bufferbloat.md" title="Markdown version">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NFRK3QY3R2');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
+  <meta property="og:title" content="What Is Bufferbloat and Why Your Video Calls Freeze">
+  <meta property="og:description" content="Your speed test looks perfect but your video call freezes: that's bufferbloat. What causes it, how to measure it in RPM, and how to fix it with SQM/QoS.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://velocibar.app/en/blog/what-is-bufferbloat.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+  <meta property="article:published_time" content="2026-09-04">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is Bufferbloat and Why Your Video Calls Freeze">
+  <meta name="twitter:description" content="Bufferbloat explained: why your video calls freeze on a 300 Mbps line, and how to fix it.">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://velocibar.app/en/blog/what-is-bufferbloat.html#post",
+    "headline": "What Is Bufferbloat and Why Your Video Calls Freeze",
+    "description": "Bufferbloat explains why your video calls freeze on a 300 Mbps line: what it is, how to measure it with RPM, and how to fix it with SQM and QoS.",
+    "inLanguage": "en",
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-04",
+    "image": "https://velocibar.app/og-image.png",
+    "mainEntityOfPage": "https://velocibar.app/en/blog/what-is-bufferbloat.html",
+    "author": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/" },
+    "publisher": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/", "logo": { "@type": "ImageObject", "url": "https://velocibar.app/icon-512.png" } }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velocibar.app/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://velocibar.app/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "What Is Bufferbloat" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/en/" class="logo" aria-label="VelociBar - Home">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-link-collapse"><a href="/en/blog/">Blog</a></li>
+        <li><a href="https://apps.apple.com/us/app/velocibar/id6756196355" class="nav-cta">Download</a></li>
+        <li>
+          <a class="lang-toggle" id="lang-toggle" href="/blog/que-es-bufferbloat.html" data-lang-target="es" hreflang="es" aria-label="Cambiar a español">
+            <span class="lang-es">ES</span>
+            <span class="lang-en active">EN</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/en/">Home</a> · <a href="/en/blog/">Blog</a>
+      </nav>
+      <h1>What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)</h1>
+      <span class="post-meta">September 4, 2026 · 7 min read</span>
+
+      <p>You pay for 300 Mbps, your speed test comes back at 290, and your Zoom call still freezes the moment someone in the house uploads photos to the cloud or kicks off a backup. It's not an outage, it's not your WiFi, and the speed test isn't lying: the problem has a name. It's called <strong>bufferbloat</strong>, and it's one of the most common network problems precisely because a normal speed test can't see it.</p>
+
+      <h2>What bufferbloat actually is</h2>
+      <p>Every router and modem keeps a small pool of memory — a <strong>buffer</strong> — where it holds packets that are about to go out over your line. It exists for a good reason: if two packets arrive at once, one waits a moment instead of getting dropped. But many manufacturers, trying hard to avoid ever dropping a single packet, made that pool huge. That's where the problem starts.</p>
+      <p>Picture a supermarket checkout with a mile-long conveyor belt behind it. As long as the line is short, everything moves fast. But if more people show up than the register can handle, the belt doesn't say "no room": it just keeps filling up, and every new person waits behind everyone who arrived before them. Nobody gets turned away, but the wait balloons.</p>
+      <p>That's exactly what happens in your router when the line is saturated — say, uploading a big video or running a cloud backup. The oversized buffer accepts hundreds of extra packets instead of dropping them, so <strong>upload or download speed barely budges</strong>. But every new packet — the one from your video call, the one from your online match, the one for the page you're trying to load — has to wait its turn behind a very long line. The result is <strong>sky-high latency with perfect throughput</strong>: exactly the combination a normal speed test can't catch, because it only measures how many megabits fit through the pipe, not how long they take to arrive.</p>
+
+      <h2>The symptoms: the test looks great, but everything stutters</h2>
+      <p>Bufferbloat has a very recognizable signature once you know what to look for:</p>
+      <ul>
+        <li>The speed test comes back excellent — sometimes better than ever — and the video call still freezes.</li>
+        <li>Online games have intermittent lag, not constant lag: fine most of the time, terrible in bursts.</li>
+        <li>Web pages take a while to start loading, even though they finish fast once they do.</li>
+        <li>The problem shows up whenever <strong>someone on the network uploads or downloads something heavy</strong>: a cloud backup, a 4K photo, a console update, a torrent. The moment that transfer finishes, everything goes back to normal.</li>
+      </ul>
+      <p>If you recognize this pattern — especially the part about it lining up with someone uploading something — it's almost certainly bufferbloat, not a problem with your provider or with <a href="/en/blog/internet-slow-at-night.html">nightly peak-hour congestion</a>, although both problems can coexist in the same house.</p>
+
+      <h2>How to measure it: responsiveness in RPM</h2>
+      <p>The right way to measure bufferbloat isn't speed — it's <strong>responsiveness under load</strong>, expressed as <strong>RPM (round-trips per minute)</strong>: how many times per minute your network can complete a round trip while it's saturated with traffic. It's the metric reported by Apple's <code>networkQuality</code> tool, which rates it in three tiers: <strong>Low, Medium, or High</strong>.</p>
+      <p>You don't need to memorize an exact number — and you should be skeptical of anyone who hands you an overly precise threshold. What you can expect, in general terms: at a few hundred RPM, video calls and online games are going to suffer as soon as the line gets loaded; above roughly a thousand, the experience is usually comfortable even with heavy background traffic. What matters isn't the isolated number, it's seeing it <strong>over time</strong>: if your responsiveness tanks every night at 10 p.m., every time the automatic backup kicks in, or every weekend, that tells you the cause.</p>
+      <p>A one-off test only gives you a snapshot of RPM at that instant — the same limitation you run into if you just <a href="/en/blog/speed-test-mac.html">run a speed test on your Mac</a> once and trust that single number. <a href="/en/">VelociBar</a> measures responsiveness automatically several times a day from your Mac's menu bar and keeps the history locally, so you can see exactly when bufferbloat hits — at night, during the backup window, when there's a video class running in the next room — instead of guessing.</p>
+
+      <h2>How to fix it, ranked by impact</h2>
+      <h3>1. Enable Smart Queue Management (SQM) on your router</h3>
+      <p>By far the most effective fix. SQM combines a rate limit set slightly below your actual line speed with a modern queue-management algorithm — <strong>fq_codel</strong> or <strong>CAKE</strong> — that shares bandwidth fairly across flows and stops the queue from growing unbounded. Most stock ISP routers don't ship with it enabled, or don't include it at all.</p>
+      <h3>2. Set up QoS to prioritize latency-sensitive traffic</h3>
+      <p>If your router offers QoS (Quality of Service), prioritize video calls and online gaming over downloads and backups. It doesn't eliminate bufferbloat on its own, but it decides who gets to the front of the queue.</p>
+      <h3>3. Use ethernet for anything that can't wait</h3>
+      <p>WiFi adds its own queue and its own variability on top of the router's. For your work machine, important video calls, or a gaming rig, an ethernet cable removes an entire source of added latency.</p>
+      <h3>4. Avoid running heavy uploads at the same time as everything else</h3>
+      <p>Schedule cloud backups and large uploads for a time when you don't need real-time performance, or when no one else in the house is on a call. It's the simplest fix and it costs nothing.</p>
+      <h3>5. If your ISP's router doesn't support SQM, replace it</h3>
+      <p>Many carrier-issued routers don't let you enable SQM at all. Open firmware like <strong>OpenWrt</strong>, installed on a compatible router, ships with fq_codel or CAKE ready to turn on in minutes, and it's usually the single biggest upgrade you can make to your whole home network.</p>
+
+      <div class="post-cta">
+        <h2>Measure your bufferbloat over time</h2>
+        <p>VelociBar logs your responsiveness in RPM automatically from the macOS menu bar, so you can see exactly when latency under load spikes — not just what it reads right now. No accounts, no cloud — everything stays on your Mac.</p>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/velocibar/id6756196355"><span class="btn-icon">↓</span><span>Download VelociBar</span></a>
+      </div>
+
+      <p class="post-footer-nav"><a href="/en/blog/">← All articles</a></p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/en/blog/">Blog</a>
+        <a href="/legal/privacy.html">Privacy Policy</a>
+        <a href="/legal/terms.html">Terms of Use</a>
+      </nav>
+      <p class="copyright">© 2026 VelociBar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

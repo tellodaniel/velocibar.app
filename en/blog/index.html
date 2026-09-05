@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Guides on Internet Speed, Bufferbloat and Your ISP | VelociBar</title>
+  <meta name="description" content="Practical guides on internet speed: why it's slow at night, what bufferbloat is, how to test on a Mac, and how to complain to your ISP with evidence.">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/en/blog/">
+  <link rel="alternate" hreflang="es" href="https://velocibar.app/blog/">
+  <link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NFRK3QY3R2');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
+  <meta property="og:title" content="VelociBar Blog — Guides on Internet Speed">
+  <meta property="og:description" content="Practical guides: why your internet is slow at night, what bufferbloat is, how to test on a Mac, and how to complain to your ISP with evidence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://velocibar.app/en/blog/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VelociBar Blog — Guides on Internet Speed">
+  <meta name="twitter:description" content="Why your internet is slow at night, what bufferbloat is, how to test on a Mac, and how to complain to your ISP with evidence.">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://velocibar.app/en/blog/#blog",
+    "name": "VelociBar Blog",
+    "description": "Practical guides on internet speed, bufferbloat, measuring on macOS, and holding your ISP accountable with evidence.",
+    "url": "https://velocibar.app/en/blog/",
+    "inLanguage": "en",
+    "publisher": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/", "logo": { "@type": "ImageObject", "url": "https://velocibar.app/icon-512.png" } },
+    "blogPost": [
+      { "@type": "BlogPosting", "headline": "Why Is Your Internet Slow at Night? Causes and Fixes", "url": "https://velocibar.app/en/blog/internet-slow-at-night.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)", "url": "https://velocibar.app/en/blog/what-is-bufferbloat.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "How to Prove Your Internet Is Slower Than What You Pay For", "url": "https://velocibar.app/en/blog/prove-isp-throttling.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "How to Test Your Internet Speed on a Mac: 3 Ways", "url": "https://velocibar.app/en/blog/speed-test-mac.html", "datePublished": "2026-09-04" },
+      { "@type": "BlogPosting", "headline": "Speedtest vs Fast.com: What Each Really Measures (and What Neither Tells You)", "url": "https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html", "datePublished": "2026-09-04" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/en/" class="logo" aria-label="VelociBar - Home">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-link-collapse"><a href="/en/blog/" aria-current="page">Blog</a></li>
+        <li><a href="https://apps.apple.com/us/app/velocibar/id6756196355" class="nav-cta">Download</a></li>
+        <li>
+          <a class="lang-toggle" id="lang-toggle" href="/blog/" data-lang-target="es" hreflang="es" aria-label="Cambiar a español">
+            <span class="lang-es">ES</span>
+            <span class="lang-en active">EN</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="blog-wrap">
+      <div class="blog-head">
+        <span class="eyebrow">Blog</span>
+        <h1>Understand your internet connection</h1>
+        <p>Practical guides on real speed, bufferbloat, measuring on macOS, and defending yourself with data when your connection doesn't deliver what you pay for.</p>
+      </div>
+      <div class="post-list">
+        <a class="post-card" href="/en/blog/internet-slow-at-night.html">
+          <h2>Why Is Your Internet Slow at Night? Causes and Fixes</h2>
+          <p>Slow from 9 to 11 p.m. and fast at 3 a.m.: that's peak-hour congestion. What causes it, how to prove it with data, and what you can do.</p>
+          <span class="post-meta">September 4, 2026 · 6 min read</span>
+        </a>
+        <a class="post-card" href="/en/blog/what-is-bufferbloat.html">
+          <h2>What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)</h2>
+          <p>Speed isn't everything: bufferbloat makes latency explode when your line is full. What it is, how to measure it in RPM, and how to fix it.</p>
+          <span class="post-meta">September 4, 2026 · 6 min read</span>
+        </a>
+        <a class="post-card" href="/en/blog/prove-isp-throttling.html">
+          <h2>How to Prove Your Internet Is Slower Than What You Pay For</h2>
+          <p>From a "it feels slow" that support ignores to a CSV with weeks of measurements they can't dismiss. Step by step: rule out WiFi, measure, complain, escalate.</p>
+          <span class="post-meta">September 4, 2026 · 7 min read</span>
+        </a>
+        <a class="post-card" href="/en/blog/speed-test-mac.html">
+          <h2>How to Test Your Internet Speed on a Mac: 3 Ways</h2>
+          <p>Web tests, the networkQuality tool Apple hides in the Terminal, and continuous measurement from the menu bar. When to use each.</p>
+          <span class="post-meta">September 4, 2026 · 6 min read</span>
+        </a>
+        <a class="post-card" href="/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html">
+          <h2>Speedtest vs Fast.com: What Each Really Measures (and What Neither Tells You)</h2>
+          <p>One measures your theoretical ceiling, the other Netflix's servers — and neither shows how your connection behaves at 9 p.m. The honest comparison.</p>
+          <span class="post-meta">September 4, 2026 · 6 min read</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/en/blog/">Blog</a>
+        <a href="/legal/privacy.html">Privacy Policy</a>
+        <a href="/legal/terms.html">Terms of Use</a>
+      </nav>
+      <p class="copyright">© 2026 VelociBar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" data-static-lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speedtest vs Fast.com: qué mide cada uno y qué no te cuentan — VelociBar</title>
+  <meta name="description" content="Speedtest exprime tu línea al máximo, Fast.com mide contra Netflix. Qué mide cada test de velocidad, sus límites y qué ninguno de los dos te cuenta.">
+  <meta name="author" content="VelociBar">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#0a0f14">
+  <link rel="canonical" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html">
+  <link rel="alternate" hreflang="es" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html">
+  <link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html">
+  <link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html">
+  <link rel="alternate" type="text/markdown" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.md" title="Versión en Markdown">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFRK3QY3R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NFRK3QY3R2');
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="VelociBar">
+  <meta property="og:title" content="Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)">
+  <meta property="og:description" content="Speedtest exprime tu línea al máximo, Fast.com mide contra Netflix. Qué mide cada test de velocidad, sus límites y qué ninguno de los dos te cuenta.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://velocibar.app/og-image.png">
+  <meta property="article:published_time" content="2026-09-04">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speedtest vs Fast.com: ¿cuál es el mejor test de velocidad?">
+  <meta name="twitter:description" content="Qué mide cada test de velocidad, sus límites y qué ninguno de los dos te cuenta sobre tu conexión.">
+  <meta name="twitter:image" content="https://velocibar.app/og-image.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html#post",
+    "headline": "Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)",
+    "description": "Speedtest exprime tu línea al máximo, Fast.com mide contra Netflix. Qué mide cada test de velocidad, sus límites y qué ninguno de los dos te cuenta.",
+    "inLanguage": "es",
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-04",
+    "image": "https://velocibar.app/og-image.png",
+    "mainEntityOfPage": "https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html",
+    "author": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/" },
+    "publisher": { "@type": "Organization", "name": "VelociBar", "url": "https://velocibar.app/", "logo": { "@type": "ImageObject", "url": "https://velocibar.app/icon-512.png" } }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://velocibar.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://velocibar.app/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo" aria-label="VelociBar - Inicio">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">VelociBar</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-link-collapse"><a href="/blog/">Blog</a></li>
+        <li><a href="https://apps.apple.com/us/app/velocibar/id6756196355" class="nav-cta">Descargar</a></li>
+        <li>
+          <a class="lang-toggle" id="lang-toggle" href="/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html" data-lang-target="en" hreflang="en" aria-label="Switch to English">
+            <span class="lang-es active">ES</span>
+            <span class="lang-en">EN</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <nav class="breadcrumbs" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a> · <a href="/blog/">Blog</a>
+      </nav>
+      <h1>Speedtest vs Fast.com: qué mide cada uno (y lo que ninguno te cuenta)</h1>
+      <span class="post-meta">4 de septiembre de 2026 · 7 min de lectura</span>
+
+      <p>«Cuál es el mejor test de velocidad, Speedtest o Fast.com» es la pregunta equivocada. Los dos son herramientas fiables, pero miden cosas distintas, con métodos distintos y para propósitos distintos. Ninguno miente, pero ninguno te da tampoco el cuadro completo. Vamos a ver exactamente qué hace cada uno, dónde se parecen y qué información se te queda fuera pases el test que pases.</p>
+
+      <h2>Cómo funciona Speedtest de Ookla</h2>
+      <p>Speedtest busca, entre miles de servidores repartidos por el mundo, uno cercano a ti y con muy buena conectividad —normalmente alojado en la infraestructura de un operador o un datacenter con mucho ancho de banda disponible. Después abre varias conexiones en paralelo contra ese servidor y suma el rendimiento de todas ellas.</p>
+      <p>Ese diseño no es casualidad: Speedtest está pensado para encontrar el <strong>techo</strong> de tu línea. Si contratas 500 Mbps, quieres un test que sea capaz de exprimir esos 500 Mbps si tu línea los da, y las conexiones múltiples contra un servidor óptimo son la forma de conseguirlo. Es la herramienta correcta para una pregunta muy concreta: <em>¿mi proveedor me está dando lo que contraté?</em></p>
+      <p>Lo que Speedtest no está diseñado para representar es tu <strong>experiencia habitual</strong>. Cuando ves una serie de TV, descargas un archivo o cargas una página, casi nunca hablas con un servidor óptimo por varias conexiones en paralelo: hablas con un único servidor, con una única conexión, que puede estar más lejos o peor dimensionado. El número que ves en Speedtest es real, pero es tu mejor caso, no tu caso típico.</p>
+
+      <h2>Cómo funciona Fast.com</h2>
+      <p>Fast.com, de Netflix, nació con un propósito mucho más concreto: dejar que cualquiera comprobara si su proveedor estaba <strong>limitando el tráfico hacia Netflix</strong>. Por eso, en lugar de servidores genéricos de test, Fast.com mide contra la propia infraestructura de Netflix —la misma red de servidores (Open Connect) que te sirve las películas y series.</p>
+      <p>Es una herramienta deliberadamente simple: pocos parámetros, poca configuración, un número grande en el centro de la pantalla. Eso la hace muy accesible, pero también más limitada como diagnóstico general: mide bien el escenario «tráfico hacia Netflix», que sirve como aproximación razonable a tu velocidad de descarga general, aunque no es exactamente lo mismo que hablar con cualquier otro servicio.</p>
+
+      <h2>Lo que Speedtest y Fast.com tienen en común</h2>
+      <p>Más allá de sus diferencias, ambos comparten una limitación estructural: son una <strong>fotografía de un instante</strong>, tomada justo en el momento en que tú, de forma consciente, decides mirar. Y ese detalle importa más de lo que parece.</p>
+      <p>Algunos proveedores han sido señalados por gestionar de forma más favorable el tráfico dirigido a servidores de test conocidos —los de Speedtest y Fast.com son, por definición, de los más reconocibles que existen. No es una acusación generalizada ni demostrable en cada caso individual, pero sí es una razón plausible por la que un resultado puede verse mejor en el test de lo que se siente navegando a diario. Y aunque no hubiera ningún trato especial, el simple hecho de que el resultado dependa de un único momento —justo cuando abres la app— ya deja fuera todo lo que pasa el resto del día.</p>
+
+      <h2>Comparativa: Speedtest, Fast.com y monitoreo continuo</h2>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>Speedtest</th><th>Fast.com</th><th>Monitoreo continuo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Qué mide</strong></td><td>El techo de tu línea: máximo rendimiento posible con conexiones en paralelo</td><td>Rendimiento real contra la red de Netflix (Open Connect)</td><td>Tu velocidad y responsividad reales a lo largo del día, medición tras medición</td></tr>
+          <tr><td><strong>Servidores de test</strong></td><td>Red global de servidores de terceros, elige el más óptimo cerca de ti</td><td>Infraestructura propia de Netflix (Open Connect)</td><td>CDN global + la herramienta networkQuality de Apple</td></tr>
+          <tr><td><strong>Mejor uso</strong></td><td>Verificar la velocidad contratada frente a tu ISP</td><td>Comprobar si se limita el tráfico hacia Netflix</td><td>Entender el patrón real de tu conexión, día y noche</td></tr>
+          <tr><td><strong>Latencia bajo carga</strong></td><td>Incluye una métrica de latencia bajo carga, pero solo en ese instante</td><td>Incluye una métrica de latencia bajo carga, pero solo en ese instante</td><td>Responsividad (RPM) medida en cada prueba, con historial</td></tr>
+          <tr><td><strong>Historial en el tiempo</strong></td><td>No, salvo que crees una cuenta y lo repitas manualmente</td><td>No</td><td>Sí, automático, cada 15/30/60 minutos</td></tr>
+          <tr><td><strong>Evidencia exportable</strong></td><td>Captura de pantalla o cuenta con historial limitado</td><td>Captura de pantalla</td><td>CSV local con fecha, hora, Mbps y RPM de cada test</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>Lo que ninguno de los dos te cuenta</h2>
+      <p>Ni Speedtest ni Fast.com pueden responder a preguntas que dependen del tiempo: ¿cómo se comporta tu conexión a las 21:00 comparado con las 9:00? ¿Hay caídas que se repiten cada noche o cada fin de semana? ¿Mejoró de verdad tu conexión después de que cambiaras de plan o de router, o solo lo parece porque hiciste el test una vez en un buen momento?</p>
+      <p>Esas preguntas no se responden con un test puntual, por bueno que sea el test. Se responden con <strong>monitoreo continuo</strong>: mediciones automáticas y repetidas que dibujan una curva, no un punto. Es exactamente para eso que existe <a href="/">VelociBar</a>, una app de barra de menú para macOS que ejecuta un test automático cada 15, 30 o 60 minutos, mide tanto la velocidad de descarga como la responsividad bajo carga (RPM) y guarda todo el historial en local, exportable a CSV.</p>
+      <p>La conclusión honesta es que no compiten entre sí: se complementan. Usa Speedtest o Fast.com para una comprobación puntual —por ejemplo, para <a href="/blog/test-velocidad-mac.html">hacer un test de velocidad en tu Mac</a> antes de una videollamada importante. Y si sospechas que tu conexión empeora en ciertos momentos o quieres <a href="/blog/reclamar-isp-internet-lento.html">reclamar a tu ISP con datos</a>, necesitas el patrón completo que solo da el monitoreo continuo.</p>
+
+      <div class="post-cta">
+        <h2>Un test puntual no basta para ver el patrón completo</h2>
+        <p>VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y guarda el historial completo en tu Mac. Sin cuentas, sin nube.</p>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/velocibar/id6756196355"><span class="btn-icon">↓</span><span>Descargar VelociBar</span></a>
+      </div>
+
+      <p class="post-footer-nav"><a href="/blog/">← Todos los artículos</a></p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">◉</span>
+        <span>VelociBar</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/blog/">Blog</a>
+        <a href="/legal/privacy.html">Política de Privacidad</a>
+        <a href="/legal/terms.html">Términos de Uso</a>
+      </nav>
+      <p class="copyright">© 2026 VelociBar. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

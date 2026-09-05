@@ -30,10 +30,20 @@ VelociBar is built for people who pay for a fast plan but feel their connection 
 - Does it run in the background? Yes — it runs scheduled tests from the menu bar while you work.
 - How much load does it add? Tests are calibrated not to saturate your bandwidth; you set the frequency and it pauses on battery or weak signal.
 
+## Blog (practical guides, Spanish and English)
+
+- Why is your internet slow at night: https://velocibar.app/en/blog/internet-slow-at-night.html — Markdown: https://velocibar.app/en/blog/internet-slow-at-night.md (ES: https://velocibar.app/blog/internet-lento-por-la-noche.md)
+- What is bufferbloat: https://velocibar.app/en/blog/what-is-bufferbloat.html — Markdown: https://velocibar.app/en/blog/what-is-bufferbloat.md (ES: https://velocibar.app/blog/que-es-bufferbloat.md)
+- How to prove your internet is slower than what you pay for: https://velocibar.app/en/blog/prove-isp-throttling.html — Markdown: https://velocibar.app/en/blog/prove-isp-throttling.md (ES: https://velocibar.app/blog/reclamar-isp-internet-lento.md)
+- How to test internet speed on a Mac (incl. Apple's networkQuality tool): https://velocibar.app/en/blog/speed-test-mac.html — Markdown: https://velocibar.app/en/blog/speed-test-mac.md (ES: https://velocibar.app/blog/test-velocidad-mac.md)
+- Speedtest vs Fast.com vs continuous monitoring: https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html — Markdown: https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.md (ES: https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.md)
+
 ## Links
 
 - Home (Spanish): https://velocibar.app/ — Markdown: https://velocibar.app/index.md
 - Home (English): https://velocibar.app/en/ — Markdown: https://velocibar.app/en/index.md
+- Blog (Spanish): https://velocibar.app/blog/
+- Blog (English): https://velocibar.app/en/blog/
 - Full site content in one file: https://velocibar.app/llms-full.txt
 - Comparison vs one-off speed tests (English): https://velocibar.app/en/#comparativa
 - FAQ (English): https://velocibar.app/en/#faq
