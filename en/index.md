@@ -35,7 +35,7 @@ Your data never leaves your Mac. **No accounts, no cloud, no telemetry.** Every 
 
 Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.
 
-| | One-off tests (Speedtest, Fast.com) | VelociBar |
+| | One-off tests | VelociBar |
 |---|---|---|
 | **When it measures** | Only when you run it | Automatically, every 15, 30 or 60 minutes |
 | **What it reveals** | A snapshot of that instant | The real pattern: the 9 p.m. drop, the weekend congestion |

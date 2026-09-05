@@ -42,7 +42,7 @@ Your data never leaves your Mac. **No accounts, no cloud, no telemetry.** Every 
 
 Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.
 
-| | One-off tests (Speedtest, Fast.com) | VelociBar |
+| | One-off tests | VelociBar |
 |---|---|---|
 | **When it measures** | Only when you run it | Automatically, every 15, 30 or 60 minutes |
 | **What it reveals** | A snapshot of that instant | The real pattern: the 9 p.m. drop, the weekend congestion |
@@ -134,7 +134,7 @@ Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría.** Cad
 
 Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.
 
-| | Tests puntuales (Speedtest, Fast.com) | VelociBar |
+| | Tests puntuales | VelociBar |
 |---|---|---|
 | **Cuándo mide** | Solo cuando tú lo ejecutas | Automáticamente, cada 15, 30 o 60 minutos |
 | **Qué revela** | Una foto de ese instante | El patrón real: la caída de las 21:00, la congestión del fin de semana |

@@ -279,6 +279,84 @@
     observer.observe(counter);
   }
 
+  // --- Scroll-driven motion (homepage mocks & sections) ---
+  // Motivated motion only: the mocks illustrate a live measuring app, so lines
+  // draw in, numbers count up, and the two engine chips take turns. Everything
+  // is gated on prefers-reduced-motion and added by JS (no-JS stays static).
+  function startCountUp(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const finalText = el.textContent.trim();
+    const target = parseFloat(finalText);
+    if (isNaN(target)) return;
+    const decimals = (finalText.split('.')[1] || '').length;
+    const duration = 1600;
+    const start = performance.now();
+    const ease = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      el.textContent = (ease(p) * target).toFixed(decimals);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = finalText;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initMotion() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    const revealEls = document.querySelectorAll(
+      '.feature-text, .stats .stat, .compare-head, .compare-intro, .compare-table-wrap, .compare-note'
+    );
+    revealEls.forEach((el) => el.classList.add('reveal'));
+
+    const mocks = document.querySelectorAll('.mock, .vb-panel');
+    mocks.forEach((m) => {
+      m.classList.add('motion');
+      m.querySelectorAll('svg path').forEach((p) => {
+        if (p.getAttribute('fill') === 'none') {
+          const len = p.getTotalLength();
+          p.style.strokeDasharray = len;
+          p.style.strokeDashoffset = len;
+          p.classList.add('draw-line');
+        } else {
+          p.classList.add('draw-fill');
+        }
+      });
+      m.querySelectorAll('.reading .big, .rpm-num').forEach((el) =>
+        el.setAttribute('data-countup', '')
+      );
+    });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          el.classList.add('in-view');
+          el.querySelectorAll('.draw-line').forEach((p) => {
+            p.style.strokeDashoffset = 0;
+          });
+          el.querySelectorAll('[data-countup]').forEach(startCountUp);
+          io.unobserve(el);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    revealEls.forEach((el) => io.observe(el));
+    mocks.forEach((el) => io.observe(el));
+
+    // The two measurement engines take turns, like in the real app
+    const chips = document.querySelectorAll('.source-row .source-chip');
+    if (chips.length === 2) {
+      setInterval(() => {
+        chips.forEach((c) => c.classList.toggle('is-active'));
+      }, 4000);
+    }
+  }
+
   // --- Initialize ---
   function init() {
     // Initialize i18n system
@@ -286,6 +364,9 @@
 
     // Start speed counter animation
     animateSpeedCounter();
+
+    // Scroll-driven motion
+    initMotion();
 
     // Initialize smooth scroll
     initSmoothScroll();

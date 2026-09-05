@@ -35,7 +35,7 @@ Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría.** Cad
 
 Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.
 
-| | Tests puntuales (Speedtest, Fast.com) | VelociBar |
+| | Tests puntuales | VelociBar |
 |---|---|---|
 | **Cuándo mide** | Solo cuando tú lo ejecutas | Automáticamente, cada 15, 30 o 60 minutos |
 | **Qué revela** | Una foto de ese instante | El patrón real: la caída de las 21:00, la congestión del fin de semana |
