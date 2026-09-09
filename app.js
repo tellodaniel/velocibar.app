@@ -7,6 +7,12 @@
 (function () {
   'use strict';
 
+  // Private browsing may make storage unavailable; navigation still works.
+  const languagePreference = {
+    get() { try { return localStorage.getItem('velocibar-lang'); } catch { return null; } },
+    set(lang) { try { localStorage.setItem('velocibar-lang', lang); } catch { /* Optional preference. */ } }
+  };
+
   // --- i18n System ---
   const i18n = {
     currentLang: 'es',
@@ -14,7 +20,7 @@
     // Detect user's preferred language
     detectLanguage() {
       // Check localStorage first
-      const saved = localStorage.getItem('velocibar-lang');
+      const saved = languagePreference.get();
       if (saved && (saved === 'es' || saved === 'en')) {
         return saved;
       }
@@ -32,7 +38,7 @@
       if (lang !== 'es' && lang !== 'en') return;
       
       this.currentLang = lang;
-      localStorage.setItem('velocibar-lang', lang);
+      languagePreference.set(lang);
       document.documentElement.lang = lang;
       
       this.applyTranslations();
@@ -167,11 +173,12 @@
       if (staticLang) {
         this.currentLang = staticLang;
 
-        const saved = localStorage.getItem('velocibar-lang');
+        const saved = languagePreference.get();
         if ((saved === 'es' || saved === 'en') && saved !== staticLang) {
           // Send the visitor to this page's own translation, not the homepage
           const alt = document.querySelector('link[rel="alternate"][hreflang="' + saved + '"]');
-          window.location.replace(alt ? alt.getAttribute('href') : (saved === 'en' ? '/en/' : '/'));
+          const destination = alt ? new URL(alt.href).pathname : (saved === 'en' ? '/en/' : '/');
+          window.location.replace(destination + window.location.search + window.location.hash);
           return;
         }
 
@@ -179,7 +186,7 @@
         if (toggle) {
           toggle.addEventListener('click', () => {
             const target = toggle.getAttribute('data-lang-target');
-            if (target) localStorage.setItem('velocibar-lang', target);
+            if (target) languagePreference.set(target);
           });
         }
         return;
@@ -233,55 +240,95 @@
     });
   }
 
-  // --- Speed counter animation ---
-  function animateSpeedCounter() {
-    const counter = document.getElementById('speed-counter');
-    if (!counter) return;
-
-    const target = 92;
-    const finalLabel = '92.4';
-    const duration = 1800;
-    const startTime = performance.now();
-
-    // Easing function for smooth deceleration
-    function easeOutExpo(t) {
-      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-    }
-
-    function updateCounter(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeOutExpo(progress);
-      const currentValue = Math.floor(easedProgress * target);
-
-      counter.textContent = currentValue;
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.textContent = finalLabel;
+  // --- Responsive navigation ---
+  function initNavigation() {
+    const nav = document.querySelector('.landing-page .nav');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!nav || !toggle) return;
+    const isEnglish = document.documentElement.lang === 'en';
+    const setOpen = (open) => {
+      nav.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', isEnglish ? (open ? 'Close menu' : 'Open menu') : (open ? 'Cerrar menú' : 'Abrir menú'));
+    };
+    nav.classList.add('nav-ready');
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
       }
-    }
+    });
+    document.addEventListener('click', event => { if (!nav.contains(event.target)) setOpen(false); });
+    window.matchMedia('(min-width: 851px)').addEventListener('change', () => setOpen(false));
 
-    // Start animation when element is in view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            requestAnimationFrame(updateCounter);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    if (!('IntersectionObserver' in window)) return;
+    const links = [...nav.querySelectorAll('a[href^="#"]')];
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const link = links.find(item => item.hash === '#' + entry.target.id);
+        if (entry.isIntersecting) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-15% 0px -55% 0px' });
+    links.forEach(link => {
+      const section = document.querySelector(link.hash);
+      if (section) observer.observe(section);
+    });
+  }
 
-    observer.observe(counter);
+  // A clearly labelled simulation: no network tests or scheduled jobs run here.
+  function initPreview() {
+    const button = document.getElementById('preview-run');
+    if (!button) return;
+    const isEnglish = document.documentElement.lang === 'en';
+    const label = button.querySelector('span');
+    const panel = document.querySelector('.vb-panel');
+    const status = document.getElementById('preview-status');
+    const interval = document.getElementById('preview-interval');
+    const counter = document.getElementById('speed-counter');
+    const restingLabel = label.textContent;
+    const samples = [{ speed: '94.8', rpm: '1286' }, { speed: '88.7', rpm: '1180' }, { speed: '92.4', rpm: '1240' }];
+    let sampleIndex = 0;
+    let hasRun = false;
+    const updateStatus = () => {
+      status.textContent = isEnglish
+        ? `Sample data${hasRun ? ' updated' : ''} · every ${interval.value} min in the app`
+        : `Datos de ejemplo${hasRun ? ' actualizados' : ''} · cada ${interval.value} min en la app`;
+    };
+    button.hidden = false;
+    interval.addEventListener('change', updateStatus);
+    button.addEventListener('click', () => {
+      if (button.disabled) return;
+      const sample = samples[sampleIndex % samples.length];
+      button.disabled = true;
+      panel.classList.add('is-running');
+      label.textContent = isEnglish ? 'Measuring…' : 'Midiendo…';
+      status.textContent = isEnglish ? 'Simulating a test with sample data…' : 'Simulando una prueba con datos de ejemplo…';
+      const finish = () => {
+        counter.textContent = sample.speed;
+        document.getElementById('preview-rpm').textContent = sample.rpm;
+        document.getElementById('menubar-speed').textContent = Math.round(Number(sample.speed)) + ' Mbps';
+        const points = Array.from({ length: 21 }, (_, i) => `${i * 15},${Math.round(25 + Math.sin(i * 1.8 + sampleIndex) * 8 + Math.cos(i * 0.6) * 5)}`);
+        const line = 'M' + points.join(' L');
+        document.querySelector('.preview-line').setAttribute('d', line);
+        document.querySelector('.preview-area').setAttribute('d', line + ' L300,64 L0,64 Z');
+        sampleIndex += 1;
+        hasRun = true;
+        panel.classList.remove('is-running');
+        button.disabled = false;
+        label.textContent = restingLabel;
+        updateStatus();
+      };
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) finish();
+      else window.setTimeout(finish, 1100);
+    });
   }
 
   // --- Scroll-driven motion (homepage mocks & sections) ---
   // Motivated motion only: the mocks illustrate a live measuring app, so lines
-  // draw in, numbers count up, and the two engine chips take turns. Everything
+  // draw in and numbers count up once. Everything
   // is gated on prefers-reduced-motion and added by JS (no-JS stays static).
   function startCountUp(el) {
     if (el.dataset.counted) return;
@@ -311,7 +358,7 @@
     );
     revealEls.forEach((el) => el.classList.add('reveal'));
 
-    const mocks = document.querySelectorAll('.mock, .vb-panel');
+    const mocks = document.querySelectorAll('.mock');
     mocks.forEach((m) => {
       m.classList.add('motion');
       m.querySelectorAll('svg path').forEach((p) => {
@@ -348,13 +395,6 @@
     revealEls.forEach((el) => io.observe(el));
     mocks.forEach((el) => io.observe(el));
 
-    // The two measurement engines take turns, like in the real app
-    const chips = document.querySelectorAll('.source-row .source-chip');
-    if (chips.length === 2) {
-      setInterval(() => {
-        chips.forEach((c) => c.classList.toggle('is-active'));
-      }, 4000);
-    }
   }
 
   // --- Initialize ---
@@ -362,8 +402,8 @@
     // Initialize i18n system
     i18n.init();
 
-    // Start speed counter animation
-    animateSpeedCounter();
+    initNavigation();
+    initPreview();
 
     // Scroll-driven motion
     initMotion();
@@ -371,15 +411,7 @@
     // Initialize smooth scroll
     initSmoothScroll();
 
-    // Keyboard accessibility for FAQ items
-    document.querySelectorAll('.faq-item summary').forEach((summary) => {
-      summary.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          summary.click();
-        }
-      });
-    });
+    // Native <details> supplies keyboard and screen-reader behavior for the FAQ.
   }
 
   // Run on DOM ready

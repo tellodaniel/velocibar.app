@@ -57,8 +57,9 @@
   <meta name="twitter:image" content="https://velocibar.app/og-image.png">
   <meta name="twitter:image:alt" content="VelociBar: monitor de velocidad de internet en la barra de menú de macOS">
 
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="/assets/fonts/manrope-semibold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="styles.css?v=20260909.3" as="style">
+  <link rel="stylesheet" href="styles.css?v=20260909.3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -190,20 +191,22 @@
   }
   </script>
 </head>
-<body>
+<body class="landing-page">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <!-- Header -->
   <header class="header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegación principal">
       <a href="/" class="logo" aria-label="VelociBar - Inicio">
         <img class="logo-icon" src="/favicon.svg" alt="" width="20" height="20">
         <span class="logo-text">VelociBar</span>
       </a>
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
         <li class="nav-link-collapse"><a href="#medicion">Medición</a></li>
         <li class="nav-link-collapse"><a href="#responsividad">Responsividad</a></li>
         <li class="nav-link-collapse"><a href="#historial">Historial</a></li>
         <li class="nav-link-collapse"><a href="/blog/">Blog</a></li>
-        <li><a href="#descargar" class="nav-cta">Descargar</a></li>
+        <li><a href="#descargar" class="nav-cta">Descargar<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></li>
         <li>
           <a class="lang-toggle" id="lang-toggle" href="/en/" data-lang-target="en" hreflang="en" aria-label="Switch to English">
             <span class="lang-es active">ES</span>
@@ -214,75 +217,65 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
     <section class="hero" id="inicio">
       <div class="hero-text">
-        <span class="eyebrow">Monitor de red · macOS</span>
-        <h1>La velocidad real de tu internet, no la de la foto perfecta.</h1>
-        <p class="hero-subtitle">
-          VelociBar mide tu conexión por sí sola desde la barra de menú: <strong>descarga real</strong>, <strong>responsividad bajo carga</strong> e historial exportable.
-        </p>
+        <span class="eyebrow hero-eyebrow"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg> UNA PEQUEÑA APP PARA TU MAC</span>
+        <h1><span>Tu internet.</span><span class="text-accent">Sin suposiciones.</span></h1>
+        <p class="hero-subtitle">Conoce tu velocidad real, detecta las caídas y encuentra el patrón. VelociBar mide en segundo plano, directo desde tu barra de menú.</p>
         <div class="cta-group">
           <a class="btn btn-primary" id="download-btn" href="https://apps.apple.com/us/app/velocibar/id6756196355">
-            <span class="btn-icon">↓</span>
-            <span>Descargar VelociBar</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg><span>Descargar para Mac</span>
           </a>
-          <span class="cta-meta-inline">Requiere macOS 26 o superior</span>
+          <a class="text-link" href="#medicion">Así funciona <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
         </div>
+        <p class="hero-compatibility">macOS 26 o superior<span aria-hidden="true">·</span>Sin cuentas. Solo tu Mac.</p>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
+      <figure class="hero-visual" aria-label="Vista previa de VelociBar con datos de ejemplo">
         <div class="stage">
-          <div class="menubar">
+          <div class="desktop-wallpaper" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="menubar" aria-hidden="true">
+            <svg class="menubar-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
             <span class="menubar-app">Finder</span>
-            <div class="menubar-menus"><span>Archivo</span><span>Edición</span><span>Ver</span></div>
-            <span class="menubar-status"><span class="ico">◉</span> 92 Mbps</span>
+            <div class="menubar-menus"><span>Archivo</span><span>Edición</span></div>
+            <span class="menubar-status"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v4m5-9v9m5-14v14m5-19v19"/></svg> <span id="menubar-speed">92 Mbps</span></span>
             <span class="menubar-clock">9:41</span>
           </div>
           <div class="stage-body">
             <div class="vb-panel">
               <div class="vb-head">
+                <img src="/favicon.svg" alt="" width="20" height="20">
                 <span class="vb-head-title">VelociBar</span>
-                <span class="vb-head-time">· hace 2 min</span>
-                <span class="vb-head-dot"></span>
+                <span class="vb-head-dot" aria-hidden="true"></span>
+                <span class="vb-head-time">Conectado</span>
               </div>
-              <div class="vb-metrics">
-                <div class="vb-metric">
-                  <span class="vb-metric-label">Descarga</span>
-                  <span class="vb-metric-value"><span id="speed-counter">92.4</span> Mbps</span>
-                </div>
-                <div class="vb-metric">
-                  <span class="vb-metric-label">Responsividad</span>
-                  <span class="vb-metric-value">1240 RPM</span>
-                  <span class="vb-badge is-high">Alta</span>
-                </div>
+              <div class="vb-download">
+                <span class="vb-metric-label"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg> Velocidad de descarga</span>
+                <div class="vb-speed"><span id="speed-counter">92.4</span><span class="vb-speed-unit">Mbps</span></div>
               </div>
-              <div class="vb-graph">
-                <svg viewBox="0 0 228 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stop-color="#38bdc3" stop-opacity="0.35"/>
-                      <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M2,30 L24,24 L46,27 L68,17 L90,25 L112,19 L134,29 L156,15 L178,31 L200,21 L226,25 L226,46 L2,46 Z" fill="url(#vbg)"/>
-                  <path d="M2,30 L24,24 L46,27 L68,17 L90,25 L112,19 L134,29 L156,15 L178,31 L200,21 L226,25" fill="none" stroke="#4dd4db" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <div class="vb-graph" aria-hidden="true">
+                <svg viewBox="0 0 300 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs><linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86d9c3" stop-opacity="0.24"/><stop offset="1" stop-color="#86d9c3" stop-opacity="0"/></linearGradient></defs>
+                  <path class="preview-area" d="M0,42 L15,39 L30,41 L45,30 L60,33 L75,20 L90,25 L105,23 L120,34 L135,20 L150,23 L165,16 L180,21 L195,19 L210,29 L225,18 L240,21 L255,13 L270,17 L285,14 L300,18 L300,64 L0,64 Z" fill="url(#vbg)"/>
+                  <path class="preview-line" d="M0,42 L15,39 L30,41 L45,30 L60,33 L75,20 L90,25 L105,23 L120,34 L135,20 L150,23 L165,16 L180,21 L195,19 L210,29 L225,18 L240,21 L255,13 L270,17 L285,14 L300,18" fill="none" stroke="#86d9c3" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
                 </svg>
               </div>
+              <div class="vb-graph-axis" aria-hidden="true"><span>Últimas mediciones</span><span>Ahora</span></div>
+              <div class="vb-responsiveness"><span>Responsividad</span><span><strong id="preview-rpm">1240</strong> <span class="rpm-suffix">RPM</span></span><span class="vb-badge is-high">Alta</span></div>
               <div class="vb-row">
-                <span>⏱ Intervalo</span>
-                <span class="vb-pick">15 min ▾</span>
+                <label for="preview-interval"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Medir cada</label>
+                <select class="vb-pick" id="preview-interval"><option value="15">15 min</option><option value="30">30 min</option><option value="60">60 min</option></select>
               </div>
-              <div class="vb-actions">
-                <span class="vb-btn is-primary">▶ Probar ahora</span>
-                <span class="vb-btn is-icon">▤</span>
-                <span class="vb-btn is-icon">⌫</span>
-              </div>
+              <button class="vb-btn is-primary" id="preview-run" type="button" hidden><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg><span>Probar ahora</span></button>
+              <div class="vb-local"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg> El historial se guarda en tu Mac</div>
             </div>
+            <div class="desktop-note" aria-hidden="true"><span>VelociBar</span><span>Tu conexión, a la vista.</span></div>
           </div>
         </div>
-      </div>
+        <figcaption class="preview-caption"><span class="preview-indicator" aria-hidden="true"></span><span id="preview-status" role="status" aria-live="polite">Vista previa · datos de ejemplo</span></figcaption>
+      </figure>
     </section>
 
     <!-- Stat strip -->
@@ -293,7 +286,7 @@
       </div>
       <div class="stat">
         <span class="stat-num">2</span>
-        <span class="stat-label">Motores de medición: networkQuality de Apple + CDN</span>
+        <span class="stat-label">Motores de medición complementarios</span>
       </div>
       <div class="stat">
         <span class="stat-num">CSV</span>
@@ -304,7 +297,8 @@
     <!-- Feature 1 — Measurement -->
     <section class="feature" id="medicion">
       <div class="feature-text">
-        <h2>Dos motores de medición, una sola verdad.</h2>
+        <span class="eyebrow">01 / MEDICIÓN REAL</span>
+        <h2>Dos motores. Una visión más clara.</h2>
         <p>VelociBar alterna la herramienta <span class="mono">networkQuality</span> de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio.</p>
       </div>
       <div class="feature-visual">
@@ -330,12 +324,12 @@
               <svg viewBox="0 0 480 54" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="spk" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#38bdc3" stop-opacity="0.3"/>
-                    <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+                    <stop offset="0" stop-color="#86d9c3" stop-opacity="0.3"/>
+                    <stop offset="1" stop-color="#86d9c3" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
                 <path d="M0,40 L40,34 L80,38 L120,22 L160,30 L200,18 L240,33 L280,14 L320,28 L360,20 L400,32 L440,16 L480,26 L480,54 L0,54 Z" fill="url(#spk)"/>
-                <path d="M0,40 L40,34 L80,38 L120,22 L160,30 L200,18 L240,33 L280,14 L320,28 L360,20 L400,32 L440,16 L480,26" fill="none" stroke="#4dd4db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <path d="M0,40 L40,34 L80,38 L120,22 L160,30 L200,18 L240,33 L280,14 L320,28 L360,20 L400,32 L440,16 L480,26" fill="none" stroke="#9ae0cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
               </svg>
             </div>
           </div>
@@ -346,7 +340,8 @@
     <!-- Feature 2 — Responsiveness -->
     <section class="feature feature-reverse" id="responsividad">
       <div class="feature-text">
-        <h2>Por qué tu videollamada se entrecorta con 300 Mbps.</h2>
+        <span class="eyebrow">02 / MÁS ALLÁ DE LOS MBPS</span>
+        <h2>La velocidad no lo dice todo.</h2>
         <p>La velocidad no lo es todo. VelociBar mide la <strong>responsividad bajo carga</strong> (RPM): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del <em>bufferbloat</em>, y es lo que decide si Zoom se congela.</p>
         <p>Cada prueba se califica como Baja, Media o Alta (el mismo criterio que usa la herramienta de Apple) para que sepas de un vistazo si el problema es la velocidad o la estabilidad.</p>
       </div>
@@ -375,7 +370,8 @@
     <!-- Feature 3 — History -->
     <section class="feature" id="historial">
       <div class="feature-text">
-        <h2>Ve el patrón, no solo el momento.</h2>
+        <span class="eyebrow">03 / EL CONTEXTO COMPLETO</span>
+        <h2>Cada medición cuenta una historia.</h2>
         <p>Cada prueba se guarda localmente y se dibuja en una línea de tiempo. Descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió.</p>
       </div>
       <div class="feature-visual">
@@ -386,13 +382,13 @@
               <svg viewBox="0 0 480 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="hist" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#38bdc3" stop-opacity="0.32"/>
-                    <stop offset="1" stop-color="#38bdc3" stop-opacity="0"/>
+                    <stop offset="0" stop-color="#86d9c3" stop-opacity="0.32"/>
+                    <stop offset="1" stop-color="#86d9c3" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
                 <path d="M0,46 L48,40 L96,34 L144,30 L192,33 L240,32 L288,42 L336,70 L384,112 L416,122 L448,72 L480,50 L480,150 L0,150 Z" fill="url(#hist)"/>
-                <path d="M0,46 L48,40 L96,34 L144,30 L192,33 L240,32 L288,42 L336,70 L384,112 L416,122 L448,72 L480,50" fill="none" stroke="#4dd4db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-                <circle cx="416" cy="122" r="4.5" fill="#e55039" stroke="#0a0f14" stroke-width="2"/>
+                <path d="M0,46 L48,40 L96,34 L144,30 L192,33 L240,32 L288,42 L336,70 L384,112 L416,122 L448,72 L480,50" fill="none" stroke="#9ae0cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <circle cx="416" cy="122" r="4.5" fill="#df8b7c" stroke="#0a0f14" stroke-width="2"/>
               </svg>
             </div>
             <div class="history-axis"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
@@ -405,13 +401,14 @@
     <!-- Feature 4 — Export -->
     <section class="feature feature-reverse" id="exportar">
       <div class="feature-text">
-        <h2>Tus datos, en un CSV que habla por ti.</h2>
+        <span class="eyebrow">04 / TUS DATOS, CONTIGO</span>
+        <h2>De la sospecha a la evidencia.</h2>
         <p>Exporta el historial completo con un clic: marca de tiempo, motor, descarga, latencia y responsividad. Evidencia objetiva para tu proveedor de internet, o solo para ti.</p>
       </div>
       <div class="feature-visual">
-        <div class="mock csv-card" role="img" aria-label="Archivo CSV exportado con una fila de caída resaltada">
+        <div class="mock csv-card" role="group" aria-label="Archivo CSV exportado con una fila de caída resaltada">
           <div class="mock-head"><span class="mock-dot"></span><span class="mono">speed_log.csv</span></div>
-          <div class="csv-body">
+          <div class="csv-body" tabindex="0" role="region" aria-label="Datos de ejemplo en CSV, desplaza para ver todas las columnas">
             <div class="csv-line head"><span class="col ts">timestamp</span><span class="col">source</span><span class="col">download_mbps</span><span class="col">latency_ms</span><span class="col">responsiveness_rpm</span></div>
             <div class="csv-line"><span class="col ts">09:15</span><span class="col">apple</span><span class="col">92.4</span><span class="col">12</span><span class="col">1240</span></div>
             <div class="csv-line"><span class="col ts">14:30</span><span class="col">custom</span><span class="col">88.7</span><span class="col">15</span><span class="col">980</span></div>
@@ -424,6 +421,8 @@
 
     <!-- Privacy line -->
     <section class="privacy" id="privacidad">
+      <span class="privacy-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg></span>
+      <span class="eyebrow">PRIVADA POR NATURALEZA</span>
       <p class="privacy-line">
         Tus datos nunca salen de tu Mac. <strong>Sin cuentas, sin nube, sin telemetría.</strong> Cada prueba, cada registro y cada exportación ocurren en local.
       </p>
@@ -432,6 +431,7 @@
     <!-- Comparison -->
     <section class="compare" id="comparativa">
       <div class="compare-head">
+        <span class="eyebrow">UN POCO MÁS DE PERSPECTIVA</span>
         <h2>¿VelociBar o un test de velocidad puntual?</h2>
       </div>
       <p class="compare-intro">Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.</p>
@@ -480,7 +480,9 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="faq-head">
-        <h2>Preguntas frecuentes</h2>
+        <span class="eyebrow">BUENO SABERLO</span>
+        <h2>Todo un poco<br> más claro.</h2>
+        <p>Lo que necesitas saber antes de empezar.</p>
       </div>
       <div class="faq-list">
         <details class="faq-item">
@@ -520,11 +522,13 @@
 
     <!-- CTA Final -->
     <section class="cta-section" id="descargar">
+      <img class="cta-app-icon" src="/icon-192.png" alt="" width="72" height="72">
+      <span class="eyebrow">SIEMPRE EN TU BARRA DE MENÚ</span>
       <h2>Deja de adivinar. Empieza a medir.</h2>
       <div class="cta-group">
         <a class="btn btn-primary btn-large" id="download-btn-footer" href="https://apps.apple.com/us/app/velocibar/id6756196355">
-          <span class="btn-icon">↓</span>
-          <span>Descargar VelociBar</span>
+          <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg>
+          <span>Descargar para Mac</span>
         </a>
       </div>
       <p class="cta-meta">Requiere macOS 26 o superior</p>
@@ -547,6 +551,6 @@
     </div>
   </footer>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=20260909.3" defer></script>
 </body>
 </html>
