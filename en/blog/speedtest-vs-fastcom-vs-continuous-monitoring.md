@@ -1,51 +1,63 @@
-# Speedtest vs Fast.com: What Each Really Measures (and What Neither Tells You)
+> Markdown version of https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html · [Versión en español](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html)
 
-September 4, 2026 · 7 min read
+# Speedtest vs Fast.com vs VelociBar: Which Test to Use
 
-> Markdown version of https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html · [Versión en español](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.md)
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 4 min read
 
-"Which is the better speed test, Speedtest or Fast.com?" is the wrong question. Both are reliable tools, but they measure different things, with different methods, for different purposes. Neither one lies to you, but neither gives you the full picture either. Let's look at exactly what each one does, where they overlap, and what information stays out of reach no matter which test you run.
+**Use Speedtest or Fast.com for a quick connection check, and VelociBar when you want scheduled tests with local history on a Mac.** Both web tools can report more than download speed. Differences between their results can reflect the server, route, workload, or timing; they do not by themselves prove ISP throttling.
 
 ## How Ookla's Speedtest works
 
 Speedtest looks through thousands of servers spread across the world and picks one that's close to you and very well connected, usually hosted on carrier infrastructure or in a datacenter with plenty of bandwidth to spare. It then opens several parallel connections against that server and adds up their combined throughput.
 
-That design isn't an accident: Speedtest is built to find the **ceiling** of your line. If you pay for 500 Mbps, you want a test capable of squeezing out all 500 Mbps if your line can deliver them, and multiple parallel connections against an optimal server is how you get there. It's the right tool for one specific question: *is my provider giving me what I paid for?*
+A throughput test estimates how much data the connection to its selected server can carry during the run. That is useful for checking a plan’s performance, provided you account for the device, connection type, and other traffic.
 
-What Speedtest isn't designed to represent is your **everyday experience**. When you stream a show, download a file, or load a page, you're almost never talking to an optimal server over several parallel connections: you're talking to a single server, over a single connection, that may be farther away or less generously provisioned. The number Speedtest gives you is real, but it's your best case, not your typical one.
+No single test server represents every application. Real applications can also use CDNs and multiple connections, so it is misleading to label one tool “theoretical” and another “real.” Compare equivalent conditions, and use a second destination when investigating a discrepancy.
 
 ## How Fast.com works
 
-Fast.com, from Netflix, was built with a much narrower purpose: letting anyone check whether their ISP was **throttling traffic to Netflix**. That's why, instead of generic test servers, Fast.com measures against Netflix's own infrastructure: the same network of servers (Open Connect) that streams you movies and shows.
+Fast.com estimates current connection speed using transfers to Netflix servers. [Its own FAQ describes a general speed estimate](https://fast.com/), not a conclusive test of deliberate traffic throttling.
 
-It's a deliberately simple tool: few settings, little configuration, one big number in the middle of the screen. That makes it very approachable, but also more limited as a general diagnostic: it measures the "traffic to Netflix" scenario well, which serves as a reasonable proxy for your general download speed, though it isn't exactly the same as talking to any other service.
+Its main view emphasizes download speed. “Show more info” also displays upload speed and unloaded and loaded latency. The settings allow you to adjust test duration and parallel connections.
 
 ## What Speedtest and Fast.com have in common
 
 Beyond their differences, both share a structural limitation: they're a **snapshot of one moment**, taken right when you, deliberately, decide to look. And that detail matters more than it seems.
 
-Some ISPs have been reported to handle traffic bound for well-known test servers more favorably, and the servers behind Speedtest and Fast.com are, by definition, some of the most recognizable ones out there. That's not a blanket accusation, nor something provable in every individual case, but it is a plausible reason a result can look better in the test than the connection feels day to day. And even without any special treatment at all, the simple fact that the result depends on a single moment (the exact instant you open the app) already leaves out everything that happens the rest of the day.
+Results can differ because of server selection, routing, background traffic, device limits, and timing. To investigate a repeatable gap, keep the setup stable and alternate tools across several time windows. A discrepancy alone is not evidence that a provider recognizes or favors test traffic.
 
-## Comparison: Speedtest, Fast.com, and continuous monitoring
+## Comparison: Speedtest, Fast.com, and VelociBar
 
-| | Speedtest | Fast.com | Continuous monitoring |
-|---|---|---|---|
-| **What it measures** | Your line's ceiling: maximum throughput possible using parallel connections | Real throughput against Netflix's network (Open Connect) | Your actual speed and responsiveness over the course of the day, test after test |
-| **Test servers** | Global network of third-party servers, picks the most optimal one near you | Netflix's own infrastructure (Open Connect) | Global CDN + Apple's networkQuality tool |
-| **Best use** | Verifying your contracted speed against your ISP | Checking whether traffic to Netflix is being throttled | Understanding your connection's real pattern, day and night |
-| **Latency under load** | Includes a loaded-latency metric, but only for that instant | Includes a loaded-latency metric, but only for that instant | Responsiveness (RPM) measured on every test, with history |
-| **History over time** | No, unless you create an account and repeat it manually | No | Yes, automatic, every 15/30/60 minutes |
-| **Exportable evidence** | Screenshot or account with limited history | Screenshot | Local CSV with date, time, Mbps, and RPM for every test |
+Capabilities differ by client and test method; comparison reviewed September 10, 2026.
 
-## What neither one tells you
+| Feature | Speedtest | Fast.com | VelociBar |
+| --- | --- | --- | --- |
+| Measurements | Download, upload, and latency; details depend on client | Download, upload, unloaded and loaded latency | Download and responsiveness; method depends on engine |
+| Destinations | Speedtest server network | Netflix servers | Apple networkQuality and a CDN download |
+| Best use | A connection check against a selected server | A quick browser test using Netflix infrastructure | Scheduled measurements and local history on a Mac |
+| History | Available in apps; behavior depends on client | Record results yourself | Automatic local history, every 15/30/60 minutes while running |
+| Sharing | Result sharing; export options depend on client | Record or capture the result | Local CSV with timestamps, source, results, and error flags |
+| Limits | A single run covers one moment | A single run covers one moment | Periodic samples; neither engine represents every destination |
 
-Neither Speedtest nor Fast.com can answer questions that depend on time: how does your connection behave at 9 p.m. compared to 9 a.m.? Are there drops that repeat every night or every weekend? Did your connection actually improve after you switched plans or routers, or does it just look that way because you happened to test it once at a good moment?
+## What a single test cannot tell you
+
+A single run cannot tell you whether a connection is slower at 9 p.m. than at 9 a.m. Repeating and recording tests can answer that question, whether you collect them manually, automate a suitable tool, or use an app with built-in scheduling.
 
 Those questions don't get answered by a one-off test, no matter how good the test is. They get answered by **continuous monitoring**: automatic, repeated measurements that draw a curve, not a point. That's exactly why [VelociBar](https://velocibar.app/en/) exists: a macOS menu bar app that runs an automatic test every 15, 30, or 60 minutes, measures both download speed and responsiveness under load (RPM), and keeps the entire history locally, exportable to CSV.
 
-The honest conclusion is that these tools don't compete with each other: they complement each other. Use Speedtest or Fast.com for a spot check, for example to [run a speed test on your Mac](https://velocibar.app/en/blog/speed-test-mac.html) before an important video call. And if you suspect your connection gets worse at certain times or want to [prove your ISP is throttling you with data](https://velocibar.app/en/blog/prove-isp-throttling.html), you need the full pattern that only continuous monitoring can give you.
+Use a spot check before an important call and a history to investigate recurring trouble. [Ookla’s app listing includes test history and sharing](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest); the available workflow depends on the client. VelociBar combines scheduled tests and local CSV export on macOS. See [how to test on a Mac](https://velocibar.app/en/blog/speed-test-mac.html) and [how to document slowdowns for support](https://velocibar.app/en/blog/prove-isp-throttling.html).
 
-## Links
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
 
-- Blog: https://velocibar.app/en/blog/
-- Download VelociBar (App Store): https://apps.apple.com/us/app/velocibar/id6756196355
+## Sources
+
+- [Fast.com: measurements and settings](https://fast.com/)
+- [Ookla: Speedtest app features and history](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest)
+
+## A one-off test can't show you the full pattern
+
+VelociBar measures your connection automatically from the macOS menu bar and keeps the full history on your Mac. No accounts, no cloud.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)

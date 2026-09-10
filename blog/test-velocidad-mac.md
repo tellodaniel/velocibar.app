@@ -1,10 +1,10 @@
-# Cómo hacer un test de velocidad en tu Mac: 3 métodos (incluido el que Apple esconde en la Terminal)
+> Versión en Markdown de https://velocibar.app/blog/test-velocidad-mac.html · [English version](https://velocibar.app/en/blog/speed-test-mac.html)
 
-4 de septiembre de 2026 · 6 min de lectura
+# Cómo hacer un test de velocidad en tu Mac: 3 métodos
 
-> Versión en Markdown de https://velocibar.app/blog/test-velocidad-mac.html · [English version](https://velocibar.app/en/blog/speed-test-mac.md)
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 6 min de lectura
 
-Buscas "test de velocidad" en Google, entras al primer resultado, esperas quince segundos y aparece un número en Mbps. ¿Ya está? No del todo. Ese número describe cómo estaba tu conexión en ese instante concreto, en ese navegador, contra ese servidor. Si quieres saber de verdad qué tan rápida —y qué tan estable— es tu conexión, tu Mac te ofrece tres formas de comprobarlo, y la más reveladora ni siquiera pasa por un navegador. Aquí tienes las tres, de la más rápida a la más completa.
+**Para medir la velocidad de internet en Mac, abre un test web, ejecuta `networkQuality` en la Terminal o usa VelociBar para programar mediciones.** Un test web da una lectura puntual; la herramienta de Apple también reporta responsividad bajo carga. Repetir las pruebas permite comparar la conexión entre horas y días.
 
 ## Método 1: Test de velocidad web (Speedtest.net, Fast.com)
 
@@ -12,15 +12,15 @@ Abrir Speedtest.net o Fast.com y esperar unos segundos es la forma más rápida 
 
 Pero conviene conocer sus límites:
 
-- **Es un número de mejor caso.** El test elige el servidor más cercano y con menos carga, y mide en condiciones casi ideales, no en las condiciones reales bajo las que trabajas, juegas o haces una videollamada.
-- **Añade overhead de navegador.** El JavaScript corriendo en una pestaña introduce su propia varianza; no es una medición pura a nivel de red.
+- **El destino importa.** Los servidores, las rutas y la configuración pueden producir resultados distintos. Usa el mismo método para comparar tendencias y otro destino para contrastar un problema.
+- **El dispositivo también importa.** El navegador, el procesador, el adaptador y el WiFi pueden limitar el resultado. Un test web sigue siendo útil para medir la conexión disponible en ese equipo.
 - **Solo mide ese instante.** Un test a las 11:00 de la mañana no dice nada sobre lo que pasa a las 21:30, cuando toda tu casa —y tu barrio— están conectados a la vez.
 
 Perfecto para saber si tu wifi funciona ahora mismo. Insuficiente para saber si tu internet [va lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html) o solo en ciertos momentos. Para eso necesitas algo más.
 
-## Método 2: El test que Apple esconde en la Terminal: `networkquality`
+## Método 2: La herramienta integrada de Apple: networkQuality
 
-Desde macOS Monterey, tu Mac trae integrado el mismo motor de medición que Apple usa para calificar la calidad de tu red. Se llama `networkquality`, vive en la Terminal, no tiene interfaz gráfica y casi nadie sabe que existe.
+macOS Monterey 12 y posteriores incluyen `networkQuality`. [Apple la describe como una prueba de responsividad en condiciones de uso.](https://developer.apple.com/videos/play/wwdc2021/10239/) Respeta las mayúsculas del comando, especialmente si tu sistema de archivos distingue entre mayúsculas y minúsculas.
 
 Así se usa:
 
@@ -28,10 +28,10 @@ Así se usa:
 2. Escribe el comando y pulsa Return:
 
 ```
-networkquality
+networkQuality
 ```
 
-Espera unos 20-30 segundos. Verás un resultado parecido a este:
+Espera a que termine. La duración y los campos de salida dependen de la versión de macOS y de la red. Este resultado es ilustrativo; no es un benchmark de VelociBar:
 
 ```
 ==== SUMMARY ====
@@ -44,16 +44,16 @@ Idle Latency: 14.353 milliseconds
 Cada línea te dice algo distinto:
 
 - **Uplink / Downlink capacity.** La velocidad real de subida y bajada, medida mientras la red está bajo carga de trabajo, no en una ráfaga aislada.
-- **Responsiveness.** Aquí está lo interesante. Apple no solo mide Mbps: mide cómo responde tu red mientras está saturada, y la califica como **Low, Medium o High**. Es el dato que un test de velocidad tradicional no te da.
-- **RPM (roundtrips per minute).** El número entre paréntesis junto a Responsiveness. Indica cuántos viajes de ida y vuelta completa tu conexión por minuto mientras hay tráfico pesado circulando a la vez. Es el indicador directo de [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html): cuanto más bajo el RPM, más se acumula tu tráfico en cola detrás de una descarga o subida grande, y más notas el lag en una videollamada o una partida online aunque tu velocidad de descarga sea alta.
+- **Responsiveness.** Apple reporta cómo responde la red bajo carga, con una clasificación Low, Medium o High. Otras pruebas también miden latencia bajo carga; sus unidades y métodos pueden ser diferentes.
+- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo.
 - **Idle Latency.** La latencia con la red en reposo, sin carga. Es tu punto de partida: compárala con lo que ocurre bajo carga para ver cuánto se degrada tu conexión cuando de verdad la exiges.
 
 El comando tiene dos variantes útiles:
 
-- `networkquality -v`: versión detallada (verbose), con más desglose de cada fase de la prueba.
-- `networkquality -s`: ejecuta las pruebas de subida y bajada de forma secuencial en vez de simultánea, útil si sospechas que se están interfiriendo entre sí y quieres una lectura más limpia de cada sentido.
+- `networkQuality -v`: versión detallada (verbose), con más desglose de cada fase de la prueba.
+- `networkQuality -s`: ejecuta subida y bajada de forma secuencial. Cambia la carga de trabajo, así que compáralo con otras pruebas secuenciales. Consulta `man networkQuality` para revisar las opciones de tu versión.
 
-Es gratis, no requiere abrir un navegador ni instalar nada, y te da un dato —la responsividad— que la mayoría de tests web ni siquiera menciona.
+La herramienta integrada no requiere otra instalación. Las pruebas generan tráfico y pueden afectar otras actividades mientras se ejecutan. Evita superponer pruebas y elige un momento adecuado si tu conexión tiene límite de datos.
 
 ## Método 3: Medición continua desde la barra de menú (VelociBar)
 
@@ -63,7 +63,7 @@ Para eso necesitas ejecutar el mismo tipo de prueba una y otra vez, a lo largo d
 
 Con ese historial puedes ver de un vistazo si tu velocidad cae de forma sistemática cada noche, si el problema es puntual o constante, y si tu responsividad (RPM) se desploma en las horas de más tráfico aunque la velocidad de descarga siga pareciendo aceptable. Es la diferencia entre sospechar algo y demostrarlo con datos.
 
-Ninguno de los tres métodos sobra: usa Speedtest o Fast.com para una comprobación rápida, `networkquality` cuando quieras un dato técnico preciso sin salir de la Terminal, y VelociBar cuando necesites ver el patrón completo a lo largo de los días.
+Ninguno de los tres métodos sobra: usa Speedtest o Fast.com para una comprobación rápida, `networkQuality` cuando quieras un dato técnico preciso sin salir de la Terminal, y VelociBar cuando necesites ver el patrón completo a lo largo de los días.
 
 ## Consejos para que el resultado sea fiable
 
@@ -72,9 +72,19 @@ Sea cual sea el método que uses, estos detalles cambian el resultado más de lo
 - **Usa cable ethernet si puedes**, o siéntate cerca del router en la banda de 5 GHz. El wifi de 2,4 GHz y la distancia añaden variables que no tienen nada que ver con tu proveedor.
 - **Pausa descargas, backups y VPN** antes de medir. Una copia de seguridad en la nube corriendo en segundo plano puede consumir gran parte de tu ancho de banda sin que lo notes.
 - **Repite la prueba a distintas horas del día**, no solo una vez por la mañana. El patrón —si existe— solo aparece cuando comparas varios momentos.
-- **No te fíes de una sola medición.** Tanto los tests web como `networkquality` pueden variar de una ejecución a otra por motivos ajenos a tu conexión —congestión momentánea de un servidor, por ejemplo—. Ejecuta la prueba dos o tres veces y quédate con la tendencia, no con el número aislado.
+- **No te fíes de una sola medición.** Tanto los tests web como `networkQuality` pueden variar de una ejecución a otra por motivos ajenos a tu conexión —congestión momentánea de un servidor, por ejemplo—. Ejecuta la prueba dos o tres veces y quédate con la tendencia, no con el número aislado.
 
-## Enlaces
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
 
-- Todos los artículos: https://velocibar.app/blog/
-- Descargar VelociBar (App Store): https://apps.apple.com/us/app/velocibar/id6756196355
+## Fuentes
+
+- [Apple: networkQuality y responsividad](https://developer.apple.com/videos/play/wwdc2021/10239/)
+- [Fast.com: mediciones de velocidad y latencia](https://fast.com/)
+
+## Deja que VelociBar mida por ti
+
+Ejecuta tests automáticos desde la barra de menú de tu Mac, guarda el historial en local y expórtalo a CSV cuando lo necesites. Sin cuentas, sin nube: todo en tu Mac.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)

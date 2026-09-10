@@ -1,188 +1,769 @@
-# VelociBar — Full site content for LLMs
+# VelociBar — Product summary and blog articles
 
-> This file inlines the complete content of https://velocibar.app in English and Spanish.
-> Short summary: https://velocibar.app/llms.txt · Markdown pages: https://velocibar.app/en/index.md (EN), https://velocibar.app/index.md (ES)
+> Compiled from llms.txt and the public article HTML. Articles retain their canonical URLs, language, publication dates, and sources.
 
----
+# VelociBar
 
-# VelociBar - Continuous Internet Speed Test for macOS
+> VelociBar is a macOS menu bar app for scheduled internet connection tests, local history, and CSV export. Its guides explain speed tests, responsiveness, and how to document recurring connection problems.
 
-> Markdown version of https://velocibar.app/en/ · [Versión en español](https://velocibar.app/index.md)
+## Product facts
 
-VelociBar is a macOS menu bar app that measures your real internet speed over time, not just at the moment you run a one-off test. It lives in the menu bar, measures on its own in the background, and keeps a local history you can export to CSV to hold your internet provider (ISP) accountable.
+- Requires macOS 26 or later. See the [App Store listing](https://apps.apple.com/us/app/velocibar/id6756196355) for current availability and pricing.
+- Scheduled tests run every 15, 30, or 60 minutes while the app is running and the Mac is awake. They are periodic samples, not uninterrupted monitoring.
+- Automatic tests alternate Apple's networkQuality engine and a CDN download engine. Manual tests use the CDN engine.
+- Tests generate internet traffic and can consume significant data or affect other network activity. They are active measurements, not passive observation.
+- Results are stored locally and can be exported. Local history does not mean the test itself stays offline: it contacts external test servers.
+- The current CSV fields are timestamp, source, is_error, download_mbps, latency_ms, duration_s, bytes_downloaded, and responsiveness_rpm. Older app versions may contain fewer fields.
+- Compare results within the same engine. Apple latency_ms is derived from RPM; CDN latency_ms records initial HTTP response time. The engines use different responsiveness methods. Zero RPM can mean unmeasured; error records should be separated from successful tests.
+- A history can show recurring slowdowns. It cannot alone prove deliberate ISP throttling, locate a bottleneck, establish a contract violation, or guarantee compensation.
+- Speedtest and Fast.com remain useful for spot checks and include latency measurements. Some Speedtest clients also offer history and sharing. VelociBar adds integrated scheduling and local CSV export on a Mac.
 
-- **Download**: https://apps.apple.com/us/app/velocibar/id6756196355 (App Store, $1.99 USD, one-time purchase)
-- **Requirements**: macOS 26 or later
-- **Languages**: Spanish (default) and English
+## Blog guides
 
-## At a glance
+- [Internet lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html) · [English](https://velocibar.app/en/blog/internet-slow-at-night.html)
+- [Qué es el bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html) · [English](https://velocibar.app/en/blog/what-is-bufferbloat.html)
+- [Documentar internet lento para tu ISP](https://velocibar.app/blog/reclamar-isp-internet-lento.html) · [English](https://velocibar.app/en/blog/prove-isp-throttling.html)
+- [Test de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html) · [English](https://velocibar.app/en/blog/speed-test-mac.html)
+- [Speedtest vs Fast.com vs VelociBar](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html) · [English](https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html)
 
-- **100% on your Mac, on-device**: no accounts, no cloud, no telemetry
-- **2 measurement engines**: Apple's `networkQuality` tool + a real download from a global CDN
-- **Full history exportable to CSV**
+Each article links to its Markdown equivalent, its translation, and its supporting sources.
 
-## What it measures
+## Site links
 
-**Two measurement engines, one honest number.** VelociBar alternates Apple's `networkQuality` tool with a real download from a global CDN. It measures the performance you actually get while browsing, not an idealized lab number:
-
-- **Real download speed** (Mbps)
-- **Responsiveness under load** (RPM, roundtrips per minute): how many times per minute your network answers while it's saturated. It's the *bufferbloat* metric: it explains why a video call stutters or a game lags even when your download speed is high. Every test is rated **Low / Medium / High**, the same scale Apple's own tool uses.
-
-## History and export
-
-Every test is saved locally and plotted on a timeline: spot the 9 p.m. drop, the weekend congestion, or the exact day your connection changed. Export the full history in one click to CSV with these columns: `timestamp`, `source` (engine), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Objective evidence for your ISP, or just for you.
-
-Automatic tests run in the background every 15, 30, or 60 minutes (your choice), with a "Run now" button and a desktop widget showing your latest measurement.
-
-## Privacy
-
-Your data never leaves your Mac. **No accounts, no cloud, no telemetry.** Every test, every log and every export runs locally.
-
-## VelociBar or a one-off speed test?
-
-Speedtest and Fast.com are great for a snapshot of the moment. VelociBar answers a different question: how your connection behaves throughout the day, every day.
-
-| | One-off tests | VelociBar |
-|---|---|---|
-| **When it measures** | Only when you run it | Automatically, every 15, 30 or 60 minutes |
-| **What it reveals** | A snapshot of that instant | The real pattern: the 9 p.m. drop, the weekend congestion |
-| **Bufferbloat** | Not always measured | Responsiveness under load (RPM), rated Low / Medium / High |
-| **History** | Limited, or requires an account | Local on your Mac, exportable to CSV in one click |
-| **Privacy** | Web service, varies by provider | No accounts, no cloud, no telemetry |
-
-You don't have to choose: use a one-off test to check the moment, and VelociBar to know (and prove) what your connection is really like.
-
-## Frequently asked questions
-
-### What exactly does VelociBar measure?
-
-VelociBar measures real download speed (Mbps) and responsiveness under load (RPM). It alternates two engines: Apple's networkQuality tool and a real download from a global CDN, so it reflects the performance you actually experience, not a lab number under ideal conditions.
-
-### What is responsiveness (RPM), and why does it matter?
-
-Responsiveness measures how many round trips your network completes per minute while under load. It's the bufferbloat metric: it explains why a video call stutters or a game lags even when your download speed is high. VelociBar rates it Low, Medium or High.
-
-### Does VelociBar upload my data anywhere?
-
-No. All results are stored only on your Mac. There are no accounts, no cloud and no telemetry. You have full control of your data.
-
-### Can I export the history?
-
-Yes. VelociBar saves every test to a CSV file with timestamp, engine, download (Mbps), latency (ms) and responsiveness (RPM). You can open or export it in one click: objective evidence for your ISP or for your own tracking.
-
-### Does it run in the background?
-
-Yes. VelociBar lives in the menu bar and runs automatic tests at the interval you choose: every 15, 30 or 60 minutes. It also includes a widget so you can see your latest reading at a glance.
-
-### What do I need to run VelociBar?
-
-macOS 26 or later. You can download VelociBar from the Apple App Store.
-
-### How do I prove to my ISP that my internet is slow?
-
-Let VelociBar measure in the background for a few days, then export the history to CSV. The file includes timestamp, measurement engine, download (Mbps), latency (ms) and responsiveness (RPM): objective evidence of recurring drops (say, every night at 9 p.m.) that a one-off test can't show.
-
-### Does VelociBar replace Speedtest or Fast.com?
-
-It complements them. A one-off test is great for checking a single moment; VelociBar measures continuously and automatically, keeps the history on your Mac, and exports it to CSV, so you can see patterns over time and have objective evidence. Many users run both.
-
-## Links
-
-- Home page (HTML): https://velocibar.app/en/
-- Versión en español (HTML): https://velocibar.app/
-- Download on the App Store: https://apps.apple.com/us/app/velocibar/id6756196355
-- Privacy Policy: https://velocibar.app/legal/privacy.html
-- Terms of Use: https://velocibar.app/legal/terms.html
-- Site summary for LLMs: https://velocibar.app/llms.txt
+- [Home in Spanish](https://velocibar.app/)
+- [Home in English](https://velocibar.app/en/)
+- [Spanish blog](https://velocibar.app/blog/)
+- [English blog](https://velocibar.app/en/blog/)
+- [Product summary and complete blog text](https://velocibar.app/llms-full.txt)
+- [Privacy policy](https://velocibar.app/legal/privacy.html)
+- [Terms](https://velocibar.app/legal/terms.html)
 
 ---
 
-# VelociBar - Test de velocidad de internet continuo para macOS
+> Versión en Markdown de https://velocibar.app/blog/internet-lento-por-la-noche.html · [English version](https://velocibar.app/en/blog/internet-slow-at-night.html)
 
-> Versión en Markdown de https://velocibar.app/ · [English version](https://velocibar.app/en/index.md)
+# ¿Por qué tu internet va lento por la noche? Causas y solución
 
-VelociBar es una app de barra de menú para macOS que mide tu velocidad real de internet a lo largo del tiempo, no solo en el momento en que ejecutas un test puntual. Vive en la barra de menú, mide sola en segundo plano y guarda un historial local que puedes exportar a CSV para reclamar a tu proveedor de internet (ISP).
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 4 min de lectura
 
-- **Descarga**: https://apps.apple.com/us/app/velocibar/id6756196355 (App Store, 1,99 USD, pago único)
-- **Requisitos**: macOS 26 o superior
-- **Idiomas**: español (por defecto) e inglés
+**El internet lento por la noche puede deberse a congestión en hora pico, descargas en casa o interferencias WiFi.** Compara pruebas por cable en horas tranquilas y ocupadas antes de atribuirlo al ISP. Una caída recurrente documenta un problema, pero no demuestra su causa ni una limitación deliberada del proveedor.
 
-## De un vistazo
+## Una posible causa: capacidad de red compartida
 
-- **100 % en tu Mac, en local**: sin cuentas, sin nube, sin telemetría
-- **2 motores de medición**: la herramienta `networkQuality` de Apple + descarga real desde una CDN global
-- **Historial completo exportable a CSV**
+Tu conexión no es un carril privado hasta el proveedor. En la mayoría de tecnologías de acceso —cable coaxial (DOCSIS), fibra GPON e internet móvil— el último tramo de la red se comparte entre decenas o cientos de hogares de tu zona.
 
-## Qué mide
+La capacidad compartida puede convertirse en un cuello de botella si la demanda simultánea supera lo que puede entregar un tramo de red. El streaming, las descargas y las llamadas pueden aumentar esa demanda por la tarde o noche. El horario y el impacto dependen del proveedor y la zona; una red compartida no está necesariamente saturada.
 
-**Dos motores de medición, una sola verdad.** VelociBar alterna la herramienta `networkQuality` de Apple con una descarga real desde una CDN global. Mide el rendimiento que de verdad obtienes navegando, no un número idealizado de laboratorio:
+Una caída repetida por la noche te da un horario que investigar. Los backups programados y las interferencias locales también pueden seguir un horario: ese patrón, por sí solo, no distingue un problema del ISP de uno en casa.
 
-- **Velocidad de descarga real** (Mbps)
-- **Responsividad bajo carga** (RPM, roundtrips per minute): cuántas veces por minuto responde tu red mientras está saturada. Es la métrica del *bufferbloat*, y explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. Cada prueba se califica como **Baja / Media / Alta**, el mismo criterio que usa la herramienta de Apple.
+## Otras causas con el mismo síntoma
 
-## Historial y exportación
+- **Interferencia WiFi vecinal.** Las redes cercanas pueden competir por el tiempo de transmisión. Compara WiFi con ethernet a la misma hora; un mejor resultado por cable apunta al tramo inalámbrico.
+- **Congestión dentro de tu propia casa.** Backups, actualizaciones y streaming comparten capacidad. Si las colas añaden demasiada demora, también puede haber [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html).
+- **Gestión de tráfico del proveedor.** Algunos ISP priorizan o limitan ciertos tráficos en horas de carga. Es difícil de ver desde fuera; precisamente por eso necesitas un historial de mediciones y no una prueba suelta.
 
-Cada prueba se guarda localmente y se dibuja en una línea de tiempo: descubre la caída de las 9 de la noche, la saturación del fin de semana o el día exacto en que tu conexión cambió. Exporta el historial completo con un clic a CSV con estas columnas: `timestamp`, `source` (motor), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Evidencia objetiva para tu ISP, o solo para ti.
+## Cómo comprobarlo con datos (no con sensaciones)
 
-Las pruebas automáticas se ejecutan en segundo plano cada 15, 30 o 60 minutos (tú eliges), con un botón «Probar ahora» y un widget de escritorio con tu última medición.
+Un test de velocidad puntual no puede demostrar un problema que solo existe a ciertas horas: si lo ejecutas a las 11:00 dará un resultado perfecto. Lo que necesitas es la **curva del día completo**:
 
-## Privacidad
+1. **Mide de forma continua durante al menos una semana.** Una app como [VelociBar](https://velocibar.app/) ejecuta un test automático cada 15, 30 o 60 minutos desde la barra de menú de tu Mac y guarda el historial en local.
+2. **Busca el patrón.** Mantén comparables el equipo, la conexión, el motor y el tráfico de fondo. Repite pruebas por cable en horas tranquilas y ocupadas. Si varios destinos se ralentizan con el tráfico doméstico en pausa, pide al ISP revisar capacidad compartida o rutas.
+3. **Mira también la responsividad, no solo los Mbps.** La latencia se mide en milisegundos: menos es mejor. La responsividad se mide en RPM: más es mejor. Una caída de RPM indica respuestas más lentas bajo la carga de la prueba; no identifica dónde ocurre la demora.
+4. **Exporta la evidencia.** Conserva un CSV con fechas y condiciones de prueba para que soporte revise las caídas recurrentes. Separa los resultados por motor y marca las pruebas fallidas en lugar de tratarlas como mediciones válidas de velocidad cero.
 
-Tus datos nunca salen de tu Mac. **Sin cuentas, sin nube, sin telemetría.** Cada prueba, cada registro y cada exportación ocurren en local.
+## Qué puedes hacer al respecto
 
-## ¿VelociBar o un test de velocidad puntual?
+### 1. Reclama con datos
 
-Speedtest o Fast.com son útiles para una foto del momento. VelociBar responde otra pregunta: cómo se comporta tu conexión a lo largo del día, todos los días.
+Si varias pruebas por cable quedan muy por debajo de la velocidad del plan, comparte el historial y pide una revisión. Incluye resultados de horas tranquilas como comparación. Consulta [cómo documentar internet lento para tu ISP](https://velocibar.app/blog/reclamar-isp-internet-lento.html).
 
-| | Tests puntuales | VelociBar |
-|---|---|---|
-| **Cuándo mide** | Solo cuando tú lo ejecutas | Automáticamente, cada 15, 30 o 60 minutos |
-| **Qué revela** | Una foto de ese instante | El patrón real: la caída de las 21:00, la congestión del fin de semana |
-| **Bufferbloat** | No siempre lo mide | Responsividad bajo carga (RPM), calificada Baja / Media / Alta |
-| **Historial** | Limitado o requiere cuenta | Local en tu Mac, exportable a CSV con un clic |
-| **Privacidad** | Servicio web, según cada proveedor | Sin cuentas, sin nube, sin telemetría |
+### 2. Considera cambiar de tecnología, no solo de plan
 
-No tienes que elegir: usa un test puntual para comprobar el momento y VelociBar para conocer —y demostrar— cómo es tu conexión de verdad.
+Un plan más rápido puede no resolver la congestión en otro tramo de la red. Pregunta dónde está el cuello de botella antes de pagar una mejora. La fibra también puede tener limitaciones de capacidad compartida; cambiar de tecnología no garantiza la solución.
 
-## Preguntas frecuentes
+### 3. Optimiza lo que controlas
 
-### ¿Qué mide exactamente VelociBar?
+- Programa backups y descargas grandes para la madrugada.
+- Usa cable ethernet para el equipo de trabajo y las videollamadas.
+- Activa Smart Queue Management (SQM/QoS) en tu router para que la congestión doméstica no añada lag propio.
 
-VelociBar mide la velocidad de descarga real (Mbps) y la responsividad bajo carga (RPM). Alterna dos motores: la herramienta networkQuality de Apple y una descarga real desde una CDN global. Así refleja el rendimiento que de verdad experimentas, no un número de laboratorio en condiciones ideales.
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
 
-### ¿Qué es la responsividad (RPM) y por qué importa?
+## Fuentes
 
-La responsividad mide cuántos viajes de ida y vuelta completa tu red por minuto mientras está bajo carga. Es la métrica del bufferbloat: explica por qué una videollamada se entrecorta o un juego tiene lag aunque tu velocidad de descarga sea alta. VelociBar la clasifica como Baja, Media o Alta.
+- [Ofcom: diagnóstico de banda ancha y WiFi](https://www.ofcom.org.uk/phones-and-broadband/service-quality/broadband-wifi-help)
+- [Apple: responsividad en condiciones de uso](https://developer.apple.com/videos/play/wwdc2021/10239/)
 
-### ¿VelociBar sube mis datos a algún servidor?
+## Descubre tu patrón nocturno
 
-No. Todos los resultados se almacenan únicamente en tu Mac. No hay cuentas, no hay nube y no hay telemetría. Tú tienes el control total de tus datos.
+VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y dibuja la curva completa del día. Sin cuentas, sin nube: todo en tu Mac.
 
-### ¿Puedo exportar el historial?
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
 
-Sí. VelociBar guarda cada prueba en un archivo CSV con marca de tiempo, motor, descarga (Mbps), latencia (ms) y responsividad (RPM). Lo abres o lo exportas con un clic, lo que sirve como evidencia objetiva para tu proveedor de internet o para tu propio seguimiento.
+[← Todos los artículos](https://velocibar.app/blog/)
 
-### ¿Funciona en segundo plano?
+---
 
-Sí. VelociBar vive en la barra de menú y ejecuta pruebas automáticas en el intervalo que elijas: cada 15, 30 o 60 minutos. También incluye un widget para ver tu última medición de un vistazo.
+> Versión en Markdown de https://velocibar.app/blog/que-es-bufferbloat.html · [English version](https://velocibar.app/en/blog/what-is-bufferbloat.html)
 
-### ¿Qué necesito para usar VelociBar?
+# Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)
 
-macOS 26 o superior. Puedes descargar VelociBar desde la App Store de Apple.
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 5 min de lectura
 
-### ¿Cómo demuestro a mi ISP que mi internet va lento?
+**El bufferbloat es una demora excesiva en las colas de paquetes cuando la red está ocupada.** Puede provocar lag en llamadas y juegos aunque la descarga sea rápida. Revisa la latencia bajo carga además de los Mbps; una gestión de colas adecuada puede ayudar. Las interferencias WiFi, la pérdida de paquetes y otras fallas pueden producir síntomas parecidos.
 
-Deja que VelociBar mida en segundo plano durante unos días y exporta el historial a CSV. El archivo incluye fecha y hora, motor de medición, descarga (Mbps), latencia (ms) y responsividad (RPM): evidencia objetiva de caídas recurrentes —por ejemplo, cada noche a las 21:00— que un test puntual no puede demostrar.
+## Qué es el bufferbloat
 
-### ¿VelociBar reemplaza a Speedtest o Fast.com?
+Cada router y cada módem tiene un pequeño almacén de memoria (un **buffer**) donde guarda los paquetes que están a punto de salir por tu línea. Existe por una buena razón: si dos paquetes llegan a la vez, uno espera un instante en vez de perderse. Pero muchos fabricantes, para evitar a toda costa que se descarte un solo paquete, hicieron ese almacén enorme. Y ahí empieza el problema.
 
-Los complementa. Un test puntual sirve para comprobar un momento concreto; VelociBar mide de forma continua y automática, guarda el historial en tu Mac y lo exporta a CSV, para que veas patrones a lo largo del tiempo y tengas evidencia objetiva. Muchos usuarios usan ambos.
+Imagina la caja de un supermercado con una cinta transportadora kilométrica detrás. Mientras la cola sea corta, todo va rápido. Pero si entra más gente de la que la caja puede atender, la cinta no dice "no caben más": simplemente se llena y se llena, y cada persona nueva espera detrás de todas las anteriores. Nadie se queda sin pasar, pero la espera se dispara.
 
-## Enlaces
+Durante una transferencia grande, los paquetes de una llamada o un juego pueden esperar detrás del tráfico pesado. La velocidad puede seguir alta mientras empeoran los tiempos de respuesta. Mirar solo los Mbps no revela esa demora, pero una prueba de latencia bajo carga sí puede detectarla. [El IETF explica cómo el exceso de colas añade demora y recomienda su gestión activa.](https://www.rfc-editor.org/rfc/rfc7567.html)
 
-- Página principal (HTML): https://velocibar.app/
-- English version (HTML): https://velocibar.app/en/
-- Descargar en la App Store: https://apps.apple.com/us/app/velocibar/id6756196355
-- Política de privacidad: https://velocibar.app/legal/privacy.html
-- Términos de uso: https://velocibar.app/legal/terms.html
-- Resumen del sitio para LLMs: https://velocibar.app/llms.txt
+## Los síntomas: el test da bien, pero todo se traba
+
+El bufferbloat tiene una firma muy reconocible una vez que sabes buscarla:
+
+- El test de velocidad da un resultado excelente (a veces mejor que nunca) y aun así la videollamada se congela.
+- Las partidas online tienen lag intermitente, no constante: bien la mayor parte del tiempo, terrible en ráfagas.
+- Las páginas web tardan en empezar a cargar, aunque luego bajen rápido.
+- El problema aparece siempre que **alguien en la red sube algo pesado**: una copia de seguridad en la nube, una foto de 4K, una actualización de consola, un torrent. En cuanto esa subida o descarga termina, todo vuelve a la normalidad.
+
+Si el lag aparece durante transferencias pesadas, compara la latencia en reposo y bajo carga y repite por ethernet. El patrón es compatible con demora por colas, pero no aísla el router ni descarta [congestión del ISP](https://velocibar.app/blog/internet-lento-por-la-noche.html).
+
+## Cómo medirlo: la responsividad en RPM
+
+Mide cuánto aumenta la demora bajo carga, además de la descarga. [La herramienta networkQuality de Apple expresa la responsividad en RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (viajes de ida y vuelta por minuto): más es mejor. [Fast.com también muestra latencia en reposo y bajo carga](https://fast.com/) en milisegundos, donde menos es mejor.
+
+Usa como orientación la clasificación Low, Medium o High que reporte tu versión de la herramienta de Apple. No existe un valor de RPM que garantice una llamada o partida fluida. Compara pruebas equivalentes antes y después de un cambio: el destino, el método, la conexión inalámbrica y la aplicación influyen.
+
+Una prueba puntual describe un momento. [VelociBar](https://velocibar.app/) conserva mediciones repetidas para investigar cambios a lo largo del tiempo. Sus motores Apple y CDN usan métodos diferentes: compara resultados del mismo motor en lugar de tratar sus RPM como intercambiables. Consulta la [guía de pruebas de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html).
+
+## Cómo solucionarlo, de mayor a menor impacto
+
+### 1. Activa Smart Queue Management (SQM) en el router
+
+SQM puede ayudar cuando tu router controla el cuello de botella. Combina regulación de tráfico con gestión de colas, frecuentemente mediante fq_codel o CAKE. Sigue las instrucciones del router, mide antes y después del cambio y comprueba que el equipo soporte la velocidad de tu conexión.
+
+### 2. Configura QoS para priorizar tráfico sensible a la latencia
+
+Si tu router ofrece QoS (Quality of Service), prioriza videollamadas y juego online por encima de descargas y backups. No elimina el bufferbloat por sí solo, pero decide quién espera en la cola primero.
+
+### 3. Usa cable ethernet para lo que no puede esperar
+
+El WiFi añade su propia cola y su propia variabilidad encima de la del router. Para la máquina de trabajo, las videollamadas importantes o el equipo de juego, un cable ethernet elimina una fuente entera de latencia añadida.
+
+### 4. Evita subidas pesadas simultáneas
+
+Programa los backups en la nube y las subidas grandes para cuando no los necesites en tiempo real, o para cuando nadie más en casa esté en una videollamada. Es la solución más simple y no cuesta nada.
+
+### 5. Revisa la compatibilidad antes de cambiar el router
+
+Si el router no puede gestionar las colas de forma eficaz, investiga equipos o firmware compatibles. Verifica el modelo exacto, la capacidad de procesamiento y la configuración que requiere el ISP. Cambiar el router no resuelve un cuello de botella fuera de tu casa.
+
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
+
+## Fuentes
+
+- [IETF RFC 7567: gestión activa de colas](https://www.rfc-editor.org/rfc/rfc7567.html)
+- [Apple: demoras de red y RPM](https://developer.apple.com/videos/play/wwdc2021/10239/)
+- [Fast.com: latencia en reposo y bajo carga](https://fast.com/)
+
+## Mide tu bufferbloat a lo largo del tiempo
+
+VelociBar registra tu responsividad en RPM automáticamente desde la barra de menú de macOS, para que veas exactamente cuándo se dispara la latencia bajo carga, no solo cuánto marca ahora mismo. Sin cuentas, sin nube: todo en tu Mac.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)
+
+---
+
+> Versión en Markdown de https://velocibar.app/blog/reclamar-isp-internet-lento.html · [English version](https://velocibar.app/en/blog/prove-isp-throttling.html)
+
+# Cómo reclamar a tu ISP por internet lento: la guía con evidencia
+
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 5 min de lectura
+
+**Para documentar internet lento ante tu ISP, reúne pruebas repetibles por cable, registra las condiciones y comparte un resumen fechado con soporte.** Incluye horas tranquilas y ocupadas. El historial puede demostrar caídas recurrentes; por sí solo no prueba una limitación deliberada del ISP ni un incumplimiento contractual.
+
+## Paso 0: Descarta primero tu propio lado
+
+Empieza por ethernet y pausa el tráfico de otros equipos. Comprueba que el adaptador, el cable, los puertos del router y el dispositivo soporten la velocidad del plan. Repite con otro equipo y destino de prueba. Si por cable mejora y por WiFi no, investiga el tramo inalámbrico; el ISP también podría ayudarte si suministró el router.
+
+## Paso 1: Ten claro qué contrataste de verdad
+
+Revisa las definiciones de velocidad, las condiciones de conexión y el procedimiento de reclamación de tu plan o contrato. La velocidad anunciada, la habitual y la mínima garantizada son medidas diferentes. Determinar un incumplimiento depende del contrato y de las reglas locales aplicables; un resultado bajo no resuelve esa cuestión por sí solo.
+
+## Paso 2: Reúne mediciones comparables a lo largo del tiempo
+
+Reporta la falla cuanto antes; no necesitas esperar dos semanas para contactar a soporte. Varios días de mediciones pueden revelar un patrón, y una muestra más larga puede ayudar con problemas intermitentes. Una prueba suelta sigue siendo útil para documentar ese momento, aunque no establezca una tendencia.
+
+Lo que cambia la conversación es un historial con marca de tiempo generado automáticamente, sin que tú intervengas. Una app como [VelociBar](https://velocibar.app/) ejecuta un test cada 15, 30 o 60 minutos desde la barra de menú de tu Mac —tú eliges el intervalo— y guarda cada resultado en local. Al cabo de una o dos semanas tienes algo que una captura suelta no puede ofrecer: una curva que muestra si el problema es sistemático (por ejemplo, todas las noches entre las 21:00 y las 23:00, como describimos en [por qué tu internet va lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html)) o si son caídas puntuales y aisladas. Un proveedor puede ignorar una queja; le cuesta mucho más ignorar dos semanas de datos con la misma caída repetida cada noche a la misma hora.
+
+## Paso 3: Arma el expediente de evidencia
+
+Exporta el CSV original y conserva los nombres de sus columnas. El registro actual de VelociBar incluye `timestamp`, `source`, `is_error`, `download_mbps`, `latency_ms`, `duration_s`, `bytes_downloaded` y `responsiveness_rpm`. Separa las pruebas exitosas de los errores y agrupa por `source` antes de calcular resúmenes. Las versiones anteriores pueden incluir menos campos.
+
+- **Velocidad del plan y distribución de resultados.** Reporta mediana, rango y número de pruebas exitosas por motor y franja horaria. Incluye periodos normales y malos para evitar una selección sesgada.
+- **Horas peores**: el rango horario en el que la velocidad cae de forma repetida, y en cuántos días de la muestra ocurre.
+- **Responsividad y latencia.** Separa los motores. En Apple, `latency_ms` se deriva de RPM; en el motor CDN, esa columna registra el tiempo de respuesta HTTP inicial. Un RPM de cero puede significar que no se midió, y no debe interpretarse como una puntuación válida.
+
+Si además quieres contrastar con una herramienta externa reconocida, complementa tu expediente con un test puntual —tienes el paso a paso en [cómo medir la velocidad de tu Mac](https://velocibar.app/blog/test-velocidad-mac.html)— pero que sea el complemento, no la base: la base es tu historial continuo.
+
+## Paso 4: Contacta a soporte de la forma correcta
+
+Cuando contactes a soporte técnico, comparte las mediciones que tengas hasta ese momento:
+
+1. Indica la velocidad contratada y la mediana real que has medido, con el periodo exacto (por ejemplo: «contratados 500 Mbps, mediana real 210 Mbps entre el 1 y el 14 de septiembre»).
+2. Adjunta el CSV exportado o el resumen; no te limites a describir el problema de palabra.
+3. Pide una revisión de la línea y del horario recurrente, incluyendo posibles problemas de capacidad o rutas. Evita presentar una sospecha como un diagnóstico confirmado.
+4. Exige un número de ticket o referencia de la incidencia en cada contacto, y anota la fecha, el canal (teléfono, chat, email) y el nombre de quien te atendió.
+
+Ese registro de fechas es tan importante como los datos de velocidad: si acabas escalando, demuestra que ya le diste al proveedor la oportunidad de arreglarlo.
+
+## Paso 5: Escala si te ignoran
+
+Si el problema continúa, sigue el procedimiento formal del proveedor y después la vía que corresponda a tu país. Consulta la [Oficina de Atención al Usuario de Telecomunicaciones](https://usuariosteleco.digital.gob.es/reclamaciones) en España, el [portal de quejas de la FCC](https://consumercomplaints.fcc.gov/hc/en-us) en Estados Unidos y la [orientación de Ofcom](https://www.ofcom.org.uk/make-a-complaint/complain-about-mobile-phone-or-internet-services) para la vía aplicable en el Reino Unido. Los requisitos y las posibles soluciones varían.
+
+No asumas que un historial de velocidad elimina automáticamente una penalización por permanencia. Revisa el contrato y las reglas de reclamación aplicables antes de solicitar una cancelación, compensación u otra solución.
+
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
+
+## Fuentes
+
+- [España: reclamaciones de telecomunicaciones](https://usuariosteleco.digital.gob.es/reclamaciones)
+- [FCC: quejas sobre el servicio de internet](https://consumercomplaints.fcc.gov/hc/en-us)
+- [Ofcom: fallas, reclamaciones y resolución de disputas](https://www.ofcom.org.uk/phones-and-broadband/service-quality/broadband-wifi-help)
+
+## Construye tu expediente sin esfuerzo
+
+VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y guarda cada resultado en un historial local exportable a CSV. Cuando necesites reclamar, la evidencia ya está lista.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)
+
+---
+
+> Versión en Markdown de https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html · [English version](https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html)
+
+# Speedtest vs Fast.com vs VelociBar: cuál usar
+
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 4 min de lectura
+
+**Usa Speedtest o Fast.com para comprobar tu conexión y VelociBar si quieres pruebas programadas con historial local en Mac.** Las dos herramientas web pueden reportar más que velocidad de descarga. Las diferencias entre resultados pueden deberse al servidor, la ruta, la carga o el horario; por sí solas no prueban una limitación deliberada del ISP.
+
+## Cómo funciona Speedtest de Ookla
+
+Speedtest busca, entre miles de servidores repartidos por el mundo, uno cercano a ti y con muy buena conectividad: normalmente alojado en la infraestructura de un operador o un datacenter con mucho ancho de banda disponible. Después abre varias conexiones en paralelo contra ese servidor y suma el rendimiento de todas ellas.
+
+Una prueba de velocidad estima cuántos datos puede transferir la conexión hacia el servidor seleccionado durante esa ejecución. Sirve para revisar el rendimiento de un plan si consideras el equipo, el tipo de conexión y el tráfico de fondo.
+
+Un servidor de prueba no representa todas las aplicaciones. Las aplicaciones también pueden usar CDN y conexiones múltiples, así que llamar a una herramienta “teórica” y a otra “real” resulta engañoso. Compara condiciones equivalentes y contrasta con otro destino cuando investigues diferencias.
+
+## Cómo funciona Fast.com
+
+Fast.com estima la velocidad actual mediante transferencias hacia servidores de Netflix. [Sus preguntas frecuentes describen una estimación general de velocidad](https://fast.com/), no una prueba concluyente de limitación deliberada del tráfico.
+
+La vista inicial destaca la descarga. “Mostrar más información” también muestra subida y latencia en reposo y bajo carga. La configuración permite ajustar la duración y el número de conexiones paralelas.
+
+## Lo que Speedtest y Fast.com tienen en común
+
+Más allá de sus diferencias, ambos comparten una limitación estructural: son una **fotografía de un instante**, tomada justo en el momento en que tú, de forma consciente, decides mirar. Y ese detalle importa más de lo que parece.
+
+Los resultados pueden variar por el servidor, la ruta, el tráfico de fondo, el dispositivo y el horario. Para investigar una diferencia recurrente, mantén estable la configuración y alterna herramientas en varias franjas horarias. Una discrepancia no demuestra que el proveedor reconozca o favorezca el tráfico de pruebas.
+
+## Comparativa: Speedtest, Fast.com y VelociBar
+
+Las funciones dependen del cliente y del método; comparativa revisada el 10 de septiembre de 2026.
+
+| Característica | Speedtest | Fast.com | VelociBar |
+| --- | --- | --- | --- |
+| Mediciones | Descarga, subida y latencia; detalles según el cliente | Descarga, subida, latencia en reposo y bajo carga | Descarga y responsividad; método según el motor |
+| Destinos | Red de servidores de Speedtest | Servidores de Netflix | networkQuality de Apple y descarga desde CDN |
+| Mejor uso | Comprobar la conexión hacia un servidor seleccionado | Prueba rápida en navegador con infraestructura de Netflix | Mediciones programadas e historial local en Mac |
+| Historial | Disponible en apps; depende del cliente | Registro manual de resultados | Historial local cada 15/30/60 minutos mientras la app funciona |
+| Compartir | Resultados compartidos; exportación según el cliente | Registrar o capturar el resultado | CSV local con fecha, motor, resultados e indicadores de error |
+| Límites | Una ejecución cubre un momento | Una ejecución cubre un momento | Muestras periódicas; ningún motor representa todos los destinos |
+
+## Lo que una prueba suelta no puede decirte
+
+Una ejecución no permite comparar las 21:00 con las 9:00. Repetir y registrar las pruebas sí ayuda, tanto si lo haces manualmente como si automatizas una herramienta adecuada o usas una app con programación integrada.
+
+Esas preguntas no se responden con un test puntual, por bueno que sea el test. Se responden con **monitoreo continuo**: mediciones automáticas y repetidas que dibujan una curva, no un punto. Es exactamente para eso que existe [VelociBar](https://velocibar.app/), una app de barra de menú para macOS que ejecuta un test automático cada 15, 30 o 60 minutos, mide tanto la velocidad de descarga como la responsividad bajo carga (RPM) y guarda todo el historial en local, exportable a CSV.
+
+Usa una prueba puntual antes de una llamada importante y un historial para investigar problemas recurrentes. [La ficha de la app de Ookla incluye historial y resultados compartidos](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest); el flujo disponible depende del cliente. VelociBar combina pruebas programadas y exportación CSV local en macOS. Consulta [cómo medir en Mac](https://velocibar.app/blog/test-velocidad-mac.html) y [cómo documentar caídas para soporte](https://velocibar.app/blog/reclamar-isp-internet-lento.html).
+
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
+
+## Fuentes
+
+- [Fast.com: mediciones y configuración](https://fast.com/)
+- [Ookla: funciones e historial de Speedtest](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest)
+
+## Un test puntual no basta para ver el patrón completo
+
+VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y guarda el historial completo en tu Mac. Sin cuentas, sin nube.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)
+
+---
+
+> Versión en Markdown de https://velocibar.app/blog/test-velocidad-mac.html · [English version](https://velocibar.app/en/blog/speed-test-mac.html)
+
+# Cómo hacer un test de velocidad en tu Mac: 3 métodos
+
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 6 min de lectura
+
+**Para medir la velocidad de internet en Mac, abre un test web, ejecuta `networkQuality` en la Terminal o usa VelociBar para programar mediciones.** Un test web da una lectura puntual; la herramienta de Apple también reporta responsividad bajo carga. Repetir las pruebas permite comparar la conexión entre horas y días.
+
+## Método 1: Test de velocidad web (Speedtest.net, Fast.com)
+
+Abrir Speedtest.net o Fast.com y esperar unos segundos es la forma más rápida de comprobar tu conexión. Para una revisión puntual —¿funciona el wifi ahora mismo?, ¿el técnico dejó la línea bien tras la visita?— es más que suficiente, y no necesitas instalar nada.
+
+Pero conviene conocer sus límites:
+
+- **El destino importa.** Los servidores, las rutas y la configuración pueden producir resultados distintos. Usa el mismo método para comparar tendencias y otro destino para contrastar un problema.
+- **El dispositivo también importa.** El navegador, el procesador, el adaptador y el WiFi pueden limitar el resultado. Un test web sigue siendo útil para medir la conexión disponible en ese equipo.
+- **Solo mide ese instante.** Un test a las 11:00 de la mañana no dice nada sobre lo que pasa a las 21:30, cuando toda tu casa —y tu barrio— están conectados a la vez.
+
+Perfecto para saber si tu wifi funciona ahora mismo. Insuficiente para saber si tu internet [va lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html) o solo en ciertos momentos. Para eso necesitas algo más.
+
+## Método 2: La herramienta integrada de Apple: networkQuality
+
+macOS Monterey 12 y posteriores incluyen `networkQuality`. [Apple la describe como una prueba de responsividad en condiciones de uso.](https://developer.apple.com/videos/play/wwdc2021/10239/) Respeta las mayúsculas del comando, especialmente si tu sistema de archivos distingue entre mayúsculas y minúsculas.
+
+Así se usa:
+
+1. Abre **Terminal** (Aplicaciones → Utilidades → Terminal, o pulsa ⌘+Espacio y escribe "Terminal").
+2. Escribe el comando y pulsa Return:
+
+```
+networkQuality
+```
+
+Espera a que termine. La duración y los campos de salida dependen de la versión de macOS y de la red. Este resultado es ilustrativo; no es un benchmark de VelociBar:
+
+```
+==== SUMMARY ====
+Uplink capacity: 18.220 Mbps
+Downlink capacity: 245.981 Mbps
+Responsiveness: Medium (612 RPM)
+Idle Latency: 14.353 milliseconds
+```
+
+Cada línea te dice algo distinto:
+
+- **Uplink / Downlink capacity.** La velocidad real de subida y bajada, medida mientras la red está bajo carga de trabajo, no en una ráfaga aislada.
+- **Responsiveness.** Apple reporta cómo responde la red bajo carga, con una clasificación Low, Medium o High. Otras pruebas también miden latencia bajo carga; sus unidades y métodos pueden ser diferentes.
+- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo.
+- **Idle Latency.** La latencia con la red en reposo, sin carga. Es tu punto de partida: compárala con lo que ocurre bajo carga para ver cuánto se degrada tu conexión cuando de verdad la exiges.
+
+El comando tiene dos variantes útiles:
+
+- `networkQuality -v`: versión detallada (verbose), con más desglose de cada fase de la prueba.
+- `networkQuality -s`: ejecuta subida y bajada de forma secuencial. Cambia la carga de trabajo, así que compáralo con otras pruebas secuenciales. Consulta `man networkQuality` para revisar las opciones de tu versión.
+
+La herramienta integrada no requiere otra instalación. Las pruebas generan tráfico y pueden afectar otras actividades mientras se ejecutan. Evita superponer pruebas y elige un momento adecuado si tu conexión tiene límite de datos.
+
+## Método 3: Medición continua desde la barra de menú (VelociBar)
+
+Los métodos 1 y 2 tienen algo en común: son una foto fija. Te dicen cómo está tu conexión ahora mismo, a las 11:00 de la mañana, con la casa vacía. No pueden responder a la pregunta que de verdad te preocupa: "¿por qué mi internet va lento todas las noches sobre las 21:00?"
+
+Para eso necesitas ejecutar el mismo tipo de prueba una y otra vez, a lo largo de todo el día, y comparar los resultados. Es exactamente lo que hace [VelociBar](https://velocibar.app/): una app de barra de menú para Mac que ejecuta pruebas automáticas cada 15, 30 o 60 minutos —tú eliges el intervalo—, guarda cada resultado en un historial local y te deja exportarlo a CSV cuando quieras.
+
+Con ese historial puedes ver de un vistazo si tu velocidad cae de forma sistemática cada noche, si el problema es puntual o constante, y si tu responsividad (RPM) se desploma en las horas de más tráfico aunque la velocidad de descarga siga pareciendo aceptable. Es la diferencia entre sospechar algo y demostrarlo con datos.
+
+Ninguno de los tres métodos sobra: usa Speedtest o Fast.com para una comprobación rápida, `networkQuality` cuando quieras un dato técnico preciso sin salir de la Terminal, y VelociBar cuando necesites ver el patrón completo a lo largo de los días.
+
+## Consejos para que el resultado sea fiable
+
+Sea cual sea el método que uses, estos detalles cambian el resultado más de lo que crees:
+
+- **Usa cable ethernet si puedes**, o siéntate cerca del router en la banda de 5 GHz. El wifi de 2,4 GHz y la distancia añaden variables que no tienen nada que ver con tu proveedor.
+- **Pausa descargas, backups y VPN** antes de medir. Una copia de seguridad en la nube corriendo en segundo plano puede consumir gran parte de tu ancho de banda sin que lo notes.
+- **Repite la prueba a distintas horas del día**, no solo una vez por la mañana. El patrón —si existe— solo aparece cuando comparas varios momentos.
+- **No te fíes de una sola medición.** Tanto los tests web como `networkQuality` pueden variar de una ejecución a otra por motivos ajenos a tu conexión —congestión momentánea de un servidor, por ejemplo—. Ejecuta la prueba dos o tres veces y quédate con la tendencia, no con el número aislado.
+
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero.
+
+## Fuentes
+
+- [Apple: networkQuality y responsividad](https://developer.apple.com/videos/play/wwdc2021/10239/)
+- [Fast.com: mediciones de velocidad y latencia](https://fast.com/)
+
+## Deja que VelociBar mida por ti
+
+Ejecuta tests automáticos desde la barra de menú de tu Mac, guarda el historial en local y expórtalo a CSV cuando lo necesites. Sin cuentas, sin nube: todo en tu Mac.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)
+
+---
+
+> Markdown version of https://velocibar.app/en/blog/internet-slow-at-night.html · [Versión en español](https://velocibar.app/blog/internet-lento-por-la-noche.html)
+
+# Why Is Your Internet Slow at Night? Causes and Fixes
+
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 4 min read
+
+**Internet that slows down at night can be caused by peak-hour congestion, household downloads, or WiFi interference.** Compare wired tests at quiet and busy hours before blaming your ISP. A recurring slowdown is useful evidence of a problem, but does not establish its cause or prove deliberate throttling.
+
+## One possible cause: shared network capacity
+
+Your connection isn't a private lane all the way to your provider. In most access technologies, including coaxial cable (DOCSIS), GPON fiber, and mobile internet, the last stretch of the network is shared among dozens or hundreds of homes in your area.
+
+Shared capacity can become a bottleneck when simultaneous demand exceeds what a network segment can deliver. Evening streaming, downloads, and calls can increase that demand. The busy period and its impact vary by provider and neighborhood; a shared network is not automatically an overloaded network.
+
+A repeatable evening drop gives you a time window to investigate. Scheduled backups and local wireless interference can follow a schedule too, so the timing alone cannot distinguish an ISP problem from a home-network problem.
+
+## Other causes with the same symptom
+
+- **Neighborhood WiFi interference.** Nearby networks can compete for wireless airtime. Compare WiFi with ethernet at the same time; a faster wired result points toward the wireless segment.
+- **Congestion inside your own home.** Backups, updates, and streaming share capacity. If queues add excessive delay, [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html) may also be involved.
+- **Provider traffic management.** Some ISPs prioritize or throttle certain traffic under load. It's hard to see from the outside, which is exactly why you need a measurement history, not a single test.
+
+## How to investigate a nighttime slowdown
+
+A one-off speed test can't demonstrate a problem that only exists at certain hours: run it at 11 a.m. and it will come back perfect. What you need is the **full-day curve**:
+
+1. **Measure continuously for at least a week.** An app like [VelociBar](https://velocibar.app/en/) runs an automatic test every 15, 30, or 60 minutes from your Mac's menu bar and keeps the history locally.
+2. **Look for the pattern.** Keep the device, connection type, test engine, and background traffic comparable. Repeat wired tests at quiet and busy hours. If multiple test destinations slow down with household traffic paused, ask your ISP to investigate shared capacity or routing.
+3. **Watch responsiveness, not just Mbps.** Latency is measured in milliseconds: lower is better. Responsiveness is measured in RPM: higher is better. A fall in RPM indicates slower responses under the test load; it does not identify where the delay occurs.
+4. **Export the evidence.** Keep a CSV with timestamps and test conditions so support can examine recurring drops. Separate results by engine and mark failed tests instead of treating them as valid zero-speed readings.
+
+## What you can do about it
+
+### 1. Complain with data
+
+If repeated wired tests fall well below your plan speed, share the history and ask support to investigate. Include quiet-hour results for comparison. See [how to document slow internet for your ISP](https://velocibar.app/en/blog/prove-isp-throttling.html).
+
+### 2. Consider switching technology, not just plans
+
+A faster plan may not resolve congestion elsewhere in the network. Ask the provider where the bottleneck is before paying for an upgrade. Fiber can also have shared capacity constraints; changing access technology alone does not guarantee a fix.
+
+### 3. Optimize what you control
+
+- Schedule backups and large downloads for the early morning.
+- Use ethernet for your work machine and video calls.
+- Enable Smart Queue Management (SQM/QoS) on your router so household congestion doesn't add its own lag.
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
+
+## Sources
+
+- [Ofcom: broadband and WiFi troubleshooting](https://www.ofcom.org.uk/phones-and-broadband/service-quality/broadband-wifi-help)
+- [Apple: responsiveness under working conditions](https://developer.apple.com/videos/play/wwdc2021/10239/)
+
+## Find your nighttime pattern
+
+VelociBar measures your connection automatically from the macOS menu bar and draws the full-day curve. No accounts, no cloud: everything stays on your Mac.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
+
+---
+
+> Markdown version of https://velocibar.app/en/blog/prove-isp-throttling.html · [Versión en español](https://velocibar.app/blog/reclamar-isp-internet-lento.html)
+
+# How to Document Slow Internet for Your ISP
+
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+
+**To document slow internet for your ISP, collect repeatable wired tests, record the conditions, and share a dated summary with support.** Keep results from both quiet and busy hours. A speed history can demonstrate recurring slowdowns; it cannot, by itself, prove deliberate ISP throttling or a contractual breach.
+
+## Step 0: Rule out your own side first
+
+Start with ethernet and pause other traffic. Check that the adapter, cable, router ports, and device support your plan speed. Repeat on another device and test destination. If wired results improve but WiFi remains slow, investigate the wireless segment; your ISP may still help if it supplied the router.
+
+## Step 1: Know what you actually contracted
+
+Check the speed definitions, connection requirements, and complaint procedure in your plan or contract. Advertised, typical, and minimum guaranteed speeds are different measures. Whether a result breaches an agreement depends on the contract and applicable local rules; a low test result alone does not decide that question.
+
+## Step 2: Collect comparable measurements over time
+
+Report the fault promptly; you do not need to wait two weeks to contact support. Several days of measurements can reveal a recurring pattern, and a longer sample can help with intermittent issues. A single test remains useful evidence of that moment, even though it cannot establish a trend.
+
+What changes the conversation is a timestamped history generated automatically, without you doing anything. An app like [VelociBar](https://velocibar.app/en/) runs a test every 15, 30, or 60 minutes from your Mac's menu bar (you choose the interval) and stores every result locally. After a week or two you have something a screenshot never could: a curve that shows whether the problem is systematic (every night between 8 and 11 p.m., for example, as we cover in [why your internet is slow at night](https://velocibar.app/en/blog/internet-slow-at-night.html)) or just isolated, random dips. A provider can ignore one complaint; it's much harder to ignore two weeks of data showing the same drop, at the same time, every single night.
+
+## Step 3: Build the evidence file
+
+Export the original CSV and keep its column names. VelociBar’s current log includes `timestamp`, `source`, `is_error`, `download_mbps`, `latency_ms`, `duration_s`, `bytes_downloaded`, and `responsiveness_rpm`. Separate successful tests from errors and group by `source` before calculating summaries. Older app versions may have fewer fields.
+
+- **Plan speed and measured distribution.** Report the median, range, and number of successful tests for each engine and time window. Include typical and poor periods so the summary does not cherry-pick results.
+- **Worst hours**: the time window where speed drops repeatedly, and how many days out of the sample it happens.
+- **Responsiveness and latency.** Keep engine results separate. Apple’s `latency_ms` is derived from RPM; the CDN engine records initial HTTP response time in that column. A zero RPM may mean unmeasured, so it should not be interpreted as a valid responsiveness score.
+
+If you also want to cross-check with a well-known external tool, complement your file with a one-off test (see [how to test your Mac's speed](https://velocibar.app/en/blog/speed-test-mac.html)), but treat it as a supplement, not the foundation. The foundation is your continuous history.
+
+## Step 4: Contact support the right way
+
+When you contact technical support, include what you have measured so far:
+
+1. State the contracted speed and the median actual speed you measured, with the exact period ("contracted 500 Mbps, median actual 210 Mbps between Sept 1 and 14").
+2. Attach the exported CSV or the summary: don't just describe the problem in words.
+3. Ask support to check the line and investigate the recurring time window, including possible capacity or routing issues. Avoid presenting a suspected cause as a confirmed diagnosis.
+4. Get a ticket number for every contact, and log the date, channel (phone, chat, email), and the name of whoever helped you.
+
+That log of dates matters almost as much as the speed data: if you end up escalating, it proves you already gave the provider a chance to fix it.
+
+## Step 5: Escalate if you're ignored
+
+If the problem remains unresolved, follow the provider’s formal complaint process and then the route that applies in your country. The [FCC complaint portal](https://consumercomplaints.fcc.gov/hc/en-us) accepts US internet-service complaints. Consult [Ofcom’s guidance](https://www.ofcom.org.uk/make-a-complaint/complain-about-mobile-phone-or-internet-services) for the appropriate UK route, and [Spain’s telecommunications complaints office](https://usuariosteleco.digital.gob.es/reclamaciones) for Spanish requirements. Evidence requirements and remedies vary.
+
+Do not assume a speed log automatically cancels an early-termination charge. Check the relevant contract terms and complaint rules before seeking cancellation, compensation, or another remedy.
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
+
+## Sources
+
+- [FCC: internet service complaints](https://consumercomplaints.fcc.gov/hc/en-us)
+- [Ofcom: faults, complaints, and dispute resolution](https://www.ofcom.org.uk/phones-and-broadband/service-quality/broadband-wifi-help)
+- [Spain: telecommunications complaints](https://usuariosteleco.digital.gob.es/reclamaciones)
+
+## Build your evidence file effortlessly
+
+VelociBar measures your connection automatically from the macOS menu bar and stores every result in a local history you can export to CSV. When it's time to complain, the evidence is already there.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
+
+---
+
+> Markdown version of https://velocibar.app/en/blog/speed-test-mac.html · [Versión en español](https://velocibar.app/blog/test-velocidad-mac.html)
+
+# How to Test Internet Speed on a Mac: 3 Methods
+
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+
+**To test internet speed on a Mac, open a web speed test, run `networkQuality` in Terminal, or use VelociBar for scheduled measurements.** Web tests give a quick snapshot; Apple’s built-in tool also reports responsiveness under load. Repeated tests help you compare connection quality across hours and days.
+
+## Method 1: Web speed tests (Speedtest.net, Fast.com)
+
+Opening Speedtest.net or Fast.com and waiting a few seconds is the fastest way to check your connection. For a quick spot check, such as whether the wifi is working right now or whether the technician actually fixed the line, it's more than enough, and you don't need to install anything.
+
+But it's worth knowing the limits:
+
+- **The destination matters.** Different servers, routes, and connection settings can produce different results. Use the same method for trend comparisons and another destination to cross-check a suspected problem.
+- **The device matters too.** Browser, CPU, network adapter, and WiFi limitations can affect results. A browser test is still a useful measurement of the connection available to that device.
+- **It only measures that instant.** A test at 11 a.m. tells you nothing about what happens at 9:30 p.m., when your whole house (and your whole neighborhood) is online at once.
+
+Fine for checking whether your wifi is working right now. Not enough to know whether your internet [is slow specifically at night](https://velocibar.app/en/blog/internet-slow-at-night.html) or only at certain times. For that, you need something more.
+
+## Method 2: Apple’s built-in Terminal tool: networkQuality
+
+macOS Monterey 12 and later include `networkQuality`. [Apple describes it as a test of responsiveness under working conditions.](https://developer.apple.com/videos/play/wwdc2021/10239/) Use the capitalization shown below, especially on a case-sensitive filesystem.
+
+Here's how to run it:
+
+1. Open **Terminal** (Applications → Utilities → Terminal, or press ⌘+Space and type "Terminal").
+2. Type the command and press Return:
+
+```
+networkQuality
+```
+
+Wait for the test to finish. Duration and output fields vary by macOS version and network conditions. This is illustrative output, not a VelociBar benchmark:
+
+```
+==== SUMMARY ====
+Uplink capacity: 18.220 Mbps
+Downlink capacity: 245.981 Mbps
+Responsiveness: Medium (612 RPM)
+Idle Latency: 14.353 milliseconds
+```
+
+Each line tells you something different:
+
+- **Uplink / Downlink capacity.** Real upload and download throughput, measured while the network is under working load, not an isolated burst.
+- **Responsiveness.** Apple reports how the network responds under load, with a Low, Medium, or High rating. Other tests can also measure loaded latency; their units and methods may differ.
+- **RPM (round trips per minute).** Higher RPM means faster responses under this test’s load. A low result can be consistent with [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), but does not identify the cause by itself.
+- **Idle Latency.** Latency with the network at rest, no load. It's your baseline: compare it against what happens under load to see how much your connection degrades when you actually push it.
+
+The command has two useful variants:
+
+- `networkQuality -v`: verbose output, with more detail on each phase of the test.
+- `networkQuality -s`: tests upload and download sequentially rather than together. This changes the workload, so compare it with other sequential runs. Use `man networkQuality` to check options for your installed version.
+
+The built-in tool requires no additional installation. Its tests generate traffic and can affect other activity while running, so avoid overlapping tests and choose a suitable moment on a metered connection.
+
+## Method 3: Continuous measurement from your menu bar (VelociBar)
+
+Methods 1 and 2 have something in common: they're a snapshot. They tell you how your connection looks right now, at 11 a.m., with the house empty. They can't answer the question you actually care about: "why does my internet slow down every night around 9 p.m.?"
+
+For that you need to run the same kind of test over and over, throughout the day, and compare the results. That's exactly what [VelociBar](https://velocibar.app/en/) does: a Mac menu bar app that runs automatic tests every 15, 30, or 60 minutes (you choose the interval), keeps every result in a local history, and lets you export it to CSV whenever you want.
+
+With that history you can see at a glance whether your speed drops consistently every night, whether the problem is occasional or constant, and whether your responsiveness (RPM) collapses during peak hours even while download speed still looks acceptable. That's the difference between suspecting something and proving it with data.
+
+None of the three methods is redundant: use Speedtest or Fast.com for a quick check, `networkQuality` when you want a precise technical reading without leaving Terminal, and VelociBar when you need to see the full pattern over days.
+
+## Tips for accurate results
+
+Whichever method you use, these details change the result more than you'd think:
+
+- **Use an ethernet cable if you can**, or sit close to the router on the 5 GHz band. 2.4 GHz wifi and distance add variables that have nothing to do with your provider.
+- **Pause downloads, backups, and VPNs** before you test. A cloud backup running quietly in the background can eat a big chunk of your bandwidth without you noticing.
+- **Repeat the test at different times of day**, not just once in the morning. The pattern (if there is one) only shows up when you compare several moments.
+- **Don't trust a single reading.** Both web tests and `networkQuality` can vary from one run to the next for reasons unrelated to your connection, such as momentary server congestion. Run the test two or three times and go with the trend, not the outlier.
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
+
+## Sources
+
+- [Apple: networkQuality and responsiveness](https://developer.apple.com/videos/play/wwdc2021/10239/)
+- [Fast.com: speed and latency measurements](https://fast.com/)
+
+## Let VelociBar measure it for you
+
+Run automatic tests from your Mac's menu bar, keep the history locally, and export it to CSV whenever you need it. No accounts, no cloud: everything stays on your Mac.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
+
+---
+
+> Markdown version of https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html · [Versión en español](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html)
+
+# Speedtest vs Fast.com vs VelociBar: Which Test to Use
+
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 4 min read
+
+**Use Speedtest or Fast.com for a quick connection check, and VelociBar when you want scheduled tests with local history on a Mac.** Both web tools can report more than download speed. Differences between their results can reflect the server, route, workload, or timing; they do not by themselves prove ISP throttling.
+
+## How Ookla's Speedtest works
+
+Speedtest looks through thousands of servers spread across the world and picks one that's close to you and very well connected, usually hosted on carrier infrastructure or in a datacenter with plenty of bandwidth to spare. It then opens several parallel connections against that server and adds up their combined throughput.
+
+A throughput test estimates how much data the connection to its selected server can carry during the run. That is useful for checking a plan’s performance, provided you account for the device, connection type, and other traffic.
+
+No single test server represents every application. Real applications can also use CDNs and multiple connections, so it is misleading to label one tool “theoretical” and another “real.” Compare equivalent conditions, and use a second destination when investigating a discrepancy.
+
+## How Fast.com works
+
+Fast.com estimates current connection speed using transfers to Netflix servers. [Its own FAQ describes a general speed estimate](https://fast.com/), not a conclusive test of deliberate traffic throttling.
+
+Its main view emphasizes download speed. “Show more info” also displays upload speed and unloaded and loaded latency. The settings allow you to adjust test duration and parallel connections.
+
+## What Speedtest and Fast.com have in common
+
+Beyond their differences, both share a structural limitation: they're a **snapshot of one moment**, taken right when you, deliberately, decide to look. And that detail matters more than it seems.
+
+Results can differ because of server selection, routing, background traffic, device limits, and timing. To investigate a repeatable gap, keep the setup stable and alternate tools across several time windows. A discrepancy alone is not evidence that a provider recognizes or favors test traffic.
+
+## Comparison: Speedtest, Fast.com, and VelociBar
+
+Capabilities differ by client and test method; comparison reviewed September 10, 2026.
+
+| Feature | Speedtest | Fast.com | VelociBar |
+| --- | --- | --- | --- |
+| Measurements | Download, upload, and latency; details depend on client | Download, upload, unloaded and loaded latency | Download and responsiveness; method depends on engine |
+| Destinations | Speedtest server network | Netflix servers | Apple networkQuality and a CDN download |
+| Best use | A connection check against a selected server | A quick browser test using Netflix infrastructure | Scheduled measurements and local history on a Mac |
+| History | Available in apps; behavior depends on client | Record results yourself | Automatic local history, every 15/30/60 minutes while running |
+| Sharing | Result sharing; export options depend on client | Record or capture the result | Local CSV with timestamps, source, results, and error flags |
+| Limits | A single run covers one moment | A single run covers one moment | Periodic samples; neither engine represents every destination |
+
+## What a single test cannot tell you
+
+A single run cannot tell you whether a connection is slower at 9 p.m. than at 9 a.m. Repeating and recording tests can answer that question, whether you collect them manually, automate a suitable tool, or use an app with built-in scheduling.
+
+Those questions don't get answered by a one-off test, no matter how good the test is. They get answered by **continuous monitoring**: automatic, repeated measurements that draw a curve, not a point. That's exactly why [VelociBar](https://velocibar.app/en/) exists: a macOS menu bar app that runs an automatic test every 15, 30, or 60 minutes, measures both download speed and responsiveness under load (RPM), and keeps the entire history locally, exportable to CSV.
+
+Use a spot check before an important call and a history to investigate recurring trouble. [Ookla’s app listing includes test history and sharing](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest); the available workflow depends on the client. VelociBar combines scheduled tests and local CSV export on macOS. See [how to test on a Mac](https://velocibar.app/en/blog/speed-test-mac.html) and [how to document slowdowns for support](https://velocibar.app/en/blog/prove-isp-throttling.html).
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
+
+## Sources
+
+- [Fast.com: measurements and settings](https://fast.com/)
+- [Ookla: Speedtest app features and history](https://play.google.com/store/apps/details?id=org.zwanoo.android.speedtest)
+
+## A one-off test can't show you the full pattern
+
+VelociBar measures your connection automatically from the macOS menu bar and keeps the full history on your Mac. No accounts, no cloud.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
+
+---
+
+> Markdown version of https://velocibar.app/en/blog/what-is-bufferbloat.html · [Versión en español](https://velocibar.app/blog/que-es-bufferbloat.html)
+
+# What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)
+
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+
+**Bufferbloat is excessive packet-queue delay when a network is busy.** It can make calls and games lag even with high download speeds. Check latency under load as well as Mbps; a suitable queue-management configuration can help. WiFi interference, packet loss, and other faults can cause similar symptoms.
+
+## What bufferbloat actually is
+
+Every router and modem keeps a small pool of memory (a **buffer**) where it holds packets that are about to go out over your line. It exists for a good reason: if two packets arrive at once, one waits a moment instead of getting dropped. But many manufacturers, trying hard to avoid ever dropping a single packet, made that pool huge. That's where the problem starts.
+
+Picture a supermarket checkout with a mile-long conveyor belt behind it. As long as the line is short, everything moves fast. But if more people show up than the register can handle, the belt doesn't say "no room": it just keeps filling up, and every new person waits behind everyone who arrived before them. Nobody gets turned away, but the wait balloons.
+
+During a large transfer, packets from a call or game may wait behind bulk traffic. Throughput can remain high while response times worsen. A Mbps-only result misses that delay, but tests with loaded-latency measurements can reveal it. [The IETF explains why excessive queueing adds delay and recommends active queue management.](https://www.rfc-editor.org/rfc/rfc7567.html)
+
+## The symptoms: the test looks great, but everything stutters
+
+Bufferbloat has a very recognizable signature once you know what to look for:
+
+- The speed test comes back excellent, sometimes better than ever, and the video call still freezes.
+- Online games have intermittent lag, not constant lag: fine most of the time, terrible in bursts.
+- Web pages take a while to start loading, even though they finish fast once they do.
+- The problem shows up whenever **someone on the network uploads or downloads something heavy**: a cloud backup, a 4K photo, a console update, a torrent. The moment that transfer finishes, everything goes back to normal.
+
+If the lag appears during heavy transfers, compare unloaded and loaded latency and repeat the test over ethernet. The pattern is consistent with queueing delay, but does not isolate the router or exclude [ISP congestion](https://velocibar.app/en/blog/internet-slow-at-night.html).
+
+## How to measure it: responsiveness in RPM
+
+Measure the increase in delay under load, not just download speed. [Apple’s networkQuality tool reports responsiveness in RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (round trips per minute); higher means more responsive. [Fast.com also exposes unloaded and loaded latency](https://fast.com/) in milliseconds, where lower is better.
+
+Use the Low, Medium, or High rating reported by your version of Apple’s tool as guidance. There is no single RPM value that guarantees a smooth call or game. Compare like-for-like tests before and after a change; the destination, test method, wireless conditions, and application all matter.
+
+A one-off test describes one moment. [VelociBar](https://velocibar.app/en/) keeps repeated measurements so you can investigate changes over time. Its Apple and CDN engines use different methods: compare results within the same engine instead of treating their RPM values as interchangeable. See the [Mac speed-test guide](https://velocibar.app/en/blog/speed-test-mac.html).
+
+## How to fix it, ranked by impact
+
+### 1. Enable Smart Queue Management (SQM) on your router
+
+SQM is a useful option when your router controls the bottleneck. It combines traffic shaping with queue management, often using fq_codel or CAKE. Use your router’s instructions, test before and after changing it, and check that the hardware can handle your connection speed.
+
+### 2. Set up QoS to prioritize latency-sensitive traffic
+
+If your router offers QoS (Quality of Service), prioritize video calls and online gaming over downloads and backups. It doesn't eliminate bufferbloat on its own, but it decides who gets to the front of the queue.
+
+### 3. Use ethernet for anything that can't wait
+
+WiFi adds its own queue and its own variability on top of the router's. For your work machine, important video calls, or a gaming rig, an ethernet cable removes an entire source of added latency.
+
+### 4. Avoid running heavy uploads at the same time as everything else
+
+Schedule cloud backups and large uploads for a time when you don't need real-time performance, or when no one else in the house is on a call. It's the simplest fix and it costs nothing.
+
+### 5. Check compatibility before replacing your router
+
+If your router cannot manage queues effectively, investigate compatible hardware or firmware. Verify the exact router model, throughput requirements, and ISP setup first. Replacing a router will not fix a bottleneck that lies outside your home.
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples.
+
+## Sources
+
+- [IETF RFC 7567: active queue management](https://www.rfc-editor.org/rfc/rfc7567.html)
+- [Apple: network delays and RPM](https://developer.apple.com/videos/play/wwdc2021/10239/)
+- [Fast.com: unloaded and loaded latency](https://fast.com/)
+
+## Measure your bufferbloat over time
+
+VelociBar logs your responsiveness in RPM automatically from the macOS menu bar, so you can see exactly when latency under load spikes, not just what it reads right now. No accounts, no cloud: everything stays on your Mac.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
