@@ -37,6 +37,19 @@ velocibar.app/
 └── CNAME           # Configuración de dominio personalizado
 ```
 
+## Mantenimiento del blog
+
+El HTML de cada artículo es la fuente de verdad. Conserva las URL existentes y los enlaces recíprocos entre español e inglés. Si cambia el contenido, actualiza la fecha visible de revisión, `dateModified`, `article:modified_time` y el `lastmod` del sitemap, manteniendo la fecha original de publicación.
+
+Después de editar, regenera las versiones Markdown y el texto completo, y valida los metadatos y enlaces. Ambos comandos usan únicamente la biblioteca estándar de Python:
+
+```sh
+python3 scripts/blog_content.py
+python3 scripts/check_blog.py
+```
+
+`llms-full.txt` se genera desde `llms.txt` y los diez artículos. No edites los archivos generados por separado. Mantén las afirmaciones del producto y las comparativas respaldadas por fuentes y por el comportamiento de la aplicación.
+
 ## 🌐 Sitio web
 
 Visita [velocibar.app](https://velocibar.app) para más información y descarga.

@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/"/>
@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/"/>
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/internet-lento-por-la-noche.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/internet-lento-por-la-noche.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/internet-slow-at-night.html"/>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/internet-slow-at-night.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/internet-lento-por-la-noche.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/internet-slow-at-night.html"/>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/que-es-bufferbloat.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/que-es-bufferbloat.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/what-is-bufferbloat.html"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/what-is-bufferbloat.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/que-es-bufferbloat.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/what-is-bufferbloat.html"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/reclamar-isp-internet-lento.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/reclamar-isp-internet-lento.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/prove-isp-throttling.html"/>
@@ -88,7 +88,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/prove-isp-throttling.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/reclamar-isp-internet-lento.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/prove-isp-throttling.html"/>
@@ -96,7 +96,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/test-velocidad-mac.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/test-velocidad-mac.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speed-test-mac.html"/>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/speed-test-mac.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/test-velocidad-mac.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speed-test-mac.html"/>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html"/>
@@ -120,7 +120,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html"/>

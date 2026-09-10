@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/assets/fonts/manrope-semibold.ttf') format('truetype');
+  src: url('/assets/fonts/manrope-semibold.woff2') format('woff2');
 }
 
 :root {
@@ -725,6 +725,16 @@ img.logo-icon { width: 28px; height: 28px; display: block; flex: 0 0 auto; }
   padding-top: var(--space-lg);
   font-size: 0.9375rem;
 }
+
+.post .post-meta { color: var(--color-text-subtle); font-size: 0.8125rem; }
+.post .post-summary { color: var(--color-text); }
+.post-toc { margin: var(--space-xl) 0; padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.post-toc p, .post-toc ul { margin-bottom: 0; }
+.post-toc li { margin-top: var(--space-xs); }
+.post .post-note { border-left: 2px solid var(--color-accent); padding-left: var(--space-lg); font-size: 0.875rem; }
+.post-sources { margin-top: var(--space-xl); overflow-wrap: anywhere; }
+.post caption { text-align: left; padding-bottom: var(--space-md); color: var(--color-text-muted); font-size: 0.8125rem; }
+.post .table-wrap:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 
 /* Responsive layouts keep the preview and primary actions readable. */
 @media (max-width: 1050px) {
