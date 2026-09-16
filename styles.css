@@ -951,3 +951,7 @@ img.logo-icon { width: 28px; height: 28px; display: block; flex: 0 0 auto; }
   }
   .mock.in-view .rpm-marker { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
+
+/* --- Footer guides row (2026-09-16): lists the posts so every guide is one click from the homepage --- */
+.footer-content { flex-wrap: wrap; }
+.footer-guides { flex-basis: 100%; gap: var(--space-md) var(--space-lg); padding-top: 12px; border-top: 1px solid var(--color-border-soft); }

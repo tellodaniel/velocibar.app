@@ -1,0 +1,215 @@
+[
+  {
+    "claim": "No battery or weak-signal pausing exists",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "translations.js",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt",
+      "blog/**/*.html",
+      "blog/**/*.md",
+      "en/blog/**/*.html",
+      "en/blog/**/*.md"
+    ],
+    "must_not_match": [
+      "pause[sd]? (tests )?on battery",
+      "on battery or weak signal",
+      "pausa (las pruebas )?con bater",
+      "se[nñ]al d[eé]bil"
+    ],
+    "must_match": []
+  },
+  {
+    "claim": "No alerts or notifications exist",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "translations.js",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt",
+      "blog/**/*.html",
+      "blog/**/*.md",
+      "en/blog/**/*.html",
+      "en/blog/**/*.md"
+    ],
+    "must_not_match": [
+      "automatic alerts",
+      "alertas autom",
+      "sends? (you )?a notification",
+      "te avisa",
+      "notifica"
+    ],
+    "must_match": []
+  },
+  {
+    "claim": "Upload speed is not measured",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "translations.js",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt"
+    ],
+    "must_not_match": [
+      "VelociBar[^.\\n]{0,80}\\b(upload speed|velocidad de subida)",
+      "(measures?|mide) (the )?(upload|subida)",
+      "upload_mbps"
+    ],
+    "must_match": [],
+    "_note": "Other tools' upload readouts may be described; VelociBar itself never measures upload."
+  },
+  {
+    "claim": "The CSV engine column is named source, not engine, and the file has more columns than the five shown",
+    "paths": [
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt",
+      "blog/**/*.html",
+      "blog/**/*.md",
+      "en/blog/**/*.html",
+      "en/blog/**/*.md"
+    ],
+    "must_not_match": [
+      "`engine`, `download_mbps`",
+      "<code>engine</code>, <code>download_mbps</code>",
+      "<code>engine</code> \\(el motor usado\\)",
+      "`engine` \\(el motor usado\\)",
+      "with these columns:",
+      "con estas columnas:",
+      "\\(date, time, download_mbps, latency_ms\\)"
+    ],
+    "must_match": []
+  },
+  {
+    "claim": "Minimum macOS is 26",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "translations.js",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt",
+      "legal/*.html"
+    ],
+    "must_not_match": [
+      "macOS 1[0-5]",
+      "macOS 2[0-5]\\b",
+      "Ventura",
+      "Sonoma",
+      "Sequoia"
+    ],
+    "must_match": [
+      "macOS 26"
+    ]
+  },
+  {
+    "claim": "Price is stated as $1.99 USD on the US store, never as a subscription",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt"
+    ],
+    "must_not_match": [
+      "/month",
+      "/mo\\b",
+      "al mes",
+      "suscripci",
+      "subscription",
+      "\\$[02-9]\\.99",
+      "\\$1\\.[0-8]9",
+      "free download",
+      "descarga gratis"
+    ],
+    "must_match": [
+      "1[.,]99"
+    ]
+  },
+  {
+    "claim": "Automatic intervals are exactly 15, 30 and 60 minutes",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "translations.js",
+      "index.md",
+      "en/index.md",
+      "llms.txt",
+      "llms-full.txt",
+      "blog/**/*.html",
+      "en/blog/**/*.html"
+    ],
+    "must_not_match": [
+      "every 5 minutes",
+      "cada 5 minutos",
+      "every minute",
+      "cada minuto",
+      "every 2 hours",
+      "cada 2 horas",
+      "every 10 minutes",
+      "cada 10 minutos"
+    ],
+    "must_match": [
+      "15"
+    ]
+  },
+  {
+    "claim": "No content-ops placeholders ship",
+    "paths": [
+      "index.html",
+      "en/index.html",
+      "blog/**/*.html",
+      "en/blog/**/*.html",
+      "llms.txt",
+      "llms-full.txt"
+    ],
+    "must_not_match": [
+      "\\{\\{[A-Z_]+\\}\\}",
+      "TODO",
+      "lorem ipsum",
+      "PLACEHOLDER"
+    ],
+    "must_match": []
+  },
+  {
+    "claim": "Tests saturate the line briefly by design; never claim they are calibrated not to",
+    "paths": [
+      "llms.txt",
+      "llms-full.txt",
+      "index.md",
+      "en/index.md",
+      "translations.js",
+      "index.html",
+      "en/index.html"
+    ],
+    "must_not_match": [
+      "calibrated not to saturate",
+      "not to saturate your bandwidth",
+      "no satura(n)? (tu|el) ancho de banda"
+    ],
+    "must_match": []
+  },
+  {
+    "claim": "Terms page system requirement is macOS 26",
+    "paths": [
+      "legal/terms.html",
+      "translations.js"
+    ],
+    "must_not_match": [
+      "macOS 1[0-9]\\.0 \\((Monterey|Ventura|Sonoma|Sequoia|Big Sur)\\)"
+    ],
+    "must_match": [
+      "macOS 26\\.0"
+    ]
+  }
+]

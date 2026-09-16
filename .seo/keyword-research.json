@@ -1,0 +1,8 @@
+{
+  "baseline": { "domain_rank": null, "rank_scale": null, "source": "none", "as_of": "2026-09-16", "note": "No DataForSEO. Authority unknown; brand search for 'velocibar' returned no relevant results on 2026-09-16 (host web search)." },
+  "difficulty": { "playable_bucket": "easy", "kd_source": "none", "derived_at": "2026-09-16", "evidence": ["new site, no rankings observed"] },
+  "gsc_baseline": null,
+  "bing_baseline": { "window": "106 days to 2026-09-16", "clicks": 0, "impressions": 4, "queries": ["velocibar", "www.velocibar.es"], "pages_in_index": 2, "source": ".seo/gsc/bing-2026-09-16.json" },
+  "clusters": {},
+  "candidates": []
+}

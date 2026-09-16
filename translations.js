@@ -624,7 +624,7 @@ const termsTranslations = {
     description: "Términos y Condiciones de uso de VelociBar. Conoce las condiciones que rigen el uso de nuestra aplicación.",
     ogDescription: "Términos y Condiciones de uso de VelociBar.",
     heading: "Términos y Condiciones de Uso",
-    lastUpdated: "Última actualización: 24 de diciembre de 2024",
+    lastUpdated: "Última actualización: 16 de septiembre de 2026",
     summary: "<strong>Resumen:</strong> VelociBar es una herramienta de medición de velocidad de internet proporcionada \"tal cual\". Los resultados son informativos y no constituyen garantía del rendimiento de tu conexión. Úsala de forma responsable y respeta estos términos.",
     sections: {
       acceptance: {
@@ -649,7 +649,7 @@ const termsTranslations = {
         title: "3. Requisitos del Sistema",
         intro: "Para utilizar VelociBar necesitas:",
         items: [
-          "Una computadora Mac con macOS 12.0 (Monterey) o posterior",
+          "Una computadora Mac con macOS 26.0 (Tahoe) o posterior",
           "Conexión activa a internet",
           "Espacio suficiente en disco para la aplicación y los archivos de historial"
         ]
@@ -853,7 +853,7 @@ const termsTranslations = {
     description: "VelociBar Terms and Conditions of Use. Learn the conditions that govern the use of our application.",
     ogDescription: "VelociBar Terms and Conditions of Use.",
     heading: "Terms and Conditions of Use",
-    lastUpdated: "Last updated: December 24, 2024",
+    lastUpdated: "Last updated: September 16, 2026",
     summary: "<strong>Summary:</strong> VelociBar is an internet speed measurement tool provided \"as is\". Results are informational and do not constitute a guarantee of your connection's performance. Use it responsibly and respect these terms.",
     sections: {
       acceptance: {
@@ -878,7 +878,7 @@ const termsTranslations = {
         title: "3. System Requirements",
         intro: "To use VelociBar you need:",
         items: [
-          "A Mac computer with macOS 12.0 (Monterey) or later",
+          "A Mac computer with macOS 26.0 (Tahoe) or later",
           "Active internet connection",
           "Sufficient disk space for the app and history files"
         ]

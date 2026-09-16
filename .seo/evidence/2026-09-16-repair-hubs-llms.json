@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-16",
+  "action": "repair",
+  "changes": [
+    {"file": "index.html, en/index.html", "what": "footer 'Guides' row linking all five posts of that language", "why": "depth_check: the five English posts sat at click depth 3 from the homepage; now every post is one click from / or /en/", "verify": "each href resolves to an existing file"},
+    {"file": "styles.css", "what": ".footer-content wrap + .footer-guides row", "why": "layout for the new row; no existing rule changed"},
+    {"file": "index.html, en/index.html", "what": "second paragraph under the export copy: the CSV card is an excerpt; the full file has eight columns", "why": "NY-2 option (c); the visual mock keeps five columns"},
+    {"file": "index.html", "before": "VelociBar - Test de velocidad de internet continuo para macOS (61 chars)", "after": "VelociBar: test de velocidad de internet continuo, macOS (56 chars)", "why": "tech_audit title_too_long; JS does not override <title> (no data-i18n on it)"},
+    {"file": "llms.txt", "what": "Blog and Links sections rewritten as [title](url): description; 15 described links", "why": "robots_check: 7 of 12 links had no description"},
+    {"file": "sitemap.xml", "what": "lastmod 2026-09-16 for / and /en/", "why": "content changed"}
+  ],
+  "gates": {"health_diff local render": "16 pages, 0 violations", "truth_check": "10 rules, 0 contradictions", "footer hrefs": "10/10 resolve", "browser render": "unchecked: no browser on this host; footer row wraps under flex-wrap, not visually confirmed", "live depth_check": "unchecked until pushed"}
+}

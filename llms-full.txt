@@ -20,23 +20,24 @@
 
 ## Blog guides
 
-- [Internet lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html) · [English](https://velocibar.app/en/blog/internet-slow-at-night.html)
-- [Qué es el bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html) · [English](https://velocibar.app/en/blog/what-is-bufferbloat.html)
-- [Documentar internet lento para tu ISP](https://velocibar.app/blog/reclamar-isp-internet-lento.html) · [English](https://velocibar.app/en/blog/prove-isp-throttling.html)
-- [Test de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html) · [English](https://velocibar.app/en/blog/speed-test-mac.html)
-- [Speedtest vs Fast.com vs VelociBar](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html) · [English](https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html)
+- [Internet lento por la noche](https://velocibar.app/blog/internet-lento-por-la-noche.html): causas de la congestión en hora pico y cómo comprobarla con una semana de pruebas programadas · [English](https://velocibar.app/en/blog/internet-slow-at-night.html)
+- [Qué es el bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html): por qué las videollamadas se cortan con buena velocidad, cómo medir la responsividad (RPM) y cómo reducirla · [English](https://velocibar.app/en/blog/what-is-bufferbloat.html)
+- [Documentar internet lento para tu ISP](https://velocibar.app/blog/reclamar-isp-internet-lento.html): pruebas comparables por cable, historial CSV y una solicitud clara a soporte, con los límites de lo que un historial demuestra · [English](https://velocibar.app/en/blog/prove-isp-throttling.html)
+- [Test de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html): tres métodos, incluida la herramienta networkQuality de Apple en la Terminal y cómo leer su salida · [English](https://velocibar.app/en/blog/speed-test-mac.html)
+- [Speedtest vs Fast.com vs VelociBar](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html): qué mide cada uno, cuándo usarlos y qué preguntas solo responde un historial · [English](https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html)
 
 Each article links to its Markdown equivalent, its translation, and its supporting sources.
 
 ## Site links
 
-- [Home in Spanish](https://velocibar.app/)
-- [Home in English](https://velocibar.app/en/)
-- [Spanish blog](https://velocibar.app/blog/)
-- [English blog](https://velocibar.app/en/blog/)
-- [Product summary and complete blog text](https://velocibar.app/llms-full.txt)
-- [Privacy policy](https://velocibar.app/legal/privacy.html)
-- [Terms](https://velocibar.app/legal/terms.html)
+- [Home in Spanish](https://velocibar.app/): product overview, comparison table and FAQ in Spanish, the default language. Markdown: https://velocibar.app/index.md
+- [Home in English](https://velocibar.app/en/): the same overview, comparison table and FAQ in English. Markdown: https://velocibar.app/en/index.md
+- [Spanish blog](https://velocibar.app/blog/): index of the Spanish guides.
+- [English blog](https://velocibar.app/en/blog/): index of the English guides.
+- [Product summary and complete blog text](https://velocibar.app/llms-full.txt): this file plus every guide in one plain-text document.
+- [Privacy policy](https://velocibar.app/legal/privacy.html): what the app stores (a local CSV) and what it never collects.
+- [Terms](https://velocibar.app/legal/terms.html): licence terms and system requirements (macOS 26 or later).
+- [App Store](https://apps.apple.com/us/app/velocibar/id6756196355): download, current price and availability by country.
 
 ---
 

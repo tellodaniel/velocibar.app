@@ -23,7 +23,7 @@ VelociBar is a macOS menu bar app that measures your real internet speed over ti
 
 ## History and export
 
-Every test is saved locally and plotted on a timeline: spot the 9 p.m. drop, the weekend congestion, or the exact day your connection changed. Export the full history in one click to CSV with these columns: `timestamp`, `source` (engine), `download_mbps`, `latency_ms`, `responsiveness_rpm`. Objective evidence for your ISP, or just for you.
+Every test is saved locally and plotted on a timeline: spot the 9 p.m. drop, the weekend congestion, or the exact day your connection changed. Export the full history in one click to CSV. The key columns are `timestamp`, `source` (engine), `download_mbps`, `latency_ms` and `responsiveness_rpm`; the file also carries `is_error`, `duration_s` and `bytes_downloaded`. Objective evidence for your ISP, or just for you.
 
 Automatic tests run in the background every 15, 30, or 60 minutes (your choice), with a "Run now" button and a desktop widget showing your latest measurement.
 
