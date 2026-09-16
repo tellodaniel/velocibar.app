@@ -66,12 +66,12 @@
 | date | action | slug | type | lane | what changed | commit |
 |---|---|---|---|---|---|---|
 | 2026-09-10 | correct | https://velocibar.app/llms.txt | answer-engine file | (upstream, PR #3) | battery/alerts/load claims removed, all 8 CSV fields listed, alternation qualified; found already fixed when this clone was synced on 2026-09-16 | d9bf682 |
-| 2026-09-16 | correct | https://velocibar.app/legal/terms.html | legal | fix | system requirement macOS 12.0 (Monterey) → macOS 26.0 (Tahoe), ES+EN; Last updated → 2026-09-16 | d94928a |
+| 2026-09-16 | correct | https://velocibar.app/legal/terms.html | legal | fix | system requirement macOS 12.0 (Monterey) → macOS 26.0 (Tahoe), ES+EN; Last updated → 2026-09-16 | 642a77f |
 | 2026-09-10 | correct | https://velocibar.app/blog/reclamar-isp-internet-lento.html · /en/blog/prove-isp-throttling.html | how-to | (upstream, PR #3) | posts rewritten with the real CSV fields; found already fixed on sync | d9bf682 |
-| 2026-09-16 | correct | https://velocibar.app/index.md · /en/index.md | homepage mirrors | fix | "with these columns:" five-column claim → key columns plus the three extra ones | d94928a |
-| 2026-09-16 | repair | https://velocibar.app/en/ | landing | technical | footer Guides row (5 EN posts now click depth 2); CSV excerpt note; lastmod 2026-09-16 | d94928a |
-| 2026-09-16 | repair | https://velocibar.app/ | landing | technical | footer Guías row; CSV excerpt note; title 61 → 56 chars ("VelociBar: test de velocidad de internet continuo, macOS"); lastmod 2026-09-16 | d94928a |
-| 2026-09-16 | repair | https://velocibar.app/llms.txt | answer-engine file | technical | one-line description on all 13 links; llms-full.txt regenerated with scripts/blog_content.py | d94928a |
+| 2026-09-16 | correct | https://velocibar.app/index.md · /en/index.md | homepage mirrors | fix | "with these columns:" five-column claim → key columns plus the three extra ones | 642a77f |
+| 2026-09-16 | repair | https://velocibar.app/en/ | landing | technical | footer Guides row (5 EN posts now click depth 2); CSV excerpt note; lastmod 2026-09-16 | 642a77f |
+| 2026-09-16 | repair | https://velocibar.app/ | landing | technical | footer Guías row; CSV excerpt note; title 61 → 56 chars ("VelociBar: test de velocidad de internet continuo, macOS"); lastmod 2026-09-16 | 642a77f |
+| 2026-09-16 | repair | https://velocibar.app/llms.txt | answer-engine file | technical | one-line description on all 13 links; llms-full.txt regenerated with scripts/blog_content.py | 642a77f |
 
 ---
 
