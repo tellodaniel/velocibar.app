@@ -14,6 +14,7 @@
 | 2026-09-04 | Cómo reclamar a tu ISP por internet lento con datos / How to Document Slow Internet for Your ISP | how-to | /blog/reclamar-isp-internet-lento.html · /en/blog/prove-isp-throttling.html | reclamar ISP internet lento · prove ISP throttling | n/a | unknown | none | n/a | lento por la noche, comparativa | same |
 | 2026-09-04 | Test de velocidad en Mac: 3 métodos explicados / Mac Internet Speed Test: 3 Methods Explained | how-to | /blog/test-velocidad-mac.html · /en/blog/speed-test-mac.html | test velocidad mac · speed test mac networkQuality | n/a | unknown | none | n/a | bufferbloat, comparativa | same |
 | 2026-09-04 | Speedtest vs Fast.com vs VelociBar: cuál usar / Which to Use | comparison | /blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html · /en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html | speedtest vs fast.com | n/a | unknown | none | n/a | test velocidad mac, reclamar ISP | same |
+| 2026-09-16 | ¿El test de velocidad da bien pero la videollamada se corta? Mira la responsividad / Speed Test Is Fine but Video Calls Still Stutter? Check Responsiveness, Not Mbps | guide (explainer / how-to) | /blog/videollamadas-se-cortan-test-velocidad-bien.html · /en/blog/video-calls-lag-speed-test-fine.html | videollamada se corta test velocidad bien · video call lagging but speed test is fine | n/a (no tool; SERP-inferred) | medium (vendor explainers, no authority owner) | own networkQuality runs · n=4, one Wi-Fi line · 2026-09-16 (.seo/evidence/networkquality-2026-09-16/) | 2027-03 (re-run the four tests; re-check Zoom thresholds) | que-es-bufferbloat, test-velocidad-mac, internet-lento-por-la-noche, reclamar-isp, home | a90e7c4 |
 
 ---
 
@@ -29,6 +30,7 @@
 | /blog/reclamar-isp-internet-lento.html · /en/blog/prove-isp-throttling.html | 2026-09-04 | unchecked | — | — | — | — | unmeasured | radar suggests a "formal regulator complaint" section |
 | /blog/test-velocidad-mac.html · /en/blog/speed-test-mac.html | 2026-09-04 | unchecked | — | — | — | — | unmeasured | |
 | /blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html · /en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html | 2026-09-04 | unchecked | — | — | — | — | unmeasured | |
+| /blog/videollamadas-se-cortan-test-velocidad-bien.html · /en/blog/video-calls-lag-speed-test-fine.html | 2026-09-16 | unchecked (no GSC) | — | — | — | — | unmeasured | read at 2026-10-14 and 2026-11-11 |
 
 ---
 
@@ -38,7 +40,7 @@
 
 | Rank | Candidate | Proposed type | Target keyword | Vol | Bucket | Intent | Data angle | Score | Notes / angle |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Speed test says fine but calls still stutter: it's RPM, not Mbps (ES/EN) | guide | speed test fine but video calls lag | n/a | unknown | informational→product | developer's own idle-vs-loaded latency log, n=1 | — | demand: Xfinity threads 2025-12-27, 2026-05-21; answer owner: us (no .gov/Apple page owns the symptom) |
+| ~~1~~ | SHIPPED 2026-09-16: Speed test says fine but calls still stutter (ES/EN) | guide | speed test fine but video calls lag | n/a | unknown | informational→product | developer's own idle-vs-loaded latency log, n=1 | — | demand: Xfinity threads 2025-12-27, 2026-05-21; answer owner: us (no .gov/Apple page owns the symptom) |
 | 2 | Refresh: prove-isp-throttling with a formal-complaint section (AG / Osiptel / Profeco) | refresh | reclamar ISP formal | n/a | unknown | transactional | none | — | demand: Xfinity 2026-03-14, 2026-04-15; Infobae Perú 2026-06-06 |
 | 3 | Menu bar network apps for Mac, compared: connectivity checkers vs traffic meters vs speed loggers | comparison / listicle | menu bar internet speed mac | n/a | unknown | commercial | hands-on test of each app | — | demand: MacRumors NetCheck thread 2026-08-15; AEO snapshot P1/P8; honest tradeoffs required |
 | 4 | Refresh: internet lento por la noche with FTTH 8–11 pm data and the Movistar thread | refresh | internet lento por la noche | n/a | unknown | informational | none | — | demand: Infobae 2026-02-08, tecnoorbita, Comunidad Movistar |
@@ -51,7 +53,7 @@
 | Cluster / theme | Pieces shipped | Gaps still open |
 |---|---|---|
 | Peak-hour congestion (slow at night) | 1 pair | refresh with 2026 data |
-| Bufferbloat / responsiveness (RPM) | 1 pair (definition) | symptom-first piece (backlog 1); router SQM fix on Mac |
+| Bufferbloat / responsiveness (RPM) | 2 pairs (definition; symptom-first explainer with real runs) | router SQM fix on Mac |
 | ISP evidence / complaints | 1 pair | formal complaint section (backlog 2); per-country regulator notes (MX Profeco/IFT, ES, PE Osiptel) |
 | Mac speed test / networkQuality | 1 pair | reading networkQuality output; WiFi vs Ethernet logging |
 | One-off tests vs monitoring | 1 pair | Mac menu-bar apps compared (backlog 3) |
@@ -72,6 +74,7 @@
 | 2026-09-16 | repair | https://velocibar.app/en/ | landing | technical | footer Guides row (5 EN posts now click depth 2); CSV excerpt note; lastmod 2026-09-16 | 642a77f |
 | 2026-09-16 | repair | https://velocibar.app/ | landing | technical | footer Guías row; CSV excerpt note; title 61 → 56 chars ("VelociBar: test de velocidad de internet continuo, macOS"); lastmod 2026-09-16 | 642a77f |
 | 2026-09-16 | repair | https://velocibar.app/llms.txt | answer-engine file | technical | one-line description on all 13 links; llms-full.txt regenerated with scripts/blog_content.py | 642a77f |
+| 2026-09-16 | create-editorial | https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html · https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html | guide | editorial | new ES/EN pair with four real networkQuality runs; inbound links from the bufferbloat and Mac speed-test pairs, both indexes, llms.txt, homepage footers | a90e7c4 |
 
 ---
 

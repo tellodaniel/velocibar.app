@@ -2,7 +2,7 @@
 
 # Cómo hacer un test de velocidad en tu Mac: 3 métodos
 
-Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 6 min de lectura
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 16 de septiembre de 2026 · 6 min de lectura
 
 **Para medir la velocidad de internet en Mac, abre un test web, ejecuta `networkQuality` en la Terminal o usa VelociBar para programar mediciones.** Un test web da una lectura puntual; la herramienta de Apple también reporta responsividad bajo carga. Repetir las pruebas permite comparar la conexión entre horas y días.
 
@@ -45,7 +45,7 @@ Cada línea te dice algo distinto:
 
 - **Uplink / Downlink capacity.** La velocidad real de subida y bajada, medida mientras la red está bajo carga de trabajo, no en una ráfaga aislada.
 - **Responsiveness.** Apple reporta cómo responde la red bajo carga, con una clasificación Low, Medium o High. Otras pruebas también miden latencia bajo carga; sus unidades y métodos pueden ser diferentes.
-- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo.
+- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo. Para un ejemplo real de un resultado Medium junto a una descarga de 500 Mbps, mira [responsividad frente a Mbps en una línea real](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html).
 - **Idle Latency.** La latencia con la red en reposo, sin carga. Es tu punto de partida: compárala con lo que ocurre bajo carga para ver cuánto se degrada tu conexión cuando de verdad la exiges.
 
 El comando tiene dos variantes útiles:

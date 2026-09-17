@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/que-es-bufferbloat.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/que-es-bufferbloat.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/what-is-bufferbloat.html"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/what-is-bufferbloat.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/que-es-bufferbloat.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/what-is-bufferbloat.html"/>
@@ -96,7 +96,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/blog/test-velocidad-mac.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/test-velocidad-mac.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speed-test-mac.html"/>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://velocibar.app/en/blog/speed-test-mac.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/test-velocidad-mac.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speed-test-mac.html"/>
@@ -125,6 +125,22 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html"/>
+  </url>
+  <url>
+    <loc>https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html"/>
+  </url>
+  <url>
+    <loc>https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html"/>
   </url>
   <url>
     <loc>https://velocibar.app/legal/privacy.html</loc>

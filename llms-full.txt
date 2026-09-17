@@ -24,6 +24,7 @@
 - [Qué es el bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html): por qué las videollamadas se cortan con buena velocidad, cómo medir la responsividad (RPM) y cómo reducirla · [English](https://velocibar.app/en/blog/what-is-bufferbloat.html)
 - [Documentar internet lento para tu ISP](https://velocibar.app/blog/reclamar-isp-internet-lento.html): pruebas comparables por cable, historial CSV y una solicitud clara a soporte, con los límites de lo que un historial demuestra · [English](https://velocibar.app/en/blog/prove-isp-throttling.html)
 - [Test de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html): tres métodos, incluida la herramienta networkQuality de Apple en la Terminal y cómo leer su salida · [English](https://velocibar.app/en/blog/speed-test-mac.html)
+- [Videollamadas que se cortan con un test de velocidad bueno](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html): por qué importa la latencia bajo carga (responsividad, RPM) y no los Mbps, con cuatro ejecuciones reales de networkQuality en un Mac, cómo revisarlo en cinco minutos y qué lo soluciona · [English](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html)
 - [Speedtest vs Fast.com vs VelociBar](https://velocibar.app/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html): qué mide cada uno, cuándo usarlos y qué preguntas solo responde un historial · [English](https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html)
 
 Each article links to its Markdown equivalent, its translation, and its supporting sources.
@@ -109,7 +110,7 @@ VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y 
 
 # Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)
 
-Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 5 min de lectura
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 16 de septiembre de 2026 · 5 min de lectura
 
 **El bufferbloat es una demora excesiva en las colas de paquetes cuando la red está ocupada.** Puede provocar lag en llamadas y juegos aunque la descarga sea rápida. Revisa la latencia bajo carga además de los Mbps; una gestión de colas adecuada puede ayudar. Las interferencias WiFi, la pérdida de paquetes y otras fallas pueden producir síntomas parecidos.
 
@@ -137,6 +138,8 @@ Si el lag aparece durante transferencias pesadas, compara la latencia en reposo 
 Mide cuánto aumenta la demora bajo carga, además de la descarga. [La herramienta networkQuality de Apple expresa la responsividad en RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (viajes de ida y vuelta por minuto): más es mejor. [Fast.com también muestra latencia en reposo y bajo carga](https://fast.com/) en milisegundos, donde menos es mejor.
 
 Usa como orientación la clasificación Low, Medium o High que reporte tu versión de la herramienta de Apple. No existe un valor de RPM que garantice una llamada o partida fluida. Compara pruebas equivalentes antes y después de un cambio: el destino, el método, la conexión inalámbrica y la aplicación influyen.
+
+Para ver cuánto pueden separarse los viajes en reposo y bajo carga en una misma línea, lee [por qué la videollamada se corta aunque el test de velocidad dé bien](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html), con cuatro ejecuciones reales de networkQuality.
 
 Una prueba puntual describe un momento. [VelociBar](https://velocibar.app/) conserva mediciones repetidas para investigar cambios a lo largo del tiempo. Sus motores Apple y CDN usan métodos diferentes: compara resultados del mismo motor en lugar de tratar sus RPM como intercambiables. Consulta la [guía de pruebas de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html).
 
@@ -317,7 +320,7 @@ VelociBar mide tu conexión automáticamente desde la barra de menú de macOS y 
 
 # Cómo hacer un test de velocidad en tu Mac: 3 métodos
 
-Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 6 min de lectura
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 16 de septiembre de 2026 · 6 min de lectura
 
 **Para medir la velocidad de internet en Mac, abre un test web, ejecuta `networkQuality` en la Terminal o usa VelociBar para programar mediciones.** Un test web da una lectura puntual; la herramienta de Apple también reporta responsividad bajo carga. Repetir las pruebas permite comparar la conexión entre horas y días.
 
@@ -360,7 +363,7 @@ Cada línea te dice algo distinto:
 
 - **Uplink / Downlink capacity.** La velocidad real de subida y bajada, medida mientras la red está bajo carga de trabajo, no en una ráfaga aislada.
 - **Responsiveness.** Apple reporta cómo responde la red bajo carga, con una clasificación Low, Medium o High. Otras pruebas también miden latencia bajo carga; sus unidades y métodos pueden ser diferentes.
-- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo.
+- **RPM (viajes de ida y vuelta por minuto).** Un RPM más alto significa respuestas más rápidas bajo la carga de esta prueba. Un resultado bajo puede ser compatible con [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), pero no identifica la causa por sí solo. Para un ejemplo real de un resultado Medium junto a una descarga de 500 Mbps, mira [responsividad frente a Mbps en una línea real](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html).
 - **Idle Latency.** La latencia con la red en reposo, sin carga. Es tu punto de partida: compárala con lo que ocurre bajo carga para ver cuánto se degrada tu conexión cuando de verdad la exiges.
 
 El comando tiene dos variantes útiles:
@@ -399,6 +402,123 @@ VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despie
 ## Deja que VelociBar mida por ti
 
 Ejecuta tests automáticos desde la barra de menú de tu Mac, guarda el historial en local y expórtalo a CSV cuando lo necesites. Sin cuentas, sin nube: todo en tu Mac.
+
+[↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← Todos los artículos](https://velocibar.app/blog/)
+
+---
+
+> Versión en Markdown de https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html · [English version](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html)
+
+# ¿El test de velocidad da bien pero la videollamada se corta? Mira la responsividad, no los Mbps
+
+Por [VelociBar](https://velocibar.app/) · Publicado el 16 de septiembre de 2026 · 11 min de lectura
+
+**Un test de velocidad mide cuántos datos puede mover tu línea. Una videollamada necesita que los paquetes lleguen a tiempo.** Cuando las llamadas se congelan en una conexión que da bien en el test, la causa habitual es la latencia bajo carga: viajes de ida y vuelta que pasan de decenas de milisegundos a cientos mientras la línea está ocupada. La herramienta networkQuality de Apple lo reporta como responsividad (RPM), y puedes leerla en tu Mac en un minuto.
+
+## Por qué un test rápido y una llamada congelada son ciertos a la vez
+
+Una videollamada usa muy poco de una línea moderna. [Zoom indica 1,2 Mbps de subida y bajada para una llamada 720p entre dos personas](https://support.zoom.com/hc/es/article?id=zm_kb&sysparm_article=KB0060748), y 3,8 Mbps de subida y 3,0 de bajada para 1080p. [Microsoft dice que Teams puede dar video HD con menos de 1,5 Mbps](https://learn.microsoft.com/es-es/microsoftteams/prepare-network), y [Google Meet pide alrededor de 1 Mbps de salida y 1,3 Mbps de entrada por participante](https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams?hl=es) en HD. En un plan de 300 Mbps, el ancho de banda no es el límite. Un test que marca 300 dice la verdad. Solo que no es el número del que depende una llamada.
+
+La pregunta de la llamada es otra: ¿cada paquete pequeño de audio y video llega en unas decenas de milisegundos, todas las veces, en ambas direcciones? Las estadísticas de Zoom durante la reunión miden exactamente eso. [Zoom recomienda una latencia de 150 ms o menos, un jitter de 40 ms o menos y una pérdida de paquetes del 2% o menos](https://support.zoom.com/hc/es/article?id=zm_kb&sysparm_article=KB0070504). Ninguno de esos tres números es una velocidad. Una línea puede mover 500 Mbps y aun así fallar los tres en cuanto alguien en la red inicia una transferencia grande.
+
+## Lo que el test de velocidad no muestra: latencia bajo carga
+
+La mayoría de los tests de velocidad reportan tu **latencia en reposo**: el tiempo de ida y vuelta medido antes de que empiece la transferencia, con la línea tranquila. Suele ser un número agradable, de 10 a 40 ms en cable o fibra. Lo que importa para una llamada es el tiempo de ida y vuelta **mientras la línea está ocupada**, porque tu línea está ocupada cada vez que alguien en casa respalda fotos, una consola descarga una actualización o tu propio Mac sincroniza una carpeta.
+
+En muchos routers y módems ese número se dispara. El equipo retiene los paquetes salientes en una cola sobredimensionada en vez de descartar unos pocos, y los paquetes de tu llamada esperan detrás de todo lo demás. Esa demora en cola tiene nombre, [bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html), que bufferbloat.net define como “la latencia indeseable que proviene de un router u otro equipo de red que almacena demasiados datos en búfer”. La IETF recomienda gestión activa de colas contra ese problema desde el [RFC 7567 de 2015](https://www.rfc-editor.org/rfc/rfc7567), y el informe Measuring Broadband America de la FCC encontró que la latencia bajo carga de descarga “generalmente es significativamente mayor que la latencia en reposo” en los proveedores de EE. UU., con la mayor diferencia en DSL.
+
+La forma más limpia de medirlo es la que Apple integró en macOS. Desde Monterey, todo Mac trae [el comando networkQuality](https://velocibar.app/blog/test-velocidad-mac.html), que satura la línea a propósito y cuenta cuántos viajes de ida y vuelta todavía puede completar. [Apple llama al resultado responsividad, en viajes de ida y vuelta por minuto (RPM)](https://support.apple.com/es-es/HT212313): la cantidad de viajes de ida y vuelta secuenciales, o transacciones, que una red puede hacer en un minuto en condiciones normales de trabajo. El método se está estandarizando en la IETF como [Responsiveness under Working Conditions](https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/), que define las condiciones de trabajo como una ruta totalmente utilizada, de modo que se forma una cola en el cuello de botella. Dicho de otro modo, la prueba crea la situación exacta que rompe tu llamada y luego la mide.
+
+RPM y milisegundos son la misma medida, vista desde dos ángulos distintos. Divide 60.000 entre el RPM y obtienes el viaje de ida y vuelta promedio en milisegundos bajo carga: 1.000 RPM son 60 ms, 500 RPM son 120 ms, 200 RPM son 300 ms. Apple etiqueta el resultado como Low, Medium o High, y describe Medium como una conexión donde puedes ver pausas o congelamientos momentáneos, por ejemplo durante llamadas de audio o video de FaceTime. Esa frase describe el mecanismo detrás del congelamiento.
+
+## Cómo se ve en una línea real
+
+Para mostrar la brecha en vez de describirla, ejecutamos networkQuality cuatro veces seguidas en una conexión Wi-Fi doméstica la tarde del 16 de septiembre de 2026, desde el Mac en el que se escribió este artículo. La salida original está guardada junto al artículo. Es una línea en una tarde, medida frente a los servidores de Apple, así que no dice nada sobre tu proveedor. Sí muestra lo lejos que pueden estar “rápida” y “responsiva” en la misma conexión.
+
+Cuatro ejecuciones consecutivas de networkQuality, una línea Wi-Fi doméstica, 16-09-2026. Los viajes bajo carga son las muestras de petición y respuesta tomadas mientras la fase de descarga saturaba la línea. La prueba 4 usó la salida resumida, que solo reporta el RPM y su equivalente en milisegundos.
+
+| Prueba | Descarga | Subida | Ida y vuelta en reposo | Ida y vuelta bajo carga (mediana / peor) | Responsividad |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 320 Mbps | 154 Mbps | 40 ms | 59 ms / 618 ms | 470 RPM, Medium |
+| 2 | 547 Mbps | 158 Mbps | 46 ms | 82 ms / 787 ms | 560 RPM, Medium |
+| 3 | 496 Mbps | 149 Mbps | 44 ms | 145 ms / 1.150 ms | 420 RPM, Medium |
+| 4 | 626 Mbps | 143 Mbps | 42 ms | 109 ms (derivado del RPM; sin muestras) | 549 RPM, Medium |
+
+Cualquiera de las cuatro pasaría un test de velocidad de sobra. Las cuatro quedaron también en Medium, con la mediana del viaje de ida y vuelta bajo carga entre 1,5 y más de 3 veces el valor en reposo, y las peores muestras entre 618 y 1.150 ms. Fíjate en la prueba 3: la descarga más alta de las tres primeras y la peor responsividad, con una mediana de 145 ms bajo carga, justo al borde de los 150 ms que recomienda Zoom, y una de cada diez muestras por encima de 263 ms. Una llamada durante esa prueba se habría congelado un instante cada vez que una cola así se vaciaba, y un test de velocidad un minuto después habría dicho que todo está bien.
+
+Dos salvedades honestas. El Wi-Fi añade su propia variación, así que por cable el resultado seguramente sería más estable. Y cuatro pruebas son una foto, no un patrón. El patrón es lo que importa cuando intentas saber si esto pasa a las 9 de la noche todos los días o solo cuando arranca el respaldo, y por eso el último paso de abajo es registrarlo.
+
+## Cómo revisar tu conexión en cinco minutos
+
+1. **Ejecuta networkQuality en tu Mac.** Abre la Terminal, escribe `networkQuality`, pulsa Intro y espera unos 20 segundos. Lee la línea Responsiveness: la etiqueta y el RPM (las versiones recientes de macOS también imprimen los milisegundos). Low o Medium con una descarga sana es la firma de la que trata este artículo.
+2. **Compara latencia en reposo y bajo carga en un test web.** El botón “Show more info” de Fast.com muestra por separado la latencia sin carga y con carga; la propia guía de Netflix es que ambas deberían estar cerca. El test de velocidad de Cloudflare hace lo mismo y mete esa diferencia en su puntuación para videollamadas. Un valor con carga varias veces mayor que el de reposo es el mismo hallazgo desde otro servidor.
+3. **Lee las estadísticas de la propia llamada.** Durante una llamada de Zoom, abre Configuración, luego Estadísticas, y observa latencia, jitter y pérdida de paquetes mientras ocurre el congelamiento. Si latencia y jitter saltan cuando empieza una transferencia en otra parte de la casa, encontraste la cola.
+4. **Repite por cable.** Si la latencia bajo carga vuelve a acercarse a la de reposo con un cable Ethernet, la cola está en tu Wi-Fi, no en tu router ni en tu proveedor. Si sigue alta, el cuello de botella está más allá del cable.
+5. **Regístralo durante varios días.** Una sola prueba dice lo que hizo la línea en ese minuto. Para saber si el problema es un patrón nocturno, un horario de respaldo o algo aleatorio, necesitas la responsividad medida con un horario. [VelociBar](https://velocibar.app/) ejecuta una prueba cada 15, 30 o 60 minutos desde la barra de menú, alterna el motor de Apple con una descarga desde una CDN y escribe cada resultado, incluido el RPM, en un CSV local. VelociBar etiqueta el RPM que registra con las bandas menos de 200 (Low), de 200 a 999 (Medium) y 1.000 o más (High).
+
+## Cuándo no es la responsividad
+
+La demora en cola es la explicación más común de un test rápido y una llamada mala, y no es la única. Antes de cambiar de router, descarta estas, porque cada una tiene un arreglo distinto.
+
+| Lo que ves | Causa probable | Cómo comprobarlo |
+| --- | --- | --- |
+| Se congela por Wi-Fi, va bien por cable | Interferencia inalámbrica o una banda de 2,4 GHz saturada. [El consejo de la propia Apple](https://support.apple.com/es-es/102319) es pasar los dispositivos a 5 GHz y reducir lo que comparte la banda. | Paso 4 de arriba |
+| El video se congela pero el audio sobrevive; los ventiladores se aceleran | El propio Mac. Zoom atribuye muchos problemas de video a la configuración del dispositivo, apps que compiten por recursos o problemas de calidad, y señala que los portátiles de dos núcleos bajan a unos 5 cuadros por segundo al compartir pantalla. | Cierra apps pesadas; mira la CPU en Monitor de Actividad durante la llamada |
+| Solo va mal con la VPN del trabajo | Sobrecarga de la VPN. [Microsoft recomienda no enviar tráfico en tiempo real por una VPN](https://learn.microsoft.com/es-es/microsoftteams/qos-in-teams) porque añade sobrecarga a los paquetes y crea retrasos en el tráfico en tiempo real. | Prueba la misma llamada sin la VPN |
+| Solo una persona se congela para todos los demás | La conexión de esa persona, no la tuya. | Pídele que haga las mismas comprobaciones |
+| Se congela cuando subes o sincronizas | Saturación de la subida. Los planes domésticos tienen mucha menos subida que bajada, y un respaldo en la nube la llena. A menudo es bufferbloat del lado de subida. En las cuatro pruebas de arriba, la mediana del viaje de ida y vuelta durante la fase de subida fue mayor que durante la de descarga en todos los casos: 173 ms frente a 59 ms en la prueba 1, 151 frente a 82 en la 2, 214 frente a 145 en la 3. | Pausa la sincronización y vuelve a probar |
+
+El RPM tiene sus propios límites. Es un número de una ruta hacia los servidores de Apple, y como [señala Cloudflare](https://blog.cloudflare.com/aim-database-for-internet-quality/), la ruta que toma un test de velocidad puede ser muy distinta de la que toman tus llamadas. Dos herramientas que siguen el mismo método deberían coincidir en la etiqueta, no en el RPM exacto. Tómalo como un indicador fiable de colas en tu línea, no como un veredicto sobre una llamada concreta.
+
+## Qué lo soluciona, en orden
+
+1. **Conéctate por cable en las llamadas que importan.** Ethernet elimina la cola del Wi-Fi por completo y es el único arreglo que no cuesta nada y funciona hoy.
+2. **Mueve las transferencias pesadas fuera del horario de llamadas.** Programa respaldos en la nube, sincronización de fotos y actualizaciones de consola para la noche. La mayor parte de la cola la causa tráfico que tú controlas.
+3. **Activa la gestión de colas en el router.** Si tu router ofrece Smart Queue Management (SQM, normalmente fq_codel o CAKE), actívalo y configúralo un poco por debajo de tus velocidades medidas. El firmware antiguo a menudo no incluye SQM, así que busca una actualización antes de dar por hecho que tu router no puede. Si solo ofrece QoS, prioriza tu Mac o tu app de llamadas. [La guía de bufferbloat](https://velocibar.app/blog/que-es-bufferbloat.html) ordena estas opciones en detalle.
+4. **Sal de los 2,4 GHz.** Usa la banda de 5 GHz o 6 GHz para el equipo desde el que haces llamadas, y mantén el router a la vista si puedes.
+5. **Si solo pasa a las mismas horas cada día, mide y documenta.** La congestión en el nodo del proveedor tiene su pico por la noche, y un registro de responsividad por hora es la evidencia que separa la [congestión de hora pico](https://velocibar.app/blog/internet-lento-por-la-noche.html) de un problema dentro de tu casa. [Así se convierte ese registro en una solicitud a soporte](https://velocibar.app/blog/reclamar-isp-internet-lento.html).
+
+## Preguntas frecuentes
+
+### ¿Por qué Zoom se congela si mi internet es rápido?
+
+Porque Zoom necesita paquetes a tiempo, no en volumen. Una llamada 720p usa alrededor de 1,2 Mbps, así que un plan de 300 Mbps tiene capacidad de sobra. Los congelamientos vienen de la latencia, el jitter y la pérdida de paquetes, que suben cuando la línea está ocupada con otro tráfico. Mide la responsividad bajo carga, no la velocidad de descarga.
+
+### ¿Es más importante la velocidad de subida que la de bajada para las videollamadas?
+
+Ninguna importa mucho una vez que tienes unos pocos Mbps en cada dirección. Lo que importa es que la menor de las dos, casi siempre la subida en planes domésticos, no se sature con un respaldo o una sincronización durante la llamada. Cuando eso pasa, la cola de subida retrasa tu audio y video salientes y el otro lado te ve congelado.
+
+### ¿Qué velocidad de internet necesito para Zoom?
+
+Las cifras publicadas por Zoom son 1,2 Mbps de subida y bajada para una llamada 720p entre dos personas y 3,8 Mbps de subida y 3,0 de bajada para 1080p. Casi cualquier plan de banda ancha lo cumple. Una buena conexión para Zoom es la que mantiene la latencia en 150 ms o menos y el jitter en 40 ms o menos mientras el resto de la casa está en línea.
+
+### ¿Por qué la llamada se corta para mí y no para los demás?
+
+Todos los participantes comparten el mismo servidor de reunión, así que si solo tu imagen se corta, el problema está entre tu Mac y ese servidor: tu Wi-Fi, la cola de tu router, tu subida o tu VPN. Ejecuta networkQuality y la comparación por cable de arriba para acotarlo.
+
+VelociBar ejecuta pruebas activas mientras la app funciona y el Mac está despierto. Las pruebas transfieren datos y pueden afectar llamadas o descargas. Compara resultados del mismo motor; las pruebas ausentes o fallidas no son muestras válidas de velocidad cero. Las mediciones de este artículo son de una conexión en un día y no son una afirmación sobre ningún proveedor.
+
+## Fuentes
+
+- [Apple: prueba la responsividad de tu red con networkQuality (RPM, Low/Medium/High)](https://support.apple.com/es-es/HT212313)
+- [IETF: Responsiveness under Working Conditions (draft-ietf-ippm-responsiveness)](https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/)
+- [Zoom: estadísticas de la reunión y latencia, jitter y pérdida de paquetes recomendados](https://support.zoom.com/hc/es/article?id=zm_kb&sysparm_article=KB0070504)
+- [Zoom: requisitos del sistema y ancho de banda](https://support.zoom.com/hc/es/article?id=zm_kb&sysparm_article=KB0060748)
+- [Microsoft: preparar la red para Teams](https://learn.microsoft.com/es-es/microsoftteams/prepare-network)
+- [Microsoft: calidad de servicio en Teams (guía sobre VPN)](https://learn.microsoft.com/es-es/microsoftteams/qos-in-teams)
+- [Google: preparar la red para Meet](https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams?hl=es)
+- [Apple: resolver problemas de Wi-Fi y Bluetooth por interferencias inalámbricas](https://support.apple.com/es-es/102319)
+- [Cloudflare: latencia en reposo y bajo carga en el test AIM](https://blog.cloudflare.com/aim-database-for-internet-quality/)
+- [Netflix: latencia sin carga y con carga en Fast.com](https://about.netflix.com/en/news/fast-com-now-measures-latency-and-upload-speed)
+- [Bufferbloat.net: introducción](https://www.bufferbloat.net/projects/bloat/wiki/Introduction/)
+- [IETF RFC 7567: gestión activa de colas](https://www.rfc-editor.org/rfc/rfc7567)
+- [FCC: Measuring Broadband America, latencia bajo carga](https://data.fcc.gov/download/measuring-broadband-america/2023/2023-Fixed-Measuring-Broadband-America-Report.pdf)
+
+## Registra tu responsividad a lo largo del tiempo
+
+VelociBar mide la velocidad de descarga y la responsividad en RPM con un horario desde la barra de menú de macOS y guarda el historial en tu Mac, para que veas las horas en las que los viajes de ida y vuelta se disparan, no solo el minuto en que hiciste un test. Sin cuentas, sin nube.
 
 [↓ Descargar VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
 
@@ -541,7 +661,7 @@ VelociBar measures your connection automatically from the macOS menu bar and sto
 
 # How to Test Internet Speed on a Mac: 3 Methods
 
-By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 16, 2026 · 5 min read
 
 **To test internet speed on a Mac, open a web speed test, run `networkQuality` in Terminal, or use VelociBar for scheduled measurements.** Web tests give a quick snapshot; Apple’s built-in tool also reports responsiveness under load. Repeated tests help you compare connection quality across hours and days.
 
@@ -584,7 +704,7 @@ Each line tells you something different:
 
 - **Uplink / Downlink capacity.** Real upload and download throughput, measured while the network is under working load, not an isolated burst.
 - **Responsiveness.** Apple reports how the network responds under load, with a Low, Medium, or High rating. Other tests can also measure loaded latency; their units and methods may differ.
-- **RPM (round trips per minute).** Higher RPM means faster responses under this test’s load. A low result can be consistent with [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), but does not identify the cause by itself.
+- **RPM (round trips per minute).** Higher RPM means faster responses under this test’s load. A low result can be consistent with [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), but does not identify the cause by itself. For a worked example of a Medium result next to a 500 Mbps download, see [responsiveness versus Mbps on a real line](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html).
 - **Idle Latency.** Latency with the network at rest, no load. It's your baseline: compare it against what happens under load to see how much your connection degrades when you actually push it.
 
 The command has two useful variants:
@@ -696,11 +816,128 @@ VelociBar measures your connection automatically from the macOS menu bar and kee
 
 ---
 
+> Markdown version of https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html · [Versión en español](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html)
+
+# Speed Test Is Fine but Video Calls Still Stutter? Check Responsiveness, Not Mbps
+
+By [VelociBar](https://velocibar.app/en/) · Published September 16, 2026 · 11 min read
+
+**A speed test measures how much data your line can move. A video call needs packets to arrive on time.** When calls freeze on a connection that tests fast, the usual cause is latency under load: round trips that stretch from tens of milliseconds to hundreds while the line is busy. Apple’s networkQuality tool reports that as responsiveness (RPM), and you can read it on a Mac in about a minute.
+
+## Why a fast test and a frozen call are both true at once
+
+A video call uses very little of a modern line. [Zoom lists 1.2 Mbps up and down for a 720p one-to-one call](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060748) and 3.8 Mbps up, 3.0 Mbps down for 1080p. [Microsoft says Teams can deliver HD video in under 1.5 Mbps](https://learn.microsoft.com/en-us/microsoftteams/prepare-network), and [Google Meet asks for about 1 Mbps out and 1.3 Mbps in per participant](https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams?hl=en) for HD. On a 300 Mbps plan, bandwidth is not the constraint. A speed test that comes back at 300 is telling the truth. It is not the number a call depends on.
+
+The call’s question is different: does each small packet of audio and video arrive within a few tens of milliseconds, every time, in both directions? Zoom’s own in-meeting statistics measure exactly that. [Zoom recommends latency of 150 ms or less, jitter of 40 ms or less, and packet loss of 2% or less](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0070504). None of those three numbers is a speed. A line can move 500 Mbps and still miss all three the moment something else on the network starts a big transfer.
+
+## What the speed test does not show: latency under load
+
+Most speed tests report your **idle latency**: the round-trip time measured before the transfer starts, on a quiet line. It is usually a pleasant number, 10 to 40 ms on cable or fibre. What matters for a call is the round-trip time **while the line is busy**, because your line is busy whenever someone in the house backs up photos, a console downloads an update, or your own Mac syncs a folder.
+
+On many routers and modems that number balloons. The equipment holds outgoing packets in an oversized queue instead of dropping a few, and your call’s packets wait behind everything else. That queueing delay has a name, [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), which bufferbloat.net defines as “the undesirable latency that comes from a router or other network equipment buffering too much data.” The IETF has recommended active queue management against it since [RFC 7567 in 2015](https://www.rfc-editor.org/rfc/rfc7567), and the FCC’s Measuring Broadband America report found that latency under downstream load “generally is significantly higher than idle latency” across US providers, with the biggest gap on DSL.
+
+The cleanest way to measure this is the one Apple built into macOS. Since Monterey, every Mac ships with [the networkQuality command](https://velocibar.app/en/blog/speed-test-mac.html), which saturates the line on purpose and counts how many round trips it can still complete. [Apple calls the result responsiveness, in round trips per minute (RPM)](https://support.apple.com/en-us/HT212313): “the number of sequential round-trips, or transactions, a network can do in one minute under normal working conditions.” The method is being standardised at the IETF as [Responsiveness under Working Conditions](https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/), which defines working conditions as a path that is fully utilised so a queue builds up at the bottleneck. In other words, the test creates the exact situation that breaks your call, then measures it.
+
+RPM and milliseconds are the same thing viewed from two sides. Divide 60,000 by the RPM and you get the average round trip in milliseconds under load: 1,000 RPM is 60 ms, 500 RPM is 120 ms, 200 RPM is 300 ms. Apple labels the result Low, Medium or High, and describes Medium as a connection where you “might see momentary pauses or freezes, like during FaceTime audio or video calls.” That sentence describes the mechanism behind the freeze.
+
+## What it looks like on a real line
+
+To show the gap rather than describe it, we ran networkQuality four times back to back on one home Wi-Fi connection on the afternoon of September 16, 2026, from the Mac this article was written on. The raw output is saved alongside the article. This is one line on one afternoon, tested against Apple’s servers, so it says nothing about your provider. It does show how far apart “fast” and “responsive” can sit on the same connection.
+
+Four consecutive networkQuality runs, one home Wi-Fi line, 2026-09-16. Loaded round trips are the request-response samples taken while the download phase saturated the line. Run 4 used the plain summary output, which reports only the RPM and its equivalent in milliseconds.
+
+| Run | Download | Upload | Idle round trip | Round trip under load (median / worst) | Responsiveness |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 320 Mbps | 154 Mbps | 40 ms | 59 ms / 618 ms | 470 RPM, Medium |
+| 2 | 547 Mbps | 158 Mbps | 46 ms | 82 ms / 787 ms | 560 RPM, Medium |
+| 3 | 496 Mbps | 149 Mbps | 44 ms | 145 ms / 1,150 ms | 420 RPM, Medium |
+| 4 | 626 Mbps | 143 Mbps | 42 ms | 109 ms (from RPM; no raw samples) | 549 RPM, Medium |
+
+Every run would pass any speed test with room to spare. Every run also rated Medium, with the median round trip under load anywhere from 1.5 to more than 3 times the idle figure and the worst samples between 618 ms and 1,150 ms. Run 3 is the one to look at: the fastest-looking download of the first three, and the worst responsiveness, with a median round trip of 145 ms under load, right at the edge of Zoom’s 150 ms guidance, and one in ten samples above 263 ms. A call during that run would freeze for a moment every time a queue like that drained, and a speed test taken a minute later would say everything is fine.
+
+Two honest caveats. Wi-Fi adds its own variance, so an Ethernet run would likely look tighter. And four runs are a snapshot, not a pattern. The pattern is the part that matters when you are trying to work out whether this happens at 9 p.m. every night or only when the backup kicks in, which is why the last step below is to log it.
+
+## How to check your own connection in five minutes
+
+1. **Run networkQuality on your Mac.** Open Terminal, type `networkQuality`, press Return, and wait about 20 seconds. Read the Responsiveness line: the label and the RPM (recent versions of macOS also print the milliseconds). Low or Medium with a healthy download number is the signature this article is about.
+2. **Compare idle and loaded latency in a browser test.** Fast.com’s “Show more info” reports unloaded and loaded latency separately; Netflix’s own guidance is that the two should be close to each other. Cloudflare’s speed test does the same and folds the gap into its video-call score. A loaded figure several times the idle one is the same finding from a different server.
+3. **Read the call’s own statistics.** During a Zoom call, open Settings, then Statistics, and watch latency, jitter and packet loss while the freeze happens. If latency and jitter jump when a transfer starts elsewhere in the house, you have found the queue.
+4. **Repeat over Ethernet.** If the loaded latency collapses back toward idle on a cable, the queue is in your Wi-Fi, not your router or your provider. If it stays high, the bottleneck is upstream of the cable.
+5. **Log it over a few days.** A single run tells you what the line did at that minute. To see whether the problem is a nightly pattern, a backup schedule, or random, you need responsiveness measured on a schedule. [VelociBar](https://velocibar.app/en/) runs a test every 15, 30 or 60 minutes from the menu bar, alternates Apple’s engine with a CDN download, and writes each result, including RPM, to a local CSV. VelociBar labels the RPM it records using the bands under 200 (Low), 200 to 999 (Medium) and 1,000 or more (High).
+
+## When it is not responsiveness
+
+Queueing delay is the most common explanation for a fast test and a bad call, and it is not the only one. Before changing routers, rule these out, because each has a different fix.
+
+| What you see | Likely cause | How to check |
+| --- | --- | --- |
+| Freezes on Wi-Fi, fine on a cable | Wireless interference or a crowded 2.4 GHz band. [Apple’s own advice](https://support.apple.com/en-us/102319) is to move devices to 5 GHz and reduce what shares the band. | Step 4 above |
+| Video freezes but audio survives; fans spin up | The Mac itself. Zoom attributes many video problems to “device settings, competing applications, or quality issues,” and notes dual-core laptops drop to around 5 frames per second when screen sharing. | Close heavy apps; watch CPU in Activity Monitor during the call |
+| Bad only on the work VPN | VPN overhead. [Microsoft recommends against sending real-time traffic over a VPN](https://learn.microsoft.com/en-us/microsoftteams/qos-in-teams) because it “inherently adds packet overhead and creates delays in real-time traffic.” | Test the same call off the VPN |
+| Only one person freezes for everyone else | That person’s connection, not yours. | Ask them to run the same checks |
+| Freezes when you upload or sync | Upload saturation. Home plans have far less uplink than downlink, and a cloud backup fills it. This is often bufferbloat on the upload side. In the four runs above, the median round trip during the upload phase ran higher than during the download phase every time: 173 ms against 59 ms in run 1, 151 against 82 in run 2, 214 against 145 in run 3. | Pause the sync and retest |
+
+RPM has limits of its own. It is one number from one path to Apple’s servers, and as [Cloudflare points out](https://blog.cloudflare.com/aim-database-for-internet-quality/), the route a speed test takes “may be vastly different” from the route your calls take. Two tools that follow the same method should agree on the label, not on the exact RPM. Treat it as a reliable indicator of queueing on your line, not as a verdict on a specific call.
+
+## What fixes it, in order
+
+1. **Plug in for calls that matter.** Ethernet removes the Wi-Fi queue entirely and is the only fix that costs nothing and works today.
+2. **Move heavy transfers off call hours.** Schedule cloud backups, photo sync and console updates for the night. Most of the queue is caused by traffic you control.
+3. **Turn on queue management on the router.** If your router offers Smart Queue Management (SQM, usually fq_codel or CAKE), enable it and set it to slightly below your measured speeds. Older firmware often lacks SQM entirely, so check for a firmware update before assuming your router cannot do this. If it only offers QoS, prioritise your Mac or your calling app. [The bufferbloat guide](https://velocibar.app/en/blog/what-is-bufferbloat.html) ranks these options in detail.
+4. **Get off 2.4 GHz.** Use the 5 GHz or 6 GHz band for the machine you take calls on, and keep the router within line of sight if you can.
+5. **If it only happens at the same hours every day, measure and document it.** Congestion at the provider’s node peaks in the evening, and a log of responsiveness by hour is the evidence that separates [peak-hour congestion](https://velocibar.app/en/blog/internet-slow-at-night.html) from a problem inside your home. [Here is how to turn that log into a support request](https://velocibar.app/en/blog/prove-isp-throttling.html).
+
+## Frequently asked questions
+
+### Why does Zoom freeze even though my internet is fast?
+
+Because Zoom needs packets on time rather than in bulk. A 720p call uses about 1.2 Mbps, so a 300 Mbps plan has plenty of capacity. Freezes come from latency, jitter and packet loss, which rise when the line is busy with other traffic. Measure responsiveness under load, not download speed.
+
+### Is upload speed more important than download for video calls?
+
+Neither matters much once you have a few Mbps in each direction. What matters is that the smaller of the two, almost always upload on home plans, does not get saturated by a backup or sync during the call. When it does, the upload queue delays your outgoing audio and video and the other side sees you freeze.
+
+### What is a good internet speed for Zoom?
+
+Zoom’s published figures are 1.2 Mbps up and down for a 720p one-to-one call and 3.8 Mbps up, 3.0 Mbps down for 1080p. Almost any broadband plan clears that. A good connection for Zoom is one that keeps latency at or below 150 ms and jitter at or below 40 ms while the rest of the house is online.
+
+### Why does the call freeze for me but not for the other participants?
+
+Everyone on a call shares the same meeting server, so if only your feed breaks up, the problem is between your Mac and that server: your Wi-Fi, your router’s queue, your uplink or your VPN. Run networkQuality and the Ethernet comparison above to narrow it down.
+
+VelociBar runs active tests while the app is running and the Mac is awake. Tests transfer data and may affect calls or downloads. Compare results from the same engine; missing or failed tests are not valid zero-speed samples. The measurements in this article are from one connection on one day and are not a claim about any provider.
+
+## Sources
+
+- [Apple: test your network responsiveness with networkQuality (RPM, Low/Medium/High)](https://support.apple.com/en-us/HT212313)
+- [IETF: Responsiveness under Working Conditions (draft-ietf-ippm-responsiveness)](https://datatracker.ietf.org/doc/draft-ietf-ippm-responsiveness/)
+- [Zoom: meeting statistics and recommended latency, jitter and packet loss](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0070504)
+- [Zoom: system requirements and bandwidth](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060748)
+- [Microsoft: prepare your network for Teams](https://learn.microsoft.com/en-us/microsoftteams/prepare-network)
+- [Microsoft: quality of service in Teams (VPN guidance)](https://learn.microsoft.com/en-us/microsoftteams/qos-in-teams)
+- [Google: prepare your network for Meet](https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams?hl=en)
+- [Apple: resolve Wi-Fi and Bluetooth issues caused by wireless interference](https://support.apple.com/en-us/102319)
+- [Cloudflare: idle and loaded latency in the AIM test](https://blog.cloudflare.com/aim-database-for-internet-quality/)
+- [Netflix: Fast.com unloaded and loaded latency](https://about.netflix.com/en/news/fast-com-now-measures-latency-and-upload-speed)
+- [Bufferbloat.net: introduction](https://www.bufferbloat.net/projects/bloat/wiki/Introduction/)
+- [IETF RFC 7567: active queue management](https://www.rfc-editor.org/rfc/rfc7567)
+- [FCC: Measuring Broadband America, latency under load](https://data.fcc.gov/download/measuring-broadband-america/2023/2023-Fixed-Measuring-Broadband-America-Report.pdf)
+
+## Log your responsiveness over time
+
+VelociBar measures download speed and responsiveness in RPM on a schedule from the macOS menu bar and keeps the history on your Mac, so you can see the hours when round trips balloon, not just the minute you ran a test. No accounts, no cloud.
+
+[↓ Download VelociBar](https://apps.apple.com/us/app/velocibar/id6756196355)
+
+[← All articles](https://velocibar.app/en/blog/)
+
+---
+
 > Markdown version of https://velocibar.app/en/blog/what-is-bufferbloat.html · [Versión en español](https://velocibar.app/blog/que-es-bufferbloat.html)
 
 # What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)
 
-By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 16, 2026 · 5 min read
 
 **Bufferbloat is excessive packet-queue delay when a network is busy.** It can make calls and games lag even with high download speeds. Check latency under load as well as Mbps; a suitable queue-management configuration can help. WiFi interference, packet loss, and other faults can cause similar symptoms.
 
@@ -728,6 +965,8 @@ If the lag appears during heavy transfers, compare unloaded and loaded latency a
 Measure the increase in delay under load, not just download speed. [Apple’s networkQuality tool reports responsiveness in RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (round trips per minute); higher means more responsive. [Fast.com also exposes unloaded and loaded latency](https://fast.com/) in milliseconds, where lower is better.
 
 Use the Low, Medium, or High rating reported by your version of Apple’s tool as guidance. There is no single RPM value that guarantees a smooth call or game. Compare like-for-like tests before and after a change; the destination, test method, wireless conditions, and application all matter.
+
+To see how far idle and loaded round trips can drift apart on one line, read [why video calls stutter when the speed test looks fine](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html), which walks through four real networkQuality runs.
 
 A one-off test describes one moment. [VelociBar](https://velocibar.app/en/) keeps repeated measurements so you can investigate changes over time. Its Apple and CDN engines use different methods: compare results within the same engine instead of treating their RPM values as interchangeable. See the [Mac speed-test guide](https://velocibar.app/en/blog/speed-test-mac.html).
 

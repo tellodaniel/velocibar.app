@@ -2,7 +2,7 @@
 
 # What Is Bufferbloat (and Why Your Video Calls Freeze on a 300 Mbps Line)
 
-By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 16, 2026 · 5 min read
 
 **Bufferbloat is excessive packet-queue delay when a network is busy.** It can make calls and games lag even with high download speeds. Check latency under load as well as Mbps; a suitable queue-management configuration can help. WiFi interference, packet loss, and other faults can cause similar symptoms.
 
@@ -30,6 +30,8 @@ If the lag appears during heavy transfers, compare unloaded and loaded latency a
 Measure the increase in delay under load, not just download speed. [Apple’s networkQuality tool reports responsiveness in RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (round trips per minute); higher means more responsive. [Fast.com also exposes unloaded and loaded latency](https://fast.com/) in milliseconds, where lower is better.
 
 Use the Low, Medium, or High rating reported by your version of Apple’s tool as guidance. There is no single RPM value that guarantees a smooth call or game. Compare like-for-like tests before and after a change; the destination, test method, wireless conditions, and application all matter.
+
+To see how far idle and loaded round trips can drift apart on one line, read [why video calls stutter when the speed test looks fine](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html), which walks through four real networkQuality runs.
 
 A one-off test describes one moment. [VelociBar](https://velocibar.app/en/) keeps repeated measurements so you can investigate changes over time. Its Apple and CDN engines use different methods: compare results within the same engine instead of treating their RPM values as interchangeable. See the [Mac speed-test guide](https://velocibar.app/en/blog/speed-test-mac.html).
 

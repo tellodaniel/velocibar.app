@@ -42,7 +42,8 @@ No separate feature pages. Features live as homepage sections: `#como-funciona` 
 | `/en/blog/speed-test-mac.html` | https://velocibar.app/en/blog/speed-test-mac.html | Mac Internet Speed Test: 3 Methods Explained | Mac speed test | `/blog/test-velocidad-mac.html`, `/en/blog/prove-isp-throttling.html`, `/en/blog/speed-test-mac.html`, `/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html`, `/en/blog/what-is-bufferbloat.html`; footer of `/` or `/en/` |
 | `/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html` | https://velocibar.app/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html | Speedtest vs Fast.com vs VelociBar: Which to Use | one-off vs monitoring | `/blog/speedtest-vs-fastcom-vs-monitoreo-continuo.html`, `/en/blog/speedtest-vs-fastcom-vs-continuous-monitoring.html`; footer of `/` or `/en/` |
 | `/en/blog/what-is-bufferbloat.html` | https://velocibar.app/en/blog/what-is-bufferbloat.html | What Is Bufferbloat? How to Test and Fix It | bufferbloat / RPM | `/blog/que-es-bufferbloat.html`, `/en/blog/internet-slow-at-night.html`, `/en/blog/speed-test-mac.html`, `/en/blog/what-is-bufferbloat.html`; footer of `/` or `/en/` |
-
+| `/blog/videollamadas-se-cortan-test-velocidad-bien.html` | https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html | ¿El test de velocidad da bien pero la videollamada se corta? Mira la responsividad, no los Mbps | bufferbloat / RPM (symptom-first) | `/blog/que-es-bufferbloat.html`, `/blog/test-velocidad-mac.html`; footer of `/` |
+| `/en/blog/video-calls-lag-speed-test-fine.html` | https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html | Speed Test Is Fine but Video Calls Still Stutter? Check Responsiveness, Not Mbps | bufferbloat / RPM (symptom-first) | `/en/blog/what-is-bufferbloat.html`, `/en/blog/speed-test-mac.html`; footer of `/en/` |
 Markdown mirrors exist for every post and both homepages (same path, `.md`); `llms.txt` links them. Do not link the `.md` from HTML pages.
 
 ---
@@ -89,7 +90,7 @@ None shipped. Patterns below fill as batches ship.
 
 | Slug | URL | Title | Type | Inbound links from | Anchor-text variations |
 |---|---|---|---|---|---|
-| (backfilled above; new pieces append here) | | | | | |
+| video-calls-lag-speed-test-fine · videollamadas-se-cortan-test-velocidad-bien | see above | Speed test fine, calls stutter: check responsiveness | guide | what-is-bufferbloat, speed-test-mac, blog index, homepage footer, llms.txt | "why video calls stutter when the speed test looks fine", "responsiveness versus Mbps on a real line", "latency under load explained", "four real networkQuality runs", "what a Medium RPM result looks like" |
 
 ---
 

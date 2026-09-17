@@ -2,7 +2,7 @@
 
 # How to Test Internet Speed on a Mac: 3 Methods
 
-By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 10, 2026 · 5 min read
+By [VelociBar](https://velocibar.app/en/) · Published September 4, 2026 · Updated September 16, 2026 · 5 min read
 
 **To test internet speed on a Mac, open a web speed test, run `networkQuality` in Terminal, or use VelociBar for scheduled measurements.** Web tests give a quick snapshot; Apple’s built-in tool also reports responsiveness under load. Repeated tests help you compare connection quality across hours and days.
 
@@ -45,7 +45,7 @@ Each line tells you something different:
 
 - **Uplink / Downlink capacity.** Real upload and download throughput, measured while the network is under working load, not an isolated burst.
 - **Responsiveness.** Apple reports how the network responds under load, with a Low, Medium, or High rating. Other tests can also measure loaded latency; their units and methods may differ.
-- **RPM (round trips per minute).** Higher RPM means faster responses under this test’s load. A low result can be consistent with [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), but does not identify the cause by itself.
+- **RPM (round trips per minute).** Higher RPM means faster responses under this test’s load. A low result can be consistent with [bufferbloat](https://velocibar.app/en/blog/what-is-bufferbloat.html), but does not identify the cause by itself. For a worked example of a Medium result next to a 500 Mbps download, see [responsiveness versus Mbps on a real line](https://velocibar.app/en/blog/video-calls-lag-speed-test-fine.html).
 - **Idle Latency.** Latency with the network at rest, no load. It's your baseline: compare it against what happens under load to see how much your connection degrades when you actually push it.
 
 The command has two useful variants:

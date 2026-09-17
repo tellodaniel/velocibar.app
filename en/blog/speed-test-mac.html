@@ -41,7 +41,7 @@
   <meta property="og:image" content="https://velocibar.app/og-image.png">
   <meta property="article:published_time" content="2026-09-04">
 
-  <meta property="article:modified_time" content="2026-09-10">
+  <meta property="article:modified_time" content="2026-09-16">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -59,7 +59,7 @@
   "description": "Test internet speed on Mac with Speedtest, Fast.com, Apple’s networkQuality command, or scheduled measurements. Compare Mbps, latency, and RPM.",
   "inLanguage": "en",
   "datePublished": "2026-09-04",
-  "dateModified": "2026-09-10",
+  "dateModified": "2026-09-16",
   "image": "https://velocibar.app/og-image.png",
   "mainEntityOfPage": "https://velocibar.app/en/blog/speed-test-mac.html",
   "author": {
@@ -139,7 +139,7 @@
         <a href="/en/">Home</a> · <a href="/en/blog/">Blog</a>
       </nav>
       <h1>How to Test Internet Speed on a Mac: 3 Methods</h1>
-      <p class="post-meta">By <a href="/en/" rel="author">VelociBar</a> · Published <time datetime="2026-09-04">September 4, 2026</time> · Updated <time datetime="2026-09-10">September 10, 2026</time> · 5 min read</p>
+      <p class="post-meta">By <a href="/en/" rel="author">VelociBar</a> · Published <time datetime="2026-09-04">September 4, 2026</time> · Updated <time datetime="2026-09-16">September 16, 2026</time> · 5 min read</p>
 
       <p class="post-summary"><strong>To test internet speed on a Mac, open a web speed test, run <code>networkQuality</code> in Terminal, or use VelociBar for scheduled measurements.</strong> Web tests give a quick snapshot; Apple’s built-in tool also reports responsiveness under load. Repeated tests help you compare connection quality across hours and days.</p>
 
@@ -173,7 +173,7 @@ Idle Latency: 14.353 milliseconds</code></pre>
       <ul>
         <li><strong>Uplink / Downlink capacity.</strong> Real upload and download throughput, measured while the network is under working load, not an isolated burst.</li>
         <li><strong>Responsiveness.</strong> Apple reports how the network responds under load, with a Low, Medium, or High rating. Other tests can also measure loaded latency; their units and methods may differ.</li>
-        <li><strong>RPM (round trips per minute).</strong> Higher RPM means faster responses under this test’s load. A low result can be consistent with <a href="/en/blog/what-is-bufferbloat.html">bufferbloat</a>, but does not identify the cause by itself.</li>
+        <li><strong>RPM (round trips per minute).</strong> Higher RPM means faster responses under this test’s load. A low result can be consistent with <a href="/en/blog/what-is-bufferbloat.html">bufferbloat</a>, but does not identify the cause by itself. For a worked example of a Medium result next to a 500 Mbps download, see <a href="/en/blog/video-calls-lag-speed-test-fine.html">responsiveness versus Mbps on a real line</a>.</li>
         <li><strong>Idle Latency.</strong> Latency with the network at rest, no load. It's your baseline: compare it against what happens under load to see how much your connection degrades when you actually push it.</li>
       </ul>
       <p>The command has two useful variants:</p>

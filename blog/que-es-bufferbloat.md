@@ -2,7 +2,7 @@
 
 # Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)
 
-Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 10 de septiembre de 2026 · 5 min de lectura
+Por [VelociBar](https://velocibar.app/) · Publicado el 4 de septiembre de 2026 · Actualizado el 16 de septiembre de 2026 · 5 min de lectura
 
 **El bufferbloat es una demora excesiva en las colas de paquetes cuando la red está ocupada.** Puede provocar lag en llamadas y juegos aunque la descarga sea rápida. Revisa la latencia bajo carga además de los Mbps; una gestión de colas adecuada puede ayudar. Las interferencias WiFi, la pérdida de paquetes y otras fallas pueden producir síntomas parecidos.
 
@@ -30,6 +30,8 @@ Si el lag aparece durante transferencias pesadas, compara la latencia en reposo 
 Mide cuánto aumenta la demora bajo carga, además de la descarga. [La herramienta networkQuality de Apple expresa la responsividad en RPM](https://developer.apple.com/videos/play/wwdc2021/10239/) (viajes de ida y vuelta por minuto): más es mejor. [Fast.com también muestra latencia en reposo y bajo carga](https://fast.com/) en milisegundos, donde menos es mejor.
 
 Usa como orientación la clasificación Low, Medium o High que reporte tu versión de la herramienta de Apple. No existe un valor de RPM que garantice una llamada o partida fluida. Compara pruebas equivalentes antes y después de un cambio: el destino, el método, la conexión inalámbrica y la aplicación influyen.
+
+Para ver cuánto pueden separarse los viajes en reposo y bajo carga en una misma línea, lee [por qué la videollamada se corta aunque el test de velocidad dé bien](https://velocibar.app/blog/videollamadas-se-cortan-test-velocidad-bien.html), con cuatro ejecuciones reales de networkQuality.
 
 Una prueba puntual describe un momento. [VelociBar](https://velocibar.app/) conserva mediciones repetidas para investigar cambios a lo largo del tiempo. Sus motores Apple y CDN usan métodos diferentes: compara resultados del mismo motor en lugar de tratar sus RPM como intercambiables. Consulta la [guía de pruebas de velocidad en Mac](https://velocibar.app/blog/test-velocidad-mac.html).
 

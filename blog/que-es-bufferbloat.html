@@ -41,7 +41,7 @@
   <meta property="og:image" content="https://velocibar.app/og-image.png">
   <meta property="article:published_time" content="2026-09-04">
 
-  <meta property="article:modified_time" content="2026-09-10">
+  <meta property="article:modified_time" content="2026-09-16">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -59,7 +59,7 @@
   "description": "Qué es el bufferbloat, cómo comparar latencia bajo carga y RPM, y cuándo la gestión de colas puede ayudar a reducir el lag en llamadas y juegos.",
   "inLanguage": "es",
   "datePublished": "2026-09-04",
-  "dateModified": "2026-09-10",
+  "dateModified": "2026-09-16",
   "image": "https://velocibar.app/og-image.png",
   "mainEntityOfPage": "https://velocibar.app/blog/que-es-bufferbloat.html",
   "author": {
@@ -140,7 +140,7 @@
         <a href="/">Inicio</a> · <a href="/blog/">Blog</a>
       </nav>
       <h1>Qué es el bufferbloat (y por qué tu videollamada se congela con 300 Mbps)</h1>
-      <p class="post-meta">Por <a href="/" rel="author">VelociBar</a> · Publicado el <time datetime="2026-09-04">4 de septiembre de 2026</time> · Actualizado el <time datetime="2026-09-10">10 de septiembre de 2026</time> · 5 min de lectura</p>
+      <p class="post-meta">Por <a href="/" rel="author">VelociBar</a> · Publicado el <time datetime="2026-09-04">4 de septiembre de 2026</time> · Actualizado el <time datetime="2026-09-16">16 de septiembre de 2026</time> · 5 min de lectura</p>
 
       <p class="post-summary"><strong>El bufferbloat es una demora excesiva en las colas de paquetes cuando la red está ocupada.</strong> Puede provocar lag en llamadas y juegos aunque la descarga sea rápida. Revisa la latencia bajo carga además de los Mbps; una gestión de colas adecuada puede ayudar. Las interferencias WiFi, la pérdida de paquetes y otras fallas pueden producir síntomas parecidos.</p>
 
@@ -164,6 +164,7 @@
       <h2 id="como-medirlo-la-responsividad-en-rpm">Cómo medirlo: la responsividad en RPM</h2>
       <p>Mide cuánto aumenta la demora bajo carga, además de la descarga. <a href="https://developer.apple.com/videos/play/wwdc2021/10239/">La herramienta networkQuality de Apple expresa la responsividad en RPM</a> (viajes de ida y vuelta por minuto): más es mejor. <a href="https://fast.com/">Fast.com también muestra latencia en reposo y bajo carga</a> en milisegundos, donde menos es mejor.</p>
       <p>Usa como orientación la clasificación Low, Medium o High que reporte tu versión de la herramienta de Apple. No existe un valor de RPM que garantice una llamada o partida fluida. Compara pruebas equivalentes antes y después de un cambio: el destino, el método, la conexión inalámbrica y la aplicación influyen.</p>
+      <p>Para ver cuánto pueden separarse los viajes en reposo y bajo carga en una misma línea, lee <a href="/blog/videollamadas-se-cortan-test-velocidad-bien.html">por qué la videollamada se corta aunque el test de velocidad dé bien</a>, con cuatro ejecuciones reales de networkQuality.</p>
       <p>Una prueba puntual describe un momento. <a href="/">VelociBar</a> conserva mediciones repetidas para investigar cambios a lo largo del tiempo. Sus motores Apple y CDN usan métodos diferentes: compara resultados del mismo motor en lugar de tratar sus RPM como intercambiables. Consulta la <a href="/blog/test-velocidad-mac.html">guía de pruebas de velocidad en Mac</a>.</p>
 
       <h2 id="como-solucionarlo-de-mayor-a-menor-impacto">Cómo solucionarlo, de mayor a menor impacto</h2>
